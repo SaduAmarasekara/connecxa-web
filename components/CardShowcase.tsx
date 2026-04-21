@@ -1,0 +1,623 @@
+"use client";
+import { useState, useRef } from "react";
+
+interface ColorVariant {
+  dot: string;
+  hasBorder?: boolean;
+  bgCard: string;
+  textColor: string;
+  subColor: string;
+  accent: string;
+}
+
+interface CardData {
+  id: string;
+  name: string;
+  price: string;
+  material: string;
+  printing: string;
+  title: string;
+  sub: string;
+  tag: string;
+  tagColor: string;
+  variants: ColorVariant[];
+  shimmer: string;
+  woodGrain?: boolean;
+  isCustom?: boolean;
+}
+
+const cards: CardData[] = [
+  {
+    id: "modern",
+    name: "Modern",
+    price: "Rs 9,943.73 LKR",
+    material: "Matte PVC",
+    printing: "Thermal Printing",
+    title: "DARREN LEE",
+    sub: "ENTREPRENEUR",
+    tag: "Best Seller",
+    tagColor: "#D4AF37",
+    shimmer: "rgba(212,175,55,0.12)",
+    variants: [
+      {
+        dot: "linear-gradient(135deg, #1c1c1c 50%, #D4AF37 50%)",
+        bgCard: "#1c1c1c",
+        textColor: "#D4AF37",
+        subColor: "rgba(212,175,55,0.6)",
+        accent: "#D4AF37",
+      },
+      {
+        dot: "linear-gradient(135deg, #f3f4f6 50%, #111827 50%)",
+        hasBorder: true,
+        bgCard: "#f3f4f6",
+        textColor: "#111827",
+        subColor: "rgba(17,24,39,0.5)",
+        accent: "#111827",
+      },
+      {
+        dot: "#064e3b",
+        bgCard: "#064e3b",
+        textColor: "#D4AF37",
+        subColor: "rgba(212,175,55,0.6)",
+        accent: "#064e3b",
+      },
+      {
+        dot: "#1e3a8a",
+        bgCard: "#1e3a8a",
+        textColor: "#D4AF37",
+        subColor: "rgba(212,175,55,0.6)",
+        accent: "#1e3a8a",
+      },
+      {
+        dot: "#7f1d1d",
+        bgCard: "#7f1d1d",
+        textColor: "#D4AF37",
+        subColor: "rgba(212,175,55,0.6)",
+        accent: "#7f1d1d",
+      },
+      {
+        dot: "#ffffff",
+        hasBorder: true,
+        bgCard: "#ffffff",
+        textColor: "#000000",
+        subColor: "rgba(0,0,0,0.5)",
+        accent: "#000000",
+      },
+    ],
+  },
+  {
+    id: "walnut",
+    name: "Walnut",
+    price: "Rs 10,691.38 LKR",
+    material: "Sapele Wood",
+    printing: "Laser Engraving",
+    title: "EMILY GREEN",
+    sub: "BOTANIST",
+    tag: "Natural",
+    tagColor: "#8B5A2B",
+    shimmer: "rgba(139,90,43,0.12)",
+    woodGrain: true,
+    variants: [
+      {
+        dot: "#8B5A2B",
+        bgCard: "#8B5A2B",
+        textColor: "#2B1B12",
+        subColor: "rgba(43,27,18,0.5)",
+        accent: "#8B5A2B",
+      },
+    ],
+  },
+  {
+    id: "obsidian",
+    name: "Obsidian",
+    price: "Rs 19,912.38 LKR",
+    material: "Stainless Steel",
+    printing: "Laser Engraving",
+    title: "STEVE MILLER",
+    sub: "TECH ENTHUSIAST",
+    tag: "Premium",
+    tagColor: "#4A3B12",
+    shimmer: "rgba(212,175,55,0.15)",
+    variants: [
+      {
+        dot: "#D4AF37",
+        bgCard: "#D4AF37",
+        textColor: "#4A3B12",
+        subColor: "rgba(74,59,18,0.55)",
+        accent: "#D4AF37",
+      },
+      {
+        dot: "#D1D5DB",
+        bgCard: "#D1D5DB",
+        textColor: "#111827",
+        subColor: "rgba(17,24,39,0.55)",
+        accent: "#D1D5DB",
+      },
+      {
+        dot: "#111827",
+        bgCard: "#111827",
+        textColor: "#D4AF37",
+        subColor: "rgba(212,175,55,0.55)",
+        accent: "#111827",
+      },
+      {
+        dot: "#ffffff",
+        hasBorder: true,
+        bgCard: "#ffffff",
+        textColor: "#111827",
+        subColor: "rgba(17,24,39,0.55)",
+        accent: "#000000",
+      },
+    ],
+  },
+  {
+    id: "custom",
+    name: "Custom",
+    price: "Rs 13,681.97 LKR",
+    material: "Matte PVC",
+    printing: "UV Printing",
+    title: "OneGoodCard",
+    sub: "CUSTOM DESIGN",
+    tag: "Design Yours",
+    tagColor: "#0066FF",
+    shimmer: "rgba(0,102,255,0.10)",
+    isCustom: true,
+    variants: [
+      {
+        dot: "linear-gradient(to top right, #3b82f6, #fb923c, #14b8a6)",
+        bgCard: "#0066FF",
+        textColor: "#ffffff",
+        subColor: "rgba(255,255,255,0.6)",
+        accent: "#0066FF",
+      },
+    ],
+  },
+];
+
+const tabs = ["All Cards", "Premium Cards", "Matte Cards", "Glossy Cards"];
+
+export default function CardShowcase() {
+  const [activeTab, setActiveTab] = useState<number>(0);
+  const [activeColors, setActiveColors] = useState<Record<string, number>>({});
+  const [hoveredCard, setHoveredCard] = useState<string | null>(null);
+  const scrollRef = useRef<HTMLDivElement>(null);
+  const [scrollIdx, setScrollIdx] = useState<number>(0);
+
+  const handleScroll = () => {
+    if (!scrollRef.current) return;
+    const { scrollLeft, scrollWidth, clientWidth } = scrollRef.current;
+    const total = cards.length;
+    const idx = Math.round(
+      (scrollLeft / (scrollWidth - clientWidth)) * (total - 1),
+    );
+    setScrollIdx(idx);
+  };
+
+  const scrollTo = (idx: number) => {
+    if (!scrollRef.current) return;
+    const card = scrollRef.current.children[idx] as HTMLElement | undefined;
+    if (card)
+      card.scrollIntoView({
+        behavior: "smooth",
+        block: "nearest",
+        inline: "center",
+      });
+    setScrollIdx(idx);
+  };
+
+  return (
+    <section
+      style={{
+        fontFamily: "'DM Sans', 'Helvetica Neue', sans-serif",
+        background: "#ffffff",
+        padding: "96px 0",
+      }}
+    >
+      <style>{`
+        @import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&display=swap');
+        .no-scrollbar::-webkit-scrollbar { display: none; }
+        .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+        .card-wrap { transition: none; }
+        .gray-box { transition: background 0.3s ease; }
+        .gray-box:hover { background: #EBEBEB !important; }
+        .biz-card { transition: transform 0.5s cubic-bezier(0.23,1,0.32,1), box-shadow 0.5s ease; }
+        .biz-card:hover { transform: perspective(800px) rotateY(-5deg) rotateX(2deg) scale(1.04); box-shadow: 24px 24px 56px rgba(0,0,0,0.28) !important; }
+        .color-dot { transition: transform 0.2s ease, box-shadow 0.2s ease; cursor: pointer; border-radius: 50%; }
+        .color-dot:hover { transform: scale(1.15); }
+        .shimmer-layer { position: absolute; inset: 0; background: linear-gradient(105deg, transparent 35%, rgba(255,255,255,0.14) 50%, transparent 65%); background-size: 200% 100%; animation: shimmer 3.5s ease-in-out infinite; pointer-events: none; border-radius: inherit; }
+        @keyframes shimmer { 0% { background-position: -200% 0; } 100% { background-position: 200% 0; } }
+        .spec-row { display: flex; align-items: center; gap: 12px; font-size: 14px; color: #9CA3AF; font-weight: 500; }
+        .arrow-circle { display: flex; align-items: center; justify-content: center; width: 34px; height: 34px; border-radius: 50%; background: #111827; color: #fff; font-size: 16px; transition: transform 0.25s ease; }
+        .view-all-btn:hover .arrow-circle { transform: translateX(4px); }
+        .tab-pill { border: none; cursor: pointer; font-weight: 700; font-size: 15px; padding: 10px 28px; border-radius: 99px; transition: all 0.25s ease; font-family: inherit; }
+        .carousel-arrow { position: absolute; right: 0; top: 33%; transform: translateY(-50%); width: 56px; height: 56px; background: rgba(17,17,17,0.4); backdrop-filter: blur(8px); border: none; cursor: pointer; color: #fff; border-top-left-radius: 99px; border-bottom-left-radius: 99px; display: flex; align-items: center; justify-content: center; opacity: 0; transition: opacity 0.25s ease, background 0.2s ease; }
+        .cards-outer:hover .carousel-arrow { opacity: 1; }
+        .carousel-arrow:hover { background: rgba(17,17,17,0.65) !important; }
+      `}</style>
+
+      <div style={{ maxWidth: 1600, margin: "0 auto", padding: "0 48px" }}>
+        {/* ── Header ── */}
+        <div
+          style={{ display: "flex", flexDirection: "column", marginBottom: 64 }}
+        >
+          <h2
+            style={{
+              fontSize: "clamp(34px, 4vw, 48px)",
+              fontWeight: 700,
+              color: "#111827",
+              letterSpacing: "-0.02em",
+              lineHeight: 1.1,
+              margin: "0 0 40px 0",
+            }}
+          >
+            Design Your NFC Business Card
+          </h2>
+
+          {/* Tabs */}
+          <div style={{ display: "flex", flexWrap: "wrap", gap: 12 }}>
+            {tabs.map((tab, i) => (
+              <button
+                key={tab}
+                className="tab-pill"
+                onClick={() => setActiveTab(i)}
+                style={{
+                  background: activeTab === i ? "#0066FF" : "#F5F5F5", // original: bg-[#0066FF] active
+                  color: activeTab === i ? "#ffffff" : "#374151",
+                  boxShadow:
+                    activeTab === i ? "0 8px 24px rgba(0,102,255,0.3)" : "none",
+                }}
+              >
+                {tab}
+              </button>
+            ))}
+          </div>
+        </div>
+
+        {/* ── Cards ── */}
+        <div className="cards-outer" style={{ position: "relative" }}>
+          <div
+            ref={scrollRef}
+            className="no-scrollbar"
+            onScroll={handleScroll}
+            style={{
+              display: "flex",
+              gap: 32,
+              overflowX: "auto",
+              paddingBottom: 48,
+              scrollSnapType: "x mandatory",
+            }}
+          >
+            {cards.map((card) => {
+              const selColor = activeColors[card.id] ?? 0;
+              const currentVariant = card.variants[selColor] || card.variants[0];
+              return (
+                <div
+                  key={card.id}
+                  className="card-wrap"
+                  onMouseEnter={() => setHoveredCard(card.id)}
+                  onMouseLeave={() => setHoveredCard(null)}
+                  style={{
+                    minWidth: 300,
+                    maxWidth: 380,
+                    flexShrink: 0,
+                    scrollSnapAlign: "start",
+                    display: "flex",
+                    flexDirection: "column",
+                  }}
+                >
+                  {/* Gray Box — original: bg-[#F2F2F2] rounded-[32px] aspect-square */}
+                  <div
+                    className="gray-box"
+                    style={{
+                      width: "100%",
+                      aspectRatio: "1/1",
+                      background: "#F2F2F2",
+                      borderRadius: 32,
+                      display: "flex",
+                      alignItems: "center",
+                      justifyContent: "center",
+                      padding: 40,
+                      marginBottom: 32,
+                      boxSizing: "border-box",
+                    }}
+                  >
+                    {/* Business Card — original: aspect-[1.58/1] rounded-xl shadow-[0_20px_50px_rgba(0,0,0,0.2)] */}
+                    <div
+                      className="biz-card"
+                      style={{
+                        width: "100%",
+                        aspectRatio: "1.58/1",
+                        borderRadius: 12,
+                        background: currentVariant.bgCard,
+                        position: "relative",
+                        overflow: "hidden",
+                        boxShadow: "0 20px 50px rgba(0,0,0,0.20)",
+                        display: "flex",
+                        flexDirection: "column",
+                        alignItems: "center",
+                        justifyContent: "center",
+                        padding: 24,
+                        boxSizing: "border-box",
+                      }}
+                    >
+                      <div className="shimmer-layer" />
+
+                      {/* Wood grain for Walnut */}
+                      {card.woodGrain && (
+                        <div
+                          style={{
+                            position: "absolute",
+                            inset: 0,
+                            pointerEvents: "none",
+                            backgroundImage:
+                              "repeating-linear-gradient(88deg, transparent, transparent 4px, rgba(0,0,0,0.035) 4px, rgba(0,0,0,0.035) 5px)",
+                          }}
+                        />
+                      )}
+
+                      {/* Custom badge — original: absolute top-4 right-4 text-white italic */}
+                      {card.isCustom && (
+                        <div
+                          style={{
+                            position: "absolute",
+                            top: 14,
+                            right: 14,
+                            fontSize: 10,
+                            fontWeight: 900,
+                            color: "#ffffff",
+                            fontStyle: "italic",
+                          }}
+                        >
+                          Connecxa
+                        </div>
+                      )}
+
+                      {/* Card Text */}
+                      <div
+                        style={{
+                          textAlign: "center",
+                          position: "relative",
+                          zIndex: 2,
+                        }}
+                      >
+                        <div
+                          style={{
+                            fontWeight: 900,
+                            fontSize: 18,
+                            color: currentVariant.textColor,
+                            letterSpacing: "0.2em",
+                          }}
+                        >
+                          {card.title}
+                        </div>
+                        <div
+                          style={{
+                            fontSize: 9,
+                            fontWeight: 700,
+                            color: currentVariant.subColor,
+                            letterSpacing: "0.3em",
+                            marginTop: 5,
+                            textTransform: "uppercase",
+                            opacity: 0.8,
+                          }}
+                        >
+                          {card.sub}
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* Color Circles — original: flex items-center justify-center gap-3 mb-6 */}
+                  <div
+                    style={{
+                      display: "flex",
+                      alignItems: "center",
+                      justifyContent: "center",
+                      gap: 12,
+                      marginBottom: 24,
+                    }}
+                  >
+                    {card.variants.map((v, ci) => (
+                      <div
+                        key={ci}
+                        className="color-dot"
+                        onClick={() =>
+                          setActiveColors((prev) => ({
+                            ...prev,
+                            [card.id]: ci,
+                          }))
+                        }
+                        style={{
+                          width: 24,
+                          height: 24,
+                          background: v.dot,
+                          border: v.hasBorder
+                            ? "2px solid #E5E7EB"
+                            : "2px solid transparent",
+                          boxShadow:
+                            selColor === ci
+                              ? `0 0 0 2px #fff, 0 0 0 3.5px ${v.accent}`
+                              : "0 1px 3px rgba(0,0,0,0.15)",
+                        }}
+                      />
+                    ))}
+                  </div>
+
+                  {/* Name & Price — original: text-center space-y-1 mb-6 */}
+                  <div style={{ textAlign: "center", marginBottom: 24 }}>
+                    <h3
+                      style={{
+                        fontSize: 24,
+                        fontWeight: 700,
+                        color: "#111827",
+                        margin: "0 0 4px 0",
+                      }}
+                    >
+                      {card.name}
+                    </h3>
+                    <p
+                      style={{
+                        fontSize: 18,
+                        fontWeight: 600,
+                        color: "#9CA3AF",
+                        margin: 0,
+                      }}
+                    >
+                      {card.price}
+                    </p>
+                  </div>
+
+                  {/* Specs — original: pt-6 border-t border-gray-100 flex flex-col items-center gap-3 */}
+                  <div
+                    style={{
+                      paddingTop: 24,
+                      borderTop: "1px solid #F3F4F6",
+                      display: "flex",
+                      flexDirection: "column",
+                      alignItems: "center",
+                      gap: 12,
+                    }}
+                  >
+                    <div className="spec-row">
+                      <svg
+                        width="18"
+                        height="18"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        strokeWidth="2.5"
+                      >
+                        <rect x="2" y="5" width="20" height="14" rx="2" />
+                        <path d="M2 10h20" />
+                      </svg>
+                      {card.material}
+                    </div>
+                    <div className="spec-row">
+                      <svg
+                        width="18"
+                        height="18"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        strokeWidth="2.5"
+                      >
+                        <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" />
+                      </svg>
+                      {card.printing}
+                    </div>
+                    <div className="spec-row" style={{ opacity: 0.8 }}>
+                      <svg
+                        width="18"
+                        height="18"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        strokeWidth="2.5"
+                      >
+                        <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+                      </svg>
+                      Lifetime Usage
+                    </div>
+                  </div>
+                </div>
+              );
+            })}
+          </div>
+
+          {/* Carousel Arrow — original: absolute right-0 top-1/3 rounded-l-full backdrop-blur */}
+          <button
+            className="carousel-arrow"
+            onClick={() => scrollTo(Math.min(scrollIdx + 1, cards.length - 1))}
+          >
+            <svg
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="3"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+            >
+              <polyline points="9 18 15 12 9 6" />
+            </svg>
+          </button>
+
+          {/* Pagination Dots */}
+          <div
+            style={{
+              display: "flex",
+              justifyContent: "center",
+              alignItems: "center",
+              gap: 8,
+              marginTop: 8,
+            }}
+          >
+            {/* Active dot */}
+            <div
+              onClick={() => scrollTo(0)}
+              style={{
+                height: 10,
+                width: scrollIdx === 0 ? 28 : 10,
+                borderRadius: 99,
+                background: scrollIdx === 0 ? "#111827" : "#E5E7EB",
+                transition: "all 0.3s ease",
+                cursor: "pointer",
+              }}
+            />
+            {/* dots for each card beyond first */}
+            {cards.slice(1).map((_, i) => (
+              <div
+                key={i + 1}
+                onClick={() => scrollTo(i + 1)}
+                style={{
+                  height: 10,
+                  width: scrollIdx === i + 1 ? 28 : 10,
+                  borderRadius: 99,
+                  background: scrollIdx === i + 1 ? "#111827" : "#E5E7EB",
+                  transition: "all 0.3s ease",
+                  cursor: "pointer",
+                }}
+              />
+            ))}
+            {/* extra static dots (original has 7 total) */}
+            {[0, 1, 2].map((i) => (
+              <div
+                key={`s${i}`}
+                style={{
+                  width: 10,
+                  height: 10,
+                  borderRadius: "50%",
+                  background: "#E5E7EB",
+                }}
+              />
+            ))}
+          </div>
+        </div>
+
+        {/* View All — original: mt-12 flex justify-end */}
+        <div
+          style={{ marginTop: 48, display: "flex", justifyContent: "flex-end" }}
+        >
+          <button
+            className="view-all-btn"
+            style={{
+              display: "flex",
+              alignItems: "center",
+              gap: 10,
+              background: "none",
+              border: "none",
+              cursor: "pointer",
+              fontFamily: "'DM Sans', sans-serif",
+              fontWeight: 700,
+              fontSize: 15,
+              color: "#111827",
+            }}
+          >
+            View All Products →
+          </button>
+        </div>
+      </div>
+    </section>
+  );
+}

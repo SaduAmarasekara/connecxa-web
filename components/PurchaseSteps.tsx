@@ -8,6 +8,7 @@ export default function PurchaseSteps() {
         padding: "80px 24px",
         color: "#ffffff",
         fontFamily: "'DM Sans', 'Helvetica Neue', sans-serif",
+        
       }}
     >
       <div style={{ maxWidth: 1600, margin: "0 auto", textAlign: "center", padding: "0 48px" }}>

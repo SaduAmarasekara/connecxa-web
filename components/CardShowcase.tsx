@@ -1,5 +1,6 @@
 "use client";
 import { useState, useRef } from "react";
+import Link from "next/link";
 
 interface ColorVariant {
   dot: string;
@@ -543,31 +544,31 @@ export default function CardShowcase() {
               );
             })}
           </div>
-
-
         </div>
 
         {/* View All — original: mt-12 flex justify-end */}
         <div
           style={{ marginTop: 48, display: "flex", justifyContent: "flex-end" }}
         >
-          <button
-            className="view-all-btn"
-            style={{
-              display: "flex",
-              alignItems: "center",
-              gap: 10,
-              background: "none",
-              border: "none",
-              cursor: "pointer",
-              fontFamily: "'DM Sans', sans-serif",
-              fontWeight: 700,
-              fontSize: 15,
-              color: "#111827",
-            }}
-          >
-            View All Products →
-          </button>
+          <Link href="/shop/products" style={{ textDecoration: "none" }}>
+            <button
+              className="view-all-btn"
+              style={{
+                display: "flex",
+                alignItems: "center",
+                gap: 10,
+                background: "none",
+                border: "none",
+                cursor: "pointer",
+                fontFamily: "'DM Sans', sans-serif",
+                fontWeight: 700,
+                fontSize: 15,
+                color: "#111827",
+              }}
+            >
+              View All Products →
+            </button>
+          </Link>
         </div>
       </div>
     </section>

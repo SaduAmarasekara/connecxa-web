@@ -32,18 +32,18 @@ export default function Home() {
 
                 </div>
 
-                <div className="space-y-5">
-                  <h1 className="text-[52px] md:text-[64px] xl:text-[78px] font-extrabold leading-[1.04] tracking-[-0.03em]">
+                <div className="space-y-5" >
+                  <h1 className="text-[52px] md:text-[64px] xl:text-[78px] font-extrabold leading-[1.04] tracking-[-0.03em] " style={{ margin: "0 auto", textAlign: "center" }}>
                     Modern Networking<br />
                     <span className="">for Professionals</span>
                   </h1>
-                  <p className="text-[17px] md:text-[19px] text-white/80 leading-[1.7] font-normal max-w-[520px]">
+                  <p className="text-[17px] md:text-[19px] text-white/80 leading-[1.7] font-normal max-w-[520px] " style={{ margin: "0 auto" }}>
                     Connect smarter with the all-in-one digital business card, CRM, and contact manager. Built for Professionals. Powered for Teams.
                   </p>
                 </div>
 
                 {/* CTA Row */}
-                <div className="flex flex-col sm:flex-row items-start sm:items-center gap-5">
+                <div className="flex flex-col sm:flex-row items-start sm:items-center gap-5 " style={{ margin: "0 auto", textAlign: "center" }}>
                   <button className="bg-[#FF5C00] text-white text-[30px] font-bold rounded-full px-10 py-5 shadow-[0_8px_30px_rgba(255,92,0,0.45)] hover:bg-[#e65300] hover:shadow-[0_12px_40px_rgba(255,92,0,0.55)] transition-all duration-200 transform hover:-translate-y-0.5 active:scale-95 inline-flex items-center gap-3">
                     Customise Now
                     <span className="text-[20px] leading-none">→</span>
@@ -55,7 +55,7 @@ export default function Home() {
               </div>
 
               {/* Stats Row — anchored to bottom */}
-              <div className="grid grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-10 mt-14 pt-8 border-t border-white/15">
+              <div className="grid grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-10 mt-14 pt-8 border-t border-white/15" style={{ margin: "0 auto", textAlign: "center" }}>
                 <div className="space-y-1.5">
                   <div className="text-[40px] md:text-[48px] font-extrabold tracking-tight leading-none">2M+</div>
                   <div className="text-[11px] font-bold text-white/55 uppercase tracking-[0.14em] leading-snug">

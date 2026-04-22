@@ -2,7 +2,7 @@ import React from 'react';
 
 const NutshellFeatures = () => {
   return (
-    <section className="w-full max-w-[1600px] mx-auto px-6 lg:px-12 py-24">
+    <section className="w-full max-w-[1600px] mx-auto px-6 lg:px-12 py-24" style={{ margin: "0 auto" }}>
       {/* Header Section */}
       <div className="text-center mb-16 md:mb-24 space-y-4">
         <div className="inline-block px-4 py-1.5 bg-blue-50 rounded-full text-blue-600 text-sm font-bold tracking-wider uppercase mb-2 animate-fade-in">

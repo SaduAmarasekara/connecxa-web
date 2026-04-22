@@ -4,6 +4,7 @@ import CardShowcase from "@/components/CardShowcase";
 import NutshellFeatures from "@/components/NutshellFeatures";
 import FAQ from "@/components/FAQ";
 import PurchaseSteps from "@/components/PurchaseSteps";
+import CorporateBranding from "@/components/CorporateBranding";
 
 export default function ShopPage() {
   return (
@@ -768,13 +769,15 @@ export default function ShopPage() {
           </div>
         </div>
       </main>
-      <div className="w-full h-24 lg:h-32 bg-white" />
+     
       <div className="w-full h-24 lg:h-32 bg-white" />
       <NutshellFeatures />
       <div className="w-full h-24 lg:h-32 bg-white" />
       <CardShowcase />
       <div className="w-full h-24 lg:h-32 bg-white" />
       <PurchaseSteps />
+      <div className="w-full h-24 lg:h-32 bg-white" />
+      <CorporateBranding />
       <div className="w-full h-24 lg:h-32 bg-white" />
       <FAQ />
       <div className="w-full h-24 lg:h-32 bg-white" />

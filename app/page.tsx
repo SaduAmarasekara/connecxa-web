@@ -103,22 +103,9 @@ export default function Home() {
 
       {/* ── Floating UI Elements ── */}
 
-      {/* Right sidebar strip */}
-      <div
-        className="fixed right-0 top-1/2 -translate-y-1/2 bg-white text-black text-[12px] font-extrabold py-5 px-2.5 rounded-l-2xl shadow-[0_4px_30px_rgba(0,0,0,0.12)] z-[100] border-y border-l border-gray-100 flex flex-col items-center gap-2"
-        style={{ writingMode: "vertical-rl", textOrientation: "mixed" }}
-      >
-        Get 10% off
-      </div>
 
-      {/* Currency picker */}
-      <div className="fixed bottom-8 left-8 z-50">
-        <div className="bg-white/90 backdrop-blur-md border border-gray-100 rounded-xl py-2.5 px-4 flex items-center gap-2.5 text-sm font-bold text-gray-700 shadow-xl cursor-pointer hover:shadow-2xl transition-shadow">
-          <span className="text-lg">🇱🇰</span>
-          LKR
-          <span className="text-[9px] text-gray-400 ml-0.5">▼</span>
-        </div>
-      </div>
+
+
 
       {/* Action FABs */}
       <div className="fixed bottom-8 right-8 flex flex-col gap-4 z-50">

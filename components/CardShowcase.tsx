@@ -28,89 +28,9 @@ interface CardData {
 
 const cards: CardData[] = [
   {
-    id: "modern",
-    name: "Modern",
-    price: "Rs 9,943.73 LKR",
-    material: "Matte PVC",
-    printing: "Thermal Printing",
-    title: "DARREN LEE",
-    sub: "ENTREPRENEUR",
-    tag: "Best Seller",
-    tagColor: "#D4AF37",
-    shimmer: "rgba(212,175,55,0.12)",
-    variants: [
-      {
-        dot: "linear-gradient(135deg, #1c1c1c 50%, #D4AF37 50%)",
-        bgCard: "#1c1c1c",
-        textColor: "#D4AF37",
-        subColor: "rgba(212,175,55,0.6)",
-        accent: "#D4AF37",
-      },
-      {
-        dot: "linear-gradient(135deg, #f3f4f6 50%, #111827 50%)",
-        hasBorder: true,
-        bgCard: "#f3f4f6",
-        textColor: "#111827",
-        subColor: "rgba(17,24,39,0.5)",
-        accent: "#111827",
-      },
-      {
-        dot: "#064e3b",
-        bgCard: "#064e3b",
-        textColor: "#D4AF37",
-        subColor: "rgba(212,175,55,0.6)",
-        accent: "#064e3b",
-      },
-      {
-        dot: "#1e3a8a",
-        bgCard: "#1e3a8a",
-        textColor: "#D4AF37",
-        subColor: "rgba(212,175,55,0.6)",
-        accent: "#1e3a8a",
-      },
-      {
-        dot: "#7f1d1d",
-        bgCard: "#7f1d1d",
-        textColor: "#D4AF37",
-        subColor: "rgba(212,175,55,0.6)",
-        accent: "#7f1d1d",
-      },
-      {
-        dot: "#ffffff",
-        hasBorder: true,
-        bgCard: "#ffffff",
-        textColor: "#000000",
-        subColor: "rgba(0,0,0,0.5)",
-        accent: "#000000",
-      },
-    ],
-  },
-  {
-    id: "walnut",
-    name: "Walnut",
-    price: "Rs 10,691.38 LKR",
-    material: "Sapele Wood",
-    printing: "Laser Engraving",
-    title: "EMILY GREEN",
-    sub: "BOTANIST",
-    tag: "Natural",
-    tagColor: "#8B5A2B",
-    shimmer: "rgba(139,90,43,0.12)",
-    woodGrain: true,
-    variants: [
-      {
-        dot: "#8B5A2B",
-        bgCard: "#8B5A2B",
-        textColor: "#2B1B12",
-        subColor: "rgba(43,27,18,0.5)",
-        accent: "#8B5A2B",
-      },
-    ],
-  },
-  {
     id: "obsidian",
     name: "Obsidian",
-    price: "Rs 19,912.38 LKR",
+    price: "Rs 19,912.38",
     material: "Stainless Steel",
     printing: "Laser Engraving",
     title: "STEVE MILLER",
@@ -127,11 +47,11 @@ const cards: CardData[] = [
         accent: "#D4AF37",
       },
       {
-        dot: "#D1D5DB",
-        bgCard: "#D1D5DB",
+        dot: "#9CA3AF",
+        bgCard: "#9CA3AF",
         textColor: "#111827",
         subColor: "rgba(17,24,39,0.55)",
-        accent: "#D1D5DB",
+        accent: "#9CA3AF",
       },
       {
         dot: "#111827",
@@ -151,24 +71,130 @@ const cards: CardData[] = [
     ],
   },
   {
-    id: "custom",
-    name: "Custom",
-    price: "Rs 13,681.97 LKR",
-    material: "Matte PVC",
-    printing: "UV Printing",
-    title: "Connecxa",
-    sub: "CUSTOM DESIGN",
-    tag: "Design Yours",
-    tagColor: "#0066FF",
-    shimmer: "rgba(0,102,255,0.10)",
-    isCustom: true,
+    id: "walnut",
+    name: "Walnut",
+    price: "Rs 10,691.38",
+    material: "Sapele Wood",
+    printing: "Laser Engraving",
+    title: "EMILY GREEN",
+    sub: "BOTANIST",
+    tag: "Natural",
+    tagColor: "#8B5A2B",
+    shimmer: "rgba(139,90,43,0.12)",
+    woodGrain: true,
     variants: [
       {
-        dot: "linear-gradient(to top right, #3b82f6, #fb923c, #14b8a6)",
-        bgCard: "#0066FF",
+        dot: "#8B5A2B",
+        bgCard: "#8B5A2B",
+        textColor: "#2B1B12",
+        subColor: "rgba(43,27,18,0.5)",
+        accent: "#8B5A2B",
+      },
+    ],
+  },
+  {
+    id: "modern",
+    name: "Modern",
+    price: "Rs 9,943.73",
+    material: "Matte PVC",
+    printing: "Thermal Printing",
+    title: "DARREN LEE",
+    sub: "ENTREPRENEUR",
+    tag: "Best Seller",
+    tagColor: "#D4AF37",
+    shimmer: "rgba(212,175,55,0.12)",
+    variants: [
+      {
+        dot: "#111827",
+        bgCard: "#111827",
         textColor: "#ffffff",
         subColor: "rgba(255,255,255,0.6)",
-        accent: "#0066FF",
+        accent: "#111827",
+      },
+      {
+        dot: "#4B5563",
+        bgCard: "#4B5563",
+        textColor: "#ffffff",
+        subColor: "rgba(255,255,255,0.6)",
+        accent: "#4B5563",
+      },
+      {
+        dot: "#064e3b",
+        bgCard: "#064e3b",
+        textColor: "#ffffff",
+        subColor: "rgba(255,255,255,0.6)",
+        accent: "#064e3b",
+      },
+      {
+        dot: "#1e3a8a",
+        bgCard: "#1e3a8a",
+        textColor: "#ffffff",
+        subColor: "rgba(255,255,255,0.6)",
+        accent: "#1e3a8a",
+      },
+      {
+        dot: "#7f1d1d",
+        bgCard: "#7f1d1d",
+        textColor: "#ffffff",
+        subColor: "rgba(255,255,255,0.6)",
+        accent: "#7f1d1d",
+      },
+      {
+        dot: "#ffffff",
+        hasBorder: true,
+        bgCard: "#ffffff",
+        textColor: "#000000",
+        subColor: "rgba(0,0,0,0.5)",
+        accent: "#000000",
+      },
+    ],
+  },
+  {
+    id: "parallels",
+    name: "Parallels",
+    price: "Rs 13,681.97",
+    material: "Matte PVC",
+    printing: "UV Printing",
+    title: "NATALIE DIAZ",
+    sub: "CONTENT STRATEGIST",
+    tag: "Pro",
+    tagColor: "#0066FF",
+    shimmer: "rgba(255,255,255,0.10)",
+    variants: [
+      {
+        dot: "#1F2937",
+        bgCard: "#1F2937",
+        textColor: "#ffffff",
+        subColor: "rgba(255,255,255,0.6)",
+        accent: "#1F2937",
+      },
+      {
+        dot: "#0F766E",
+        bgCard: "#0F766E",
+        textColor: "#ffffff",
+        subColor: "rgba(255,255,255,0.6)",
+        accent: "#0F766E",
+      },
+      {
+        dot: "#D4AF37",
+        bgCard: "#D4AF37",
+        textColor: "#111827",
+        subColor: "rgba(17,24,39,0.6)",
+        accent: "#D4AF37",
+      },
+      {
+        dot: "#6B7280",
+        bgCard: "#6B7280",
+        textColor: "#ffffff",
+        subColor: "rgba(255,255,255,0.6)",
+        accent: "#6B7280",
+      },
+      {
+        dot: "#991B1B",
+        bgCard: "#991B1B",
+        textColor: "#ffffff",
+        subColor: "rgba(255,255,255,0.6)",
+        accent: "#991B1B",
       },
     ],
   },
@@ -355,6 +381,25 @@ export default function CardShowcase() {
                         />
                       )}
 
+                      {/* Custom lines for Parallels (if applicable) */}
+                      {card.id === "parallels" && (
+                        <svg
+                          style={{
+                            position: "absolute",
+                            inset: 0,
+                            pointerEvents: "none",
+                            width: "100%",
+                            height: "100%",
+                            opacity: 0.15,
+                          }}
+                          preserveAspectRatio="none"
+                          viewBox="0 0 100 100"
+                        >
+                          <line x1="50" y1="0" x2="100" y2="100" stroke="#D4AF37" strokeWidth="1" />
+                          <line x1="0" y1="100" x2="50" y2="0" stroke="#D4AF37" strokeWidth="1" />
+                        </svg>
+                      )}
+
                       {/* Custom badge — original: absolute top-4 right-4 text-white italic */}
                       {card.isCustom && (
                         <div
@@ -436,7 +481,7 @@ export default function CardShowcase() {
                             : "2px solid transparent",
                           boxShadow:
                             selColor === ci
-                              ? `0 0 0 2px #fff, 0 0 0 3.5px ${v.accent}`
+                              ? `0 0 0 2px #fff, 0 0 0 4px #22c55e`
                               : "0 1px 3px rgba(0,0,0,0.15)",
                         }}
                       />

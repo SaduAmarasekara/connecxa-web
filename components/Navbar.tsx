@@ -29,34 +29,6 @@ export default function Navbar() {
         
         .navbar-root { font-family: 'DM Sans', 'Helvetica Neue', sans-serif; }
 
-        /* Banner */
-        .top-banner {
-          background: #0f172a;
-          color: #fff;
-          padding: 10px 16px;
-          text-align: center;
-          font-size: 13px;
-          font-weight: 600;
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          gap: 8px;
-          width: 100%;
-          position: relative;
-          z-index: 60;
-          letter-spacing: 0.01em;
-        }
-        .banner-pill {
-          background: rgba(255,255,255,0.1);
-          border-radius: 99px;
-          padding: 2px 12px;
-          font-size: 12px;
-          font-weight: 700;
-          color: rgba(255,255,255,0.85);
-          border: 1px solid rgba(255,255,255,0.15);
-          margin-left: 8px;
-        }
-
         /* Nav wrapper */
         .nav-wrapper {
           position: sticky;
@@ -284,14 +256,6 @@ export default function Navbar() {
       `}</style>
 
       <div className="navbar-root">
-        {/* ── Top Banner ── */}
-        <div className="top-banner">
-          <span>🌍</span>
-          <span>Free Worldwide Shipping for orders above S$100</span>
-          <span>🚀</span>
-          <span className="banner-pill">Limited Offer</span>
-        </div>
-
         {/* ── Nav ── */}
         <div className={`nav-wrapper ${scrolled ? "scrolled" : "top"}`}>
           <div className={`nav-inner ${scrolled ? "scrolled" : ""}`}>

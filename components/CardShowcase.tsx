@@ -156,7 +156,7 @@ const cards: CardData[] = [
     price: "Rs 13,681.97 LKR",
     material: "Matte PVC",
     printing: "UV Printing",
-    title: "OneGoodCard",
+    title: "Connecxa",
     sub: "CUSTOM DESIGN",
     tag: "Design Yours",
     tagColor: "#0066FF",

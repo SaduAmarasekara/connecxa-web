@@ -2,10 +2,10 @@
 import Link from "next/link";
 
 const quickLinks = [
-  "Get your One Good Card",
+  "Get your Connecxa Card",
   "Be our Affiliate!",
   "Send a Gift Card",
-  "One Good Ring",
+  "Connecxa Ring",
   "Contact Us",
   "User Login",
 ];

@@ -258,7 +258,7 @@ export default function NetworkingToolkit() {
               {/* Sidebar */}
               <div className="w-[80px] md:w-[130px] bg-white border-r border-gray-100 flex flex-col items-center py-6">
                 <div className="w-10 h-10 md:w-14 md:h-14 bg-[#0066FF] rounded-lg md:rounded-2xl text-white font-bold flex items-center justify-center text-[18px] md:text-[24px] mb-4">G</div>
-                <div className="hidden md:block font-bold text-[12px] mb-8 text-center px-2">One Good Team<br/><span className="text-[9px] text-gray-400 font-normal">Team · OGT-1234</span></div>
+                <div className="hidden md:block font-bold text-[12px] mb-8 text-center px-2">Connecxa Team<br/><span className="text-[9px] text-gray-400 font-normal">Team · OGT-1234</span></div>
                 
                 <div className="w-full flex flex-col gap-1 px-3">
                   <div className="w-full h-8 bg-gray-50 rounded text-gray-400 flex items-center justify-center md:justify-start md:px-3 text-[10px] font-bold"><span className="hidden md:block">Home</span></div>

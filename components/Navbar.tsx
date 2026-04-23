@@ -202,7 +202,7 @@ export default function Navbar() {
           background: none;
           font-family: inherit;
         }
-        .nav-link:hover { background: #f3f4f6; color: #0066FF; }
+        .nav-link:hover { background: #f3f4f6; color: #005AD1; }
         .nav-link .chevron {
           font-size: 10px;
           opacity: 0.45;
@@ -226,9 +226,9 @@ export default function Navbar() {
           font-family: inherit;
           font-size: 15px;
           font-weight: 700;
-          color: #0066FF;
+          color: #005AD1;
           background: transparent;
-          border: 2px solid #0066FF;
+          border: 2px solid #005AD1;
           border-radius: 99px;
           padding: 10px 28px;
           cursor: pointer;
@@ -236,7 +236,7 @@ export default function Navbar() {
           white-space: nowrap;
         }
         .btn-demo:hover {
-          background: #0066FF;
+          background: #005AD1;
           color: #ffffff;
           box-shadow: 0 6px 24px rgba(0,102,255,0.3);
           transform: translateY(-1px);
@@ -248,7 +248,7 @@ export default function Navbar() {
           font-size: 15px;
           font-weight: 700;
           color: #ffffff;
-          background: #0066FF;
+          background: #005AD1;
           border: none;
           border-radius: 99px;
           padding: 10px 28px;
@@ -285,7 +285,7 @@ export default function Navbar() {
           transition: all 0.2s ease;
           flex-shrink: 0;
         }
-        .cart-btn:hover { background: #eff6ff; border-color: #bfdbfe; color: #0066FF; }
+        .cart-btn:hover { background: #eff6ff; border-color: #bfdbfe; color: #005AD1; }
         .cart-badge {
           position: absolute;
           top: -4px;
@@ -354,7 +354,7 @@ export default function Navbar() {
           cursor: pointer;
           transition: color 0.2s ease;
         }
-        .mobile-nav-link:hover { color: #0066FF; }
+        .mobile-nav-link:hover { color: #005AD1; }
 
         @media (max-width: 1100px) { .desktop-links { display: none; } .nav-divider { display: none; } }
         @media (max-width: 640px) { .btn-demo { display: none; } .nav-inner { padding: 10px 20px; } .nav-inner.scrolled { padding: 8px 20px; } .logo-wrap { width: 180px; height: 64px; } }
@@ -391,7 +391,7 @@ export default function Navbar() {
                         <div className="bg-white rounded-[20px] shadow-[0_12px_40px_rgba(0,0,0,0.12)] border border-gray-100 p-3 w-[360px] flex flex-col gap-1">
                           {link.dropdown.map((item, i) => (
                             <Link href={item.href} key={i} className="flex items-start gap-4 p-3 rounded-xl hover:bg-gray-50 transition-colors cursor-pointer" style={{ textDecoration: 'none' }}>
-                              <div className="w-[48px] h-[48px] bg-[#0066FF] rounded-lg flex items-center justify-center shrink-0 shadow-sm mt-0.5">
+                              <div className="w-[48px] h-[48px] bg-[#005AD1] rounded-lg flex items-center justify-center shrink-0 shadow-sm mt-0.5">
                                 {item.icon}
                               </div>
                               <div className="flex flex-col">
@@ -487,9 +487,9 @@ export default function Navbar() {
                 fontFamily: "inherit",
                 fontSize: 16,
                 fontWeight: 700,
-                color: "#0066FF",
+                color: "#005AD1",
                 background: "transparent",
-                border: "2px solid #0066FF",
+                border: "2px solid #005AD1",
                 borderRadius: 99,
                 padding: "14px 28px",
                 cursor: "pointer",
@@ -504,7 +504,7 @@ export default function Navbar() {
                 fontSize: 16,
                 fontWeight: 700,
                 color: "#ffffff",
-                background: "#0066FF",
+                background: "#005AD1",
                 border: "none",
                 borderRadius: 99,
                 padding: "14px 28px",

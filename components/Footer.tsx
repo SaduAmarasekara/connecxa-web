@@ -124,7 +124,7 @@ export default function Footer() {
         .link-arrow { opacity: 0; transform: translateX(-4px); transition: all 0.2s ease; font-size: 12px; }
         .cta-demo-btn { border: 2px solid rgba(255,255,255,0.8); color: #ffffff; background: transparent; border-radius: 99px; padding: 14px 48px; font-size: 16px; font-weight: 700; cursor: pointer; transition: all 0.25s ease; font-family: inherit; min-width: 190px; }
         .cta-demo-btn:hover { border-color: #ffffff; background: rgba(255,255,255,0.12); }
-        .cta-main-btn { background: #ffffff; color: #0066FF; border: none; border-radius: 99px; padding: 14px 48px; font-size: 16px; font-weight: 700; cursor: pointer; transition: all 0.25s ease; font-family: inherit; min-width: 190px; box-shadow: 0 16px 40px rgba(0,0,0,0.2); }
+        .cta-main-btn { background: #ffffff; color: #005AD1; border: none; border-radius: 99px; padding: 14px 48px; font-size: 16px; font-weight: 700; cursor: pointer; transition: all 0.25s ease; font-family: inherit; min-width: 190px; box-shadow: 0 16px 40px rgba(0,0,0,0.2); }
         .cta-main-btn:hover { background: #f0f0f0; transform: translateY(-2px); box-shadow: 0 20px 48px rgba(0,0,0,0.28); }
         .cta-main-btn:active { transform: scale(0.97); }
         .feature-pill { display: flex; align-items: center; gap: 10px; font-size: 15px; font-weight: 700; color: #ffffff; white-space: nowrap; }
@@ -138,7 +138,7 @@ export default function Footer() {
       {/* ── Blue CTA Section ── */}
       <div
         style={{
-          background: "#0066FF", // original: bg-[#0066FF]
+          background: "#005AD1", // original: bg-[#005AD1]
           color: "#ffffff",
           padding: "80px 24px",
           width: "100%",
@@ -285,7 +285,7 @@ export default function Footer() {
                     width: 36,
                     height: 36,
                     borderRadius: 10,
-                    background: "#0066FF", // original blue
+                    background: "#005AD1", // original blue
                     display: "flex",
                     alignItems: "center",
                     justifyContent: "center",

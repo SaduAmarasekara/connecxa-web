@@ -6,6 +6,7 @@ import SmarterConnect from "@/components/SmarterConnect";
 import SecuritySection from "@/components/SecuritySection";
 import FAQ from "@/components/FAQ";
 import { ContactContextSection, NetworkingFeatures } from "@/components/ContactAddons";
+import FeatureGrid from '@/components/FeatureGrid';
 
 export default function ContactManager() {
   return (
@@ -25,8 +26,13 @@ export default function ContactManager() {
         <NetworkingFeatures />
         
         <div className="w-full h-24 lg:h-32 bg-white" />
+
+      
        
         <FAQ />
+        <div className="w-full h-24 lg:h-32 bg-white" />
+          <FeatureGrid />
+
         <div className="w-full h-24 lg:h-32 bg-white" />
       </div>
     </main>

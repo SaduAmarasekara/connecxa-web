@@ -87,7 +87,7 @@ export default function ProfilesShowcase() {
                 </div>
                 
                 {/* Profile Label */}
-                <span className="text-[20px] font-bold text-gray-800 tracking-tight group-hover/card:text-[#0066FF] transition-colors">
+                <span className="text-[20px] font-bold text-gray-800 tracking-tight group-hover/card:text-[#005AD1] transition-colors">
                   {profile.name}
                 </span>
               </div>

@@ -35,13 +35,13 @@ export function ContactContextSection() {
             <ul className="space-y-6">
               <li className="flex items-center gap-4">
                 <div className="w-6 h-6 rounded-md bg-blue-50 flex items-center justify-center">
-                  <div className="w-3 h-0.5 bg-blue-600 rounded-full" />
+                  <div className="w-3 h-0.5 bg-[#005AD1] rounded-full" />
                 </div>
                 <span className="text-[17px] font-bold text-gray-800">Automated activity logs</span>
               </li>
               <li className="flex items-center gap-4">
                 <div className="w-6 h-6 rounded-md bg-blue-50 flex items-center justify-center">
-                  <div className="w-3 h-0.5 bg-blue-600 rounded-full" />
+                  <div className="w-3 h-0.5 bg-[#005AD1] rounded-full" />
                 </div>
                 <span className="text-[17px] font-bold text-gray-800">Built-in notes with timestamps</span>
               </li>
@@ -91,7 +91,7 @@ export function NetworkingFeatures() {
       desc: "Easily manage contacts on the go, whether you're using mobile or desktop.",
       bg: "#DBEAFE",
       icon: (
-        <svg className="w-6 h-6 text-blue-600" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+        <svg className="w-6 h-6 text-[#005AD1]" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
           <rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/>
         </svg>
       )

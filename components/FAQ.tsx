@@ -37,7 +37,7 @@ export default function FAQ() {
     <section className="w-full flex flex-col items-center bg-white py-24 lg:py-32" style={{ fontFamily: "'DM Sans', 'Helvetica Neue', sans-serif" }}>
       <div className="w-full max-w-[1600px] px-6 lg:px-12">
         {/* Main Blue Box */}
-        <div className="bg-[#0066FF] rounded-[24px] md:rounded-[15px] px-10 py-16 md:px-16 md:py-20 lg:px-[80px] lg:py-[90px] text-white flex flex-col lg:flex-row items-start justify-between gap-12 lg:gap-20 shadow-2xl">
+        <div className="bg-[#005AD1] rounded-[24px] md:rounded-[15px] px-10 py-16 md:px-16 md:py-20 lg:px-[80px] lg:py-[90px] text-white flex flex-col lg:flex-row items-start justify-between gap-12 lg:gap-20 shadow-2xl">
           
           {/* Left Column */}
           <div className="w-full lg:w-[35%] flex flex-col shrink-0 text-left">

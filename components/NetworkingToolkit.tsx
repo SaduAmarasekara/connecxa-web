@@ -97,10 +97,10 @@ export default function NetworkingToolkit() {
                   {/* Business card inside phone */}
                   <div className="w-[140px] h-[80px] bg-white rounded-md shadow-md p-2 flex flex-col justify-center relative">
                     {/* Scanner corners */}
-                    <div className="absolute -top-1 -left-1 w-3 h-3 border-t-2 border-l-2 border-[#0066FF]"></div>
-                    <div className="absolute -top-1 -right-1 w-3 h-3 border-t-2 border-r-2 border-[#0066FF]"></div>
-                    <div className="absolute -bottom-1 -left-1 w-3 h-3 border-b-2 border-l-2 border-[#0066FF]"></div>
-                    <div className="absolute -bottom-1 -right-1 w-3 h-3 border-b-2 border-r-2 border-[#0066FF]"></div>
+                    <div className="absolute -top-1 -left-1 w-3 h-3 border-t-2 border-l-2 border-[#005AD1]"></div>
+                    <div className="absolute -top-1 -right-1 w-3 h-3 border-t-2 border-r-2 border-[#005AD1]"></div>
+                    <div className="absolute -bottom-1 -left-1 w-3 h-3 border-b-2 border-l-2 border-[#005AD1]"></div>
+                    <div className="absolute -bottom-1 -right-1 w-3 h-3 border-b-2 border-r-2 border-[#005AD1]"></div>
 
                     <div className="font-bold text-[10px]">Elizabeth Bennet</div>
                     <div className="text-[7px] text-gray-500 mb-1">CEO</div>
@@ -128,13 +128,13 @@ export default function NetworkingToolkit() {
                 </div>
                 {/* Bar chart */}
                 <div className="flex-1 flex items-end justify-between px-2 gap-3 border-b border-gray-100 pb-1">
-                  <div className="w-6 h-[60%] bg-[#0066FF] rounded-t-sm group-hover:scale-y-110 transition-transform origin-bottom"></div>
-                  <div className="w-6 h-[40%] bg-[#0066FF] rounded-t-sm group-hover:scale-y-110 transition-transform origin-bottom"></div>
-                  <div className="w-6 h-[90%] bg-[#0066FF] rounded-t-sm group-hover:scale-y-110 transition-transform origin-bottom"></div>
-                  <div className="w-6 h-[70%] bg-[#0066FF] rounded-t-sm group-hover:scale-y-110 transition-transform origin-bottom relative">
+                  <div className="w-6 h-[60%] bg-[#005AD1] rounded-t-sm group-hover:scale-y-110 transition-transform origin-bottom"></div>
+                  <div className="w-6 h-[40%] bg-[#005AD1] rounded-t-sm group-hover:scale-y-110 transition-transform origin-bottom"></div>
+                  <div className="w-6 h-[90%] bg-[#005AD1] rounded-t-sm group-hover:scale-y-110 transition-transform origin-bottom"></div>
+                  <div className="w-6 h-[70%] bg-[#005AD1] rounded-t-sm group-hover:scale-y-110 transition-transform origin-bottom relative">
                     {/* Tooltip */}
                     <div className="absolute -top-10 -right-4 w-[100px] h-[30px] bg-white rounded-md shadow-[0_4px_12px_rgba(0,0,0,0.1)] border border-gray-100 flex items-center justify-center gap-1.5 opacity-0 group-hover:opacity-100 transition-opacity">
-                      <div className="w-2 h-2 bg-[#0066FF]"></div>
+                      <div className="w-2 h-2 bg-[#005AD1]"></div>
                       <span className="text-[9px] font-bold whitespace-nowrap">Contact Saves 18</span>
                     </div>
                   </div>
@@ -222,7 +222,7 @@ export default function NetworkingToolkit() {
 
           {/* Left: Text Content */}
           <div className="flex-1 w-full max-w-[500px]">
-            <div className="text-[13px] font-black text-[#0066FF] tracking-[0.1em] mb-4 uppercase">
+            <div className="text-[13px] font-black text-[#005AD1] tracking-[0.1em] mb-4 uppercase">
               OGC For Teams
             </div>
             <h2 className="text-[36px] md:text-[44px] font-bold text-[#111827] leading-[1.1] tracking-tight mb-6">
@@ -231,19 +231,19 @@ export default function NetworkingToolkit() {
             <p className="text-[17px] text-[#6B7280] font-medium leading-[1.6] mb-8">
               Easily manage digital business cards across your team - all from one centralised dashboard. Complete with powerful admin tools and real-time insights.
             </p>
-            <button className="bg-[#0066FF] hover:bg-[#0052cc] text-white font-bold py-3.5 px-8 rounded-full shadow-[0_8px_20px_rgba(0,102,255,0.25)] transition-all transform hover:-translate-y-1 mb-10 flex items-center gap-2 text-[15px]">
+            <button className="bg-[#005AD1] hover:bg-[#0052cc] text-white font-bold py-3.5 px-8 rounded-full shadow-[0_8px_20px_rgba(0,102,255,0.25)] transition-all transform hover:-translate-y-1 mb-10 flex items-center gap-2 text-[15px]">
               Learn More <span>→</span>
             </button>
 
             <div className="flex flex-col gap-4 text-[#4B5563] text-[15px] font-medium">
               <div className="flex items-center gap-3">
-                <div className="w-6 h-6 shrink-0 flex items-center justify-center text-[#0066FF]">
+                <div className="w-6 h-6 shrink-0 flex items-center justify-center text-[#005AD1]">
                   <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" /><circle cx="9" cy="7" r="4" /><path d="M23 21v-2a4 4 0 0 0-3-3.87" /><path d="M16 3.13a4 4 0 0 1 0 7.75" /></svg>
                 </div>
                 Bulk manage digital name cards for your company
               </div>
               <div className="flex items-center gap-3">
-                <div className="w-6 h-6 shrink-0 flex items-center justify-center text-[#0066FF]">
+                <div className="w-6 h-6 shrink-0 flex items-center justify-center text-[#005AD1]">
                   <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12" /></svg>
                 </div>
                 Gain insights into the performance of team members
@@ -256,12 +256,12 @@ export default function NetworkingToolkit() {
             <div className="w-full h-full bg-[#f8f9fb] rounded-[16px] md:rounded-[24px] overflow-hidden flex shadow-inner relative">
               {/* Sidebar */}
               <div className="w-[80px] md:w-[130px] bg-white border-r border-gray-100 flex flex-col items-center py-6">
-                <div className="w-10 h-10 md:w-14 md:h-14 bg-[#0066FF] rounded-lg md:rounded-2xl text-white font-bold flex items-center justify-center text-[18px] md:text-[24px] mb-4">G</div>
+                <div className="w-10 h-10 md:w-14 md:h-14 bg-[#005AD1] rounded-lg md:rounded-2xl text-white font-bold flex items-center justify-center text-[18px] md:text-[24px] mb-4">G</div>
                 <div className="hidden md:block font-bold text-[12px] mb-8 text-center px-2">Connecxa Team<br /><span className="text-[9px] text-gray-400 font-normal">Team · OGT-1234</span></div>
 
                 <div className="w-full flex flex-col gap-1 px-3">
                   <div className="w-full h-8 bg-gray-50 rounded text-gray-400 flex items-center justify-center md:justify-start md:px-3 text-[10px] font-bold"><span className="hidden md:block">Home</span></div>
-                  <div className="w-full h-8 bg-[#0066FF] rounded text-white shadow-sm flex items-center justify-center md:justify-start md:px-3 text-[10px] font-bold"><span className="hidden md:block">Business Cards</span></div>
+                  <div className="w-full h-8 bg-[#005AD1] rounded text-white shadow-sm flex items-center justify-center md:justify-start md:px-3 text-[10px] font-bold"><span className="hidden md:block">Business Cards</span></div>
                   <div className="w-full h-8 bg-transparent text-gray-400 flex items-center justify-center md:justify-start md:px-3 text-[10px] font-bold"><span className="hidden md:block">CRM</span></div>
                   <div className="w-full h-8 bg-transparent text-gray-400 flex items-center justify-center md:justify-start md:px-3 text-[10px] font-bold"><span className="hidden md:block">Employees</span></div>
                 </div>
@@ -279,7 +279,7 @@ export default function NetworkingToolkit() {
                   </div>
                   <div className="flex-1 h-24 bg-white rounded-xl border border-blue-100 shadow-sm flex flex-col overflow-hidden">
                     <div className="h-2/3 w-full bg-gradient-to-tr from-blue-400 to-blue-200" />
-                    <div className="h-1/3 flex items-center justify-center bg-[#0066FF]"><div className="w-6 h-6 rounded-full bg-white -mt-4 shadow border border-gray-100"></div></div>
+                    <div className="h-1/3 flex items-center justify-center bg-[#005AD1]"><div className="w-6 h-6 rounded-full bg-white -mt-4 shadow border border-gray-100"></div></div>
                   </div>
                   <div className="flex-1 h-24 bg-white rounded-xl border border-gray-100 shadow-sm flex flex-col overflow-hidden opacity-50">
                     <div className="h-2/3 w-full bg-pink-100" />
@@ -320,14 +320,14 @@ export default function NetworkingToolkit() {
                 <div className="absolute top-[10%] right-[5%] w-[180px] h-[140px] bg-white rounded-xl shadow-2xl border border-gray-100 p-3 flex flex-col z-10 transform scale-100 md:scale-110 md:origin-top-right">
                   <div className="font-bold text-[11px] mb-2">Profile Views</div>
                   <div className="flex-1 flex items-end justify-between px-1 gap-2 pb-1 border-b border-gray-50">
-                    <div className="w-4 h-[70%] bg-[#0066FF] rounded-t-sm"></div>
-                    <div className="w-4 h-[40%] bg-[#0066FF] rounded-t-sm"></div>
-                    <div className="w-4 h-[100%] bg-[#0066FF] rounded-t-sm relative">
+                    <div className="w-4 h-[70%] bg-[#005AD1] rounded-t-sm"></div>
+                    <div className="w-4 h-[40%] bg-[#005AD1] rounded-t-sm"></div>
+                    <div className="w-4 h-[100%] bg-[#005AD1] rounded-t-sm relative">
                       <div className="absolute -top-6 -right-2 bg-gray-900 text-white text-[8px] px-1.5 py-0.5 rounded flex items-center gap-1 font-bold shadow-lg whitespace-nowrap">
                         <div className="w-1.5 h-1.5 bg-blue-400 rounded-full"></div> Profile Views 101
                       </div>
                     </div>
-                    <div className="w-4 h-[80%] bg-[#0066FF] rounded-t-sm"></div>
+                    <div className="w-4 h-[80%] bg-[#005AD1] rounded-t-sm"></div>
                   </div>
                   <div className="flex justify-between text-[7px] text-gray-400 mt-1 font-bold">
                     <span>Dec 28</span><span>Jan 03</span><span>Jan 08</span><span>Jan 10</span>

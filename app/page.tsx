@@ -14,12 +14,7 @@ export default function Home() {
         <div className="w-full max-w-[1600px] px-4 lg:px-8">
 
           {/* Blue Hero Card */}
-          <div className="bg-[#0066FF] rounded-[48px] px-10 pt-12 pb-0 md:px-14 md:pt-14 lg:px-20 lg:pt-16 text-white relative overflow-hidden flex flex-col lg:flex-row min-h-[660px] shadow-[0_32px_80px_rgba(0,102,255,0.35)] items-stretch">
-
-            {/* Subtle radial glow — top-left */}
-            <div className="absolute -top-32 -left-32 w-[520px] h-[520px] rounded-full bg-white/10 blur-[80px] pointer-events-none" />
-            {/* Subtle radial glow — bottom-right */}
-            <div className="absolute -bottom-24 right-0 w-[400px] h-[400px] rounded-full bg-[#0044cc]/60 blur-[90px] pointer-events-none" />
+          <div className="bg-[#005AD1] rounded-[48px] px-10 pt-12 pb-0 md:px-14 md:pt-14 lg:px-20 lg:pt-16 text-white relative overflow-hidden flex flex-col lg:flex-row min-h-[660px] items-stretch">
 
             {/* ── Left Column ── */}
             <div className="flex-1 z-10 flex flex-col justify-between w-full lg:max-w-[600px] pb-16">

@@ -1,7 +1,7 @@
 @import "tailwindcss";
 
 @theme {
-  --color-brand-blue: #0057FF;
+  --color-brand-blue: #005AD1;
   --color-brand-orange: #FF5C00;
   --font-sans: var(--font-outfit), 'Outfit', system-ui, -apple-system, sans-serif;
 }
@@ -9,7 +9,7 @@
 :root {
   --background: #ffffff;
   --foreground: #171717;
-  --brand-blue: #0057FF;
+  --brand-blue: #005AD1;
   --brand-orange: #FF5C00;
 }
 

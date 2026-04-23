@@ -159,7 +159,7 @@ const cards: CardData[] = [
     title: "NATALIE DIAZ",
     sub: "CONTENT STRATEGIST",
     tag: "Pro",
-    tagColor: "#0066FF",
+    tagColor: "#005AD1",
     shimmer: "rgba(255,255,255,0.10)",
     variants: [
       {
@@ -265,7 +265,7 @@ export default function CardShowcase() {
                 className="tab-pill"
                 onClick={() => setActiveTab(i)}
                 style={{
-                  background: activeTab === i ? "#0066FF" : "#F5F5F5", // original: bg-[#0066FF] active
+                  background: activeTab === i ? "#005AD1" : "#F5F5F5", // original: bg-[#005AD1] active
                   color: activeTab === i ? "#ffffff" : "#374151",
                   boxShadow:
                     activeTab === i ? "0 8px 24px rgba(0,102,255,0.3)" : "none",

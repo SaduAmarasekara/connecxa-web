@@ -58,7 +58,7 @@ const CorporateBranding = () => {
 
         {/* Right Column: Content */}
         <div className="w-full lg:w-1/2 flex flex-col text-left">
-          <div className="text-[#0066FF] font-black text-sm md:text-base tracking-[0.15em] uppercase mb-4">
+          <div className="text-[#005AD1] font-black text-sm md:text-base tracking-[0.15em] uppercase mb-4">
             Bulk Corporate Order
           </div>
 
@@ -70,14 +70,14 @@ const CorporateBranding = () => {
             Let's elevate your brand presence with customised NFC business cards - made exactly the way you want them.
           </p>
 
-          <button className="bg-[#0066FF] hover:bg-[#0052CC] text-white px-8 py-4 rounded-full font-bold text-[18px] flex items-center justify-center gap-3 w-fit transition-all hover:scale-105 shadow-lg shadow-blue-200 mb-12">
+          <button className="bg-[#005AD1] hover:bg-[#0052CC] text-white px-8 py-4 rounded-full font-bold text-[18px] flex items-center justify-center gap-3 w-fit transition-all hover:scale-105 shadow-lg shadow-blue-200 mb-12">
             Get in touch
             <span className="text-xl">→</span>
           </button>
 
           <div className="space-y-6">
             <div className="flex items-center gap-4 text-gray-700 font-bold text-[15px] md:text-[17px]">
-              <div className="w-6 h-6 flex items-center justify-center text-[#0066FF]">
+              <div className="w-6 h-6 flex items-center justify-center text-[#005AD1]">
                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round">
                   <line x1="12" y1="1" x2="12" y2="23" />
                   <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6" />
@@ -87,7 +87,7 @@ const CorporateBranding = () => {
             </div>
 
             <div className="flex items-center gap-4 text-gray-700 font-bold text-[15px] md:text-[17px]">
-              <div className="w-6 h-6 flex items-center justify-center text-[#0066FF]">
+              <div className="w-6 h-6 flex items-center justify-center text-[#005AD1]">
                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round">
                   <circle cx="13.5" cy="6.5" r=".5" />
                   <circle cx="17.5" cy="10.5" r=".5" />

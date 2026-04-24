@@ -39,7 +39,7 @@ export default function Home() {
 
                 {/* CTA Row */}
                 <div className="flex flex-col sm:flex-row items-start sm:items-center gap-5 " style={{ margin: "0 auto", textAlign: "center" }}>
-                  <button className="bg-[#FF5C00] text-white text-[30px] font-bold rounded-full px-10 py-5 shadow-[0_8px_30px_rgba(255,92,0,0.45)] hover:bg-[#e65300] hover:shadow-[0_12px_40px_rgba(255,92,0,0.55)] transition-all duration-200 transform hover:-translate-y-0.5 active:scale-95 inline-flex items-center gap-3">
+                  <button className="bg-[#FF5C00] text-white text-[30px] font-bold rounded-full px-10 py-5  transition-all duration-200 transform active:scale-95 inline-flex items-center gap-3 cursor-pointer">
                     Customise Now
                     <span className="text-[20px] leading-none">→</span>
                   </button>

@@ -112,7 +112,51 @@ const navLinks = [
       }
     ]
   },
-  { label: "For Companies", hasDropdown: true },
+  { 
+    label: "For Companies", 
+    hasDropdown: true,
+    dropdown: [
+      {
+        title: "OGC for Teams",
+        desc: "Smart solutions designed for modern teams",
+        icon: (
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
+            <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2" />
+            <circle cx="9" cy="7" r="4" />
+            <line x1="19" y1="8" x2="19" y2="14" />
+            <line x1="16" y1="11" x2="22" y2="11" />
+          </svg>
+        ),
+        href: "/for-companies/teams"
+      },
+      {
+        title: "Corporate Gifting",
+        desc: "The modern choice for business gifts",
+        icon: (
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
+            <polyline points="20 12 20 22 4 22 4 12" />
+            <rect x="2" y="7" width="20" height="5" />
+            <line x1="12" y1="22" x2="12" y2="7" />
+            <path d="M12 7H7.5a2.5 2.5 0 0 1 0-5C11 2 12 7 12 7z" />
+            <path d="M12 7h4.5a2.5 2.5 0 0 0 0-5C13 2 12 7 12 7z" />
+          </svg>
+        ),
+        href: "/for-companies/corporate-gifting"
+      },
+      {
+        title: "NFC Live Printing for Events",
+        desc: "Personalised NFC cards, printed in real-time",
+        icon: (
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
+            <polyline points="6 9 6 2 18 2 18 9" />
+            <path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2" />
+            <rect x="6" y="14" width="12" height="8" />
+          </svg>
+        ),
+        href: "/for-companies/nfc-events"
+      }
+    ]
+  },
   { label: "Contact Us", hasDropdown: false },
   { label: "Resources", hasDropdown: true },
 ];

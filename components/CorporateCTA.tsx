@@ -17,7 +17,7 @@ export default function CorporateCTA() {
           </h2>
 
           <p className="text-white/90 text-[16px] md:text-[18px] font-medium leading-relaxed mb-10 max-w-[420px]">
-            Getting in bulk or looking to get corporate-branded One Good Cards for your company?
+            Getting in bulk or looking to get corporate-branded connecxa for your company?
           </p>
 
           <button className="bg-[#FF5C00] hover:bg-[#E65300] text-white px-20 py-10 rounded-2xl font-[900] text-[28px] w-fit transition-all hover:scale-105 active:scale-95 shadow-[0_30px_30px_rgba(255,92,0,0.3)] uppercase tracking-wider">

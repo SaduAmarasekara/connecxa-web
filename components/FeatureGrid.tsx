@@ -42,7 +42,7 @@ export default function FeatureGrid() {
             <span className="text-[40px]">⭐</span>
           </h2>
           <p className="text-[19px] text-gray-500 font-medium">
-            Discover more ways to network smarter with One Good Card
+            Discover more ways to network smarter with connecxa
           </p>
         </div>
 

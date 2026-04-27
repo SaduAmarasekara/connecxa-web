@@ -14,18 +14,18 @@ export default function TeamHero() {
 
           {/* Left Content */}
           <div className="relative z-10 flex-1 lg:flex-[0_0_50%] flex flex-col justify-center p-12 md:p-14 lg:pl-[80px] lg:pr-[40px] lg:py-[80px]" style={{ marginLeft: 30, marginBottom: 50 }}>
-            <div className="text-[14px] font-bold tracking-[0.2em] text-white/70 uppercase mb-8" style={{ marginBottom: 15  }}>
+            <div className="text-[14px] font-bold tracking-[0.2em] text-white/70 uppercase mb-8" style={{ marginBottom: 15 }}>
               FOR TEAMS
             </div>
-            <h1 className="text-[52px] md:text-[68px] lg:text-[84px] font-[900] text-white leading-[1.02] mb-8" 
-            style={{ marginBottom: 15  }}>
+            <h1 className="text-[52px] md:text-[68px] lg:text-[84px] font-[900] text-white leading-[1.02] mb-8"
+              style={{ marginBottom: 15 }}>
               Modern Tools for <br /> Modern Teams
             </h1>
             <p className="text-[20px] text-white/60 leading-[1.6] mb-12 max-w-[540px] font-medium" style={{ marginBottom: 40 }}>
               From startups to enterprises, manage your team's digital business cards, CRM and leads, all from one central platform.
             </p>
 
-            <button 
+            <button
               style={{
                 background: "#fff",
                 color: "#111827",

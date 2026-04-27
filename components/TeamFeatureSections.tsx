@@ -34,7 +34,7 @@ const FeatureSection = ({ eyebrow, title, desc, features, image, imageLeft = fal
   }, []);
 
   return (
-    <section ref={sectionRef} className="w-full py-24 overflow-hidden" style={{ marginLeft: 20 }}>
+    <section ref={sectionRef} className="w-full py-24 overflow-hidden" style={{ marginLeft: 40 }}>
       <div className={`max-w-[1600px] mx-auto px-6 lg:px-12 flex flex-col ${imageLeft ? 'lg:flex-row' : 'lg:flex-row-reverse'} items-center gap-16 lg:gap-24`}>
 
         {/* Image Column */}

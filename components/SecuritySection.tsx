@@ -51,9 +51,9 @@ const securityFeatures = [
 
 export default function SecuritySection() {
   return (
-    <section className="w-full py-24 bg-[#F8FAFC]" style={{ fontFamily: "'DM Sans', sans-serif" }}>
+    <section className="w-full py-24 bg-[#F8FAFC]" style={{ fontFamily: "'DM Sans', sans-serif", marginLeft: 40 }}>
       <div className="w-full max-w-[1600px] mx-auto px-6 md:px-12">
-        
+
         {/* Header */}
         <div className="text-center mb-16">
           <h2 className="text-[44px] md:text-[56px] font-black text-[#111] leading-tight mb-4 flex items-center justify-center gap-4">

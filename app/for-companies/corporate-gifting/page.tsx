@@ -1,21 +1,22 @@
 "use client";
 
-import CorporateBranding from "@/components/CorporateBranding";
-import PurchaseSteps from "@/components/PurchaseSteps";
+import CorporateGiftingHero from "@/components/CorporateGiftingHero";
+import CorporateGiftOptions from "@/components/CorporateGiftOptions";
+import OccasionsSection from "@/components/OccasionsSection";
 import FAQ from "@/components/FAQ";
-import CorporateCTA from "@/components/CorporateCTA";
+
 
 export default function CorporateGiftingPage() {
   return (
     <div className="min-h-screen bg-white">
-      <div className="pt-20">
-        <CorporateBranding />
-      </div>
-      <PurchaseSteps />
-      <div className="py-20">
-        <CorporateCTA />
-      </div>
-      <FAQ />
+      <CorporateGiftingHero />
+        <div className="w-full h-24 lg:h-32 bg-white" />
+      <CorporateGiftOptions />
+       <div className="w-full h-24 lg:h-32 bg-white" />
+      <OccasionsSection />
+    <div className="w-full h-24 lg:h-32 bg-white" />
+      <FAQ dark />
+      <div className="w-full h-24 lg:h-32 bg-white" />
     </div>
   );
 }

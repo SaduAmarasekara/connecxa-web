@@ -1,3 +1,5 @@
+"use client";
+
 import Image from "next/image";
 import CardShowcase from "@/components/CardShowcase";
 import Workflow from "@/components/Workflow";
@@ -28,24 +30,47 @@ export default function Home() {
                 </div>
 
                 <div className="space-y-5" >
-                  <h1 className="text-[52px] md:text-[64px] xl:text-[78px] font-extrabold leading-[1.04] tracking-[-0.03em] " style={{ margin: "0 auto", textAlign: "center" }}>
+                  <h1 className="text-[36px] md:text-[55px] xl:text-[64px] font-extrabold leading-[1.04] tracking-[-0.03em] " style={{ marginLeft: 20 }}>
                     Modern Networking<br />
                     <span className="">for Professionals</span>
                   </h1>
-                  <p className="text-[17px] md:text-[19px] text-white/80 leading-[1.7] font-normal max-w-[520px] " style={{ margin: "0 auto" }}>
+                  <p className="text-[16px] md:text-[19px] text-white/80 leading-[1.7] font-normal max-w-[520px] " style={{ marginLeft: 20 }}>
                     Connect smarter with the all-in-one digital business card, CRM, and contact manager. Built for Professionals. Powered for Teams.
                   </p>
                 </div>
 
                 {/* CTA Row */}
-                <div className="flex flex-col sm:flex-row items-start sm:items-center gap-5 " style={{ margin: "0 auto", textAlign: "center" }}>
-                  <button className="bg-[#FF5C00] text-white text-[30px] font-bold rounded-full px-10 py-5  transition-all duration-200 transform active:scale-95 inline-flex items-center gap-3 cursor-pointer">
+                <div className="flex flex-col sm:flex-row items-start sm:items-center gap-5 " style={{ marginLeft: 20 }}>
+                  <button
+                    style={{
+                      background: "#FF5C00",
+                      color: "#fff",
+                      fontSize: 18,
+                      fontWeight: 800,
+                      borderRadius: 50,
+                      padding: "16px 36px",
+                      border: "none",
+                      cursor: "pointer",
+                      display: "inline-flex",
+                      alignItems: "center",
+                      gap: 8,
+                      width: "fit-content",
+
+                      transition: "all 0.2s",
+                    }}
+                    onMouseEnter={(e) => {
+                      e.currentTarget.style.transform = "translateY(-2px)";
+                      e.currentTarget.style.boxShadow = "0 14px 36px rgba(255,92,0,0.35)";
+                    }}
+                    onMouseLeave={(e) => {
+                      e.currentTarget.style.transform = "translateY(0)";
+                      e.currentTarget.style.boxShadow = "0 8px 28px rgba(255,92,0,0.25)";
+                    }}
+                  >
                     Customise Now
-                    <span className="text-[20px] leading-none">→</span>
+                    <span style={{ fontSize: 20, marginLeft: 5 }}>→</span>
                   </button>
-                  <span className="text-white/60 text-[14px] font-medium">
-                    No credit card required
-                  </span>
+
                 </div>
               </div>
 
@@ -130,7 +155,7 @@ export default function Home() {
       <CardShowcase />
 
       {/* Spacer between CardShowcase and Workflow */}
-      <div className="w-full h-24 lg:h-32 bg-white" />
+
 
       <Workflow />
 

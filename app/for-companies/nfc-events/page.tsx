@@ -27,7 +27,7 @@ export default function NFCEventsPage() {
       <div className="w-full h-24 lg:h-32 bg-white" />
       
       <div className="py-20">
-        <FAQ />
+        <FAQ dark/>
         </div>
       <div className="w-full h-24 lg:h-32 bg-white" />
       

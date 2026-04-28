@@ -120,36 +120,7 @@ export default function Home() {
         </div>
       </main>
 
-      {/* ── Floating UI Elements ── */}
 
-
-
-
-
-      {/* Action FABs */}
-      <div className="fixed bottom-8 right-8 flex flex-col gap-4 z-50">
-        {/* Wallet */}
-        <div className="relative group">
-          <div className="absolute -top-1.5 -right-1.5 w-[22px] h-[22px] bg-red-500 text-white text-[10px] flex items-center justify-center rounded-full font-extrabold shadow">
-            1
-          </div>
-          <button className="w-[58px] h-[58px] bg-white rounded-full shadow-xl flex items-center justify-center border border-gray-100 text-teal-500 hover:scale-105 transition-transform">
-            <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
-              <path d="M20 12V8H6a2 2 0 0 1-2-2c0-1.1.9-2 2-2h12v4" />
-              <path d="M4 6v12c0 1.1.9 2 2 2h14v-4" />
-              <path d="M18 12a2 2 0 0 0-2 2c0 1.1.9 2 2 2h4v-4h-4z" />
-            </svg>
-          </button>
-        </div>
-        {/* Help */}
-        <button className="w-[58px] h-[58px] bg-[#FF5C00] text-white rounded-full shadow-[0_8px_24px_rgba(255,92,0,0.4)] flex items-center justify-center hover:scale-105 transition-transform">
-          <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3">
-            <circle cx="12" cy="12" r="10" />
-            <path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3" />
-            <line x1="12" y1="17" x2="12.01" y2="17" />
-          </svg>
-        </button>
-      </div>
 
       {/* ── Sections ── */}
       <CardShowcase />

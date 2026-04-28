@@ -157,7 +157,7 @@ const navLinks = [
       }
     ]
   },
-  { label: "Contact Us", hasDropdown: false },
+  { label: "Contact Us", href: "/contact-us", hasDropdown: false },
   { label: "Resources", hasDropdown: true },
 ];
 
@@ -215,8 +215,8 @@ export default function Navbar() {
         /* Logo */
         .logo-wrap {
           position: relative;
-          height: 80px;
-          width: 240px;
+          height: 60px;
+          width: 160px;
           flex-shrink: 0;
           transition: transform 0.25s ease;
           display: block;
@@ -426,10 +426,16 @@ export default function Navbar() {
               <div className="desktop-links">
                 {navLinks.map((link) => (
                   <div key={link.label} className="group relative">
-                    <button className="nav-link">
-                      {link.label}
-                      {link.hasDropdown && <span className="chevron">▼</span>}
-                    </button>
+                    {link.href && !link.hasDropdown ? (
+                      <Link href={link.href} className="nav-link" style={{ textDecoration: 'none' }}>
+                        {link.label}
+                      </Link>
+                    ) : (
+                      <button className="nav-link">
+                        {link.label}
+                        {link.hasDropdown && <span className="chevron">▼</span>}
+                      </button>
+                    )}
                     {link.dropdown && (
                       <div className="absolute top-[100%] left-0 pt-3 hidden group-hover:block z-50">
                         <div className="bg-white rounded-[20px] shadow-[0_12px_40px_rgba(0,0,0,0.12)] border border-gray-100 p-3 w-[360px] flex flex-col gap-1">
@@ -509,12 +515,18 @@ export default function Navbar() {
             }}
           >
             {navLinks.map((link) => (
-              <div key={link.label} className="mobile-nav-link">
-                {link.label}
-                {link.hasDropdown && (
-                  <span style={{ fontSize: 13, opacity: 0.4 }}>▼</span>
-                )}
-              </div>
+              link.href && !link.hasDropdown ? (
+                <Link href={link.href} key={link.label} className="mobile-nav-link" onClick={() => setMobileOpen(false)}>
+                  {link.label}
+                </Link>
+              ) : (
+                <div key={link.label} className="mobile-nav-link">
+                  {link.label}
+                  {link.hasDropdown && (
+                    <span style={{ fontSize: 13, opacity: 0.4 }}>▼</span>
+                  )}
+                </div>
+              )
             ))}
           </div>
 

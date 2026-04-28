@@ -6,7 +6,7 @@ import Image from "next/image";
 const giftOptions = [
   {
     title: "Ready-Made Corporate Gifts",
-    description: "Make event gifting easy with One Good Card's pre-packed, ready-to-go NFC products that save your time and effort.",
+    description: "Make event gifting easy with connecxa's pre-packed, ready-to-go NFC products that save your time and effort.",
     image: "/ready-made-gifts.png",
   },
   {

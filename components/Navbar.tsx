@@ -215,8 +215,8 @@ export default function Navbar() {
         /* Logo */
         .logo-wrap {
           position: relative;
-          height: 60px;
-          width: 160px;
+          height: 100px;
+          width: 280px;
           flex-shrink: 0;
           transition: transform 0.25s ease;
           display: block;

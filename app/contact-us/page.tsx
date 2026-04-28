@@ -1,26 +1,13 @@
 "use client";
 
 import React from "react";
-import { DM_Sans, DM_Serif_Display } from "next/font/google";
 import TestermonialsContact from "@/components/testermonialscontact";
 import FAQSectionContact from "@/components/Faqsectioncontact";
 
-const dmSans = DM_Sans({
-  subsets: ["latin"],
-  weight: ["300", "400", "500", "600", "700"],
-  variable: "--font-dm-sans",
-});
-
-const dmSerif = DM_Serif_Display({
-  subsets: ["latin"],
-  weight: ["400"],
-  style: ["normal", "italic"],
-  variable: "--font-dm-serif",
-});
 
 export default function ContactUsPage() {
   return (
-    <div className={`${dmSans.variable} ${dmSerif.variable}`}>
+    <div>
       <style>{`
         .contact-page {
           min-height: 100vh;
@@ -30,7 +17,7 @@ export default function ContactUsPage() {
           margin: 0 auto;
           padding: 0 40px;
           align-items: stretch;
-          font-family: var(--font-dm-sans), sans-serif;
+          font-family: var(--font-outfit), sans-serif;
           background: #FAFAF8;
         }
 
@@ -73,7 +60,7 @@ export default function ContactUsPage() {
         }
 
         .contact-heading {
-          font-family: var(--font-dm-serif), serif;
+          font-family: var(--font-outfit), sans-serif;
           font-size: 48px;
           font-weight: 400;
           line-height: 1.1;
@@ -135,7 +122,7 @@ export default function ContactUsPage() {
           padding: 13px 16px;
           border: 1.5px solid #E8E8E4;
           border-radius: 12px;
-          font-family: var(--font-dm-sans), sans-serif;
+          font-family: var(--font-outfit), sans-serif;
           font-size: 14px;
           color: #111;
           background: #fff;
@@ -187,7 +174,7 @@ export default function ContactUsPage() {
           color: #fff;
           border: none;
           border-radius: 14px;
-          font-family: var(--font-dm-sans), sans-serif;
+          font-family: var(--font-outfit), sans-serif;
           font-size: 15px;
           font-weight: 700;
           cursor: pointer;
@@ -293,7 +280,7 @@ export default function ContactUsPage() {
 
         .testimonial-text {
           color: #fff;
-          font-family: var(--font-dm-serif), serif;
+          font-family: var(--font-outfit), sans-serif;
           font-size: 17px;
           font-weight: 400;
           font-style: italic;

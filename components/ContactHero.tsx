@@ -14,13 +14,13 @@ export default function ContactHero() {
 
           {/* Left Content */}
           <div className="relative z-10 flex-1 lg:flex-[0_0_50%] flex flex-col justify-center p-12 md:p-14 lg:pl-[80px] lg:pr-[40px] lg:py-[80px] mt-48" style={{margin: "0 60px"}}>
-            <div className="text-[13px] font-bold tracking-[0.12em] text-[#111] uppercase mb-8">
+            <div className="text-[13px] font-bold tracking-[0.12em] text-[#111] uppercase mb-8"style = {{marginBottom : 20}}>
               Smart Contact Management
             </div>
-            <h1 className="text-[52px] md:text-[68px] lg:text-[84px] font-black text-[#111] leading-[1.02] mb-8 ">
+            <h1 className="text-[52px] md:text-[68px] lg:text-[84px] font-black text-[#111] leading-[1.02] mb-8 " style = {{marginBottom : 20}}>
               Your Contact Book<br />Just Got Smarter
             </h1>
-            <p className="text-[20px] text-[#222] leading-[1.6] mb-12 max-w-[520px] font-medium opacity-90">
+            <p className="text-[20px] text-[#222] leading-[1.6] mb-12 max-w-[520px] font-medium opacity-90" style = {{marginBottom : 35}}>
               Built for modern professionals - fast, organised, and always in sync. A cleaner, clearer way to manage relationships.
             </p>
             

@@ -30,11 +30,11 @@ export default function Home() {
                 </div>
 
                 <div className="space-y-5" >
-                  <h1 className="text-[36px] md:text-[55px] xl:text-[64px] font-extrabold leading-[1.04] tracking-[-0.03em] " style={{ marginLeft: 20 }}>
+                  <h1 className="text-[36px] md:text-[55px] xl:text-[64px] font-extrabold leading-[1.04] tracking-[-0.03em] " style={{ marginLeft: 20, marginBottom: 25 }}>
                     Modern Networking<br />
                     <span className="">for Professionals</span>
                   </h1>
-                  <p className="text-[16px] md:text-[19px] text-white/80 leading-[1.7] font-normal max-w-[520px] " style={{ marginLeft: 20 }}>
+                  <p className="text-[16px] md:text-[19px] text-white/80 leading-[1.7] font-normal max-w-[520px] " style={{ marginLeft: 20, marginBottom: 35 }}>
                     Connect smarter with the all-in-one digital business card, CRM, and contact manager. Built for Professionals. Powered for Teams.
                   </p>
                 </div>

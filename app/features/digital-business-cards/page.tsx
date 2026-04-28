@@ -19,14 +19,14 @@ export default function DigitalBusinessCards() {
         <div className="relative flex flex-col lg:flex-row items-stretch bg-[#D8C4E0] rounded-[48px] min-h-[700px] overflow-hidden">
           
           {/* Left Content */}
-          <div className="relative z-10 flex-1 lg:flex-[0_0_55%] flex flex-col justify-center p-12 md:p-14 lg:pl-[80px] lg:pr-[40px] lg:py-[80px]"> 
-            <div className="text-[14px] font-bold tracking-[0.15em] text-black uppercase mb-6">
+          <div className="relative z-10 flex-1 lg:flex-[0_0_55%] flex flex-col justify-center p-12 md:p-14 lg:pl-[80px] lg:pr-[40px] lg:py-[80px]"style = {{ marginLeft: 40}}> 
+            <div className="text-[14px] font-bold tracking-[0.15em] text-black uppercase mb-6"style = {{marginBottom : 20}}>
               DIGITAL BUSINESS CARD
             </div>
-            <h1 className="text-[56px] md:text-[72px] lg:text-[88px] font-black text-black leading-[1.02] mb-8 tracking-[-0.04em]">
+            <h1 className="text-[56px] md:text-[72px] lg:text-[88px] font-black text-black leading-[1.02] mb-8 tracking-[-0.04em]"style = {{marginBottom : 20}}>
               Ditch the Paper.<br />Go Fully Digital.
             </h1>
-            <p className="text-[21px] text-black/80 leading-[1.6] mb-12 max-w-[560px] font-medium">
+            <p className="text-[21px] text-black/80 leading-[1.6] mb-12 max-w-[560px] font-medium"style = {{marginBottom : 35}}>
               Make every impression count with a sleek, modern digital business card - no apps, no limits, just your brand at its best.
             </p>
             

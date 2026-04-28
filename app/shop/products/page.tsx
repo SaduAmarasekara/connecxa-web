@@ -25,11 +25,10 @@ export default function AllProductsPage() {
 
           {/* Product Grid */}
           <CardShowcase />
- 
+        </div>
 
         <CorporateCTA />
-        </div>
-             <div className="w-full h-24 lg:h-32 bg-white" />
+        <div style={{width: "100%", height: "100px"}} />
       </main>
     </div>
   );

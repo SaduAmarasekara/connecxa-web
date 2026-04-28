@@ -48,9 +48,124 @@ export default function FAQsPage() {
       answer: "Your data is encrypted and stored securely. You have full control over what information you share and can deactivate your card at any time."
     },
     {
-      category: "General",
-      question: "Does Connecxa have an affiliate program?",
-      answer: "Yes, we offer an affiliate program for individuals and businesses. Contact our support team for more details on how to join."
+      category: "Corporate",
+      question: "Are bulk discounts available for companies?",
+      answer: "Yes, we offer corporate discounts for bulk orders starting from 10 cards. Please contact our sales team for a custom quote."
+    },
+    {
+      category: "Corporate",
+      question: "Can I get a pricing quotation for my company?",
+      answer: "Absolutely. Simply reach out via our contact form or email us at sales@connecxa.com with your requirements."
+    },
+    {
+      category: "Corporate",
+      question: "Can I customise with my company's design and logo?",
+      answer: "Yes, we provide full customization options for corporate orders, including your brand logo, colors, and specific employee details."
+    },
+    {
+      category: "Corporate",
+      question: "What if I don't have my own designs?",
+      answer: "No problem! Our design team can help you create a professional look that aligns with your brand identity."
+    },
+    {
+      category: "Corporate",
+      question: "What is the support level provided for companies?",
+      answer: "Corporate clients receive priority support and a dedicated account manager to assist with onboarding and team management."
+    },
+    {
+      category: "Corporate",
+      question: "Are there central management options for companies?",
+      answer: "Yes, our Team Dashboard allows admins to manage all company cards, update employee details centrally, and track networking analytics."
+    },
+    {
+      category: "Corporate",
+      question: "How many companies are using Connecxa?",
+      answer: "Hundreds of forward-thinking companies globally trust Connecxa for their professional networking needs."
+    },
+    {
+      category: "Features & Usage",
+      question: "Will Connecxa work on iOS and Android devices?",
+      answer: "Yes, Connecxa works seamlessly with both iOS (iPhone 7 and newer) and NFC-enabled Android devices."
+    },
+    {
+      category: "Features & Usage",
+      question: "How do I setup my Connecxa?",
+      answer: "Simply tap your card or scan the QR code to activate it, then follow the on-screen instructions to create your digital profile."
+    },
+    {
+      category: "Features & Usage",
+      question: "Can I make changes to my digital name card in the future?",
+      answer: "Yes, you can update your information anytime through your dashboard, and the changes will be reflected instantly on your card."
+    },
+    {
+      category: "Features & Usage",
+      question: "Does this require an app to share?",
+      answer: "No app is required for the recipient to view your profile. They simply tap or scan and it opens in their mobile browser."
+    },
+    {
+      category: "Features & Usage",
+      question: "Can I link multiple hardware products to one account?",
+      answer: "Yes, you can link multiple Connecxa products (e.g., a card and a phone sticker) to a single digital profile."
+    },
+    {
+      category: "Features & Usage",
+      question: "Where does the QR code lead to?",
+      answer: "The QR code leads directly to your personalized Connecxa digital profile, just like the NFC tap."
+    },
+    {
+      category: "Features & Usage",
+      question: "What is a Dynamic QR Code?",
+      answer: "A Dynamic QR Code allows you to change the destination URL or content without needing to reprint the physical QR code."
+    },
+    {
+      category: "Features & Usage",
+      question: "What happens to the QR code and card after making changes?",
+      answer: "Nothing! They continue to work perfectly, and anyone who scans or taps will see your updated information immediately."
+    },
+    {
+      category: "Order & Shipping",
+      question: "How do I order my own Connecxa?",
+      answer: "You can order directly from our website shop. Choose your preferred material and customization options, then proceed to checkout."
+    },
+    {
+      category: "Order & Shipping",
+      question: "How long will it take to receive my order?",
+      answer: "Delivery usually takes 3-7 business days for local orders and 7-14 business days for international shipping."
+    },
+    {
+      category: "Order & Shipping",
+      question: "Do you provide international shipping?",
+      answer: "Yes, we ship Connecxa products worldwide. Shipping rates and times vary by location."
+    },
+    {
+      category: "Order & Shipping",
+      question: "I never got my order, what to do?",
+      answer: "Please contact our support team with your order number, and we will track your shipment and resolve the issue immediately."
+    },
+    {
+      category: "Order & Shipping",
+      question: "Is there a Minimum Order Quantity (MOQ)?",
+      answer: "There is no MOQ for individual cards. For custom corporate designs, the MOQ is typically 10 units."
+    },
+    {
+      category: "Payments",
+      question: "How does the pricing work?",
+      answer: "We offer a one-time purchase for physical cards. Premium digital features may involve a subscription plan."
+    },
+    {
+      category: "Payments",
+      question: "Is this a one-time payment?",
+      answer: "The physical card is a one-time purchase. Basic profile hosting is included for life."
+    },
+    {
+      category: "Payments",
+      question: "Are there any hidden fees?",
+      answer: "No hidden fees. Any subscription costs for advanced analytics or team features are clearly stated."
+    },
+    {
+      category: "Payments",
+      question: "What are the accepted payment methods?",
+      answer: "We accept all major credit cards, PayPal, and various local payment gateways depending on your region."
     }
   ];
 

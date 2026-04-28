@@ -13,14 +13,14 @@ export default function NFCEventHero() {
           <div className="absolute top-[-10%] right-[-5%] w-[600px] h-[600px] bg-white/10 rounded-full blur-3xl pointer-events-none" />
 
           {/* Left Content */}
-          <div className="relative z-10 flex-1 lg:flex-[0_0_55%] flex flex-col justify-center p-12 md:p-14 lg:pl-[clamp(60px,8vw,120px)] lg:pr-[40px] lg:py-[80px]" style={{ marginLeft: 40 }}>
-            <div className="text-[14px] font-bold tracking-[0.2em] text-white uppercase mb-8 opacity-90">
+          <div className="relative z-10 flex-1 lg:flex-[0_0_55%] flex flex-col justify-center p-12 md:p-14 lg:pl-[80px] lg:pr-[40px] lg:py-[80px]" style={{ marginLeft: 30, marginBottom: 50 }}>
+            <div className="text-[14px] font-bold tracking-[0.2em] text-white uppercase mb-8 opacity-90"style={{ marginBottom: 15 }}>
               LIVE NFC CARD PRINTING
             </div>
-            <h1 className="text-[52px] md:text-[68px] lg:text-[84px] font-[900] text-white leading-[1.02] mb-8">
+            <h1 className="text-[52px] md:text-[68px] lg:text-[84px] font-[900] text-white leading-[1.02] mb-8"style={{ marginBottom: 15 }}>
               Live-Printed, <br /> Right at Your Event
             </h1>
-            <p className="text-[20px] text-white/80 leading-[1.6] mb-12 max-w-[540px] font-medium">
+            <p className="text-[20px] text-white/80 leading-[1.6] mb-12 max-w-[540px] font-medium"style={{ marginBottom: 35 }}>
               Engage your audience and spark conversations with live-printed NFC cards, customised on the spot and ready in seconds.
             </p>
 
@@ -40,6 +40,7 @@ export default function NFCEventHero() {
                 width: "fit-content",
                 boxShadow: "0 8px 28px rgba(0,0,0,0.15)",
                 transition: "all 0.2s",
+                marginLeft: 50
               }}
               onMouseEnter={(e) => {
                 e.currentTarget.style.transform = "translateY(-2px)";

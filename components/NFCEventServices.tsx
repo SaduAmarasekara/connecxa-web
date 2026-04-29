@@ -57,7 +57,7 @@ export default function NFCEventServices() {
   ];
 
   return (
-    <section className="bg-white py-16 md:py-24" style={{ fontFamily: "'DM Sans', sans-serif" }}>
+    <section className="bg-white py-16 md:py-24" style={{ fontFamily: "'DM Sans', sans-serif", marginLeft: 50 }}>
       <div className="max-w-[1400px] mx-auto px-6">
         {/* Header */}
         <div className="text-center mb-16 md:mb-20 ">

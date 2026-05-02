@@ -24,17 +24,10 @@ export default function PurchaseSteps() {
         </h2>
 
         <div
-          style={{
-            display: "flex",
-            alignItems: "flex-start",
-            justifyContent: "center",
-            gap: 20,
-            flexWrap: "nowrap",
-            position: "relative",
-          }}
+          className="flex flex-col md:flex-row items-center md:items-start justify-center gap-12 md:gap-5 relative"
         >
           {/* Step 1 */}
-          <div style={{ flex: "1 1 0px", minWidth: 200, display: "flex", flexDirection: "column", alignItems: "center" }}>
+          <div className="flex-1 w-full max-w-[300px] md:max-w-none flex flex-col items-center">
             <div style={{ marginBottom: 32, height: 48, display: "flex", alignItems: "center" }}>
               <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                 <path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.77 3.77z" />
@@ -52,7 +45,7 @@ export default function PurchaseSteps() {
           <div style={{ flex: "0 0 clamp(40px, 8vw, 120px)", height: 2, background: "rgba(255,255,255,0.4)", marginTop: 24 }} className="hidden md:block" />
 
           {/* Step 2 */}
-          <div style={{ flex: "1 1 0px", minWidth: 200, display: "flex", flexDirection: "column", alignItems: "center" }}>
+          <div className="flex-1 w-full max-w-[300px] md:max-w-none flex flex-col items-center">
             <div style={{ marginBottom: 32, height: 48, display: "flex", alignItems: "center" }}>
               <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                 <path d="M21 8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16Z" />
@@ -70,7 +63,7 @@ export default function PurchaseSteps() {
           <div style={{ flex: "0 0 clamp(40px, 8vw, 120px)", height: 2, background: "rgba(255,255,255,0.4)", marginTop: 24 }} className="hidden md:block" />
 
           {/* Step 3 */}
-          <div style={{ flex: "1 1 0px", minWidth: 200, display: "flex", flexDirection: "column", alignItems: "center" }}>
+          <div className="flex-1 w-full max-w-[300px] md:max-w-none flex flex-col items-center">
             <div style={{ marginBottom: 32, height: 48, display: "flex", alignItems: "center" }}>
               <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                 <rect width="18" height="18" x="3" y="3" rx="2" />

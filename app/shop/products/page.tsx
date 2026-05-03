@@ -15,7 +15,7 @@ export default function AllProductsPage() {
 
           {/* Header */}
           <div className="mb-16 " style={{ margin: "0 auto", textAlign: "center" }} >
-            <h1 className="text-[42px] md:text-[60px] font-[900] text-[#111827] leading-tight mb-8">
+            <h1 className="text-[42px] md:text-[60px] font-[900] text-[#111827] leading-tight mb-20">
               Your Gateway to Smarter Connections
             </h1>
             <p className="text-gray-500 text-lg md:text-xl font-medium">
@@ -23,12 +23,15 @@ export default function AllProductsPage() {
             </p>
           </div>
 
+      <div className="w-full h-10 lg:h-12 bg-white" />
           {/* Product Grid */}
           <CardShowcase />
         </div>
 
+      <div className="w-full h-10 lg:h-12 bg-white" />
         <CorporateCTA />
-        <div style={{width: "100%", height: "100px"}} />
+     
+      <div className="w-full h-24 lg:h-32 bg-white" />
       </main>
     </div>
   );

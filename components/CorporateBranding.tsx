@@ -21,7 +21,7 @@ const CorporateBranding = () => {
   }, []);
 
   return (
-    <section className="w-full max-w-[1600px] mx-auto px-6 lg:px-12 py-24 " style={{ margin: "0 auto" }} >
+    <section className="w-full max-w-[1600px] mx-auto px-6 lg:px-12 py-16 md:py-24" style={{ margin: "0 auto" }}>
       <div className="flex flex-col lg:flex-row items-center gap-12 lg:gap-24">
 
         {/* Left Column: Image Carousel */}
@@ -57,16 +57,16 @@ const CorporateBranding = () => {
         </div>
 
         {/* Right Column: Content */}
-        <div className="w-full lg:w-1/2 flex flex-col text-left">
+        <div className="w-full lg:w-1/2 flex flex-col items-center lg:items-start text-center lg:text-left">
           <div className="text-[#005AD1] font-black text-sm md:text-base tracking-[0.15em] uppercase mb-4">
             Bulk Corporate Order
           </div>
 
-          <h2 className="text-[36px] md:text-[52px] lg:text-[60px] font-[900] text-[#111827] leading-[1.1] tracking-tight mb-6">
-            Customise with your <br className="hidden md:block" /> Corporate Branding
+          <h2 className="text-[32px] md:text-[52px] lg:text-[60px] font-[900] text-[#111827] leading-[1.1] tracking-tight mb-6">
+            Customise with your <br className="hidden lg:block" /> Corporate Branding
           </h2>
 
-          <p className="text-gray-500 text-[17px] md:text-[20px] font-medium leading-relaxed mb-10 max-w-xl">
+          <p className="text-gray-500 text-[16px] md:text-[20px] font-medium leading-relaxed mb-10 max-w-xl mx-auto lg:mx-0" style={{ marginBottom: "20px" }}>
             Let's elevate your brand presence with customised NFC business cards - made exactly the way you want them.
           </p>
 
@@ -86,6 +86,7 @@ const CorporateBranding = () => {
               width: "fit-content",
               boxShadow: "0 8px 28px rgba(0,90,209,0.25)",
               transition: "all 0.2s",
+              marginBottom:"20px",
             }}
             onMouseEnter={(e) => {
               e.currentTarget.style.transform = "translateY(-2px)";
@@ -101,8 +102,8 @@ const CorporateBranding = () => {
           </button>
 
           <div className="space-y-6">
-            <div className="flex items-center gap-4 text-gray-700 font-bold text-[15px] md:text-[17px]">
-              <div className="w-6 h-6 flex items-center justify-center text-[#005AD1]">
+            <div className="flex items-center lg:items-start gap-4 text-gray-700 font-bold text-[14px] md:text-[17px] text-left">
+              <div className="w-6 h-6 flex items-center justify-center text-[#005AD1] shrink-0">
                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round">
                   <line x1="12" y1="1" x2="12" y2="23" />
                   <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6" />
@@ -111,8 +112,8 @@ const CorporateBranding = () => {
               Corporate bulk rates available on request
             </div>
 
-            <div className="flex items-center gap-4 text-gray-700 font-bold text-[15px] md:text-[17px]">
-              <div className="w-6 h-6 flex items-center justify-center text-[#005AD1]">
+            <div className="flex items-center lg:items-start gap-4 text-gray-700 font-bold text-[14px] md:text-[17px] text-left">
+              <div className="w-6 h-6 flex items-center justify-center text-[#005AD1] shrink-0">
                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round">
                   <circle cx="13.5" cy="6.5" r=".5" />
                   <circle cx="17.5" cy="10.5" r=".5" />

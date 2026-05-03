@@ -8,15 +8,15 @@ export default function CorporateCTA() {
       {/* Left Column: Content with Blue Background */}
       <div className="w-full lg:w-1/2 bg-[#005BD3] p-8 md:p-16 lg:p-24 flex flex-col justify-center items-center text-center">
         <div className="max-w-[600px] mx-auto">
-          <span className="text-white/80 font-bold text-sm tracking-[0.2em] uppercase mb-6 block">
+          <span className="text-white/80 font-bold text-sm tracking-[0.2em] uppercase  block"style={{ marginBottom: 20 }}>
             Corporate Solutions
           </span>
 
-          <h2 className="text-[38px] md:text-[54px] font-[800] text-white leading-[1.1] mb-8 tracking-tight">
+          <h2 className="text-[38px] md:text-[54px] font-[800] text-white leading-[1.1]  tracking-tight"style={{ marginBottom: 20 }}>
             Customise With Your <br />Corporate Branding
           </h2>
 
-          <p className="text-white/90 text-[16px] md:text-[18px] font-medium leading-relaxed mb-10 max-w-[420px]" style={{ marginBottom: 30 }}>
+          <p className="text-white/90 text-[16px] md:text-[18px] font-medium leading-relaxed mb-10 max-w-[500px]" style={{ marginBottom: 30 }}>
             Getting in bulk or looking to get corporate-branded connecxa for your company?
           </p>
 
@@ -35,6 +35,7 @@ export default function CorporateCTA() {
               gap: 8,
               width: "fit-content",
               transition: "all 0.2s",
+              marginBottom:"20px"
             }}
             onMouseEnter={(e) => {
               e.currentTarget.style.transform = "translateY(-2px)";

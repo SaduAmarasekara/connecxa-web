@@ -9,7 +9,7 @@ const securityFeatures = [
     icon: (
       <div className="w-12 h-12 rounded-full bg-[#E0F2FE] flex items-center justify-center mb-6">
         <svg className="w-6 h-6 text-[#0369A1]" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
-          <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/>
+          <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" /><circle cx="12" cy="7" r="4" />
         </svg>
       </div>
     )
@@ -20,7 +20,7 @@ const securityFeatures = [
     icon: (
       <div className="w-12 h-12 rounded-full bg-[#DCFCE7] flex items-center justify-center mb-6">
         <svg className="w-6 h-6 text-[#15803D]" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
-          <circle cx="12" cy="12" r="10"/><path d="m9 12 2 2 4-4"/>
+          <circle cx="12" cy="12" r="10" /><path d="m9 12 2 2 4-4" />
         </svg>
       </div>
     )
@@ -31,7 +31,7 @@ const securityFeatures = [
     icon: (
       <div className="w-12 h-12 rounded-full bg-[#F3E8FF] flex items-center justify-center mb-6">
         <svg className="w-6 h-6 text-[#7E22CE]" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
-          <rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/>
+          <rect x="3" y="11" width="18" height="11" rx="2" ry="2" /><path d="M7 11V7a5 5 0 0 1 10 0v4" />
         </svg>
       </div>
     )
@@ -42,7 +42,7 @@ const securityFeatures = [
     icon: (
       <div className="w-12 h-12 rounded-full bg-[#FEF9C3] flex items-center justify-center mb-6">
         <svg className="w-6 h-6 text-[#A16207]" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
-          <rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><path d="M7 7h10v10H7z"/>
+          <rect x="3" y="3" width="18" height="18" rx="2" ry="2" /><path d="M7 7h10v10H7z" />
         </svg>
       </div>
     )
@@ -51,16 +51,16 @@ const securityFeatures = [
 
 export default function SecuritySection() {
   return (
-    <section className="w-full py-24 bg-[#F8FAFC]" style={{ fontFamily: "'DM Sans', sans-serif", marginLeft: 40 }}>
+    <section className="w-full py-16 md:py-24 bg-[#F8FAFC]" style={{ fontFamily: "'DM Sans', sans-serif" ,marginLeft: 10 }}>
       <div className="w-full max-w-[1600px] mx-auto px-6 md:px-12">
 
         {/* Header */}
-        <div className="text-center mb-16">
-          <h2 className="text-[44px] md:text-[56px] font-black text-[#111] leading-tight mb-4 flex items-center justify-center gap-4">
+        <div className="text-center mb-12 md:mb-16">
+          <h2 className="text-[36px] md:text-[44px] lg:text-[56px] font-black text-[#111] leading-tight mb-4 flex flex-wrap items-center justify-center gap-2 md:gap-4">
             Secured Connections, Always
-            <span className="text-[40px]">🔒</span>
+            <span className="text-[32px] md:text-[40px]">🔒</span>
           </h2>
-          <p className="text-[19px] text-gray-500 font-medium">
+          <p className="text-[16px] md:text-[19px] text-gray-500 font-medium px-4 md:px-0"style={{marginBottom:20}}>
             Build connections and network confidently with built-in security at every layer
           </p>
         </div>
@@ -68,12 +68,12 @@ export default function SecuritySection() {
         {/* Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
           {securityFeatures.map((feature, i) => (
-            <div 
-              key={i} 
-              className="bg-white p-10 rounded-[32px] shadow-[0_8px_30px_rgba(0,0,0,0.04)] border border-gray-100 flex flex-col items-start transition-all duration-300 hover:shadow-[0_20px_50px_rgba(0,0,0,0.08)] hover:-translate-y-1"
+            <div
+              key={i}
+              className="bg-white p-8 md:p-10 rounded-[32px] shadow-[0_8px_30px_rgba(0,0,0,0.04)] border border-gray-100 flex flex-col items-start transition-all duration-300 hover:shadow-[0_20px_50px_rgba(0,0,0,0.08)] hover:-translate-y-1"
             >
               {feature.icon}
-              <h3 className="text-[22px] font-black text-[#111] mb-4">{feature.title}</h3>
+              <h3 className="text-[20px] md:text-[22px] font-black text-[#111] mb-3 md:mb-4">{feature.title}</h3>
               <p className="text-[15px] text-gray-500 font-medium leading-relaxed">
                 {feature.desc}
               </p>

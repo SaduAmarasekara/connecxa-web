@@ -33,36 +33,36 @@ const features = [
 
 export default function FeatureGrid() {
   return (
-    <section className="w-full py-24 bg-white" style={{ fontFamily: "'DM Sans', sans-serif", marginLeft: 40 }}>
+    <section className="w-full py-16 md:py-24 bg-white px-6 md:px-12 mx-auto max-w-[1600px]" style={{ fontFamily: "'DM Sans', sans-serif" }}>
         
         {/* Header */}
-        <div className="text-center mb-16">
-          <h2 className="text-[44px] md:text-[56px] font-black text-[#111] leading-tight mb-4 flex items-center justify-center gap-4">
+        <div className="text-center mb-12 md:mb-16">
+          <h2 className="text-[36px] md:text-[44px] lg:text-[56px] font-black text-[#111] leading-tight flex flex-wrap items-center justify-center gap-2 md:gap-4">
             Explore More Powerful Tools
-            <span className="text-[40px]">⭐</span>
+            <span className="text-[32px] md:text-[40px]">⭐</span>
           </h2>
-          <p className="text-[19px] text-gray-500 font-medium">
+          <p className="text-[16px] md:text-[19px] text-gray-500 font-medium" style={{marginBottom:20,}}>
             Discover more ways to network smarter with connecxa
           </p>
         </div>
 
         {/* Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
           {features.map((feature, i) => (
             <div 
               key={i} 
-              className="group relative flex flex-col rounded-[40px] overflow-hidden transition-all duration-300 hover:-translate-y-2 hover:shadow-[0_30px_60px_rgba(0,0,0,0.12)]"
+              className="group relative flex flex-col rounded-[32px] md:rounded-[40px] overflow-hidden transition-all duration-300 hover:-translate-y-2 hover:shadow-[0_30px_60px_rgba(0,0,0,0.12)]"
               style={{ background: feature.bg }}
             >
-              <div className="p-10 pb-8 text-center flex flex-col items-center">
-                <h3 className="text-[26px] font-black text-[#111] mb-3">{feature.title}</h3>
-                <p className="text-[16px] text-gray-600 font-medium leading-relaxed max-w-[320px]">
+              <div className="p-8 md:p-10 pb-6 md:pb-8 text-center flex flex-col items-center">
+                <h3 className="text-[22px] md:text-[26px] font-black text-[#111] mb-3">{feature.title}</h3>
+                <p className="text-[15px] md:text-[16px] text-gray-600 font-medium leading-relaxed max-w-[320px]">
                   {feature.desc}
                 </p>
               </div>
 
               {/* Mockup Area */}
-              <div className="relative h-[340px] mx-8 mt-auto rounded-t-3xl overflow-hidden shadow-2xl border-x border-t border-white/50">
+              <div className="relative h-[260px] md:h-[340px] mx-6 md:mx-8 mt-auto rounded-t-2xl md:rounded-t-3xl overflow-hidden shadow-2xl border-x border-t border-white/50">
                 <Image
                   src={feature.image}
                   alt={feature.title}

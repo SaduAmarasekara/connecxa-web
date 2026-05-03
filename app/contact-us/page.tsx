@@ -12,20 +12,16 @@ export default function ContactUsPage() {
         @import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800;900&display=swap');
         
         .contact-page-wrapper {
-          font-family: 'DM Sans', sans-serif !important;
-        }
-
-        .contact-page-wrapper * {
-          font-family: 'DM Sans', sans-serif !important;
+          font-family: 'DM Sans', sans-serif;
         }
 
         .contact-page {
           min-height: 100vh;
           display: grid;
           grid-template-columns: 1fr 1fr;
-          max-width: 1280px;
+          max-width: 1600px;
           margin: 0 auto;
-          padding: 0 40px;
+          padding: 0 5vw;
           align-items: stretch;
           background: #FAFAF8;
         }

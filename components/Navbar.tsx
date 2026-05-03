@@ -284,7 +284,7 @@ export default function Navbar() {
           border-radius: 10px;
           font-size: 15px;
           font-weight: 700;
-          color: #1f2937;
+          color: #000;
           cursor: pointer;
           transition: background 0.18s ease, color 0.18s ease;
           white-space: nowrap;
@@ -506,7 +506,7 @@ export default function Navbar() {
                       </button>
                     )}
                     {link.dropdown && (
-                      <div className="absolute top-[100%] left-0 pt-3 hidden group-hover:block z-50">
+                      <div className="absolute top-full left-0 pt-2 hidden group-hover:block z-[100]">
                         <div className="bg-white rounded-[20px] shadow-[0_12px_40px_rgba(0,0,0,0.12)] border border-gray-100 p-3 w-[360px] flex flex-col gap-1">
                           {link.dropdown.map((item, i) => (
                             <Link href={item.href} key={i} className="flex items-start gap-4 p-3 rounded-xl hover:bg-gray-50 transition-colors cursor-pointer" style={{ textDecoration: 'none' }}>

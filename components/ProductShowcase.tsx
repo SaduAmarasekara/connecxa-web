@@ -77,12 +77,8 @@ export default function ProductShowcase() {
               }`}
               style={{ transitionDelay: `${(i % 2) * 200}ms` }}
             >
-              <div className="px-4 mb-8">
-                <h3 className="text-[32px] font-black text-[#111] tracking-tight">{item.title}</h3>
-              </div>
-              
               <div 
-                className="w-full aspect-[4/3] rounded-[48px] overflow-hidden mb-10 shadow-[0_10px_40px_rgba(0,0,0,0.04)] transition-all duration-500 hover:shadow-[0_30px_70px_rgba(0,0,0,0.12)] group"
+                className="w-full aspect-[4/3] rounded-[48px] overflow-hidden mb-8 shadow-[0_10px_40px_rgba(0,0,0,0.04)] transition-all duration-500 hover:shadow-[0_30px_70px_rgba(0,0,0,0.12)] group"
                 style={{ background: item.bg }}
               >
                 <div className="relative w-full h-full p-16 md:p-24 lg:p-32">
@@ -97,7 +93,8 @@ export default function ProductShowcase() {
                 </div>
               </div>
 
-              <div className="px-4">
+              <div className="px-4 mb-4 flex flex-col items-center justify-center text-center">
+                <h3 className="text-[32px] font-black text-[#111] tracking-tight mb-4">{item.title}</h3>
                 <p className="text-[19px] text-gray-500 font-medium leading-relaxed max-w-[540px] mx-auto">
                   {item.desc}
                 </p>

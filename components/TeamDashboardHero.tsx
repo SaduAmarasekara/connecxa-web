@@ -5,64 +5,78 @@ import Image from "next/image";
 
 export default function TeamDashboardHero() {
   return (
-    <section className="w-full flex justify-center py-6 md:py-12 bg-white" style={{ fontFamily: "'DM Sans', sans-serif" }}>
-      <div className="w-full max-w-[1600px] px-6">  
-        <div className="relative flex flex-col lg:flex-row items-stretch bg-[#90CAD9] rounded-[48px] min-h-[600px] md:min-h-[700px] overflow-hidden shadow-[0 32px 80px rgba(144,202,217,0.25)] border-[8px] border-white">
+    <section className="w-full flex flex-col items-center py-8 lg:py-16 overflow-x-hidden" style={{ fontFamily: "DM Sans, sans-serif" }}>
+      <div className="w-full max-w-[1600px] px-5 md:px-16 lg:px-24">
 
-          {/* Subtle bg art */}
-          <div className="absolute top-[-10%] right-[-5%] w-[600px] h-[600px] bg-white/20 rounded-full blur-3xl pointer-events-none" />
+        {/* Team Dashboard Hero Card */}
+        <div className="bg-[#90CAD9] bg-gradient-to-br from-[#90CAD9] to-[#7AB6C5] rounded-[32px] md:rounded-[48px] px-6 py-16 md:py-20 lg:px-20 lg:py-24 text-[#111] relative overflow-hidden flex flex-col lg:flex-row items-center lg:items-stretch shadow-2xl border-[8px] border-white">
 
-          {/* Left Content */}
-          <div className="relative z-10 flex-1 lg:flex-[0_0_50%] flex flex-col justify-center p-12 md:p-14 lg:pl-[80px] lg:pr-[40px] lg:py-[80px]" style={{ marginLeft: 50 }} >
-            <div className="text-[13px] font-bold tracking-[0.12em] text-[#005AD1] uppercase mb-8"style = {{marginBottom : 20}}>
-              CENTRALISED TEAM MANAGEMENT
+          {/* Background decorative elements */}
+          <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-white/20 rounded-full blur-[120px] -translate-y-1/2 translate-x-1/4 pointer-events-none" />
+          <div className="absolute bottom-0 left-0 w-[400px] h-[400px] bg-black/5 rounded-full blur-[100px] translate-y-1/4 -translate-x-1/4 pointer-events-none" />
+
+          {/* ── Left Column — Content ── */}
+          <div className="flex-1 z-10 flex flex-col justify-center w-full lg:max-w-[700px] pb-10 lg:pb-16 text-center lg:text-left items-center lg:items-start lg:ml-[50px] xl:ml-[80px]" style={{ marginLeft: 50 }}>
+
+            <div className="flex flex-col gap-8 md:gap-10 items-center lg:items-start w-full">
+              {/* Eyebrow tag */}
+              <div className="inline-flex w-fit items-center gap-2 bg-black/5 backdrop-blur-md border border-black/10 rounded-full px-4 py-2 text-[12px] font-bold tracking-[0.15em] uppercase text-black/80">
+                <span className="w-2 h-2 rounded-full bg-[#005AD1] animate-pulse" />
+                CENTRALISED TEAM MANAGEMENT
+              </div>
+
+              <div className="space-y-6 w-full">
+                <h1 className="text-[36px] md:text-[56px] xl:text-[84px] font-black text-[#111] leading-[1.05] md:leading-[1.02] tracking-[-0.04em]">
+                  Run Everything.<br />From One Place.
+                </h1>
+                <p className="text-[18px] md:text-[21px] text-[#222] leading-[1.6] font-medium max-w-[560px] mx-auto lg:mx-0">
+                  Simplify team-wide digital business card management with your centralised control panel. Built for smarter team operations.
+                </p>
+              </div>
+
+              {/* CTA Button */}
+              <div className="mt-6">
+                <button
+                  style={{
+                    background: "#fff",
+                    color: "#005AD1",
+                    fontSize: 18,
+                    fontWeight: 800,
+                    borderRadius: 50,
+                    padding: "18px 46px",
+                    border: "none",
+                    cursor: "pointer",
+                    display: "inline-flex",
+                    alignItems: "center",
+                    gap: 12,
+                    width: "fit-content",
+                    boxShadow: "0 10px 30px rgba(0,0,0,0.1)",
+                    transition: "all 0.25s cubic-bezier(0.23, 1, 0.32, 1)",
+                  }}
+                  onMouseEnter={(e) => {
+                    e.currentTarget.style.transform = "translateY(-3px)";
+                    e.currentTarget.style.boxShadow = "0 15px 40px rgba(0,0,0,0.15)";
+                  }}
+                  onMouseLeave={(e) => {
+                    e.currentTarget.style.transform = "translateY(0)";
+                    e.currentTarget.style.boxShadow = "0 10px 30px rgba(0,0,0,0.1)";
+                  }}
+                >
+                  Get Started
+                  <span style={{ fontSize: 22 }}>→</span>
+                </button>
+              </div>
             </div>
-            <h1 className="text-[52px] md:text-[68px] lg:text-[84px] font-black text-[#111] leading-[1.02] mb-8"style = {{marginBottom : 20}}>
-              Run Everything.<br />From One Place.
-            </h1>
-            <p className="text-[20px] text-[#222] leading-[1.6] mb-12 max-w-[540px] font-medium opacity-90"style = {{marginBottom : 35}}>
-              Simplify team-wide digital business card management with your centralised control panel. Built for smarter team operations.
-            </p>
-            
-            <button 
-              style={{
-                background: "#fff",
-                color: "#005AD1",
-                fontSize: 18,
-                fontWeight: 800,
-                borderRadius: 50,
-                padding: "16px 36px",
-                border: "none",
-                cursor: "pointer",
-                display: "inline-flex",
-                alignItems: "center",
-                gap: 8,
-                width: "fit-content",
-                boxShadow: "0 8px 28px rgba(0,0,0,0.12)",
-                transition: "all 0.2s",
-              }}
-              onMouseEnter={(e) => {
-                e.currentTarget.style.transform = "translateY(-2px)";
-                e.currentTarget.style.boxShadow = "0 14px 36px rgba(0,0,0,0.18)";
-              }}
-              onMouseLeave={(e) => {
-                e.currentTarget.style.transform = "translateY(0)";
-                e.currentTarget.style.boxShadow = "0 8px 28px rgba(0,0,0,0.12)";
-              }}
-            >
-              Get Started
-              <span style={{ fontSize: 20, marginLeft: 8 }}>→</span>
-            </button>
           </div>
 
-          {/* Right Mockup */}
-          <div className="relative z-10 flex-1 flex items-center justify-center p-8 lg:p-12">
-            <div className="relative w-full aspect-[16/10] max-w-[750px] group">
+          {/* ── Right Column — Image ── */}
+          <div className="flex-1 relative w-full z-10 flex items-end justify-center lg:justify-end mt-12 lg:mt-0 min-h-[360px] md:min-h-[480px] lg:min-h-0">
+            <div className="relative w-full h-full min-h-[400px] md:min-h-[500px] lg:min-h-[640px] lg:scale-[1.05] origin-bottom transition-transform duration-700 ease-out hover:scale-[1.08]">
               <Image
                 src="/team-dashboard-mockup.png"
                 alt="Team Dashboard Central Control Panel"
                 fill
-                className="object-contain transition-transform duration-700 group-hover:scale-[1.02]"
+                className="object-contain object-bottom drop-shadow-[0_45px_65px_rgba(0,0,0,0.15)]"
                 priority
               />
             </div>

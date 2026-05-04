@@ -34,17 +34,17 @@ const FeatureSection = ({ eyebrow, title, desc, features, image, imageLeft = fal
   }, []);
 
   return (
-    <section ref={sectionRef} className="w-full py-24 overflow-hidden" style={{ marginLeft: 40 }}>
-      <div className={`max-w-[1600px] mx-auto px-6 lg:px-12 flex flex-col ${imageLeft ? 'lg:flex-row' : 'lg:flex-row-reverse'} items-center gap-16 lg:gap-24`}>
+    <section ref={sectionRef} className="w-full py-16 md:py-24 overflow-hidden max-lg:!ml-0 max-lg:!p-6" style={{ marginLeft: 40 }}>
+      <div className={`max-w-[1400px] mx-auto px-0 md:px-6 lg:px-12 flex flex-col ${imageLeft ? 'lg:flex-row' : 'lg:flex-row-reverse'} items-center justify-between gap-10 md:gap-16 lg:gap-20`}>
 
         {/* Image Column */}
         <div
-          className={`w-full lg:w-1/2 transition-all duration-1000 ease-out transform ${isVisible
+          className={`w-full lg:w-[45%] transition-all duration-1000 ease-out transform ${isVisible
             ? 'translate-x-0 opacity-100'
             : `${imageLeft ? '-translate-x-32' : 'translate-x-32'} opacity-0`
             }`}
         >
-          <div className="relative aspect-[4/3] rounded-[48px] overflow-hidden shadow-[0_40px_100px_rgba(0,0,0,0.1)] border border-gray-100 bg-gray-50">
+          <div className="relative aspect-[4/3] rounded-[32px] md:rounded-[40px] overflow-hidden shadow-[0_20px_50px_rgba(0,0,0,0.1)] md:shadow-[0_40px_100px_rgba(0,0,0,0.1)] border border-gray-100 bg-gray-50">
             <Image
               src={image}
               alt={title}
@@ -56,30 +56,30 @@ const FeatureSection = ({ eyebrow, title, desc, features, image, imageLeft = fal
 
         {/* Text Column */}
         <div
-          className={`w-full lg:w-1/2 flex flex-col transition-all duration-1000 ease-out transform delay-200 ${isVisible
+          className={`w-full lg:w-[45%] flex flex-col max-lg:items-center max-lg:text-center transition-all duration-1000 ease-out transform delay-200 ${isVisible
             ? 'translate-x-0 opacity-100'
             : `${imageLeft ? 'translate-x-32' : '-translate-x-32'} opacity-0`
             }`}
         >
-          <div className="text-[#005AD1] font-black text-sm tracking-[0.15em] uppercase mb-6">
+          <div className="text-[#005AD1] font-black text-xs md:text-sm tracking-[0.15em] uppercase mb-4 md:mb-6">
             {eyebrow}
           </div>
 
-          <h2 className="text-[36px] md:text-[52px] lg:text-[60px] font-[900] text-[#111827] leading-[1.1] tracking-tight mb-8">
+          <h2 className="text-[32px] sm:text-[36px] md:text-[44px] lg:text-[48px] font-[900] text-[#111827] leading-[1.1] tracking-tight mb-6 md:mb-8">
             {title}
           </h2>
 
-          <p className="text-gray-500 text-[18px] md:text-[20px] font-medium leading-relaxed mb-12">
+          <p className="text-gray-500 text-[16px] md:text-[18px] font-medium leading-relaxed mb-8 md:mb-12">
             {desc}
           </p>
 
-          <div className="space-y-8">
+          <div className="space-y-6 md:space-y-8 max-lg:text-left max-lg:w-full max-lg:max-w-md">
             {features.map((f, i) => (
-              <div key={i} className="flex items-start gap-5 group">
-                <div className="w-8 h-8 flex items-center justify-center text-[#005AD1] mt-1 shrink-0 transition-transform group-hover:scale-110">
+              <div key={i} className="flex items-start gap-4 md:gap-5 group">
+                <div className="w-6 h-6 md:w-8 md:h-8 flex items-center justify-center text-[#005AD1] mt-1 shrink-0 transition-transform group-hover:scale-110">
                   {f.icon}
                 </div>
-                <div className="text-gray-600 text-[16px] md:text-[18px] leading-relaxed">
+                <div className="text-gray-600 text-[15px] md:text-[16px] leading-relaxed">
                   <span className="font-bold text-gray-900">{f.bold}</span> {f.text}
                 </div>
               </div>

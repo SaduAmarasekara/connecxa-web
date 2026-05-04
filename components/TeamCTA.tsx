@@ -6,7 +6,7 @@ export default function TeamCTA() {
   return (
     <section className="w-full flex justify-center py-20 md:py-24 bg-white">
       <div className="w-full max-w-[1600px] px-6">
-        <div className="relative flex flex-col items-center justify-center bg-[#111111] rounded-[32px] md:rounded-[48px] py-24 md:py-64 px-6 md:px-8 text-center overflow-hidden shadow-[0_32px_80px_rgba(0,0,0,0.3)]">
+        <div className="relative flex flex-col items-center justify-center bg-[#111111] rounded-[15px] md:rounded-[20px] py-24 md:py-64 px-6 md:px-8 text-center overflow-hidden shadow-[0_32px_80px_rgba(0,0,0,0.3)]">
 
           {/* Subtle bg art */}
           <div className="absolute top-[-20%] left-[-10%] w-[400px] h-[400px] bg-white/5 rounded-full blur-3xl pointer-events-none" />

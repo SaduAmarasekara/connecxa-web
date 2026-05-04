@@ -25,14 +25,13 @@ export default function ProfilesShowcase() {
   };
 
   return (
-    <section className="w-full py-24 bg-white overflow-hidden" style={{ fontFamily: "'DM Sans', 'Helvetica Neue', sans-serif", marginLeft: "20px" }}>
+    <section className="w-full py-24 bg-white overflow-hidden" style={{ fontFamily: "'DM Sans', 'Helvetica Neue', sans-serif", marginLeft: "10px" }}>
       
       {/* Header - Centered relative to the 1440px max-width */}
       <div className="w-full max-w-[1440px] mx-auto px-5 md:px-16 lg:px-24">
         <div className="text-center mb-16 flex flex-col items-center">
-          <h2 className="text-[40px] md:text-[54px] font-bold text-[#111827] tracking-tight leading-tight mb-4 flex items-center justify-center gap-3">
-            Fully-Customisable Profiles
-            <span className="text-[0.85em]">⚡</span>
+          <h2 className="text-[36px] sm:text-[40px] md:text-[54px] font-bold text-[#111827] tracking-tight leading-tight mb-4 text-center">
+            Fully-Customisable Profiles <span className="text-[0.85em] inline-block ml-1">⚡</span>
           </h2>
           <p className="text-[17px] md:text-[19px] text-[#4B5563] font-medium max-w-2xl mx-auto">
             Ready-to-use Digital Business Cards for modern professionals and teams. Click to view!
@@ -43,10 +42,10 @@ export default function ProfilesShowcase() {
       {/* Carousel Container - No max-width on the right side to remove white space */}
       <div className="relative group pl-5 md:pl-16 lg:pl-24">
 
-        {/* Scroll Buttons - Now visible on mobile too */}
+        {/* Scroll Buttons - Now visible on mobile and tablet */}
         <button
           onClick={() => scroll('left')}
-          className="absolute left-2 md:left-8 top-1/2 -translate-y-1/2 z-10 w-10 h-10 md:w-14 md:h-14 bg-white/90 backdrop-blur-sm rounded-full shadow-[0_8px_30px_rgba(0,0,0,0.12)] flex items-center justify-center text-gray-800 hover:scale-110 transition-transform md:opacity-0 md:group-hover:opacity-100 border border-gray-100"
+          className="absolute left-2 md:left-8 top-1/2 -translate-y-1/2 z-10 w-10 h-10 md:w-14 md:h-14 bg-white/90 backdrop-blur-sm rounded-full shadow-[0_8px_30px_rgba(0,0,0,0.12)] flex items-center justify-center text-gray-800 hover:scale-110 transition-transform lg:opacity-0 lg:group-hover:opacity-100 border border-gray-100"
           aria-label="Scroll left"
         >
           <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" className="md:w-6 md:h-6"><path d="M15 18l-6-6 6-6" /></svg>
@@ -54,7 +53,7 @@ export default function ProfilesShowcase() {
 
         <button
           onClick={() => scroll('right')}
-          className="absolute right-2 md:right-8 top-1/2 -translate-y-1/2 z-10 w-10 h-10 md:w-14 md:h-14 bg-white/90 backdrop-blur-sm rounded-full shadow-[0_8px_30px_rgba(0,0,0,0.12)] flex items-center justify-center text-gray-800 hover:scale-110 transition-transform md:opacity-0 md:group-hover:opacity-100 border border-gray-100"
+          className="absolute right-2 md:right-8 top-1/2 -translate-y-1/2 z-10 w-10 h-10 md:w-14 md:h-14 bg-white/90 backdrop-blur-sm rounded-full shadow-[0_8px_30px_rgba(0,0,0,0.12)] flex items-center justify-center text-gray-800 hover:scale-110 transition-transform lg:opacity-0 lg:group-hover:opacity-100 border border-gray-100"
           aria-label="Scroll right"
         >
           <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" className="md:w-6 md:h-6"><path d="M9 18l6-6-6-6" /></svg>

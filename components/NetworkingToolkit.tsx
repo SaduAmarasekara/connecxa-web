@@ -8,9 +8,8 @@ export default function NetworkingToolkit() {
 
         {/* ── Header ── */}
         <div className="text-center mb-20 flex flex-col items-center">
-          <h2 className="text-[38px] md:text-[50px] font-extrabold text-[#111827] tracking-tight leading-tight mb-4 flex items-center justify-center gap-3">
-            Explore The Networking Toolkit
-            <span className="text-[0.9em] text-yellow-400">🌟</span>
+          <h2 className="text-[36px] sm:text-[38px] md:text-[50px] font-extrabold text-[#111827] tracking-tight leading-tight mb-4 text-center">
+            Explore The Networking Toolkit <span className="text-[0.9em] text-yellow-400 inline-block ml-1">🌟</span>
           </h2>
           <p className="text-[17px] md:text-[19px] text-[#6B7280] font-medium max-w-2xl mx-auto">
             Built for the modern professional, ready for every connection.

@@ -24,7 +24,7 @@ export default function Home() {
             <div className="absolute bottom-0 left-0 w-[400px] h-[400px] bg-black/10 rounded-full blur-[100px] translate-y-1/4 -translate-x-1/4 pointer-events-none" />
 
             {/* ── Left Column — Content ── */}
-            <div className="flex-1 z-10 flex flex-col justify-center w-full lg:max-w-[700px] pb-10 lg:pb-16 text-center lg:text-left items-center lg:items-start lg:pl-12 xl:pl-20" style={{ marginLeft: "10px" }}>
+            <div className="flex-1 z-10 flex flex-col justify-center w-full lg:max-w-[700px] pb-10 lg:pb-16 text-center lg:text-left items-center lg:items-start lg:pl-12 xl:pl-20 max-lg:!ml-0" style={{ marginLeft: "10px" }}>
 
               {/* Headline + Sub + CTA Container - Centered Vertically */}
               <div className="flex flex-col gap-8 md:gap-10 items-center lg:items-start w-full">
@@ -34,12 +34,12 @@ export default function Home() {
                   Smart Networking 2.0
                 </div>
 
-                <div className="space-y-6 w-full">
-                  <h1 className="text-[36px] md:text-[56px] xl:text-[72px] font-extrabold leading-[1.05] md:leading-[1.02] tracking-[-0.03em]">
+                <div className="space-y-6 w-full flex flex-col items-center lg:items-start">
+                  <h1 className="text-[36px] md:text-[56px] xl:text-[72px] font-extrabold leading-[1.05] md:leading-[1.02] tracking-[-0.03em] text-center lg:text-left">
                     Modern Networking <br className="hidden xl:block" />
                     <span className="text-white/90">for Professionals</span>
                   </h1>
-                  <p className="text-[17px] md:text-[20px] text-white/80 leading-[1.6] font-medium max-w-[540px] mx-auto lg:mx-0">
+                  <p className="text-[17px] md:text-[20px] text-white/80 leading-[1.6] font-medium max-w-[600px] mx-auto lg:mx-0 px-4 lg:px-0 text-center lg:text-left">
                     Connect smarter with the all-in-one digital business card, CRM, and contact manager. Built for high-performing teams.
                   </p>
                 </div>

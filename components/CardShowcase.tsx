@@ -236,7 +236,6 @@ export default function CardShowcase() {
         .card-wrap { 
           width: 100%;
           max-width: 380px;
-          flex-shrink: 0;
           display: flex;
           flex-direction: column;
           transition: none;
@@ -245,15 +244,21 @@ export default function CardShowcase() {
         @media (min-width: 768px) {
           .cards-container {
             flex-direction: row;
-            overflow-x: auto;
-            scroll-snap-type: x mandatory;
+            flex-wrap: wrap;
+            justify-content: center;
             gap: 24px;
             padding: 0 0 40px;
             align-items: stretch;
           }
           .card-wrap {
-            width: 380px;
-            scroll-snap-align: start;
+            width: calc(50% - 12px);
+            max-width: 380px;
+          }
+        }
+
+        @media (min-width: 1100px) {
+          .card-wrap {
+            width: calc(25% - 18px);
           }
         }
 

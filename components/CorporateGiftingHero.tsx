@@ -2,6 +2,7 @@
 
 import React from "react";
 import Image from "next/image";
+import Link from "next/link";
 import { Gift } from "lucide-react";
 
 export default function CorporateGiftingHero() {
@@ -25,37 +26,39 @@ export default function CorporateGiftingHero() {
               Make gifting effortless with fully customisable NFC products that are practical, memorable, and delivered fast - perfect for any event or occasion.
             </p>
 
-            <button
-              className="max-lg:!ml-0"
-              style={{
-                background: "#FF5C00",
-                color: "#fff",
-                fontSize: 18,
-                fontWeight: 800,
-                borderRadius: 50,
-                padding: "16px 36px",
-                border: "none",
-                cursor: "pointer",
-                display: "inline-flex",
-                alignItems: "center",
-                gap: 8,
-                width: "fit-content",
-                boxShadow: "0 8px 28px rgba(255,92,0,0.25)",
-                transition: "all 0.2s",
-                marginLeft: 50
-              }}
-              onMouseEnter={(e) => {
-                e.currentTarget.style.transform = "translateY(-2px)";
-                e.currentTarget.style.boxShadow = "0 14px 36px rgba(255,92,0,0.35)";
-              }}
-              onMouseLeave={(e) => {
-                e.currentTarget.style.transform = "translateY(0)";
-                e.currentTarget.style.boxShadow = "0 8px 28px rgba(255,92,0,0.25)";
-              }}
-            >
-              Get Started
-              <span style={{ fontSize: 20, marginLeft: 8 }}>→</span>
-            </button>
+            <Link href="/login" className="no-underline">
+              <button
+                className="max-lg:!ml-0"
+                style={{
+                  background: "#FF5C00",
+                  color: "#fff",
+                  fontSize: 18,
+                  fontWeight: 800,
+                  borderRadius: 50,
+                  padding: "16px 36px",
+                  border: "none",
+                  cursor: "pointer",
+                  display: "inline-flex",
+                  alignItems: "center",
+                  gap: 8,
+                  width: "fit-content",
+                  boxShadow: "0 8px 28px rgba(255,92,0,0.25)",
+                  transition: "all 0.2s",
+                  marginLeft: 50
+                }}
+                onMouseEnter={(e) => {
+                  e.currentTarget.style.transform = "translateY(-2px)";
+                  e.currentTarget.style.boxShadow = "0 14px 36px rgba(255,92,0,0.35)";
+                }}
+                onMouseLeave={(e) => {
+                  e.currentTarget.style.transform = "translateY(0)";
+                  e.currentTarget.style.boxShadow = "0 8px 28px rgba(255,92,0,0.25)";
+                }}
+              >
+                Get Started
+                <span style={{ fontSize: 20, marginLeft: 8 }}>→</span>
+              </button>
+            </Link>
           </div>
 
           {/* Right Mockup */}

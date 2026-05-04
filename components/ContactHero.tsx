@@ -3,6 +3,8 @@
 import React from "react";
 import Image from "next/image";
 
+import Link from "next/link";
+
 export default function ContactHero() {
   return (
     <section className="w-full flex flex-col items-center py-8 lg:py-16 overflow-x-hidden" style={{ fontFamily: "DM Sans, sans-serif" }}>
@@ -36,36 +38,38 @@ export default function ContactHero() {
 
               {/* CTA Button */}
               <div className="mt-6">
-                <button
-                  style={{
-                    background: "#fff",
-                    color: "#111827",
-                    fontSize: 18,
-                    fontWeight: 800,
-                    borderRadius: 50,
-                    padding: "18px 46px",
-                    border: "none",
-                    cursor: "pointer",
-                    display: "inline-flex",
-                    alignItems: "center",
-                    gap: 12,
-                    width: "fit-content",
-                    boxShadow: "0 10px 30px rgba(0,0,0,0.1)",
-                    transition: "all 0.25s cubic-bezier(0.23, 1, 0.32, 1)",
-                    marginBottom: 40,
-                  }}
-                  onMouseEnter={(e) => {
-                    e.currentTarget.style.transform = "translateY(-3px)";
-                    e.currentTarget.style.boxShadow = "0 15px 40px rgba(0,0,0,0.15)";
-                  }}
-                  onMouseLeave={(e) => {
-                    e.currentTarget.style.transform = "translateY(0)";
-                    e.currentTarget.style.boxShadow = "0 10px 30px rgba(0,0,0,0.1)";
-                  }}
-                >
-                  Get Started
-                  <span style={{ fontSize: 22 }}>→</span>
-                </button>
+                <Link href="/login" className="no-underline">
+                  <button
+                    style={{
+                      background: "#fff",
+                      color: "#111827",
+                      fontSize: 18,
+                      fontWeight: 800,
+                      borderRadius: 50,
+                      padding: "18px 46px",
+                      border: "none",
+                      cursor: "pointer",
+                      display: "inline-flex",
+                      alignItems: "center",
+                      gap: 12,
+                      width: "fit-content",
+                      boxShadow: "0 10px 30px rgba(0,0,0,0.1)",
+                      transition: "all 0.25s cubic-bezier(0.23, 1, 0.32, 1)",
+                      marginBottom: 40,
+                    }}
+                    onMouseEnter={(e) => {
+                      e.currentTarget.style.transform = "translateY(-3px)";
+                      e.currentTarget.style.boxShadow = "0 15px 40px rgba(0,0,0,0.15)";
+                    }}
+                    onMouseLeave={(e) => {
+                      e.currentTarget.style.transform = "translateY(0)";
+                      e.currentTarget.style.boxShadow = "0 10px 30px rgba(0,0,0,0.1)";
+                    }}
+                  >
+                    Get Started
+                    <span style={{ fontSize: 22 }}>→</span>
+                  </button>
+                </Link>
               </div>
             </div>
           </div>

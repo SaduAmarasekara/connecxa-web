@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import CardShowcase from "@/components/CardShowcase";
 import NutshellFeatures from "@/components/NutshellFeatures";
 import FAQ from "@/components/FAQ";
@@ -106,36 +107,38 @@ export default function ShopPage() {
                 links, and contacts instantly.
               </p>
 
-              <button
-                style={{
-                  background: "#fff",
-                  color: "#111827",
-                  fontSize: 18,
-                  fontWeight: 800,
-                  borderRadius: 50,
-                  padding: "16px 36px",
-                  border: "none",
-                  cursor: "pointer",
-                  display: "inline-flex",
-                  alignItems: "center",
-                  gap: 8,
-                  width: "fit-content",
-                  boxShadow: "0 8px 28px rgba(0,0,0,0.18)",
-                  transition: "all 0.2s",
-                }}
-                onMouseEnter={(e) => {
-                  e.currentTarget.style.transform = "translateY(-2px)";
-                  e.currentTarget.style.boxShadow =
-                    "0 14px 36px rgba(0,0,0,0.22)";
-                }}
-                onMouseLeave={(e) => {
-                  e.currentTarget.style.transform = "translateY(0)";
-                  e.currentTarget.style.boxShadow =
-                    "0 8px 28px rgba(0,0,0,0.18)";
-                }}
-              >
-                Customise Now <span style={{ fontSize: 20 }}>→</span>
-              </button>
+              <Link href="/shop/products" className="no-underline">
+                <button
+                  style={{
+                    background: "#fff",
+                    color: "#111827",
+                    fontSize: 18,
+                    fontWeight: 800,
+                    borderRadius: 50,
+                    padding: "16px 36px",
+                    border: "none",
+                    cursor: "pointer",
+                    display: "inline-flex",
+                    alignItems: "center",
+                    gap: 8,
+                    width: "fit-content",
+                    boxShadow: "0 8px 28px rgba(0,0,0,0.18)",
+                    transition: "all 0.2s",
+                  }}
+                  onMouseEnter={(e) => {
+                    e.currentTarget.style.transform = "translateY(-2px)";
+                    e.currentTarget.style.boxShadow =
+                      "0 14px 36px rgba(0,0,0,0.22)";
+                  }}
+                  onMouseLeave={(e) => {
+                    e.currentTarget.style.transform = "translateY(0)";
+                    e.currentTarget.style.boxShadow =
+                      "0 8px 28px rgba(0,0,0,0.18)";
+                  }}
+                >
+                  Customise Now <span style={{ fontSize: 20 }}>→</span>
+                </button>
+              </Link>
             </div>
 
             {/* ── Right Column ── */}

@@ -13,19 +13,20 @@ export default function TeamHero() {
           <div className="absolute top-[-10%] right-[-5%] w-[600px] h-[600px] bg-white/5 rounded-full blur-3xl pointer-events-none" />
 
           {/* Left Content */}
-          <div className="relative z-10 flex-1 lg:flex-[0_0_50%] flex flex-col justify-center p-12 md:p-14 lg:pl-[80px] lg:pr-[40px] lg:py-[80px]" style={{ marginLeft: 30, marginBottom: 50 }}>
-            <div className="text-[14px] font-bold tracking-[0.2em] text-white/70 uppercase mb-8" style={{ marginBottom: 15 }}>
+          <div className="relative z-10 flex-1 lg:flex-[0_0_50%] flex flex-col justify-center p-12 md:p-14 lg:pl-[80px] lg:pr-[40px] lg:py-[80px] max-lg:!p-8 max-md:!p-6 max-lg:!ml-0 max-lg:!mb-0 max-lg:!items-center max-lg:!text-center" style={{ marginLeft: 30, marginBottom: 50 }}>
+            <div className="text-[14px] font-bold tracking-[0.2em] text-white/70 uppercase mb-8 max-lg:!mb-4" style={{ marginBottom: 15 }}>
               FOR TEAMS
             </div>
-            <h1 className="text-[52px] md:text-[68px] lg:text-[84px] font-[900] text-white leading-[1.02] mb-8"
+            <h1 className="text-[52px] md:text-[68px] lg:text-[84px] font-[900] text-white leading-[1.02] mb-8 max-md:!text-[42px] max-lg:!mb-4"
               style={{ marginBottom: 15 }}>
-              Modern Tools for <br /> Modern Teams
+              Modern Tools for <br className="hidden lg:block" /> Modern Teams
             </h1>
-            <p className="text-[20px] text-white/60 leading-[1.6] mb-12 max-w-[540px] font-medium" style={{ marginBottom: 40 }}>
+            <p className="text-[20px] text-white/60 leading-[1.6] mb-12 max-w-[540px] font-medium max-md:!text-[16px] max-lg:!mb-8 max-lg:!mx-auto" style={{ marginBottom: 40 }}>
               From startups to enterprises, manage your team's digital business cards, CRM and leads, all from one central platform.
             </p>
 
             <button
+              className="max-lg:!ml-0"
               style={{
                 background: "#fff",
                 color: "#111827",

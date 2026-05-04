@@ -13,18 +13,19 @@ export default function NFCEventHero() {
           <div className="absolute top-[-10%] right-[-5%] w-[600px] h-[600px] bg-white/10 rounded-full blur-3xl pointer-events-none" />
 
           {/* Left Content */}
-          <div className="relative z-10 flex-1 lg:flex-[0_0_55%] flex flex-col justify-center p-12 md:p-14 lg:pl-[80px] lg:pr-[40px] lg:py-[80px]" style={{ marginLeft: 30, marginBottom: 50 }}>
-            <div className="text-[14px] font-bold tracking-[0.2em] text-white uppercase mb-8 opacity-90"style={{ marginBottom: 15 }}>
+          <div className="relative z-10 flex-1 lg:flex-[0_0_55%] flex flex-col justify-center p-12 md:p-14 lg:pl-[80px] lg:pr-[40px] lg:py-[80px] max-lg:!p-8 max-md:!p-6 max-lg:!ml-0 max-lg:!mb-0 max-lg:!items-center max-lg:!text-center" style={{ marginLeft: 30, marginBottom: 50 }}>
+            <div className="text-[14px] font-bold tracking-[0.2em] text-white uppercase mb-8 opacity-90 max-lg:!mb-4"style={{ marginBottom: 15 }}>
               LIVE NFC CARD PRINTING
             </div>
-            <h1 className="text-[52px] md:text-[68px] lg:text-[84px] font-[900] text-white leading-[1.02] mb-8"style={{ marginBottom: 15 }}>
-              Live-Printed, <br /> Right at Your Event
+            <h1 className="text-[52px] md:text-[68px] lg:text-[84px] font-[900] text-white leading-[1.02] mb-8 max-md:!text-[42px] max-lg:!mb-4"style={{ marginBottom: 15 }}>
+              Live-Printed, <br className="hidden lg:block" /> Right at Your Event
             </h1>
-            <p className="text-[20px] text-white/80 leading-[1.6] mb-12 max-w-[540px] font-medium"style={{ marginBottom: 35 }}>
+            <p className="text-[20px] text-white/80 leading-[1.6] mb-12 max-w-[540px] font-medium max-md:!text-[16px] max-lg:!mb-8 max-lg:!mx-auto"style={{ marginBottom: 35 }}>
               Engage your audience and spark conversations with live-printed NFC cards, customised on the spot and ready in seconds.
             </p>
 
             <button
+              className="max-lg:!ml-0"
               style={{
                 background: "#fff",
                 color: "#1A1A1A",

@@ -16,20 +16,20 @@ export default function CRMHero() {
           <div className="absolute bottom-0 left-0 w-[400px] h-[400px] bg-black/5 rounded-full blur-[100px] translate-y-1/4 -translate-x-1/4 pointer-events-none" />
 
           {/* ── Left Column — Content ── */}
-          <div className="flex-1 z-10 flex flex-col justify-center w-full lg:max-w-[700px] pb-10 lg:pb-16 text-center lg:text-left items-center lg:items-start lg:ml-[50px] xl:ml-[80px]" style={{ marginLeft: 50 }}>
+          <div className="flex-1 z-10 flex flex-col justify-center w-full lg:max-w-[700px] pb-10 lg:pb-16 text-center lg:text-left items-center lg:items-start lg:ml-[50px] xl:ml-[80px]" style={{ marginLeft: 20 }}>
 
-            <div className="flex flex-col gap-8 md:gap-10 items-center lg:items-start w-full">
+            <div className="flex flex-col gap-6 md:gap-10 items-center lg:items-start w-full">
               {/* Eyebrow tag */}
-              <div className="inline-flex w-fit items-center gap-2 bg-black/5 backdrop-blur-md border border-black/10 rounded-full px-4 py-2 text-[12px] font-bold tracking-[0.15em] uppercase text-black/80">
+              <div className="inline-flex w-fit items-center gap-2 bg-black/5 backdrop-blur-md border border-black/10 rounded-full px-4 py-2 text-[11px] md:text-[12px] font-bold tracking-[0.15em] uppercase text-black/80">
                 <span className="w-2 h-2 rounded-full bg-[#005AD1] animate-pulse" />
                 CRM Deal Management
               </div>
 
-              <div className="space-y-6 w-full">
-                <h1 className="text-[36px] md:text-[56px] xl:text-[84px] font-black text-[#111] leading-[1.05] md:leading-[1.02] tracking-[-0.04em]">
+              <div className="space-y-4 md:space-y-6 w-full flex flex-col items-center lg:items-start">
+                <h1 className="text-[36px] sm:text-[44px] md:text-[56px] xl:text-[84px] font-black text-[#111] leading-[1.1] md:leading-[1.02] tracking-[-0.04em] px-2 md:px-0">
                   Modern Sales Tools.<br />Always Ready.
                 </h1>
-                <p className="text-[18px] md:text-[21px] text-[#222] leading-[1.6] font-medium max-w-[560px] mx-auto lg:mx-0">
+                <p className="text-[16px] sm:text-[18px] md:text-[21px] text-[#222] leading-[1.6] font-medium max-w-[300px] sm:max-w-[400px] md:max-w-[460px] lg:max-w-[560px] mx-auto lg:mx-0 px-4 md:px-0">
                   Designed for sales on the move - manage deals and pipelines anywhere, with seamless sync across mobile and desktop.
                 </p>
               </div>
@@ -52,6 +52,7 @@ export default function CRMHero() {
                     width: "fit-content",
                     boxShadow: "0 10px 30px rgba(0,0,0,0.1)",
                     transition: "all 0.25s cubic-bezier(0.23, 1, 0.32, 1)",
+                    marginBottom: 40,
                   }}
                   onMouseEnter={(e) => {
                     e.currentTarget.style.transform = "translateY(-3px)";

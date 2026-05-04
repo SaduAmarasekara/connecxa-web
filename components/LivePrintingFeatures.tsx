@@ -34,8 +34,8 @@ const FeatureSection = ({ eyebrow, title, desc, features, image, imageLeft = fal
   }, []);
 
   return (
-    <section ref={sectionRef} className="w-full py-8 md:py-12 overflow-hidden" style={{ marginLeft: 60 }}>
-      <div className={`max-w-[1400px] mx-auto px-6 flex flex-col ${imageLeft ? 'lg:flex-row' : 'lg:flex-row-reverse'} items-center gap-10 lg:gap-16`}>
+    <section ref={sectionRef} className="w-full py-8 md:py-12 overflow-hidden max-lg:!ml-0 max-lg:!px-4" style={{ marginLeft: 60 }}>
+      <div className={`max-w-[1400px] mx-auto px-0 md:px-6 flex flex-col ${imageLeft ? 'lg:flex-row' : 'lg:flex-row-reverse'} items-center gap-8 lg:gap-16`}>
 
         {/* Image Column */}
         <div
@@ -44,7 +44,7 @@ const FeatureSection = ({ eyebrow, title, desc, features, image, imageLeft = fal
             : `${imageLeft ? '-translate-x-12' : 'translate-x-12'} opacity-0`
             }`}
         >
-          <div className="relative aspect-[16/10] rounded-[24px] overflow-hidden shadow-[0_20px_40px_rgba(0,0,0,0.06)] border border-gray-100 bg-gray-50">
+          <div className="relative aspect-[16/10] rounded-[20px] md:rounded-[24px] overflow-hidden shadow-[0_20px_40px_rgba(0,0,0,0.06)] border border-gray-100 bg-gray-50">
             <Image
               src={image}
               alt={title}
@@ -61,27 +61,27 @@ const FeatureSection = ({ eyebrow, title, desc, features, image, imageLeft = fal
             : `${imageLeft ? 'translate-x-12' : '-translate-x-12'} opacity-0`
             }`}
         >
-          <div className="text-[#005AD1] font-bold text-[12px] tracking-[0.12em] uppercase mb-3">
+          <div className="text-[#005AD1] font-bold text-[12px] md:text-[13px] tracking-[0.12em] uppercase mb-2 md:mb-3">
             {eyebrow}
           </div>
 
-          <h2 className="text-[28px] md:text-[36px] lg:text-[44px] font-[900] text-[#111827] leading-[1.15] tracking-tight mb-5">
+          <h2 className="text-[28px] md:text-[36px] lg:text-[44px] font-[900] text-[#111827] leading-[1.15] tracking-tight mb-4 md:mb-5">
             {title}
           </h2>
 
-          <p className="text-gray-500 text-[16px] md:text-[18px] font-medium leading-relaxed mb-6 max-w-[540px]">
+          <p className="text-gray-500 text-[15px] md:text-[18px] font-medium leading-relaxed mb-6 max-w-[540px]">
             {desc}
           </p>
 
-          <div className="space-y-3 w-full flex flex-col items-center lg:items-start">
+          <div className="space-y-3 w-full flex flex-col items-start lg:items-start max-lg:max-w-md max-lg:mx-auto max-lg:text-left">
             {features.map((feature, i) => (
-              <div key={i} className="flex items-center gap-3 group">
-                <div className="w-5 h-5 flex items-center justify-center text-[#005AD1] shrink-0">
+              <div key={i} className="flex items-start gap-3 group">
+                <div className="w-5 h-5 flex items-center justify-center text-[#005AD1] shrink-0 mt-0.5">
                   <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round">
                     <polyline points="20 6 9 17 4 12" />
                   </svg>
                 </div>
-                <div className="text-gray-600 text-[15px] md:text-[16px] font-medium">
+                <div className="text-gray-600 text-[14px] md:text-[16px] font-medium">
                   {feature}
                 </div>
               </div>
@@ -133,11 +133,11 @@ export default function LivePrintingFeatures() {
   return (
     <div className="bg-white flex flex-col py-8 md:py-12" style={{ fontFamily: "'DM Sans', sans-serif" }}>
       {/* Header Section */}
-      <div className="max-w-[1400px] mx-auto px-6 text-center mb-10 md:mb-14">
-        <h2 className="text-[36px] md:text-[48px] lg:text-[56px] font-[900] text-[#111827] leading-tight mb-4">
+      <div className="max-w-[1400px] mx-auto px-4 md:px-6 text-center mb-10 md:mb-14 flex flex-col items-center">
+        <h2 className="text-[32px] md:text-[48px] lg:text-[56px] font-[900] text-[#111827] leading-tight mb-3 md:mb-4">
           Elevate Events with Live Printing
         </h2>
-        <p className="text-gray-500 text-[18px] md:text-[20px] font-medium max-w-[1400px] mx-auto">
+        <p className="text-gray-500 text-[16px] md:text-[20px] font-medium max-w-[1400px] mx-auto px-2">
           Transform your event into an experience with live-printed personalised NFC cards
         </p>
       </div>

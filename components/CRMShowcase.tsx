@@ -57,25 +57,25 @@ export default function CRMShowcase() {
   }, []);
 
   return (
-    <section ref={sectionRef} className="w-full py-24 bg-white" style={{ fontFamily: "'DM Sans', sans-serif", marginLeft: 40 }}>
-      <div className="w-full max-w-[1600px] mx-auto px-6 md:px-12 flex flex-col gap-32">
+    <section ref={sectionRef} className="w-[calc(100%-40px)] py-16 md:py-24 bg-white" style={{ fontFamily: "'DM Sans', sans-serif", marginLeft: 20 }}>
+      <div className="w-full max-w-[1600px] mx-auto px-4 sm:px-6 md:px-12 flex flex-col gap-16 md:gap-32">
         {crmShowcaseItems.map((item, i) => (
           <div
             key={i}
             data-index={i}
-            className={`reveal-section flex flex-col lg:flex-row items-center gap-16 lg:gap-24 transition-all duration-1000 ease-out ${item.reverse ? "lg:flex-row-reverse" : ""
+            className={`reveal-section flex flex-col lg:flex-row items-center gap-10 lg:gap-24 transition-all duration-1000 ease-out ${item.reverse ? "lg:flex-row-reverse" : ""
               } ${visibleItems.includes(i)
                 ? "opacity-100 translate-y-0"
                 : "opacity-0 translate-y-20"
               }`}
           >
             {/* Visual Side */}
-            <div className="flex-1 w-full lg:w-1/2">
+            <div className="w-full lg:w-1/2">
               <div
-                className="relative w-full aspect-[4/3] rounded-[48px] overflow-hidden shadow-sm flex items-center justify-center p-8 md:p-12 group"
+                className="relative w-full aspect-[4/3] rounded-[32px] md:rounded-[48px] overflow-hidden shadow-sm flex items-center justify-center p-6 md:p-12 group"
                 style={{ background: item.imageBg }}
               >
-                <div className="relative w-full h-full bg-white rounded-[32px] shadow-2xl overflow-hidden">
+                <div className="relative w-full h-full bg-white rounded-[20px] md:rounded-[32px] shadow-2xl overflow-hidden">
                   <Image
                     src={item.image}
                     alt={item.title}
@@ -87,26 +87,26 @@ export default function CRMShowcase() {
             </div>
 
             {/* Text Side */}
-            <div className="flex-1 w-full lg:w-1/2">
-              <div className="text-[13px] font-bold tracking-[0.12em] text-[#005AD1] uppercase mb-6">
+            <div className="w-full lg:w-1/2 flex flex-col items-center lg:items-start text-center lg:text-left">
+              <div className="text-[12px] md:text-[13px] font-bold tracking-[0.12em] text-[#005AD1] uppercase mb-4 md:mb-6">
                 {item.tag}
               </div>
-              <h2 className="text-[44px] md:text-[54px] font-black text-[#111] leading-[1.1] mb-8">
+              <h2 className="text-[32px] sm:text-[38px] md:text-[44px] lg:text-[54px] font-black text-[#111] leading-[1.2] md:leading-[1.1] mb-6 md:mb-8">
                 {item.title}
               </h2>
-              <p className="text-[19px] text-gray-500 font-medium leading-relaxed mb-10">
+              <p className="text-[16px] md:text-[19px] text-gray-500 font-medium leading-relaxed mb-8 md:mb-10 max-w-xl">
                 {item.desc}
               </p>
 
-              <ul className="space-y-6">
+              <ul className="space-y-4 md:space-y-6 w-full max-w-sm lg:max-w-none mx-auto lg:mx-0 text-left">
                 {item.list.map((li, idx) => (
-                  <li key={idx} className="flex items-start gap-4">
-                    <div className="mt-1.5 w-5 h-5 rounded-md bg-blue-50 flex items-center justify-center shrink-0">
+                  <li key={idx} className="flex items-start gap-3 md:gap-4">
+                    <div className="mt-1 md:mt-1.5 w-5 h-5 rounded-md bg-blue-50 flex items-center justify-center shrink-0">
                       <svg className="w-3 h-3 text-[#005AD1]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="3" d="M5 13l4 4L19 7" />
                       </svg>
                     </div>
-                    <span className="text-[17px] font-bold text-gray-800">{li}</span>
+                    <span className="text-[16px] md:text-[17px] font-bold text-gray-800">{li}</span>
                   </li>
                 ))}
               </ul>

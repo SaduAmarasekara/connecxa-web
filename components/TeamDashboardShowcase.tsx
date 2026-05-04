@@ -34,8 +34,20 @@ const FeatureSection = ({ eyebrow, title, desc, bullets, image, imageLeft = fals
   }, []);
 
   return (
-    <section ref={sectionRef} className="w-full py-8 md:py-12 overflow-hidden bg-white" style={{ fontFamily: "'DM Sans', sans-serif", marginLeft: 60 }}>
-      <div className={`max-w-[1400px] mx-auto px-6 lg:px-12 flex flex-col ${imageLeft ? 'lg:flex-row' : 'lg:flex-row-reverse'} items-center gap-10 lg:gap-16`}>
+    <section ref={sectionRef} className="w-[calc(100%-100px)] py-10 md:py-16 overflow-hidden bg-white" style={{ fontFamily: "'DM Sans', sans-serif", marginLeft: 50 }}>
+      <div className={`max-w-[1400px] mx-auto px-0 sm:px-4 lg:px-12 flex flex-col ${imageLeft ? 'lg:flex-row' : 'lg:flex-row-reverse'} items-center gap-8 lg:gap-16`}>
+
+        {/* Mobile Eyebrow */}
+        <div
+          className={`lg:hidden w-full text-center -mb-4 transition-all duration-1000 ease-out transform ${isVisible
+            ? 'translate-y-0 opacity-100'
+            : 'translate-y-4 opacity-0'
+            }`}
+        >
+          <div className="text-[#005AD1] font-bold text-[11px] md:text-[12px] tracking-[0.12em] uppercase">
+            {eyebrow}
+          </div>
+        </div>
 
         {/* Image Column */}
         <div
@@ -44,7 +56,7 @@ const FeatureSection = ({ eyebrow, title, desc, bullets, image, imageLeft = fals
             : `${imageLeft ? '-translate-x-12' : 'translate-x-12'} opacity-0`
             }`}
         >
-          <div className="relative aspect-[16/10] rounded-[24px] overflow-hidden shadow-[0_20px_40px_rgba(0,0,0,0.06)] border border-gray-100 bg-gray-50">
+          <div className="relative w-full aspect-[16/10] rounded-[20px] md:rounded-[24px] overflow-hidden shadow-[0_20px_40px_rgba(0,0,0,0.06)] border border-gray-100 bg-gray-50">
             <Image
               src={image}
               alt={title}
@@ -61,27 +73,27 @@ const FeatureSection = ({ eyebrow, title, desc, bullets, image, imageLeft = fals
             : `${imageLeft ? 'translate-x-12' : '-translate-x-12'} opacity-0`
             }`}
         >
-          <div className="text-[#005AD1] font-bold text-[12px] tracking-[0.12em] uppercase mb-3">
+          <div className="hidden lg:block text-[#005AD1] font-bold text-[11px] md:text-[12px] tracking-[0.12em] uppercase mb-3 md:mb-4">
             {eyebrow}
           </div>
 
-          <h2 className="text-[28px] md:text-[36px] lg:text-[44px] font-[900] text-[#111827] leading-[1.15] tracking-tight mb-5">
+          <h2 className="text-[26px] sm:text-[32px] md:text-[36px] lg:text-[44px] font-[900] text-[#111827] leading-[1.2] md:leading-[1.15] tracking-tight mb-4 md:mb-5">
             {title}
           </h2>
 
-          <p className="text-gray-500 text-[16px] md:text-[18px] font-medium leading-relaxed mb-6 max-w-[540px]">
+          <p className="text-gray-500 text-[14px] md:text-[18px] font-medium leading-relaxed mb-6 md:mb-8 max-w-[540px]">
             {desc}
           </p>
 
-          <div className="space-y-3 w-full flex flex-col items-center lg:items-start">
+          <div className="space-y-3 md:space-y-4 w-full max-w-sm lg:max-w-none flex flex-col items-center lg:items-start text-left">
             {bullets.map((b, i) => (
-              <div key={i} className="flex items-center gap-3 group">
-                <div className="w-5 h-5 flex items-center justify-center text-[#005AD1] shrink-0">
+              <div key={i} className="flex items-start justify-center lg:justify-start gap-3 w-full">
+                <div className="mt-0.5 md:mt-1 w-5 h-5 flex items-center justify-center text-[#005AD1] shrink-0">
                   <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round">
                     <polyline points="20 6 9 17 4 12" />
                   </svg>
                 </div>
-                <div className="text-gray-600 text-[15px] md:text-[16px] font-medium">
+                <div className="text-gray-600 text-[13px] md:text-[16px] font-medium">
                   {b.text}
                 </div>
               </div>
@@ -181,7 +193,7 @@ export default function TeamDashboardShowcase() {
   ];
 
   return (
-    <div className="flex flex-col bg-white">
+    <div className="flex flex-col gap-16 md:gap-24 bg-white py-8 md:py-12">
       {sections.map((section, index) => (
         <FeatureSection key={index} {...section} />
       ))}

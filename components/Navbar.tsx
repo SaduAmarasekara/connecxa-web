@@ -10,9 +10,8 @@ const navLinks = [
     dropdown: [
       {
         title: "NFC Business Cards",
-        desc: "Seamless connections with one-tap",
         icon: (
-          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#005AD1" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" className="sub-icon">
             <path d="M4.9 19.1C3.1 17.3 2 14.8 2 12c0-2.8 1.1-5.3 2.9-7.1" />
             <path d="M8.4 15.6c-.9-.9-1.5-2.2-1.5-3.6 0-1.4.6-2.7 1.5-3.6" />
             <path d="M12 12h.01" />
@@ -24,9 +23,8 @@ const navLinks = [
       },
       {
         title: "All Products",
-        desc: "Explore everything Connecxa offers",
         icon: (
-          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#005AD1" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" className="sub-icon">
             <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4Z" />
             <path d="M3 6h18" />
             <path d="M16 10a4 4 0 0 1-8 0" />
@@ -42,9 +40,8 @@ const navLinks = [
     dropdown: [
       {
         title: "Digital Business Cards",
-        desc: "Designed for the modern digital age",
         icon: (
-          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#005AD1" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" className="sub-icon">
             <rect x="3" y="4" width="18" height="16" rx="2" />
             <circle cx="9" cy="10" r="2" />
             <path d="M15 8h2" />
@@ -56,41 +53,30 @@ const navLinks = [
       },
       {
         title: "Contact Manager",
-        desc: "Keep your connections synced and sorted",
         icon: (
-          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#005AD1" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" className="sub-icon">
             <path d="M4 4v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V4a2 2 0 0 0-2-2H6a2 2 0 0 0-2 2Z" />
             <path d="M12 11a3 3 0 1 0 0-6 3 3 0 0 0 0 6Z" />
             <path d="M6 21v-1a4 4 0 0 1 4-4h4a4 4 0 0 1 4 4v1" />
-            <path d="M18 2h1" strokeOpacity="0.5" />
-            <path d="M18 6h1" strokeOpacity="0.5" />
-            <path d="M18 10h1" strokeOpacity="0.5" />
-            <path d="M18 14h1" strokeOpacity="0.5" />
           </svg>
         ),
         href: "/features/contact-manager"
       },
       {
         title: "CRM Deal Manager",
-        desc: "Track, manage, and close deals on the go",
         icon: (
-          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
-            <path d="m11 17 2 2 4-4" />
-            <path d="m3 17 2 2 4-4" />
-            <path d="M13 3.7a4 4 0 0 0-8 0" />
-            <path d="M21 3.7a4 4 0 0 0-8 0" />
-            <path d="M21 9v10a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V9" />
-            <path d="m3 9 4.5 4.5" />
-            <path d="m21 9-4.5 4.5" />
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#005AD1" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" className="sub-icon">
+            <path d="M11 17l2 2 4-4" />
+            <path d="M18 10h1a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-8a2 2 0 0 1 2-2h1" />
+            <path d="M17.94 11a5 5 0 0 0-5.44-5h-.1l-1.35 2.7a2 2 0 0 1-1.8 1.1h-1a2 2 0 0 0-2 2v3a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2v-4a2 2 0 0 0-.31-.96z" />
           </svg>
         ),
         href: "/features/crm-deal-manager"
       },
       {
         title: "Centralised Team Dashboard",
-        desc: "Admin tools for company-wide management",
         icon: (
-          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#005AD1" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" className="sub-icon">
             <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2" />
             <circle cx="9" cy="7" r="4" />
             <path d="M22 21v-2a4 4 0 0 0-3-3.87" />
@@ -107,9 +93,8 @@ const navLinks = [
     dropdown: [
       {
         title: "OGC for Teams",
-        desc: "Smart solutions designed for modern teams",
         icon: (
-          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#005AD1" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" className="sub-icon">
             <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2" />
             <circle cx="9" cy="7" r="4" />
             <line x1="19" y1="8" x2="19" y2="14" />
@@ -120,9 +105,8 @@ const navLinks = [
       },
       {
         title: "Corporate Gifting",
-        desc: "The modern choice for business gifts",
         icon: (
-          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#005AD1" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" className="sub-icon">
             <polyline points="20 12 20 22 4 22 4 12" />
             <rect x="2" y="7" width="20" height="5" />
             <line x1="12" y1="22" x2="12" y2="7" />
@@ -134,9 +118,8 @@ const navLinks = [
       },
       {
         title: "NFC Live Printing for Events",
-        desc: "Personalised NFC cards, printed in real-time",
         icon: (
-          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#005AD1" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" className="sub-icon">
             <polyline points="6 9 6 2 18 2 18 9" />
             <path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2" />
             <rect x="6" y="14" width="12" height="8" />
@@ -153,9 +136,8 @@ const navLinks = [
     dropdown: [
       {
         title: "Help Center",
-        desc: "Guides to help you get started",
         icon: (
-          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#005AD1" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" className="sub-icon">
             <circle cx="12" cy="12" r="10" />
             <path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3" />
             <line x1="12" y1="17" x2="12.01" y2="17" />
@@ -165,9 +147,8 @@ const navLinks = [
       },
       {
         title: "FAQs",
-        desc: "Answers to frequently asked questions",
         icon: (
-          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#005AD1" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" className="sub-icon">
             <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z" />
             <path d="M9 8h.01" />
             <path d="M12 8h.01" />
@@ -178,9 +159,8 @@ const navLinks = [
       },
       {
         title: "Blogs",
-        desc: "Articles, insights, and success stories",
         icon: (
-          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#005AD1" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" className="sub-icon">
             <path d="M4 20h16a2 2 0 0 0 2-2V8a2 2 0 0 0-2-2h-7.93a2 2 0 0 1-1.66-.9l-.82-1.2A2 2 0 0 0 7.93 3H4a2 2 0 0 0-2 2v13c0 1.1.9 2 2 2Z" />
             <path d="M2 10h20" />
           </svg>
@@ -237,26 +217,87 @@ export default function Navbar() {
           -webkit-backdrop-filter: blur(12px);
         }
 
-        /* Inner */
-        .nav-inner {
-          max-width: 1600px;
-          margin: 0 auto;
-          padding: 16px 20px;
+        /* Dropdown */
+        .dropdown-panel {
+          background: rgba(255, 255, 255, 0.98);
+          backdrop-filter: blur(20px);
+          -webkit-backdrop-filter: blur(20px);
+          border-radius: 24px;
+          border: 1px solid rgba(0, 0, 0, 0.06);
+          box-shadow: 0 25px 60px rgba(0, 0, 0, 0.12);
+          padding: 10px;
+          width: 280px;
+          animation: dropdownSlide 0.3s cubic-bezier(0.23, 1, 0.32, 1);
+        }
+
+        @keyframes dropdownSlide {
+          from { opacity: 0; transform: translateY(12px) scale(0.98); }
+          to { opacity: 1; transform: translateY(0) scale(1); }
+        }
+
+        .dropdown-item {
           display: flex;
           align-items: center;
-          justify-content: space-between;
-          gap: 24px;
-          transition: padding 0.3s ease;
+          gap: 14px;
+          padding: 10px;
+          border-radius: 12px;
+          transition: all 0.25s ease;
+          text-decoration: none;
+          cursor: pointer;
         }
-        .nav-inner.scrolled { padding: 10px 20px; }
+
+        .dropdown-item:hover {
+          background: #F8FAFF;
+          transform: translateX(4px);
+        }
+
+        .icon-box {
+          width: 38px;
+          height: 38px;
+          border-radius: 10px;
+          background: #F3F4F6;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          transition: all 0.25s ease;
+          flex-shrink: 0;
+        }
+
+        .dropdown-item:hover .icon-box {
+          background: #005AD1;
+          box-shadow: 0 6px 15px rgba(0, 90, 209, 0.2);
+        }
+
+        .dropdown-item:hover .sub-icon {
+          stroke: #ffffff;
+        }
+
+        .item-title {
+          font-size: 14.5px;
+          font-weight: 700;
+          color: #111827;
+          transition: color 0.2s ease;
+        }
+
+        .dropdown-item:hover .item-title {
+          color: #005AD1;
+        }
+
+        .sub-icon {
+          transition: stroke 0.2s ease;
+        }
 
         @media (min-width: 768px) {
-          .nav-inner { padding: 16px 64px; }
-          .nav-inner.scrolled { padding: 10px 64px; }
+          .nav-inner { padding: 12px 20px; }
+          .nav-inner.scrolled { padding: 8px 20px; }
         }
-        @media (min-width: 1024px) {
-          .nav-inner { padding: 16px 96px; }
-          .nav-inner.scrolled { padding: 10px 96px; }
+        @media (min-width: 1200px) {
+          .nav-inner { padding: 12px 40px; }
+          .nav-inner.scrolled { padding: 8px 40px; }
+        }
+        @media (min-width: 1600px) {
+          .nav-inner { padding: 12px 60px; }
+          .nav-inner.scrolled { padding: 8px 60px; }
         }
 
         /* Logo */
@@ -268,13 +309,16 @@ export default function Navbar() {
           transition: transform 0.25s ease;
           display: block;
         }
-        .logo-wrap:hover { transform: scale(1.02); }
+        .logo-wrap:hover { transform: scale(1.15); }
 
         /* Desktop links */
         .desktop-links {
           display: flex;
           align-items: center;
           gap: 4px;
+        }
+        @media (min-width: 1400px) {
+          .desktop-links { gap: 12px; }
         }
         .nav-link {
           display: flex;
@@ -315,13 +359,13 @@ export default function Navbar() {
 
         .btn-demo {
           font-family: inherit;
-          font-size: 15px;
+          font-size: 14px;
           font-weight: 700;
           color: #005AD1;
           background: transparent;
           border: 2px solid #005AD1;
           border-radius: 99px;
-          padding: 10px 28px;
+          padding: 8px 20px;
           cursor: pointer;
           transition: all 0.25s ease;
           white-space: nowrap;
@@ -336,13 +380,13 @@ export default function Navbar() {
 
         .btn-login {
           font-family: inherit;
-          font-size: 15px;
+          font-size: 14px;
           font-weight: 700;
           color: #ffffff;
           background: #005AD1;
           border: none;
           border-radius: 99px;
-          padding: 10px 28px;
+          padding: 8px 20px;
           cursor: pointer;
           display: flex;
           align-items: center;
@@ -448,27 +492,27 @@ export default function Navbar() {
         }
         .mobile-nav-link:hover { color: #005AD1; }
 
-        @media (max-width: 1100px) { 
+        @media (max-width: 1250px) { 
           .desktop-links { display: none; } 
           .nav-divider { display: none; } 
           .hamburger { display: flex; }
-          .logo-wrap { width: 200px; height: 72px; }
+          .logo-wrap { width: 220px; height: 72px; }
         }
-        @media (max-width: 1000px) {
+        @media (max-width: 1100px) {
           .btn-demo { display: none; }
         }
-        @media (max-width: 768px) {
+        @media (max-width: 900px) {
           .btn-login { display: none; }
         }
         @media (max-width: 640px) { 
           .nav-inner { padding: 10px 16px; gap: 12px; } 
           .nav-inner.scrolled { padding: 8px 16px; } 
-          .logo-wrap { width: 140px; height: 50px; } 
+          .logo-wrap { width: 180px; height: 60px; } 
           .actions { gap: 8px; }
           .nav-divider { display: none; }
         }
         @media (max-width: 380px) {
-          .logo-wrap { width: 120px; }
+          .logo-wrap { width: 150px; height: 50px; }
           .cart-btn { width: 38px; height: 38px; }
           .hamburger { padding: 6px; }
         }
@@ -477,7 +521,7 @@ export default function Navbar() {
       <div className="navbar-root">
         {/* ── Nav ── */}
         <div className={`nav-wrapper ${scrolled ? "scrolled" : "top"}`}>
-          <div className={`nav-inner ${scrolled ? "scrolled" : ""}`}>
+          <div className={`nav-inner ${scrolled ? "scrolled" : ""}`} style={{ maxWidth: '1600px', margin: '0 auto', display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: '20px', flexWrap: 'nowrap' }}>
             {/* Left: Logo + Links */}
             <div style={{ display: "flex", alignItems: "center", gap: 8 }}>
               <Link href="/" className="logo-wrap">
@@ -507,16 +551,13 @@ export default function Navbar() {
                     )}
                     {link.dropdown && (
                       <div className="absolute top-full left-0 pt-2 hidden group-hover:block z-[100]">
-                        <div className="bg-white rounded-[20px] shadow-[0_12px_40px_rgba(0,0,0,0.12)] border border-gray-100 p-3 w-[360px] flex flex-col gap-1">
+                        <div className="dropdown-panel">
                           {link.dropdown.map((item, i) => (
-                            <Link href={item.href} key={i} className="flex items-start gap-4 p-3 rounded-xl hover:bg-gray-50 transition-colors cursor-pointer" style={{ textDecoration: 'none' }}>
-                              <div className="w-[48px] h-[48px] bg-[#005AD1] rounded-lg flex items-center justify-center shrink-0 shadow-sm mt-0.5">
+                            <Link href={item.href} key={i} className="dropdown-item">
+                              <div className="icon-box">
                                 {item.icon}
                               </div>
-                              <div className="flex flex-col">
-                                <div className="text-[15.5px] font-bold text-[#111827] leading-tight mb-1 font-sans">{item.title}</div>
-                                <div className="text-[13px] text-gray-500 font-medium leading-[1.4] font-sans">{item.desc}</div>
-                              </div>
+                              <div className="item-title">{item.title}</div>
                             </Link>
                           ))}
                         </div>
@@ -634,9 +675,9 @@ export default function Navbar() {
                     }}
                   >
                     <div style={{
-                      width: 44,
-                      height: 44,
-                      backgroundColor: '#005AD1',
+                      width: 40,
+                      height: 40,
+                      backgroundColor: '#F3F4F6',
                       borderRadius: 10,
                       display: 'flex',
                       alignItems: 'center',
@@ -645,9 +686,8 @@ export default function Navbar() {
                     }}>
                       {item.icon}
                     </div>
-                    <div style={{ display: 'flex', flexDirection: 'column', gap: 2 }}>
+                    <div style={{ display: 'flex', flexDirection: 'column', justifyContent: 'center' }}>
                       <span style={{ fontSize: 16, fontWeight: 700, color: '#111827' }}>{item.title}</span>
-                      <span style={{ fontSize: 13, color: '#6b7280', lineHeight: 1.3 }}>{item.desc}</span>
                     </div>
                   </Link>
                 ))}

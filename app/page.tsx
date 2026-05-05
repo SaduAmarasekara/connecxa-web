@@ -102,7 +102,7 @@ export default function Home() {
           </div>
 
           {/* Centered Mockup */}
-          <div className="relative w-full max-w-[1000px] aspect-[16/11] flex justify-center items-end" style={{ marginTop: 10}}>
+          <div className="relative w-full max-w-[1000px] aspect-[16/11] flex justify-center items-end">
             <div className="relative w-full h-full animate-float">
               <Image
                 src="/images/homehero.png"
@@ -116,12 +116,14 @@ export default function Home() {
         </div>
 
         <style jsx>{`
-          @keyframes float {
-            0%, 100% { transform: translateY(0); }
-            50% { transform: translateY(-15px); }
+          @keyframes premium-float {
+            0% { transform: translateY(0) rotate(0deg) scale(1); }
+            33% { transform: translateY(-15px) rotate(1deg) scale(1.01); }
+            66% { transform: translateY(-5px) rotate(-1deg) scale(0.99); }
+            100% { transform: translateY(0) rotate(0deg) scale(1); }
           }
           .animate-float {
-            animation: float 5s ease-in-out infinite;
+            animation: premium-float 8s ease-in-out infinite;
           }
         `}</style>
       </main>

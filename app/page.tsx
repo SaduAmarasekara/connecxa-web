@@ -13,117 +13,117 @@ export default function Home() {
     <div className="min-h-screen flex flex-col bg-white overflow-hidden">
 
       {/* ── Hero Section ── */}
-      <main className="w-full flex flex-col items-center py-8 lg:py-16 ml-5 md:ml-8 lg:ml-[30px]">
-        <div className="w-full max-w-[1600px] px-5 md:px-16 lg:px-24">
+      <main className="w-full relative flex flex-col items-center pt-20 pb-16 lg:pt-28 lg:pb-0 overflow-hidden" style={{
+        background: "linear-gradient(180deg, #FFFFFF 0%, #F0F7FF 100%)",
+        fontFamily: "'DM Sans', 'Helvetica Neue', sans-serif"
+      }}>
+        {/* Subtle background glow effects */}
+        <div className="absolute top-[-10%] left-[-10%] w-[40%] h-[40%] bg-[#005AD1]/3 rounded-full blur-[100px] pointer-events-none" />
+        <div className="absolute bottom-[-10%] right-[-10%] w-[50%] h-[50%] bg-[#005AD1]/3 rounded-full blur-[120px] pointer-events-none" />
 
-          {/* Blue Hero Card */}
-          <div className="bg-[#005AD1] bg-gradient-to-br from-[#005AD1] to-[#0047AB] rounded-[32px] md:rounded-[48px] px-6 py-12 md:px-14 md:pt-14 lg:px-20 lg:pt-16 text-white relative overflow-hidden flex flex-col lg:flex-row min-h-[auto] lg:min-h-[700px] items-stretch shadow-2xl">
-
-            {/* Background decorative elements */}
-            <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-white/5 rounded-full blur-[120px] -translate-y-1/2 translate-x-1/4 pointer-events-none" />
-            <div className="absolute bottom-0 left-0 w-[400px] h-[400px] bg-black/10 rounded-full blur-[100px] translate-y-1/4 -translate-x-1/4 pointer-events-none" />
-
-            {/* ── Left Column — Content ── */}
-            <div className="flex-1 z-10 flex flex-col justify-center w-full lg:max-w-[700px] pb-10 lg:pb-16 text-center lg:text-left items-center lg:items-start lg:pl-12 xl:pl-20 max-lg:!ml-0" style={{ marginLeft: "10px" }}>
-
-              {/* Headline + Sub + CTA Container - Centered Vertically */}
-              <div className="flex flex-col gap-8 md:gap-10 items-center lg:items-start w-full">
-                {/* Eyebrow tag */}
-                <div className="inline-flex w-fit items-center gap-2 bg-white/10 backdrop-blur-md border border-white/20 rounded-full px-4 py-2 text-[12px] font-bold tracking-[0.15em] uppercase text-white/90">
-                  <span className="w-2 h-2 rounded-full bg-[#FF5C00] animate-pulse" />
-                  Smart Networking 2.0
-                </div>
-
-                <div className="space-y-6 w-full flex flex-col items-center lg:items-start">
-                  <h1 className="text-[36px] md:text-[56px] xl:text-[72px] font-extrabold leading-[1.05] md:leading-[1.02] tracking-[-0.03em] text-center lg:text-left">
-                    Modern Networking <br className="hidden xl:block" />
-                    <span className="text-white/90">for Professionals</span>
-                  </h1>
-                  <p className="text-[17px] md:text-[20px] text-white/80 leading-[1.6] font-medium max-w-[600px] mx-auto lg:mx-0 px-4 lg:px-0 text-center lg:text-left">
-                    Connect smarter with the all-in-one digital business card, CRM, and contact manager. Built for high-performing teams.
-                  </p>
-                </div>
-
-                {/* CTA Row */}
-                <div className="flex flex-col sm:flex-row items-center lg:items-start gap-6 w-full justify-center lg:justify-start mt-6">
-                  <Link href="/shop/products" className="no-underline">
-                    <button
-                      style={{
-                        background: "#FF5C00",
-                        color: "#fff",
-                        fontSize: 18,
-                        fontWeight: 800,
-                        borderRadius: 50,
-                        padding: "16px 36px",
-                        border: "none",
-                        cursor: "pointer",
-                        display: "inline-flex",
-                        alignItems: "center",
-                        gap: 8,
-                        width: "fit-content",
-                        boxShadow: "0 8px 28px rgba(255,92,0,0.25)",
-                        transition: "all 0.2s",
-                      }}
-                      onMouseEnter={(e) => {
-                        e.currentTarget.style.transform = "translateY(-2px)";
-                        e.currentTarget.style.boxShadow = "0 14px 36px rgba(255,92,0,0.35)";
-                      }}
-                      onMouseLeave={(e) => {
-                        e.currentTarget.style.transform = "translateY(0)";
-                        e.currentTarget.style.boxShadow = "0 8px 28px rgba(255,92,0,0.25)";
-                      }}
-                    >
-                      Customise Now
-                      <span style={{ fontSize: 20, marginLeft: 8 }}>→</span>
-                    </button>
-                  </Link>
-                </div>
-              </div>
-
-              {/* Stats Row — anchored to bottom area but still part of the flex container */}
-              <div className="grid grid-cols-2 md:grid-cols-3 gap-8 md:gap-12 mt-16 pt-10 border-t border-white/20 w-full" style={{ marginTop: "20px" }}>
-                <div className="flex flex-col gap-2 items-center lg:items-start">
-                  <div className="text-[36px] md:text-[48px] font-black tracking-tight leading-none">2M+</div>
-                  <div className="text-[12px] font-bold text-white/60 uppercase tracking-[0.12em] leading-snug">
-                    Taps, scans &<br />shares
-                  </div>
-                </div>
-                <div className="flex flex-col gap-2 items-center lg:items-start">
-                  <div className="text-[36px] md:text-[48px] font-black tracking-tight leading-none">200K+</div>
-                  <div className="text-[12px] font-bold text-white/60 uppercase tracking-[0.12em] leading-snug">
-                    Users &<br />teams globally
-                  </div>
-                </div>
-                <div className="hidden md:flex items-center gap-4 border-l border-white/10 pl-6">
-                  <div className="w-12 h-12 bg-white/10 rounded-2xl border border-white/20 flex items-center justify-center shrink-0 shadow-inner">
-                    <svg className="w-6 h-6 text-[#FFCC00]" viewBox="0 0 24 24" fill="currentColor">
-                      <path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z" />
-                    </svg>
-                  </div>
-                  <div className="text-[12px] font-bold leading-tight uppercase tracking-[0.1em] opacity-80 text-left">
-                    Certified<br />Cyber Partner
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            {/* ── Right Column — Mockup image ── */}
-            <div className="flex-1 relative w-full z-10 flex items-end justify-center lg:justify-end mt-12 lg:mt-0 min-h-[360px] md:min-h-[480px] lg:min-h-0">
-              <div className="relative w-full h-full min-h-[400px] md:min-h-[500px] lg:min-h-[640px] lg:scale-[1.15] lg:translate-x-12 lg:translate-y-4 origin-bottom-right transition-transform duration-700 ease-out hover:scale-[1.18]">
-                <Image
-                  src="/hero-mockup.png"
-                  alt="Connecxa App Mockup"
-                  fill
-                  className="object-contain object-bottom lg:object-right-bottom drop-shadow-[0_45px_65px_rgba(0,0,0,0.45)]"
-                  priority
-                />
-              </div>
-            </div>
-
+        <div className="w-full max-w-[1200px] px-6 flex flex-col items-center text-center z-10">
+          {/* Eyebrow tag */}
+          <div className="inline-flex items-center gap-2 bg-white border border-[#005AD1]/10 rounded-full px-5 py-2.5 text-[13px] font-bold tracking-[0.15em] uppercase text-[#005AD1] mb-8 shadow-sm">
+            <span className="w-2.5 h-2.5 rounded-full bg-[#005AD1] animate-pulse" />
+            Smart Networking 2.0
           </div>
-          {/* End Blue Hero Card */}
 
+          <h1 className="text-[42px] md:text-[64px] lg:text-[80px] font-black leading-[1.05] tracking-[-0.04em] text-[#111827] mb-8">
+            The easiest way to create <br className="hidden md:block" />
+            and share your <span className="text-[#005AD1]">Digital Business Card.</span>
+          </h1>
+
+          <p className="text-[18px] md:text-[21px] text-[#4B5563] leading-[1.6] font-medium max-w-[800px] mb-12">
+            The easiest way to exchange contact details, follow up instantly, and remember everyone you meet. Free forever for individuals, trusted by global enterprises.
+          </p>
+
+          {/* CTA Row */}
+          <div className="flex flex-col sm:flex-row items-center gap-5 mb-16">
+            <Link href="/login" className="no-underline">
+              <button
+                style={{
+                  background: "#005AD1",
+                  color: "#fff",
+                  fontSize: 18,
+                  fontWeight: 800,
+                  borderRadius: 50,
+                  padding: "16px 36px",
+                  border: "none",
+                  cursor: "pointer",
+                  display: "inline-flex",
+                  alignItems: "center",
+                  gap: 8,
+                  width: "fit-content",
+                  boxShadow: "0 8px 28px rgba(0,90,209,0.25)",
+                  transition: "all 0.2s",
+                  marginTop: "20px",
+                }}
+                onMouseEnter={(e) => {
+                  e.currentTarget.style.transform = "translateY(-2px)";
+                  e.currentTarget.style.boxShadow = "0 14px 36px rgba(0,90,209,0.35)";
+                  e.currentTarget.style.background = "#0047AB";
+                }}
+                onMouseLeave={(e) => {
+                  e.currentTarget.style.transform = "translateY(0)";
+                  e.currentTarget.style.boxShadow = "0 8px 28px rgba(0,90,209,0.25)";
+                  e.currentTarget.style.background = "#005AD1";
+                }}
+              >
+                Get started <span style={{ fontSize: 20 }}>→</span>
+              </button>
+            </Link>
+            <Link href="/for-companies/teams" className="no-underline">
+              <button
+                style={{
+                  background: "transparent",
+                  color: "#111827",
+                  fontSize: 18,
+                  fontWeight: 800,
+                  borderRadius: 50,
+                  padding: "16px 36px",
+                  border: "2px solid #E5E7EB",
+                  cursor: "pointer",
+                  display: "inline-flex",
+                  alignItems: "center",
+                  gap: 8,
+                  width: "fit-content",
+                  transition: "all 0.2s",
+                }}
+                onMouseEnter={(e) => {
+                  e.currentTarget.style.background = "#F9FAFB";
+                }}
+                onMouseLeave={(e) => {
+                  e.currentTarget.style.background = "transparent";
+                }}
+              >
+              Customize Now
+              </button>
+            </Link>
+          </div>
+
+          {/* Centered Mockup */}
+          <div className="relative w-full max-w-[1000px] aspect-[16/11] flex justify-center items-end" style={{ marginTop: 10}}>
+            <div className="relative w-full h-full animate-float">
+              <Image
+                src="/images/homehero.png"
+                alt="Connecxa Premium Digital Card"
+                fill
+                className="object-contain object-bottom drop-shadow-[0_40px_70px_rgba(0,0,0,0.1)]"
+                priority
+              />
+            </div>
+          </div>
         </div>
+
+        <style jsx>{`
+          @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-15px); }
+          }
+          .animate-float {
+            animation: float 5s ease-in-out infinite;
+          }
+        `}</style>
       </main>
 
       {/* ── Sections ── */}

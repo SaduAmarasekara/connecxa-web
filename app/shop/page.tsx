@@ -15,26 +15,27 @@ export default function ShopPage() {
     >
       <main className="w-full flex flex-col items-center py-6 lg:py-8">
         <div className="w-full max-w-[1600px] px-6 lg:px-12">
-    
-       
+
+
           {/* Blue Hero Card */}
           <div
             className="relative flex flex-col lg:flex-row items-center lg:items-center overflow-hidden bg-white text-[#111827] rounded-[32px] md:rounded-[48px] w-full"
             style={{
               minHeight: "auto",
-              paddingTop: "clamp(25px,4vw,60px)",
-              paddingLeft: "clamp(20px,5vw,80px)",
-              paddingRight: "clamp(20px,5vw,80px)",
-              background: "linear-gradient(180deg, #FFFFFF 0%, #D2E4FC 100%)",
+              paddingTop: "clamp(30px,5vw,70px)",
+              paddingLeft: "clamp(20px,6vw,100px)",
+              paddingRight: "clamp(20px,6vw,100px)",
+              background: "linear-gradient(135deg, #FFFFFF 0%, #F0F4FF 40%, #D9E5FF 100%)",
             }}
           >
             {/* Background effects */}
-            <div className="absolute top-[-10%] left-[-10%] w-[40%] h-[40%] bg-[#005AD1]/3 rounded-full blur-[100px] pointer-events-none" />
-            <div className="absolute bottom-[-10%] right-[-10%] w-[50%] h-[50%] bg-[#005AD1]/3 rounded-full blur-[120px] pointer-events-none" />
+            <div className="absolute top-[-20%] left-[-10%] w-[60%] h-[60%] bg-[#005AD1]/5 rounded-full blur-[120px] pointer-events-none" />
+            <div className="absolute bottom-[-15%] right-[-10%] w-[70%] h-[70%] bg-[#005AD1]/8 rounded-full blur-[150px] pointer-events-none" />
+            <div className="absolute top-[20%] right-[15%] w-[30%] h-[30%] bg-white/40 rounded-full blur-[80px] pointer-events-none" />
 
             {/* ── Left Column ── */}
             <div className="z-10 flex flex-col justify-center items-center lg:items-start text-center lg:text-left w-full lg:w-[clamp(320px,42%,580px)] shrink-0 pb-12 lg:pb-20 lg:pr-0">
-              <div className="inline-flex items-center gap-2 bg-white border border-[#005AD1]/10 rounded-full px-5 py-2 text-[13px] font-bold tracking-[0.12em] uppercase text-[#005AD1] mb-6 shadow-sm"style={{ marginBottom: "50px" }}>
+              <div className="inline-flex items-center gap-2 bg-white border border-[#005AD1]/10 rounded-full px-5 py-2 text-[13px] font-bold tracking-[0.12em] uppercase text-[#005AD1] mb-6 shadow-sm" style={{ marginBottom: "50px" }}>
                 <span className="w-2.5 h-2.5 rounded-full bg-[#005AD1] animate-pulse" />
                 NFC Business Cards
               </div>
@@ -71,32 +72,32 @@ export default function ShopPage() {
               <Link href="/shop/products" className="no-underline">
                 <button
                   style={{
-                    background: "#005AD1",
+                    background: "linear-gradient(135deg, #005AD1 0%, #0047AB 100%)",
                     color: "#fff",
                     fontSize: 18,
                     fontWeight: 800,
                     borderRadius: 50,
-                    padding: "16px 36px",
+                    padding: "18px 40px",
                     border: "none",
                     cursor: "pointer",
                     display: "inline-flex",
                     alignItems: "center",
-                    gap: 8,
+                    gap: 10,
                     width: "fit-content",
-                    boxShadow: "0 8px 28px rgba(0,90,209,0.25)",
-                    transition: "all 0.2s",
+                    boxShadow: "0 12px 32px rgba(0,90,209,0.3)",
+                    transition: "all 0.3s cubic-bezier(0.23, 1, 0.32, 1)",
                   }}
                   onMouseEnter={(e) => {
-                    e.currentTarget.style.transform = "translateY(-2px)";
+                    e.currentTarget.style.transform = "translateY(-3px) scale(1.02)";
                     e.currentTarget.style.boxShadow =
-                      "0 14px 36px rgba(0,90,209,0.35)";
-                    e.currentTarget.style.background = "#0047AB";
+                      "0 20px 48px rgba(0,90,209,0.45)";
+                    e.currentTarget.style.filter = "brightness(1.1)";
                   }}
                   onMouseLeave={(e) => {
-                    e.currentTarget.style.transform = "translateY(0)";
+                    e.currentTarget.style.transform = "translateY(0) scale(1)";
                     e.currentTarget.style.boxShadow =
-                      "0 8px 28px rgba(0,90,209,0.25)";
-                    e.currentTarget.style.background = "#005AD1";
+                      "0 12px 32px rgba(0,90,209,0.3)";
+                    e.currentTarget.style.filter = "brightness(1)";
                   }}
                 >
                   Customise Now <span style={{ fontSize: 20 }}>→</span>
@@ -110,31 +111,37 @@ export default function ShopPage() {
               <div
                 style={{
                   position: "relative",
-                  width: 272,
-                  height: 560,
-                  background: "#ffffff",
-                  borderRadius: 44,
-                  border: "7px solid #F3F4F6",
+                  width: 280,
+                  height: 580,
+                  background: "#080808", // Black screen base
+                  borderRadius: 50,
+                  border: "10px solid #1c1c1c", // Titanium frame
                   boxShadow:
-                    "0 40px 90px rgba(0,0,0,0.15), inset 0 1px 0 rgba(255,255,255,1)",
+                    "0 50px 100px rgba(0,0,0,0.3), inset 0 0 1px 1px rgba(255,255,255,0.15), inset 0 0 20px rgba(0,0,0,0.5)",
                   overflow: "hidden",
                   zIndex: 20,
                   flexShrink: 0,
-                  marginBottom: 0,
+                  display: 'flex',
+                  flexDirection: 'column'
                 }}
               >
+                {/* Frame highlight */}
+                <div style={{ position: 'absolute', inset: -2, border: '1px solid rgba(255,255,255,0.05)', borderRadius: 52, pointerEvents: 'none' }} />
+
                 {/* Dynamic island */}
                 <div
                   style={{
                     position: "absolute",
-                    top: 10,
+                    top: 14,
                     left: "50%",
                     transform: "translateX(-50%)",
-                    width: 88,
-                    height: 22,
+                    width: 92,
+                    height: 26,
                     background: "#000",
                     borderRadius: 20,
-                    zIndex: 30,
+                    zIndex: 35,
+                    border: '1px solid rgba(255,255,255,0.03)',
+                    boxShadow: '0 2px 4px rgba(0,0,0,0.5)'
                   }}
                 />
 
@@ -163,7 +170,7 @@ export default function ShopPage() {
                         position: "absolute",
                         inset: 0,
                         background:
-                          "linear-gradient(135deg,#f8f4f0 0%,#f0e8e0 40%,#e8d8c8 100%)",
+                          "linear-gradient(135deg,#ffffff 0%,#f8f9ff 100%)",
                       }}
                     />
                     <div
@@ -255,21 +262,22 @@ export default function ShopPage() {
                       style={{
                         position: "absolute",
                         bottom: 0,
-                        left: 18,
-                        width: 72,
-                        height: 72,
+                        left: 20,
+                        width: 80,
+                        height: 80,
                         borderRadius: "50%",
-                        background: "#f3f4f6",
-                        border: "3px solid #fff",
+                        background: "#ffffff",
+                        border: "4px solid #fff",
                         display: "flex",
                         alignItems: "center",
                         justifyContent: "center",
                         zIndex: 10,
                         overflow: "hidden",
-                        transform: "translateY(15px)",
+                        transform: "translateY(20px)",
+                        boxShadow: "0 8px 24px rgba(0,0,0,0.12)"
                       }}
                     >
-                      <svg width="40" height="40" viewBox="0 0 24 24" fill="#cbd5e1">
+                      <svg width="48" height="48" viewBox="0 0 24 24" fill="#E2E8F0">
                         <path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z" />
                       </svg>
                     </div>
@@ -291,14 +299,24 @@ export default function ShopPage() {
                       </div>
                     </div>
 
-                    <div style={{ display: "flex", flexDirection: "column", gap: 10 }}>
+                    <div style={{ display: "flex", flexDirection: "column", gap: 12 }}>
                       {["Monthly Specials Menu", "Reserve a table", "Coffee Roasters"].map((t, i) => (
-                        <div key={i} style={{ width: "100%", padding: "13px 14px", background: "#f9fafb", border: "1px solid #f3f4f6", borderRadius: 12, display: "flex", alignItems: "center", justifyContent: "space-between" }}>
-                          <div style={{ display: "flex", alignItems: "center", gap: 12 }}>
-                            <div style={{ width: 8, height: 8, borderRadius: "50%", background: "#005AD1" }} />
-                            <span style={{ fontSize: 13, fontWeight: 700, color: "#111827" }}>{t}</span>
+                        <div key={i} style={{
+                          width: "100%",
+                          padding: "14px 16px",
+                          background: "#ffffff",
+                          border: "1px solid rgba(0,0,0,0.04)",
+                          borderRadius: 16,
+                          display: "flex",
+                          alignItems: "center",
+                          justifyContent: "space-between",
+                          boxShadow: "0 2px 8px rgba(0,0,0,0.03)"
+                        }}>
+                          <div style={{ display: "flex", alignItems: "center", gap: 14 }}>
+                            <div style={{ width: 10, height: 10, borderRadius: "50%", background: "#005AD1", boxShadow: "0 0 8px rgba(0,90,209,0.3)" }} />
+                            <span style={{ fontSize: 14, fontWeight: 700, color: "#111827" }}>{t}</span>
                           </div>
-                          <span style={{ fontSize: 12, color: "#9ca3af" }}>›</span>
+                          <span style={{ fontSize: 14, color: "#9ca3af", fontWeight: 300 }}>›</span>
                         </div>
                       ))}
                     </div>
@@ -316,8 +334,11 @@ export default function ShopPage() {
 
               {/* ── Floating Orange NFC Card ── */}
               <div
-                className="absolute right-4 lg:right-[clamp(30px,6%,80px)] bottom-[50px] lg:bottom-[70px] w-[200px] sm:w-[248px] h-[130px] sm:h-[158px] rounded-[20px] shadow-[0_24px_60px_rgba(0,0,0,0.15)] p-4 z-30 flex flex-col justify-between cursor-pointer transition-transform duration-300 hover:-translate-y-1.5 hover:scale-105"
-                style={{ background: "linear-gradient(145deg,#e8632a 0%,#c84e18 100%)" }}
+                className="absolute right-4 lg:right-[clamp(30px,6%,80px)] bottom-[50px] lg:bottom-[70px] w-[200px] sm:w-[248px] h-[130px] sm:h-[158px] rounded-[24px] shadow-[0_32px_80px_rgba(232,99,42,0.25)] p-5 z-30 flex flex-col justify-between cursor-pointer transition-all duration-500 hover:-translate-y-2 hover:scale-105"
+                style={{
+                  background: "linear-gradient(135deg, #FF7A45 0%, #E8632A 50%, #D3541F 100%)",
+                  border: '1px solid rgba(255,255,255,0.1)'
+                }}
               >
                 <div style={{ position: "absolute", top: 12, right: 14, opacity: 0.5 }}>
                   <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#111" strokeWidth="2">

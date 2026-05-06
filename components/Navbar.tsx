@@ -288,15 +288,15 @@ export default function Navbar() {
         }
 
         @media (min-width: 768px) {
-          .nav-inner { padding: 12px 20px; }
+          .nav-inner { padding: 18px 20px; }
           .nav-inner.scrolled { padding: 8px 20px; }
         }
         @media (min-width: 1200px) {
-          .nav-inner { padding: 12px 40px; }
+          .nav-inner { padding: 18px 40px; }
           .nav-inner.scrolled { padding: 8px 40px; }
         }
         @media (min-width: 1600px) {
-          .nav-inner { padding: 12px 60px; }
+          .nav-inner { padding: 18px 60px; }
           .nav-inner.scrolled { padding: 8px 60px; }
         }
 
@@ -309,7 +309,7 @@ export default function Navbar() {
           transition: transform 0.25s ease;
           display: flex;
           align-items: center;
-          margin-top: 4px;
+          margin-top: 12px;
           margin-left: -15px;
         }
         .logo-wrap:hover { transform: scale(1.05); }

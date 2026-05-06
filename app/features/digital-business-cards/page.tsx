@@ -14,30 +14,58 @@ export default function DigitalBusinessCards() {
   return (
     <main className="w-full flex flex-col items-center py-8 lg:py-16 overflow-x-hidden" style={{ fontFamily: "DM Sans, sans-serif" }}>
       <div className="w-full max-w-[1600px] px-5 md:px-16 lg:px-24">
-
+ <div className="w-full h-14 lg:h-20 bg-white" />
         {/* Lavender Hero Card */}
-        <div className="bg-[#D8C4E0] bg-gradient-to-br from-[#D8C4E0] to-[#C1A7D1] rounded-[32px] md:rounded-[48px] px-6 py-16 md:py-20 lg:px-20 lg:py-24 text-black relative overflow-hidden flex flex-col lg:flex-row items-center lg:items-stretch shadow-2xl">
+        <div
+          className="relative flex flex-col lg:flex-row items-center lg:items-center overflow-hidden bg-white text-[#111827] rounded-[32px] md:rounded-[48px] w-full shadow-2xl"
+          style={{
+            minHeight: "auto",
+            paddingTop: "clamp(25px,4vw,60px)",
+            paddingLeft: "clamp(20px,5vw,80px)",
+            paddingRight: "clamp(20px,5vw,80px)",
+            background: "linear-gradient(180deg, #FFFFFF 0%, #D8C4E0 100%)",
+          }}
+        >
 
-          {/* Background decorative elements */}
-          <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-white/20 rounded-full blur-[120px] -translate-y-1/2 translate-x-1/4 pointer-events-none" />
-          <div className="absolute bottom-0 left-0 w-[400px] h-[400px] bg-black/5 rounded-full blur-[100px] translate-y-1/4 -translate-x-1/4 pointer-events-none" />
+          {/* Background effects */}
+          <div className="absolute top-[-10%] left-[-10%] w-[40%] h-[40%] bg-[#D8C4E0]/5 rounded-full blur-[100px] pointer-events-none" />
+          <div className="absolute bottom-[-10%] right-[-10%] w-[50%] h-[50%] bg-[#D8C4E0]/5 rounded-full blur-[120px] pointer-events-none" />
 
-          {/* ── Left Column — Content ── */}
-          <div className="flex-1 z-10 flex flex-col justify-center w-full lg:max-w-[700px] pb-10 lg:pb-16 text-center lg:text-left items-center lg:items-start lg:ml-[50px] xl:ml-[80px]"style={{marginLeft: 20}}>
+          {/* ── Left Column ── */}
+          <div className="z-10 flex flex-col justify-center items-center lg:items-start text-center lg:text-left w-full lg:w-[clamp(320px,42%,580px)] shrink-0 pb-12 lg:pb-20 lg:pr-0">
 
             <div className="flex flex-col gap-6 md:gap-10 items-center lg:items-start w-full">
               {/* Eyebrow tag */}
-              <div className="inline-flex w-fit items-center gap-2 bg-black/5 backdrop-blur-md border border-black/10 rounded-full px-4 py-2 text-[11px] md:text-[12px] font-bold tracking-[0.15em] uppercase text-black/80">
-                <span className="w-2 h-2 rounded-full bg-[#FF5C00] animate-pulse" />
+              <div className="inline-flex items-center gap-2 bg-white border border-[#D8C4E0]/30 rounded-full px-5 py-2 text-[13px] font-bold tracking-[0.12em] uppercase text-[#7C3AED] mb-6 shadow-sm">
+                <span className="w-2.5 h-2.5 rounded-full bg-[#7C3AED] animate-pulse" />
                 DIGITAL BUSINESS CARD
               </div>
 
               <div className="space-y-4 md:space-y-6 w-full flex flex-col items-center lg:items-start">
-                <h1 className="text-[36px] sm:text-[44px] md:text-[56px] xl:text-[88px] font-black text-black leading-[1.1] md:leading-[1.02] tracking-[-0.04em] px-2 md:px-0">
-                  Ditch the Paper.<br />
-                  <span className="text-black/70">Go Fully Digital.</span>
+                <h1
+                  style={{
+                    fontSize: "clamp(42px,4.5vw,72px)",
+                    fontWeight: 900,
+                    lineHeight: 1.15,
+                    letterSpacing: "0.01em",
+                    color: "#111827",
+                    marginBottom: 24,
+                  }}
+                >
+                  Ditch the Paper.
+                  <br className="hidden lg:block" />
+                  Go Fully Digital.
                 </h1>
-                <p className="text-[16px] sm:text-[18px] md:text-[21px] text-black/70 leading-[1.6] font-medium max-w-[300px] sm:max-w-[400px] md:max-w-[460px] lg:max-w-[560px] mx-auto lg:mx-0 px-4 md:px-0">
+                <p
+                  style={{
+                    fontSize: "clamp(15px,1.4vw,20px)",
+                    color: "#4B5563",
+                    lineHeight: 1.65,
+                    fontWeight: 500,
+                    maxWidth: 460,
+                    marginBottom: 40,
+                  }}
+                >
                   Make every impression count with a sleek, modern digital business card - no apps, no limits, just your brand at its best.
                 </p>
               </div>
@@ -47,35 +75,35 @@ export default function DigitalBusinessCards() {
                 <Link href="/login" className="no-underline">
                   <button
                     style={{
-                      background: "#000",
+                      background: "#7C3AED",
                       color: "#fff",
                       fontSize: 18,
                       fontWeight: 800,
                       borderRadius: 50,
-                      padding: "18px 46px",
+                      padding: "16px 36px",
                       border: "none",
                       cursor: "pointer",
                       display: "inline-flex",
                       alignItems: "center",
-                      gap: 12,
+                      gap: 8,
                       width: "fit-content",
-                      boxShadow: "0 10px 30px rgba(0,0,0,0.15)",
-                      transition: "all 0.25s cubic-bezier(0.23, 1, 0.32, 1)",
-                      marginBottom: 40,
+                      boxShadow: "0 8px 28px rgba(124,58,237,0.25)",
+                      transition: "all 0.2s",
                     }}
                     onMouseEnter={(e) => {
-                      e.currentTarget.style.transform = "translateY(-3px)";
-                      e.currentTarget.style.boxShadow = "0 15px 40px rgba(0,0,0,0.25)";
-                      e.currentTarget.style.background = "#222";
+                      e.currentTarget.style.transform = "translateY(-2px)";
+                      e.currentTarget.style.boxShadow =
+                        "0 14px 36px rgba(124,58,237,0.35)";
+                      e.currentTarget.style.background = "#6D28D9";
                     }}
                     onMouseLeave={(e) => {
                       e.currentTarget.style.transform = "translateY(0)";
-                      e.currentTarget.style.boxShadow = "0 10px 30px rgba(0,0,0,0.15)";
-                      e.currentTarget.style.background = "#000";
+                      e.currentTarget.style.boxShadow =
+                        "0 8px 28px rgba(124,58,237,0.25)";
+                      e.currentTarget.style.background = "#7C3AED";
                     }}
                   >
-                    Get Started
-                    <span style={{ fontSize: 22 }}>→</span>
+                    Get Started <span style={{ fontSize: 20 }}>→</span>
                   </button>
                 </Link>
               </div>
@@ -83,13 +111,13 @@ export default function DigitalBusinessCards() {
           </div>
 
           {/* ── Right Column — Image ── */}
-          <div className="flex-1 relative w-full z-10 flex items-end justify-center lg:justify-end mt-12 lg:mt-0 min-h-[360px] md:min-h-[480px] lg:min-h-0">
-            <div className="relative w-full h-full min-h-[400px] md:min-h-[500px] lg:min-h-[640px] lg:scale-[1.1] origin-bottom transition-transform duration-700 ease-out hover:scale-[1.12]">
+          <div className="flex-1 relative w-full z-10 flex items-center justify-center lg:justify-end mt-12 lg:mt-0 min-h-[360px] md:min-h-[480px] lg:min-h-0">
+            <div className="relative w-full h-full min-h-[300px] md:min-h-[400px] lg:min-h-[580px] lg:scale-[0.8] origin-center transition-transform duration-700 ease-out hover:scale-[0.82]">
               <Image
                 src="/digital_card_lavender_mockup_1777364739572.png"
                 alt="Digital Business Card Mockup"
                 fill
-                className="object-contain object-bottom drop-shadow-[0_45px_65px_rgba(0,0,0,0.2)]"
+                className="object-contain object-center drop-shadow-[0_45px_65px_rgba(0,0,0,0.2)]"
                 priority
               />
             </div>

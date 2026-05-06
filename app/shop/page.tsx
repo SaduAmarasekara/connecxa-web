@@ -15,9 +15,10 @@ export default function ShopPage() {
     >
       <main className="w-full flex flex-col items-center py-6 lg:py-8">
         <div className="w-full max-w-[1600px] px-6 lg:px-12">
+           <div className="w-full h-14 lg:h-20 bg-white" />
           {/* Blue Hero Card */}
           <div
-            className="relative flex flex-col lg:flex-row items-center lg:items-stretch overflow-hidden bg-white text-[#111827] rounded-[32px] md:rounded-[48px] w-full"
+            className="relative flex flex-col lg:flex-row items-center lg:items-center overflow-hidden bg-white text-[#111827] rounded-[32px] md:rounded-[48px] w-full"
             style={{
               minHeight: "auto",
               paddingTop: "clamp(25px,4vw,60px)",
@@ -103,7 +104,7 @@ export default function ShopPage() {
             </div>
 
             {/* ── Right Column ── */}
-            <div className="flex-1 relative flex items-end justify-center z-10 w-full min-h-[420px] sm:min-h-[500px] lg:min-h-[580px] mt-10 lg:mt-0 lg:pr-0 pb-10 lg:pb-0 scale-[0.8] sm:scale-100 origin-bottom">
+            <div className="flex-1 relative flex items-center justify-center z-10 w-full min-h-[420px] sm:min-h-[500px] lg:min-h-[580px] mt-10 lg:mt-0 lg:pr-0 pb-10 lg:pb-0 scale-[0.8] sm:scale-100 origin-center">
               {/* ── Phone Shell ── */}
               <div
                 style={{

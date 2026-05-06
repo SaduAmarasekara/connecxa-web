@@ -15,7 +15,8 @@ export default function ShopPage() {
     >
       <main className="w-full flex flex-col items-center py-6 lg:py-8">
         <div className="w-full max-w-[1600px] px-6 lg:px-12">
-           <div className="w-full h-14 lg:h-20 bg-white" />
+          <div className="w-full h-10 lg:h-12 bg-white" />
+       
           {/* Blue Hero Card */}
           <div
             className="relative flex flex-col lg:flex-row items-center lg:items-center overflow-hidden bg-white text-[#111827] rounded-[32px] md:rounded-[48px] w-full"
@@ -33,15 +34,15 @@ export default function ShopPage() {
 
             {/* ── Left Column ── */}
             <div className="z-10 flex flex-col justify-center items-center lg:items-start text-center lg:text-left w-full lg:w-[clamp(320px,42%,580px)] shrink-0 pb-12 lg:pb-20 lg:pr-0">
-              <div className="inline-flex items-center gap-2 bg-white border border-[#005AD1]/10 rounded-full px-5 py-2 text-[13px] font-bold tracking-[0.12em] uppercase text-[#005AD1] mb-6 shadow-sm">
+              <div className="inline-flex items-center gap-2 bg-white border border-[#005AD1]/10 rounded-full px-5 py-2 text-[13px] font-bold tracking-[0.12em] uppercase text-[#005AD1] mb-6 shadow-sm"style={{ marginBottom: "50px" }}>
                 <span className="w-2.5 h-2.5 rounded-full bg-[#005AD1] animate-pulse" />
                 NFC Business Cards
               </div>
 
               <h1
                 style={{
-                  fontSize: "clamp(42px,4.5vw,72px)",
-                  fontWeight: 900,
+                  fontSize: "clamp(22px,3.5vw,57px)",
+                  fontWeight: 800,
                   lineHeight: 1.15,
                   letterSpacing: "0.01em",
                   color: "#111827",

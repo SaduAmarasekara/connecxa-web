@@ -12,6 +12,7 @@ export default function ContactManager() {
   return (
     <main className="min-h-screen bg-white">
       {/* Hero Section */}
+       <div className="w-full h-10 lg:h-12 bg-white" />
       <ContactHero />
 
       <div className="w-full">

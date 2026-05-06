@@ -303,13 +303,16 @@ export default function Navbar() {
         /* Logo */
         .logo-wrap {
           position: relative;
-          height: 100px;
-          width: 280px;
+          height: 50px;
+          width: 220px;
           flex-shrink: 0;
           transition: transform 0.25s ease;
-          display: block;
+          display: flex;
+          align-items: center;
+          margin-top: 4px;
+          margin-left: -15px;
         }
-        .logo-wrap:hover { transform: scale(1.15); }
+        .logo-wrap:hover { transform: scale(1.05); }
 
         /* Desktop links */
         .desktop-links {
@@ -326,9 +329,9 @@ export default function Navbar() {
           gap: 5px;
           padding: 8px 14px;
           border-radius: 10px;
-          font-size: 15px;
+          font-size: 16px;
           font-weight: 700;
-          color: #000;
+          color: #111827;
           cursor: pointer;
           transition: background 0.18s ease, color 0.18s ease;
           white-space: nowrap;
@@ -359,13 +362,13 @@ export default function Navbar() {
 
         .btn-demo {
           font-family: inherit;
-          font-size: 14px;
+          font-size: 16px;
           font-weight: 700;
           color: #005AD1;
           background: transparent;
           border: 2px solid #005AD1;
           border-radius: 99px;
-          padding: 8px 20px;
+          padding: 10px 24px;
           cursor: pointer;
           transition: all 0.25s ease;
           white-space: nowrap;
@@ -380,13 +383,13 @@ export default function Navbar() {
 
         .btn-login {
           font-family: inherit;
-          font-size: 14px;
+          font-size: 16px;
           font-weight: 700;
           color: #ffffff;
           background: #005AD1;
           border: none;
           border-radius: 99px;
-          padding: 8px 20px;
+          padding: 10px 24px;
           cursor: pointer;
           display: flex;
           align-items: center;
@@ -524,17 +527,14 @@ export default function Navbar() {
           <div className={`nav-inner ${scrolled ? "scrolled" : ""}`} style={{ maxWidth: '1600px', margin: '0 auto', display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: '20px', flexWrap: 'nowrap' }}>
             {/* Left: Logo + Links */}
             <div style={{ display: "flex", alignItems: "center", gap: 8 }}>
-              <Link href="/" className="logo-wrap">
-                <Image
-                  src="/logo.jpeg"
-                  alt="OneGoodCard / Connecxa Logo"
-                  fill
-                  className="object-contain"
-                  priority
+              <Link href="/" className="logo-wrap" style={{ display: 'flex', alignItems: 'center' }}>
+                <img
+                  src="/newlogo.png"
+                  alt="Connecxa Logo"
+                  style={{ width: '200px', maxWidth: '100%', height: 'auto', maxHeight: '70px', objectFit: 'contain' }}
                 />
               </Link>
 
-              <div className="nav-divider" style={{ marginLeft: 24 }} />
 
               <div className="desktop-links">
                 {navLinks.map((link) => (

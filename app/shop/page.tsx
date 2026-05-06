@@ -20,10 +20,10 @@ export default function ShopPage() {
             className="relative flex flex-col lg:flex-row items-center lg:items-stretch overflow-hidden bg-white text-[#111827] rounded-[32px] md:rounded-[48px] w-full"
             style={{
               minHeight: "auto",
-              paddingTop: "clamp(40px,5vw,80px)",
+              paddingTop: "clamp(25px,4vw,60px)",
               paddingLeft: "clamp(20px,5vw,80px)",
               paddingRight: "clamp(20px,5vw,80px)",
-              background: "linear-gradient(180deg, #FFFFFF 0%, #F0F7FF 100%)",
+              background: "linear-gradient(180deg, #FFFFFF 0%, #D2E4FC 100%)",
             }}
           >
             {/* Background effects */}
@@ -41,8 +41,8 @@ export default function ShopPage() {
                 style={{
                   fontSize: "clamp(42px,4.5vw,72px)",
                   fontWeight: 900,
-                  lineHeight: 1.05,
-                  letterSpacing: "-0.02em",
+                  lineHeight: 1.15,
+                  letterSpacing: "0.01em",
                   color: "#111827",
                   marginBottom: 24,
                 }}

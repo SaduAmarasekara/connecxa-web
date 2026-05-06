@@ -11,10 +11,10 @@ import NetworkingToolkit from "@/components/NetworkingToolkit";
 export default function Home() {
   return (
     <div className="min-h-screen flex flex-col bg-white overflow-hidden">
-
+      <div className="w-full h-8 lg:h-12 bg-white" />
       {/* ── Hero Section ── */}
       <main className="w-full relative flex flex-col items-center pt-20 pb-16 lg:pt-28 lg:pb-0 overflow-hidden" style={{
-        background: "linear-gradient(180deg, #FFFFFF 0%, #F0F7FF 100%)",
+        background: "linear-gradient(180deg, #FFFFFF 0%, #D2E4FC 100%)",
         fontFamily: "'DM Sans', 'Helvetica Neue', sans-serif"
       }}>
         {/* Subtle background glow effects */}
@@ -23,12 +23,12 @@ export default function Home() {
 
         <div className="w-full max-w-[1200px] px-6 flex flex-col items-center text-center z-10">
           {/* Eyebrow tag */}
-          <div className="inline-flex items-center gap-2 bg-white border border-[#005AD1]/10 rounded-full px-5 py-2.5 text-[13px] font-bold tracking-[0.15em] uppercase text-[#005AD1] mb-8 shadow-sm">
+          <div className="inline-flex items-center gap-2 bg-white border border-[#005AD1]/10 rounded-full px-5 py-2.5 text-[13px] font-bold tracking-[0.15em] uppercase text-[#005AD1] mb-8 shadow-sm" >
             <span className="w-2.5 h-2.5 rounded-full bg-[#005AD1] animate-pulse" />
             Smart Networking 2.0
           </div>
 
-          <h1 className="text-[42px] md:text-[64px] lg:text-[80px] font-black leading-[1.05] tracking-[-0.04em] text-[#111827] mb-8">
+          <h1 className="text-[42px] md:text-[64px] lg:text-[80px] font-black leading-[1.05] tracking-[-0.04em] text-[#111827] mb-8" style={{ marginTop: "20px" }}>
             The easiest way to create <br className="hidden md:block" />
             and share your <span className="text-[#005AD1]">Digital Business Card.</span>
           </h1>
@@ -96,7 +96,7 @@ export default function Home() {
                   e.currentTarget.style.background = "transparent";
                 }}
               >
-              Customize Now
+                Customize Now
               </button>
             </Link>
           </div>

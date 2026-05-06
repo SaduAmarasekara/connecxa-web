@@ -14,7 +14,7 @@ export default function DigitalBusinessCards() {
   return (
     <main className="w-full flex flex-col items-center py-8 lg:py-16 overflow-x-hidden" style={{ fontFamily: "DM Sans, sans-serif" }}>
       <div className="w-full max-w-[1600px] px-5 md:px-16 lg:px-24">
-   <div className="w-full h-8 lg:h-8 bg-white" />
+
         {/* Lavender Hero Card */}
         <div
           className="relative flex flex-col lg:flex-row items-center lg:items-center overflow-hidden bg-white text-[#111827] rounded-[32px] md:rounded-[48px] w-full shadow-2xl"

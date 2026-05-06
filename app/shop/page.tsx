@@ -15,7 +15,7 @@ export default function ShopPage() {
     >
       <main className="w-full flex flex-col items-center py-6 lg:py-8">
         <div className="w-full max-w-[1600px] px-6 lg:px-12">
-       <div className="w-full h-8 lg:h-8 bg-white" />
+    
        
           {/* Blue Hero Card */}
           <div

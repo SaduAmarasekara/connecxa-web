@@ -11,7 +11,7 @@ export default function TeamDashboard() {
   return (
     <main className="min-h-screen bg-white">
       {/* Hero Section */}
-      <div className="w-full h-8 lg:h-8 bg-white" />
+      
       <TeamDashboardHero />
   <div className="w-full h-24 lg:h-32 bg-white" />
       <TeamDashboardShowcase />

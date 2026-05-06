@@ -26,11 +26,11 @@ const features = [
 
 export default function NutshellFeatures() {
   return (
-    <section className="w-full bg-[#FAFAFA] py-16 md:py-28 max-lg:!ml-0" style={{ fontFamily: "'DM Sans', sans-serif", marginLeft: "20px" }}>
-      <div className="max-w-[1600px] mx-auto px-5 md:px-16 lg:px-24">
+    <section className="w-full bg-[#FAFAFA] py-16 md:py-28 flex justify-center" style={{ fontFamily: "'DM Sans', sans-serif" }}>
+      <div className="max-w-[1100px] mx-auto px-5 md:px-12">
         
         {/* Header Section */}
-        <div className="text-center mb-16 md:mb-20 space-y-4 flex flex-col items-center">
+        <div className="text-center mb-16 md:mb-20 space-y-4 flex flex-col items-center w-full">
           <div className="inline-block px-4 py-1.5 bg-blue-50/80 border border-blue-100 rounded-full text-blue-600 text-[12px] md:text-sm font-bold tracking-[0.1em] uppercase mb-2 shadow-sm">
             Powerful Features
           </div>
@@ -44,11 +44,11 @@ export default function NutshellFeatures() {
         </div>
 
         {/* 2x2 Premium Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-10">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-10 w-full">
           {features.map((feature, idx) => (
             <div 
               key={idx} 
-              className="group relative rounded-[24px] md:rounded-[32px] overflow-hidden h-[280px] md:h-[360px] shadow-[0_12px_40px_rgba(0,0,0,0.06)] transition-transform duration-500 hover:-translate-y-2 hover:shadow-[0_20px_50px_rgba(0,0,0,0.12)] cursor-pointer"
+              className="w-full group relative rounded-[20px] md:rounded-[28px] overflow-hidden h-[220px] md:h-[280px] shadow-[0_12px_40px_rgba(0,0,0,0.06)] transition-transform duration-500 hover:-translate-y-2 hover:shadow-[0_20px_50px_rgba(0,0,0,0.12)] cursor-pointer"
             >
               <Image 
                 src={feature.image}
@@ -60,10 +60,10 @@ export default function NutshellFeatures() {
               <div className="absolute inset-0 bg-[#0A192F]/40 group-hover:bg-[#0A192F]/60 transition-colors duration-500" />
               
               <div className="absolute inset-0 p-6 md:p-8 flex flex-col justify-center items-center text-center z-10">
-                <h3 className="text-white text-[22px] md:text-[28px] lg:text-[32px] font-[800] mb-3 leading-tight tracking-tight">
+                <h3 className="text-white text-[20px] md:text-[24px] lg:text-[28px] font-[800] mb-2 leading-tight tracking-tight">
                   {feature.title}
                 </h3>
-                <p className="text-white/90 text-[15px] md:text-[18px] font-medium leading-relaxed max-w-[95%]">
+                <p className="text-white/90 text-[14px] md:text-[16px] font-medium leading-relaxed max-w-[90%]">
                   {feature.desc}
                 </p>
               </div>

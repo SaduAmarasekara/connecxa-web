@@ -101,7 +101,7 @@ export default function Home() {
           </div>
 
           {/* Centered Mockup */}
-          <div className="relative w-full max-w-[1000px] aspect-[16/11] flex justify-center items-end">
+          <div className="relative w-full max-w-[850px] aspect-[16/11] flex justify-center items-end">
             <div className="relative w-full h-full animate-float">
               <Image
                 src="/images/homehero.png"

@@ -35,16 +35,26 @@ const features = [
 export default function Workflow() {
   return (
     <section
-      className="py-16 md:py-24 lg:py-[100px]"
+      className="workflow-section py-16 md:py-24 lg:py-[100px]"
       style={{
-        background: "#F4F4F4",
-        fontFamily: "'DM Sans', 'Helvetica Neue', sans-serif",
-        marginLeft: "50px",
-         marginRight: "50px",
+        background: "#ffffff",
+        fontFamily: "'DM Sans', 'Helvetica Neue', sans-serif"
       }}
     >
       <style>{`
         @import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;1,700&display=swap');
+        
+        .workflow-section {
+          margin-left: 20px;
+          margin-right: 20px;
+        }
+
+        @media (min-width: 1280px) {
+          .workflow-section {
+            margin-left: 150px;
+            margin-right: 150px;
+          }
+        }
 
         .wf-card {
           background: #ffffff;

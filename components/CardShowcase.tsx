@@ -227,32 +227,36 @@ export default function CardShowcase() {
         
         .cards-container {
           display: flex;
-          flex-direction: column;
-          align-items: center;
-          gap: 48px;
-          padding: 0 20px 64px;
+          flex-direction: row;
+          align-items: stretch;
+          gap: 20px;
+          padding: 0 20px 40px;
+          overflow-x: auto;
+          scroll-snap-type: x mandatory;
+          -webkit-overflow-scrolling: touch;
         }
 
         .card-wrap { 
-          width: 100%;
-          max-width: 380px;
+          width: 280px;
+          flex-shrink: 0;
           display: flex;
           flex-direction: column;
-          transition: none;
+          scroll-snap-align: center;
         }
 
         @media (min-width: 768px) {
           .cards-container {
-            flex-direction: row;
             flex-wrap: wrap;
             justify-content: center;
             gap: 24px;
             padding: 0 0 40px;
-            align-items: stretch;
+            overflow-x: visible;
+            scroll-snap-type: none;
           }
           .card-wrap {
             width: calc(50% - 12px);
             max-width: 380px;
+            scroll-snap-align: none;
           }
         }
 
@@ -274,9 +278,41 @@ export default function CardShowcase() {
         .arrow-circle { display: flex; align-items: center; justify-content: center; width: 34px; height: 34px; border-radius: 50%; background: #111827; color: #fff; font-size: 16px; transition: transform 0.25s ease; }
         .view-all-btn:hover .arrow-circle { transform: translateX(4px); }
         .tab-pill { border: none; cursor: pointer; font-weight: 700; font-size: 15px; padding: 10px 28px; border-radius: 99px; transition: all 0.25s ease; font-family: inherit; }
-        .carousel-arrow { position: absolute; right: 0; top: 33%; transform: translateY(-50%); width: 56px; height: 56px; background: rgba(17,17,17,0.4); backdrop-filter: blur(8px); border: none; cursor: pointer; color: #fff; border-top-left-radius: 99px; border-bottom-left-radius: 99px; display: flex; align-items: center; justify-content: center; opacity: 0; transition: opacity 0.25s ease, background 0.2s ease; }
-        .cards-outer:hover .carousel-arrow { opacity: 1; }
-        .carousel-arrow:hover { background: rgba(17,17,17,0.65) !important; }
+        .carousel-arrow { 
+          position: absolute; 
+          top: 33%; 
+          transform: translateY(-50%); 
+          width: 48px; 
+          height: 48px; 
+          background: rgba(17,17,17,0.6); 
+          backdrop-filter: blur(8px); 
+          border: none; 
+          cursor: pointer; 
+          color: #fff; 
+          display: flex; 
+          align-items: center; 
+          justify-content: center; 
+          z-index: 50;
+          transition: all 0.2s ease;
+        }
+        .arrow-right { 
+          right: 0; 
+          border-top-left-radius: 99px; 
+          border-bottom-left-radius: 99px; 
+        }
+        .arrow-left { 
+          left: 0; 
+          border-top-right-radius: 99px; 
+          border-bottom-right-radius: 99px; 
+        }
+        @media (max-width: 767px) {
+          .carousel-arrow {
+            width: 40px;
+            height: 40px;
+            top: 25%;
+          }
+        }
+        .carousel-arrow:hover { background: rgba(17,17,17,0.8) !important; }
       `}</style>
       <div className="max-w-[1600px] mx-auto px-5 md:px-16 lg:px-24">
 
@@ -560,6 +596,24 @@ export default function CardShowcase() {
               );
             })}
           </div>
+          <button 
+            className="carousel-arrow arrow-left" 
+            onClick={() => {
+              scrollRef.current?.scrollBy({ left: -300, behavior: 'smooth' });
+            }}
+            aria-label="Scroll left"
+          >
+            <span style={{ fontSize: 24, fontWeight: 300, marginRight: -4 }}>‹</span>
+          </button>
+          <button 
+            className="carousel-arrow arrow-right" 
+            onClick={() => {
+              scrollRef.current?.scrollBy({ left: 300, behavior: 'smooth' });
+            }}
+            aria-label="Scroll right"
+          >
+            <span style={{ fontSize: 24, fontWeight: 300, marginLeft: -4 }}>›</span>
+          </button>
         </div>
 
         <div style={{ marginTop: 48, display: "flex", justifyContent: "center", padding: "0 24px" }}>

@@ -529,7 +529,7 @@ export default function Navbar() {
             <div style={{ display: "flex", alignItems: "center", gap: 32 }}>
               <Link href="/" className="logo-wrap" style={{ display: 'flex', alignItems: 'center' }}>
                 <img
-                  src="/logo.jpeg"
+                  src="/removelogo.png"
                   alt="Connecxa Logo"
                   style={{ width: 'clamp(220px, 20vw, 300px)', maxWidth: '100%', height: 'auto', maxHeight: 'clamp(75px, 10vw, 95px)', objectFit: 'contain', transform: 'scale(1.2)' }}
                 />

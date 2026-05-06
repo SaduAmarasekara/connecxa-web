@@ -11,7 +11,6 @@ import NetworkingToolkit from "@/components/NetworkingToolkit";
 export default function Home() {
   return (
     <div className="min-h-screen flex flex-col bg-white overflow-hidden">
-      <div className="w-full h-8 lg:h-12 bg-white" />
       {/* ── Hero Section ── */}
       <main className="w-full relative flex flex-col items-center pt-20 pb-16 lg:pt-28 lg:pb-0 overflow-hidden" style={{
         background: "linear-gradient(180deg, #FFFFFF 0%, #D2E4FC 100%)",

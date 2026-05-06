@@ -13,7 +13,7 @@ export default function ShopPage() {
       className="min-h-screen flex flex-col bg-white overflow-x-hidden"
       style={{ fontFamily: "'DM Sans', 'Helvetica Neue', sans-serif" }}
     >
-      <main className="w-full flex flex-col items-center py-6 lg:py-8">
+      <main className="w-full flex flex-col items-center pb-6 lg:pb-8">
         <div className="w-full max-w-[1600px] px-6 lg:px-12">
 
 

@@ -39,8 +39,8 @@ export default function ContactHero() {
               <div className="space-y-4 md:space-y-6 w-full flex flex-col items-center lg:items-start">
                 <h1
                   style={{
-                    fontSize: "clamp(22px,3.5vw,57px)",
-                    fontWeight: 800,
+                    fontSize: "clamp(22px,3.5vw,60px)",
+                    fontWeight: 900,
                     lineHeight: 1.15,
                     letterSpacing: "0.01em",
                     color: "#111827",
@@ -48,7 +48,7 @@ export default function ContactHero() {
                   }}
                 >
                   Your Contact Book
-                  <br className="hidden lg:block" />
+                  <br className="hidden lg:block" />{" "}
                   Just Got Smarter
                 </h1>
                 <p
@@ -58,7 +58,7 @@ export default function ContactHero() {
                     lineHeight: 1.65,
                     fontWeight: 500,
                     maxWidth: 460,
-                    marginBottom: 40,
+                    marginBottom: 20,
                   }}
                 >
                   Built for modern professionals - fast, organised, and always in sync. A cleaner, clearer way to manage relationships.
@@ -108,8 +108,7 @@ export default function ContactHero() {
           {/* ── Right Column — Image ── */}
           <div className="flex-1 relative w-full z-10 flex items-center justify-center lg:justify-end mt-12 lg:mt-0 min-h-[360px] md:min-h-[480px] lg:min-h-0">
             <div 
-              className="relative w-full h-full min-h-[300px] md:min-h-[400px] lg:min-h-[580px] lg:scale-[0.8] origin-center transition-transform duration-700 ease-out hover:scale-[0.82]"
-              style={{ transform: "translateY(-40px)" }}
+              className="relative w-full h-full min-h-[300px] md:min-h-[400px] lg:min-h-[580px] scale-[0.9] lg:scale-[0.8] origin-center transition-transform duration-700 ease-out hover:scale-[0.82] lg:translate-y-[-40px]"
             >
               <Image
                 src="/contact-book-mockup.png"

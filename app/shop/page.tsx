@@ -15,7 +15,7 @@ export default function ShopPage() {
     >
       <main className="w-full flex flex-col items-center py-6 lg:py-8">
         <div className="w-full max-w-[1600px] px-6 lg:px-12">
-          <div className="w-full h-10 lg:h-12 bg-white" />
+       <div className="w-full h-8 lg:h-8 bg-white" />
        
           {/* Blue Hero Card */}
           <div
@@ -41,8 +41,8 @@ export default function ShopPage() {
 
               <h1
                 style={{
-                  fontSize: "clamp(22px,3.5vw,57px)",
-                  fontWeight: 800,
+                  fontSize: "clamp(22px,3.5vw,60px)",
+                  fontWeight: 900,
                   lineHeight: 1.15,
                   letterSpacing: "0.01em",
                   color: "#111827",
@@ -61,7 +61,7 @@ export default function ShopPage() {
                   lineHeight: 1.65,
                   fontWeight: 500,
                   maxWidth: 460,
-                  marginBottom: 40,
+                  marginBottom: 20,
                 }}
               >
                 Modernise your networking with a single tap - share socials,

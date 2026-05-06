@@ -288,15 +288,15 @@ export default function Navbar() {
         }
 
         @media (min-width: 768px) {
-          .nav-inner { padding: 18px 20px; }
+          .nav-inner { padding: 14px 20px; }
           .nav-inner.scrolled { padding: 8px 20px; }
         }
         @media (min-width: 1200px) {
-          .nav-inner { padding: 18px 40px; }
+          .nav-inner { padding: 14px 40px; }
           .nav-inner.scrolled { padding: 8px 40px; }
         }
         @media (min-width: 1600px) {
-          .nav-inner { padding: 18px 60px; }
+          .nav-inner { padding: 14px 60px; }
           .nav-inner.scrolled { padding: 8px 60px; }
         }
 
@@ -526,12 +526,12 @@ export default function Navbar() {
         <div className={`nav-wrapper ${scrolled ? "scrolled" : "top"}`}>
           <div className={`nav-inner ${scrolled ? "scrolled" : ""}`} style={{ maxWidth: '1600px', margin: '0 auto', display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: '20px', flexWrap: 'nowrap' }}>
             {/* Left: Logo + Links */}
-            <div style={{ display: "flex", alignItems: "center", gap: 8 }}>
+            <div style={{ display: "flex", alignItems: "center", gap: 32 }}>
               <Link href="/" className="logo-wrap" style={{ display: 'flex', alignItems: 'center' }}>
                 <img
                   src="/newlogo.png"
                   alt="Connecxa Logo"
-                  style={{ width: '200px', maxWidth: '100%', height: 'auto', maxHeight: '70px', objectFit: 'contain' }}
+                  style={{ width: 'clamp(140px, 12vw, 175px)', maxWidth: '100%', height: 'auto', maxHeight: 'clamp(44px, 5vw, 55px)', objectFit: 'contain' }}
                 />
               </Link>
 

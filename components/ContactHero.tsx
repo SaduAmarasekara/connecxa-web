@@ -7,7 +7,7 @@ import Link from "next/link";
 
 export default function ContactHero() {
   return (
-    <section className="w-full flex flex-col items-center py-8 lg:py-16 overflow-x-hidden" style={{ fontFamily: "DM Sans, sans-serif" }}>
+    <section className="w-full flex flex-col items-center pb-8 lg:pb-16 overflow-x-hidden" style={{ fontFamily: "DM Sans, sans-serif" }}>
       <div className="w-full max-w-[1600px] px-5 md:px-16 lg:px-24">
 
         {/* Contact Hero Card */}

@@ -12,7 +12,7 @@ import FAQ from '@/components/FAQ';
 
 export default function DigitalBusinessCards() {
   return (
-    <main className="w-full flex flex-col items-center py-8 lg:py-16 overflow-x-hidden" style={{ fontFamily: "DM Sans, sans-serif" }}>
+    <main className="w-full flex flex-col items-center pb-8 lg:pb-16 overflow-x-hidden" style={{ fontFamily: "DM Sans, sans-serif" }}>
       <div className="w-full max-w-[1600px] px-5 md:px-16 lg:px-24">
 
         {/* Lavender Hero Card */}

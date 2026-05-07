@@ -7,6 +7,7 @@ import Workflow from "@/components/Workflow";
 import FAQ from "@/components/FAQ";
 import ProfilesShowcase from "@/components/ProfilesShowcase";
 import NetworkingToolkit from "@/components/NetworkingToolkit";
+import TrustedBy from "@/components/TrustedBy";
 
 export default function Home() {
   return (
@@ -27,7 +28,7 @@ export default function Home() {
             Smart Networking 2.0
           </div>
 
-          <h1 className="text-[42px] md:text-[64px] lg:text-[80px] font-black leading-[1.05] tracking-[-0.04em] text-[#111827] mb-8" style={{ marginTop: "20px" }}>
+          <h1 className="text-[42px] md:text-[64px] lg:text-[80px] font-black leading-[1.05] tracking-[-0.04em] text-[#111827] mb-8">
             The easiest way to create <br className="hidden md:block" />
             and share your <span className="text-[#005AD1]">Digital Business Card.</span>
           </h1>
@@ -126,6 +127,9 @@ export default function Home() {
           }
         `}</style>
       </main>
+    
+ <div className="w-full h-20 lg:h-30 bg-white" />
+      <TrustedBy />
 
       {/* ── Sections ── */}
       <div className="w-full h-24 lg:h-32 bg-white" />

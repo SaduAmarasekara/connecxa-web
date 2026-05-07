@@ -303,16 +303,15 @@ export default function Navbar() {
         /* Logo */
         .logo-wrap {
           position: relative;
-          height: 80px;
-          width: 340px;
+          height: 65px;
+          width: 280px;
           flex-shrink: 0;
-          transition: transform 0.25s ease;
           display: flex;
           align-items: center;
           margin-top: 0px;
-          margin-left: -35px;
+          margin-left: -25px;
         }
-        .logo-wrap:hover { transform: scale(1.05); }
+
 
         /* Desktop links */
         .desktop-links {
@@ -499,7 +498,7 @@ export default function Navbar() {
           .desktop-links { display: none; } 
           .nav-divider { display: none; } 
           .hamburger { display: flex; }
-          .logo-wrap { width: 280px; height: 85px; margin-left: -25px; }
+          .logo-wrap { width: 240px; height: 70px; margin-left: -20px; }
         }
         @media (max-width: 1100px) {
           .btn-demo { display: none; }
@@ -510,12 +509,12 @@ export default function Navbar() {
         @media (max-width: 640px) { 
           .nav-inner { padding: 10px 16px; gap: 12px; } 
           .nav-inner.scrolled { padding: 8px 16px; } 
-          .logo-wrap { width: 220px; height: 75px; margin-left: -15px; } 
+          .logo-wrap { width: 180px; height: 60px; margin-left: -12px; } 
           .actions { gap: 8px; }
           .nav-divider { display: none; }
         }
         @media (max-width: 380px) {
-          .logo-wrap { width: 180px; height: 65px; margin-left: -10px; }
+          .logo-wrap { width: 150px; height: 55px; margin-left: -8px; }
           .cart-btn { width: 38px; height: 38px; }
           .hamburger { padding: 6px; }
         }
@@ -529,9 +528,9 @@ export default function Navbar() {
             <div style={{ display: "flex", alignItems: "center", gap: 32 }}>
               <Link href="/" className="logo-wrap" style={{ display: 'flex', alignItems: 'center' }}>
                 <img
-                  src="/removelogo.png"
+                  src="/correct logo .png"
                   alt="Connecxa Logo"
-                  style={{ width: 'clamp(220px, 20vw, 300px)', maxWidth: '100%', height: 'auto', maxHeight: 'clamp(75px, 10vw, 95px)', objectFit: 'contain', transform: 'scale(1.2)' }}
+                  style={{ width: 'clamp(180px, 18vw, 260px)', maxWidth: '100%', height: 'auto', maxHeight: 'clamp(60px, 9vw, 80px)', objectFit: 'contain', transform: 'scale(1.1)' }}
                 />
               </Link>
 

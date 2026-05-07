@@ -95,23 +95,23 @@ export default function Footer() {
         @import url('https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600;9..40,700;9..40,800&display=swap');
 
         .footer-link {
-          color: #555555;
-          font-size: 14px;
-          font-weight: 500;
+          color: #4b5563;
+          font-size: 15px;
+          font-weight: 600;
           text-decoration: none;
           display: inline-flex;
           align-items: center;
           gap: 6px;
-          transition: color 0.2s ease;
+          transition: color 0.2s ease, transform 0.2s ease;
           width: fit-content;
         }
-        .footer-link:hover { color: #111827; }
+        .footer-link:hover { color: #1a56db; transform: translateX(2px); }
         .footer-link:hover .link-arrow { opacity: 1; transform: translateX(2px); }
         .link-arrow {
           opacity: 0;
           transform: translateX(-3px);
           transition: all 0.2s ease;
-          font-size: 12px;
+          font-size: 13px;
         }
 
         .cta-demo-btn {
@@ -157,11 +157,11 @@ export default function Footer() {
         }
 
         .social-btn {
-          width: 36px;
-          height: 36px;
+          width: 38px;
+          height: 38px;
           border-radius: 50%;
-          border: 1px solid #e5e7eb;
-          color: #666;
+          border: 1px solid #d1d5db;
+          color: #6b7280;
           display: flex;
           align-items: center;
           justify-content: center;
@@ -169,40 +169,41 @@ export default function Footer() {
           transition: all 0.2s ease;
         }
         .social-btn:hover {
-          border-color: #FF5C00;
-          color: #FF5C00;
-          background: #fff5f0;
+          border-color: #3b82f6;
+          color: #3b82f6;
+          background: #eff6ff;
           transform: translateY(-2px);
         }
 
         .newsletter-input {
           flex: 1;
-          border: 1px solid #ffe0cc;
-          border-radius: 6px;
-          padding: 8px 10px;
-          font-size: 13px;
+          border: 1px solid #dbeafe;
+          border-radius: 8px;
+          padding: 10px 12px;
+          font-size: 14px;
           font-family: inherit;
           outline: none;
-          background: #ffffff;
-          color: #111;
+          background:"#ec7231ff"
+          color: #111827;
           transition: border-color 0.2s;
         }
-        .newsletter-input:focus { border-color: #FF5C00; }
+        .newsletter-input::placeholder { color: "#ec7231ff" }
+        .newsletter-input:focus { border-color: #f68c3bff; }
 
         .newsletter-btn {
-          background: #FF5C00;
-          color: #ffffff;
+          background: "#ec7231ff"
+          color: "#ec7231ff"
           border: none;
-          border-radius: 6px;
-          padding: 8px 14px;
-          font-size: 12.5px;
+          border-radius: 8px;
+          padding: 10px 18px;
+          font-size: 13px;
           font-weight: 700;
           cursor: pointer;
           font-family: inherit;
           white-space: nowrap;
-          transition: background 0.2s;
+          transition: all 0.2s;
         }
-        .newsletter-btn:hover { background: #e05200; }
+        .newsletter-btn:hover { background: #ec7231ff; transform: translateY(-1px); }
 
         .pay-chip {
           height: 26px;
@@ -216,12 +217,12 @@ export default function Footer() {
         }
 
         .bottom-social-btn {
-          color: #111827;
+          color: #6b7280;
           transition: color 0.2s, transform 0.2s;
           display: flex;
           align-items: center;
         }
-        .bottom-social-btn:hover { color: #FF5C00; transform: translateY(-2px); }
+        .bottom-social-btn:hover { color: #3b82f6; transform: translateY(-2px); }
 
         .divider-dot {
           width: 3px;
@@ -250,7 +251,7 @@ export default function Footer() {
       {/* ── Blue CTA Section ── */}
       <div
         style={{
-          background: "linear-gradient(135deg, #c1d3faff 0%, #204b95ff 50%, #6eaff8ff 100%)",
+          background: "linear-gradient(135deg, #436bc2ff 0%, #204b95ff 50%, #6eaff8ff 100%)",
           color: "#ffffff",
           padding: "80px 24px",
           width: "100%",
@@ -342,15 +343,15 @@ export default function Footer() {
         </div>
       </div>
 
-      {/* ── White Footer Section ── */}
+      {/* ── White-Blue Footer Section ── */}
       <div
         style={{
-          background: "#ffffff",
+          background: "linear-gradient(180deg, #ffffff 0%, #f0f7ff 60%, #e0edff 100%)",
           color: "#111827",
-          padding: "64px 40px 0",
+          padding: "72px 40px 0",
           width: "100%",
           boxSizing: "border-box",
-          borderTop: "1px solid #f3f4f6",
+          borderTop: "1px solid #e5e7eb",
         }}
       >
         <div style={{ maxWidth: 1400, margin: "0 auto" }}>
@@ -363,7 +364,7 @@ export default function Footer() {
               gridTemplateColumns: "220px 1fr 1fr 1fr",
               gap: "48px 56px",
               paddingBottom: 56,
-              borderBottom: "1px solid #f3f4f6",
+              borderBottom: "1px solid #dbeafe",
             }}
           >
             {/* ── Brand Column ── */}
@@ -379,11 +380,12 @@ export default function Footer() {
 
               <p
                 style={{
-                  fontSize: 13.5,
-                  color: "#888",
-                  lineHeight: 1.65,
-                  margin: "0 0 22px",
-                  maxWidth: 190,
+                  fontSize: 14,
+                  color: "#6b7280",
+                  lineHeight: 1.7,
+                  margin: "0 0 24px",
+                  maxWidth: 200,
+                  fontWeight: 500,
                 }}
               >
                 The smart NFC business card built for modern professionals.
@@ -402,12 +404,12 @@ export default function Footer() {
             <div style={{ display: "flex", flexDirection: "column" }}>
               <h3
                 style={{
-                  fontSize: 11,
-                  fontWeight: 700,
-                  letterSpacing: "0.12em",
+                  fontSize: 12,
+                  fontWeight: 800,
+                  letterSpacing: "0.14em",
                   textTransform: "uppercase",
-                  color: "#FF5C00",
-                  margin: "0 0 20px",
+                  color: "#ec7231ff",
+                  margin: "0 0 22px",
                 }}
               >
                 Quick Links
@@ -426,12 +428,12 @@ export default function Footer() {
             <div style={{ display: "flex", flexDirection: "column" }}>
               <h3
                 style={{
-                  fontSize: 11,
-                  fontWeight: 700,
-                  letterSpacing: "0.12em",
+                  fontSize: 12,
+                  fontWeight: 800,
+                  letterSpacing: "0.14em",
                   textTransform: "uppercase",
-                  color: "#FF5C00",
-                  margin: "0 0 20px",
+                  color: "#ec7231ff",
+                  margin: "0 0 22px",
                 }}
               >
                 Policies
@@ -454,12 +456,12 @@ export default function Footer() {
             <div style={{ display: "flex", flexDirection: "column" }}>
               <h3
                 style={{
-                  fontSize: 11,
-                  fontWeight: 700,
-                  letterSpacing: "0.12em",
+                  fontSize: 12,
+                  fontWeight: 800,
+                  letterSpacing: "0.14em",
                   textTransform: "uppercase",
-                  color: "#FF5C00",
-                  margin: "0 0 20px",
+                  color: "#ec7231ff",
+                  margin: "0 0 22px",
                 }}
               >
                 Company
@@ -476,30 +478,31 @@ export default function Footer() {
               {/* Newsletter box */}
               <div
                 style={{
-                  padding: 18,
-                  background: "#fff8f5",
-                  borderRadius: 12,
-                  border: "1px solid #ffe4d6",
+                  padding: 20,
+                  background: "#eff6ff",
+                  borderRadius: 14,
+                  border: "1px solid #dbeafe",
                 }}
               >
                 <p
                   style={{
-                    fontSize: 11,
-                    fontWeight: 700,
-                    color: "#FF5C00",
+                    fontSize: 12,
+                    fontWeight: 800,
+                    color: "#ec7231ff",
                     margin: "0 0 6px",
                     textTransform: "uppercase",
-                    letterSpacing: "0.1em",
+                    letterSpacing: "0.14em",
                   }}
                 >
                   Newsletter
                 </p>
                 <p
                   style={{
-                    fontSize: 12.5,
-                    color: "#888",
-                    margin: "0 0 12px",
+                    fontSize: 13,
+                    color: "#6b7280",
+                    margin: "0 0 14px",
                     lineHeight: 1.5,
+                    fontWeight: 500,
                   }}
                 >
                   Stay in the loop on product updates.
@@ -563,7 +566,7 @@ export default function Footer() {
                   <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-5.2 1.74 2.89 2.89 0 0 1 2.31-4.64 2.93 2.93 0 0 1 .88.13V9.4a6.84 6.84 0 0 0-1-.05A6.33 6.33 0 0 0 5 15.68a6.34 6.34 0 0 0 6.27 6.32 6.32 6.32 0 0 0 6.21-6.32V10.4a8.11 8.11 0 0 0 4.41 1.3V8.34a5.1 5.1 0 0 1-2.3-.65z" /></svg>
                 </a>
               </div>
-              <p style={{ fontSize: 12, color: "#aaa", margin: 0, fontWeight: 500, letterSpacing: "0.01em" }}>
+              <p style={{ fontSize: 13, color: "#9ca3af", margin: 0, fontWeight: 600, letterSpacing: "0.01em" }}>
                 © 2026 Connecxa &nbsp;·&nbsp; The #1 Smart Digital Name Card for individuals and businesses.
               </p>
             </div>

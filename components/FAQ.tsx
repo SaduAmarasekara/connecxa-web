@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import Link from "next/link";
 
 const faqs = [
   {
@@ -34,71 +35,304 @@ export default function FAQ({ dark = false }: { dark?: boolean }) {
   const [openIndex, setOpenIndex] = useState<number | null>(null);
 
   return (
-    <section className="w-full flex justify-center bg-white py-16 md:py-24" style={{ fontFamily: "'DM Sans', 'Helvetica Neue', sans-serif" }}>
-      <div className="w-full max-w-[1200px] px-4 md:px-6 lg:px-12">
-        {/* Main Box */}
-        <div
-          className={`rounded-[5px] md:rounded-[10px] lg:rounded-[15px] px-6 py-8 md:px-12 md:py-16 lg:px-20 lg:py-20 text-white flex flex-col lg:flex-row items-start justify-between gap-6 md:gap-12 lg:gap-20 shadow-[0_20px_60px_rgba(0,0,0,0.15)] transition-colors duration-500 w-full ${dark ? 'bg-[#111111]' : 'bg-[#005AD1]'
-            }`}
-        >
+    <>
+      <style>{`
+        .faq-section {
+          width: 100%;
+          display: flex;
+          justify-content: center;
+          background: #ffffff;
+          padding: 80px 24px;
+          font-family: 'DM Sans', 'Helvetica Neue', sans-serif;
+          box-sizing: border-box;
+        }
 
-          {/* Left Column */}
-          <div className="w-full lg:w-[35%] flex flex-col shrink-0 text-left">
-            <h2 className="text-[36px] md:text-[52px] lg:text-[64px] font-bold tracking-tight leading-none mb-3 md:mb-6">
-              FAQs
-            </h2>
-            <a
-              href="#"
-              className="text-[15px] md:text-[17px] font-semibold flex items-center gap-2 hover:translate-x-1 transition-transform w-fit opacity-90 hover:opacity-100"
-            >
-              See all FAQs
-              <span className="text-[18px] leading-none -mt-0.5">→</span>
-            </a>
-          </div>
+        .faq-container {
+          width: 100%;
+          max-width: 1100px;
+        }
 
-          {/* Right Column - Accordion */}
-          <div className="w-full lg:flex-1 flex flex-col border-t border-white/25 mt-2 lg:mt-0">
-            {faqs.map((faq, index) => (
-              <div
-                key={index}
-                className="border-b border-white/25 w-full"
-              >
-                <button
-                  className="w-full py-4 md:py-6 flex items-center justify-between text-left focus:outline-none group"
-                  onClick={() =>
-                    setOpenIndex(openIndex === index ? null : index)
-                  }
-                >
-                  <span className="text-[15px] md:text-[18px] font-medium leading-snug pr-6 group-hover:opacity-90 transition-opacity tracking-tight">
-                    {faq.question}
-                  </span>
-                  <div
-                    className={`transform transition-transform duration-300 flex-shrink-0 flex items-center justify-center ${openIndex === index ? "rotate-90" : ""
-                      }`}
+        .faq-card {
+          border-radius: 20px;
+          padding: 56px 64px;
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          gap: 64px;
+          width: 100%;
+          box-sizing: border-box;
+          box-shadow: 0 4px 40px rgba(0, 0, 0, 0.06);
+          border: 1px solid rgba(255, 255, 255, 0.15);
+        }
+
+        .faq-card--light {
+          background: linear-gradient(135deg, #3460bfff 0%, #386dc2ff 50%, #1e528eff 100%);
+          color: #ffffff;
+          border: none;
+        }
+
+        .faq-card--dark {
+          background: #111111;
+          color: #ffffff;
+        }
+
+        .faq-left {
+          flex-shrink: 0;
+          width: 260px;
+          display: flex;
+          flex-direction: column;
+          overflow: visible;
+        }
+
+        .faq-title {
+          font-size: 56px;
+          font-weight: 800;
+          letter-spacing: -0.03em;
+          line-height: 1;
+          margin: 0 0 20px 0;
+        }
+
+        .faq-card--light .faq-title {
+          color: #ffffff;
+        }
+
+        .faq-card--dark .faq-title {
+          color: #ffffff;
+        }
+
+        .faq-see-all {
+          font-size: 16px;
+          font-weight: 600;
+          display: inline-flex;
+          align-items: center;
+          gap: 8px;
+          text-decoration: none;
+          transition: transform 0.2s ease, opacity 0.2s ease;
+          opacity: 0.75;
+          width: fit-content;
+        }
+
+        .faq-card--light .faq-see-all {
+          color: #ffffff;
+        }
+
+        .faq-card--dark .faq-see-all {
+          color: #ffffff;
+        }
+
+        .faq-see-all:hover {
+          transform: translateX(4px);
+          opacity: 1;
+        }
+
+        .faq-see-all-arrow {
+          font-size: 18px;
+          line-height: 1;
+          transition: transform 0.2s ease;
+        }
+
+        .faq-see-all:hover .faq-see-all-arrow {
+          transform: translateX(3px);
+        }
+
+        .faq-right {
+          flex: 1;
+          display: flex;
+          flex-direction: column;
+          min-width: 0;
+        }
+
+        .faq-item {
+          width: 100%;
+        }
+
+        .faq-card--light .faq-item {
+          border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .faq-card--dark .faq-item {
+          border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+        }
+
+        .faq-item:last-child {
+          border-bottom: none;
+        }
+
+        .faq-button {
+          width: 100%;
+          padding: 22px 0;
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          background: none;
+          border: none;
+          cursor: pointer;
+          text-align: left;
+          font-family: inherit;
+          transition: opacity 0.2s ease;
+        }
+
+        .faq-card--light .faq-button {
+          color: #ffffff;
+        }
+
+        .faq-card--dark .faq-button {
+          color: #ffffff;
+        }
+
+        .faq-button:hover {
+          opacity: 0.8;
+        }
+
+        .faq-question {
+          font-size: 17px;
+          font-weight: 600;
+          line-height: 1.4;
+          padding-right: 24px;
+          letter-spacing: -0.01em;
+        }
+
+        .faq-chevron {
+          flex-shrink: 0;
+          width: 20px;
+          height: 20px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .faq-chevron--open {
+          transform: rotate(90deg);
+        }
+
+        .faq-answer-wrapper {
+          overflow: hidden;
+          transition: max-height 0.35s cubic-bezier(0.4, 0, 0.2, 1),
+                      opacity 0.3s ease;
+        }
+
+        .faq-answer-wrapper--closed {
+          max-height: 0;
+          opacity: 0;
+        }
+
+        .faq-answer-wrapper--open {
+          max-height: 300px;
+          opacity: 1;
+        }
+
+        .faq-answer {
+          padding: 0 0 24px 0;
+          font-size: 15px;
+          line-height: 1.7;
+          max-width: 90%;
+        }
+
+        .faq-card--light .faq-answer {
+          color: rgba(255, 255, 255, 0.8);
+        }
+
+        .faq-card--dark .faq-answer {
+          color: rgba(255, 255, 255, 0.7);
+        }
+
+        @media (max-width: 900px) {
+          .faq-card {
+            flex-direction: column;
+            padding: 40px 36px;
+            gap: 32px;
+            border-radius: 16px;
+          }
+          .faq-left {
+            width: 100%;
+          }
+          .faq-title {
+            font-size: 44px;
+            margin-bottom: 12px;
+          }
+        }
+
+        @media (max-width: 580px) {
+          .faq-section {
+            padding: 56px 16px;
+          }
+          .faq-card {
+            padding: 32px 24px;
+            gap: 24px;
+            border-radius: 14px;
+          }
+          .faq-title {
+            font-size: 36px;
+          }
+          .faq-question {
+            font-size: 15px;
+          }
+          .faq-button {
+            padding: 18px 0;
+          }
+        }
+      `}</style>
+
+      <section className="faq-section">
+        <div className="faq-container">
+          <div className={`faq-card ${dark ? 'faq-card--dark' : 'faq-card--light'}`}>
+
+            {/* Left Column */}
+            <div className="faq-left">
+              <h2 className="faq-title">FAQs</h2>
+              <Link href="/resources/faqs" className="faq-see-all">
+                See all FAQs
+                <span className="faq-see-all-arrow">→</span>
+              </Link>
+            </div>
+
+            {/* Right Column - Accordion */}
+            <div className="faq-right">
+              {faqs.map((faq, index) => (
+                <div key={index} className="faq-item">
+                  <button
+                    className="faq-button"
+                    onClick={() =>
+                      setOpenIndex(openIndex === index ? null : index)
+                    }
                   >
-                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
-                      <polyline points="9 18 15 12 9 6" />
-                    </svg>
-                  </div>
-                </button>
+                    <span className="faq-question">{faq.question}</span>
+                    <div
+                      className={`faq-chevron ${openIndex === index ? 'faq-chevron--open' : ''}`}
+                    >
+                      <svg
+                        width="18"
+                        height="18"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        strokeWidth="2.5"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                      >
+                        <polyline points="9 18 15 12 9 6" />
+                      </svg>
+                    </div>
+                  </button>
 
-                {/* Animated Dropdown Content */}
-                <div
-                  className={`overflow-hidden transition-all duration-300 ease-in-out ${openIndex === index
-                      ? "max-h-[300px] pb-6 opacity-100"
-                      : "max-h-0 opacity-0"
+                  {/* Animated Dropdown Content */}
+                  <div
+                    className={`faq-answer-wrapper ${
+                      openIndex === index
+                        ? 'faq-answer-wrapper--open'
+                        : 'faq-answer-wrapper--closed'
                     }`}
-                >
-                  <p className="text-[14px] md:text-[16px] text-white/80 leading-relaxed font-medium md:max-w-[90%]">
-                    {faq.answer}
-                  </p>
+                  >
+                    <p className="faq-answer">{faq.answer}</p>
+                  </div>
                 </div>
-              </div>
-            ))}
-          </div>
+              ))}
+            </div>
 
+          </div>
         </div>
-      </div>
-    </section>
+      </section>
+    </>
   );
 }

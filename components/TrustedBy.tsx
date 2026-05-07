@@ -17,7 +17,7 @@ const logos = [
     name: "Hyatt",
     svg: (
       <svg viewBox="0 0 200 56" className="h-10 w-auto" xmlns="http://www.w3.org/2000/svg">
-        <text x="8" y="46" fontFamily="Georgia, serif" fontSize="46" fontWeight="700" fill="#1B1B5E" letterSpacing="-2">HYATT</text>
+        <text x="8" y="46" fontFamily="'DM Sans', sans-serif" fontSize="46" fontWeight="700" fill="#1B1B5E" letterSpacing="-2">HYATT</text>
       </svg>
     ),
   },
@@ -36,7 +36,7 @@ const logos = [
     svg: (
       <svg viewBox="0 0 150 46" className="h-10 w-auto" xmlns="http://www.w3.org/2000/svg">
         <rect width="150" height="46" rx="23" fill="#E20015"/>
-        <text x="75" y="32" textAnchor="middle" fontFamily="Arial, sans-serif" fontSize="22" fontWeight="700" fill="white" letterSpacing="1">BOSCH</text>
+        <text x="75" y="32" textAnchor="middle" fontFamily="'DM Sans', sans-serif" fontSize="22" fontWeight="700" fill="white" letterSpacing="1">BOSCH</text>
       </svg>
     ),
   },
@@ -44,7 +44,7 @@ const logos = [
     name: "Fujifilm",
     svg: (
       <svg viewBox="0 0 185 44" className="h-10 w-auto" xmlns="http://www.w3.org/2000/svg">
-        <text x="2" y="36" fontFamily="Arial Black, sans-serif" fontSize="34" fontWeight="900" fill="#D20020" letterSpacing="-0.5">FUJIFILM</text>
+        <text x="2" y="36" fontFamily="'DM Sans', sans-serif" fontSize="34" fontWeight="900" fill="#D20020" letterSpacing="-0.5">FUJIFILM</text>
       </svg>
     ),
   },
@@ -52,7 +52,7 @@ const logos = [
     name: "Jimmy Choo",
     svg: (
       <svg viewBox="0 0 240 34" className="h-10 w-auto" xmlns="http://www.w3.org/2000/svg">
-        <text x="2" y="26" fontFamily="Georgia, serif" fontSize="22" fontWeight="400" fill="#1a1a1a" letterSpacing="4">JIMMY CHOO</text>
+        <text x="2" y="26" fontFamily="'DM Sans', sans-serif" fontSize="22" fontWeight="400" fill="#1a1a1a" letterSpacing="4">JIMMY CHOO</text>
       </svg>
     ),
   },
@@ -61,7 +61,7 @@ const logos = [
     svg: (
       <svg viewBox="0 0 100 44" className="h-10 w-auto" xmlns="http://www.w3.org/2000/svg">
         <rect width="100" height="44" rx="4" fill="#D31145"/>
-        <text x="50" y="30" textAnchor="middle" fontFamily="Arial, sans-serif" fontSize="22" fontWeight="900" fill="white" letterSpacing="4">AIA</text>
+        <text x="50" y="30" textAnchor="middle" fontFamily="'DM Sans', sans-serif" fontSize="22" fontWeight="900" fill="white" letterSpacing="4">AIA</text>
       </svg>
     ),
   },
@@ -69,7 +69,7 @@ const logos = [
     name: "Shiseido",
     svg: (
       <svg viewBox="0 0 190 34" className="h-10 w-auto" xmlns="http://www.w3.org/2000/svg">
-        <text x="2" y="26" fontFamily="Georgia, serif" fontSize="20" fontWeight="400" fill="#1a1a1a" letterSpacing="6">SHISEIDO</text>
+        <text x="2" y="26" fontFamily="'DM Sans', sans-serif" fontSize="20" fontWeight="400" fill="#1a1a1a" letterSpacing="6">SHISEIDO</text>
       </svg>
     ),
   },
@@ -78,9 +78,9 @@ const logos = [
     svg: (
       <svg viewBox="0 0 100 68" className="h-10 w-auto" xmlns="http://www.w3.org/2000/svg">
         <rect width="100" height="32" rx="4" fill="#F29200"/>
-        <text x="50" y="22" textAnchor="middle" fontFamily="Arial, sans-serif" fontSize="14" fontWeight="700" fill="white">BANDAI</text>
+        <text x="50" y="22" textAnchor="middle" fontFamily="'DM Sans', sans-serif" fontSize="14" fontWeight="700" fill="white">BANDAI</text>
         <rect y="36" width="100" height="32" rx="4" fill="#1A1A8C"/>
-        <text x="50" y="57" textAnchor="middle" fontFamily="Arial, sans-serif" fontSize="14" fontWeight="700" fill="white">NAMCO</text>
+        <text x="50" y="57" textAnchor="middle" fontFamily="'DM Sans', sans-serif" fontSize="14" fontWeight="700" fill="white">NAMCO</text>
       </svg>
     ),
   },
@@ -97,7 +97,7 @@ const logos = [
     name: "Medtronic",
     svg: (
       <svg viewBox="0 0 190 36" className="h-10 w-auto" xmlns="http://www.w3.org/2000/svg">
-        <text x="2" y="28" fontFamily="Arial, sans-serif" fontSize="26" fontWeight="300" fill="#0056A0" letterSpacing="0.5">medtronic</text>
+        <text x="2" y="28" fontFamily="'DM Sans', sans-serif" fontSize="26" fontWeight="300" fill="#0056A0" letterSpacing="0.5">medtronic</text>
       </svg>
     ),
   },
@@ -105,8 +105,8 @@ const logos = [
     name: "JobStreet",
     svg: (
       <svg viewBox="0 0 165 40" className="h-10 w-auto" xmlns="http://www.w3.org/2000/svg">
-        <text x="2" y="32" fontFamily="Arial, sans-serif" fontSize="30" fontWeight="700" fill="#1C3688">Job</text>
-        <text x="66" y="32" fontFamily="Arial, sans-serif" fontSize="30" fontWeight="700" fill="#F58220">Street</text>
+        <text x="2" y="32" fontFamily="'DM Sans', sans-serif" fontSize="30" fontWeight="700" fill="#1C3688">Job</text>
+        <text x="66" y="32" fontFamily="'DM Sans', sans-serif" fontSize="30" fontWeight="700" fill="#F58220">Street</text>
       </svg>
     ),
   },
@@ -114,7 +114,7 @@ const logos = [
     name: "Bvlgari",
     svg: (
       <svg viewBox="0 0 155 30" className="h-10 w-auto" xmlns="http://www.w3.org/2000/svg">
-        <text x="2" y="24" fontFamily="Georgia, serif" fontSize="20" fontWeight="400" fill="#1a1a1a" letterSpacing="6">BVLGARI</text>
+        <text x="2" y="24" fontFamily="'DM Sans', sans-serif" fontSize="20" fontWeight="400" fill="#1a1a1a" letterSpacing="6">BVLGARI</text>
       </svg>
     ),
   },
@@ -122,7 +122,7 @@ const logos = [
     name: "NXP",
     svg: (
       <svg viewBox="0 0 100 40" className="h-10 w-auto" xmlns="http://www.w3.org/2000/svg">
-        <text x="2" y="34" fontFamily="Arial Black, sans-serif" fontSize="38" fontWeight="900" fill="#009FE3" letterSpacing="-1">NXP</text>
+        <text x="2" y="34" fontFamily="'DM Sans', sans-serif" fontSize="38" fontWeight="900" fill="#009FE3" letterSpacing="-1">NXP</text>
       </svg>
     ),
   },
@@ -130,7 +130,7 @@ const logos = [
     name: "Changi",
     svg: (
       <svg viewBox="0 0 155 42" className="h-10 w-auto" xmlns="http://www.w3.org/2000/svg">
-        <text x="2" y="32" fontFamily="Arial, sans-serif" fontSize="28" fontWeight="700" fill="#003DA5" letterSpacing="2">CHANGI</text>
+        <text x="2" y="32" fontFamily="'DM Sans', sans-serif" fontSize="28" fontWeight="700" fill="#003DA5" letterSpacing="2">CHANGI</text>
       </svg>
     ),
   },
@@ -139,8 +139,8 @@ const logos = [
     svg: (
       <svg viewBox="0 0 56 56" className="h-10 w-auto" xmlns="http://www.w3.org/2000/svg">
         <circle cx="28" cy="28" r="26" fill="none" stroke="#003087" strokeWidth="2.5"/>
-        <text x="28" y="24" textAnchor="middle" fontFamily="Georgia, serif" fontSize="9" fill="#003087" fontWeight="700">INTER</text>
-        <text x="28" y="34" textAnchor="middle" fontFamily="Georgia, serif" fontSize="7" fill="#003087">CONTINENTAL</text>
+        <text x="28" y="24" textAnchor="middle" fontFamily="'DM Sans', sans-serif" fontSize="9" fill="#003087" fontWeight="700">INTER</text>
+        <text x="28" y="34" textAnchor="middle" fontFamily="'DM Sans', sans-serif" fontSize="7" fill="#003087">CONTINENTAL</text>
       </svg>
     ),
   },
@@ -149,8 +149,10 @@ const logos = [
 export default function TrustedBy() {
   const trackRef = useRef<HTMLDivElement>(null);
 
+  const fontStyle = { fontFamily: "'DM Sans', 'Helvetica Neue', sans-serif" };
+
   return (
-    <section className="w-full py-20 bg-white overflow-hidden">
+    <section className="w-full py-20 bg-white overflow-hidden" style={fontStyle}>
 
       {/* ── Centered Header ── */}
       <div className="w-full px-6 text-center mb-4">
@@ -158,7 +160,7 @@ export default function TrustedBy() {
           World-class clients
         </p>
         <h2
-          className="font-serif font-bold leading-[1.1] tracking-tight text-gray-900 mb-5 mx-auto"
+          className="font-bold leading-[1.1] tracking-tight text-gray-900 mb-5 mx-auto"
           style={{ fontSize: "clamp(40px, 6vw, 64px)" }}
         >
           Trusted by{" "}
@@ -175,7 +177,7 @@ export default function TrustedBy() {
           <br />
           companies worldwide
         </h2>
-        <p className="text-gray-500 text-lg font-light">
+        <p className="text-gray-500 text-lg font-medium">
           From Fortune 500s to fast-growing teams
         </p>
       </div>
@@ -215,7 +217,7 @@ export default function TrustedBy() {
               </div>
               <span
                 className="font-semibold uppercase text-gray-300 transition-colors duration-300 group-hover/logo:text-gray-500"
-                style={{ fontSize: "9px", letterSpacing: "0.18em" }}
+                style={{ fontSize: "10px", letterSpacing: "0.18em" }}
               >
                 {logo.name}
               </span>
@@ -237,7 +239,7 @@ export default function TrustedBy() {
             )}
             <div className="text-center">
               <div
-                className="font-serif font-bold leading-none mb-1"
+                className="font-bold leading-none mb-1"
                 style={{
                   fontSize: "36px",
                   background: "linear-gradient(135deg, #0066FF 0%, #00C9A7 100%)",
@@ -248,7 +250,7 @@ export default function TrustedBy() {
               >
                 {s.num}
               </div>
-              <div className="text-xs text-gray-400 tracking-wide font-light">
+              <div className="text-xs text-gray-400 tracking-wide font-medium">
                 {s.label}
               </div>
             </div>

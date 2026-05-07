@@ -38,6 +38,7 @@ export default function NetworkingToolkit() {
           overflow: hidden;
           margin-bottom: 24px;
           transition: transform 0.3s cubic-bezier(0.23, 1, 0.32, 1);
+
         }
         .nt-card:hover .nt-visual {
           transform: translateY(-6px);
@@ -270,6 +271,7 @@ export default function NetworkingToolkit() {
               <h3 style={{ fontSize: 22, fontWeight: 700, color: "#111827", margin: "0 0 8px", letterSpacing: "-0.01em" }}>Networking Insights</h3>
               <p style={{ fontSize: 15, color: "#6B7280", fontWeight: 500, margin: 0, lineHeight: 1.65 }}>Understand your impact with data-driven engagement tracking</p>
             </div>
+            
 
             {/* Card 5: Virtual Connections */}
             <div className="nt-card">
@@ -305,7 +307,7 @@ export default function NetworkingToolkit() {
                   <div className="w-4 h-4 rounded-full bg-[#1DB954]"></div>
                 </div>
                 <div className="absolute w-[100px] h-[36px] bg-[#FF5C00] rounded-xl right-[28%] top-[35%] flex items-center justify-center shadow-xl z-10 -rotate-3 group-hover:scale-110 transition-transform">
-                  <span className="text-white text-[11px] font-black tracking-wide">OneGoodCard</span>
+                  <span className="text-white text-[11px] font-black tracking-wide">Connecxa</span>
                 </div>
                 <div className="absolute w-[60px] h-[60px] bg-gradient-to-tr from-[#FFDC80] via-[#F56040] to-[#E1306C] rounded-2xl right-[15%] bottom-[20%] flex items-center justify-center shadow-lg">
                   <div className="w-8 h-8 rounded-full border-2 border-white flex items-center justify-center">

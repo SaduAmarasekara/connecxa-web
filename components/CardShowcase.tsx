@@ -208,16 +208,13 @@ export default function CardShowcase() {
   const [activeColors, setActiveColors] = useState<Record<string, number>>({});
   const scrollRef = useRef<HTMLDivElement>(null);
 
-
   return (
     <section
       className="py-16 md:py-24"
       style={{
         fontFamily: "'DM Sans', 'Helvetica Neue', sans-serif",
         background: "#ffffff",
-        marginLeft: "20px"
-       
-      
+        marginLeft: "20px",
       }}
     >
       <style>{`
@@ -314,11 +311,15 @@ export default function CardShowcase() {
         }
         .carousel-arrow:hover { background: rgba(17,17,17,0.8) !important; }
       `}</style>
-      <div className="max-w-[1600px] mx-auto px-5 md:px-16 lg:px-24">
-
+      <div className="mx-auto px-5 md:px-16 lg:px-24">
         {/* ── Header ── */}
         <div
-          style={{ display: "flex", flexDirection: "column", marginBottom: 64, padding: "0 24px" }}
+          style={{
+            display: "flex",
+            flexDirection: "column",
+            marginBottom: 64,
+            padding: "0 24px",
+          }}
         >
           <h2
             style={{
@@ -335,7 +336,14 @@ export default function CardShowcase() {
           </h2>
 
           {/* Tabs */}
-          <div style={{ display: "flex", flexWrap: "wrap", gap: 12, justifyContent: "center" }}>
+          <div
+            style={{
+              display: "flex",
+              flexWrap: "wrap",
+              gap: 12,
+              justifyContent: "center",
+            }}
+          >
             {tabs.map((tab, i) => (
               <button
                 key={tab}
@@ -356,18 +364,13 @@ export default function CardShowcase() {
 
         {/* ── Cards ── */}
         <div className="cards-outer" style={{ position: "relative" }}>
-          <div
-            ref={scrollRef}
-            className="no-scrollbar cards-container"
-          >
+          <div ref={scrollRef} className="no-scrollbar cards-container">
             {cards.map((card) => {
               const selColor = activeColors[card.id] ?? 0;
-              const currentVariant = card.variants[selColor] || card.variants[0];
+              const currentVariant =
+                card.variants[selColor] || card.variants[0];
               return (
-                <div
-                  key={card.id}
-                  className="card-wrap"
-                >
+                <div key={card.id} className="card-wrap">
                   <div
                     className="gray-box"
                     style={{
@@ -428,8 +431,22 @@ export default function CardShowcase() {
                           preserveAspectRatio="none"
                           viewBox="0 0 100 100"
                         >
-                          <line x1="50" y1="0" x2="100" y2="100" stroke="#D4AF37" strokeWidth="1" />
-                          <line x1="0" y1="100" x2="50" y2="0" stroke="#D4AF37" strokeWidth="1" />
+                          <line
+                            x1="50"
+                            y1="0"
+                            x2="100"
+                            y2="100"
+                            stroke="#D4AF37"
+                            strokeWidth="1"
+                          />
+                          <line
+                            x1="0"
+                            y1="100"
+                            x2="50"
+                            y2="0"
+                            stroke="#D4AF37"
+                            strokeWidth="1"
+                          />
                         </svg>
                       )}
 
@@ -596,27 +613,38 @@ export default function CardShowcase() {
               );
             })}
           </div>
-          <button 
-            className="carousel-arrow arrow-left" 
+          <button
+            className="carousel-arrow arrow-left"
             onClick={() => {
-              scrollRef.current?.scrollBy({ left: -300, behavior: 'smooth' });
+              scrollRef.current?.scrollBy({ left: -300, behavior: "smooth" });
             }}
             aria-label="Scroll left"
           >
-            <span style={{ fontSize: 24, fontWeight: 300, marginRight: -4 }}>‹</span>
+            <span style={{ fontSize: 24, fontWeight: 300, marginRight: -4 }}>
+              ‹
+            </span>
           </button>
-          <button 
-            className="carousel-arrow arrow-right" 
+          <button
+            className="carousel-arrow arrow-right"
             onClick={() => {
-              scrollRef.current?.scrollBy({ left: 300, behavior: 'smooth' });
+              scrollRef.current?.scrollBy({ left: 300, behavior: "smooth" });
             }}
             aria-label="Scroll right"
           >
-            <span style={{ fontSize: 24, fontWeight: 300, marginLeft: -4 }}>›</span>
+            <span style={{ fontSize: 24, fontWeight: 300, marginLeft: -4 }}>
+              ›
+            </span>
           </button>
         </div>
 
-        <div style={{ marginTop: 48, display: "flex", justifyContent: "center", padding: "0 24px" }}>
+        <div
+          style={{
+            marginTop: 48,
+            display: "flex",
+            justifyContent: "center",
+            padding: "0 24px",
+          }}
+        >
           <Link href="/shop/products" style={{ textDecoration: "none" }}>
             <button
               className="view-all-btn"

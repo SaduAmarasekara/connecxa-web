@@ -1,11 +1,13 @@
 "use client";
 
+import { useRef } from "react";
 import Image from "next/image";
+import Link from "next/link";
 
 const features = [
   {
     id: "digital-card",
-    bgColor: "#E8D5F5", // soft lavender/purple
+    bgColor: "#E8D5F5",
     imageSrc: "/workflow-digital-card.png",
     title: "Digital Business Cards",
     description:
@@ -14,7 +16,7 @@ const features = [
   },
   {
     id: "crm",
-    bgColor: "#C8DFF8", // soft blue
+    bgColor: "#C8DFF8",
     imageSrc: "/workflow-crm.png",
     title: "CRM Deal Manager",
     description:
@@ -23,7 +25,7 @@ const features = [
   },
   {
     id: "contacts",
-    bgColor: "#FFF3C4", // soft yellow
+    bgColor: "#FFF3C4",
     imageSrc: "/workflow-contacts.png",
     title: "Contact Manager",
     description:
@@ -33,57 +35,39 @@ const features = [
 ];
 
 export default function Workflow() {
+  const scrollRef = useRef<HTMLDivElement>(null);
+
+  const scroll = (direction: "left" | "right") => {
+    if (scrollRef.current) {
+      scrollRef.current.scrollBy({
+        left: direction === "left" ? -300 : 300,
+        behavior: "smooth",
+      });
+    }
+  };
+
   return (
-    <section
-      className="workflow-section py-16 md:py-24 lg:py-[100px]"
-      style={{
-        background: "#ffffff",
-        fontFamily: "'DM Sans', 'Helvetica Neue', sans-serif"
-      }}
-    >
-      <style>{`
-        @import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;1,700&display=swap');
-        
-        .workflow-section {
-          margin-left: 20px;
-          margin-right: 20px;
-        }
-
-        @media (min-width: 1280px) {
-          .workflow-section {
-            margin-left: 150px;
-            margin-right: 150px;
-          }
-        }
-
+    <section className="py-16 md:py-24 lg:py-[100px] bg-white overflow-hidden">
+      <style jsx>{`
         .wf-card {
           background: #ffffff;
           border-radius: 24px;
           overflow: hidden;
           display: flex;
           flex-direction: column;
-          transition: transform 0.3s cubic-bezier(0.23,1,0.32,1), box-shadow 0.3s ease;
-          box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+          transition: transform 0.3s cubic-bezier(0.23, 1, 0.32, 1),
+            box-shadow 0.3s ease;
+          box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
         }
         .wf-card:hover {
           transform: translateY(-6px);
-          box-shadow: 0 20px 48px rgba(0,0,0,0.13);
+          box-shadow: 0 20px 48px rgba(0, 0, 0, 0.13);
         }
         .wf-img-panel {
           width: 100%;
-          aspect-ratio: 16/11;
+          aspect-ratio: 16 / 11;
           position: relative;
           overflow: hidden;
-          display: flex;
-          align-items: center;
-          justify-content: center;
-        }
-        .wf-img-panel img {
-          object-fit: cover;
-          transition: transform 0.5s ease;
-        }
-        .wf-card:hover .wf-img-panel img {
-          transform: scale(1.03);
         }
         .wf-learn {
           display: inline-flex;
@@ -101,10 +85,37 @@ export default function Workflow() {
           border-color: #111827;
           gap: 10px;
         }
+        .no-scrollbar::-webkit-scrollbar {
+          display: none;
+        }
+
+        /* ── Mobile: carousel items ── */
+        @media (max-width: 767px) {
+          .workflow-container {
+            display: flex !important;
+            overflow-x: auto !important;
+            scroll-snap-type: x mandatory !important;
+            padding-bottom: 16px;
+            gap: 16px !important;
+          }
+          .wf-card {
+            min-width: 280px;
+            max-width: 300px;
+            flex-shrink: 0;
+          }
+        }
       `}</style>
 
-      <div className="max-w-[1440px] mx-auto px-5 md:px-16 lg:px-24">
-
+      {/* ── Constrained wrapper — same max-width everywhere ── */}
+      <div
+        style={{
+          maxWidth: 1200,
+          marginLeft: "auto",
+          marginRight: "auto",
+          paddingLeft: 24,
+          paddingRight: 24,
+        }}
+      >
         {/* ── Header ── */}
         <div style={{ textAlign: "center", marginBottom: 64 }}>
           <h2
@@ -138,60 +149,91 @@ export default function Workflow() {
           </p>
         </div>
 
-        {/* ── Feature Cards Grid ── */}
-        <div
-          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-7"
-        >
-          {features.map((feature) => (
-            <div key={feature.id} className="wf-card">
+        {/* ── Cards ── */}
+        <div className="relative">
+          {/* Mobile scroll buttons */}
+          <button
+            onClick={() => scroll("left")}
+            className="absolute -left-3 top-1/2 -translate-y-1/2 z-20 w-10 h-10 bg-white/90 backdrop-blur-sm rounded-full shadow-lg flex items-center justify-center text-gray-800 border border-gray-100 md:hidden"
+            aria-label="Scroll left"
+          >
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3">
+              <path d="M15 18l-6-6 6-6" />
+            </svg>
+          </button>
+          <button
+            onClick={() => scroll("right")}
+            className="absolute -right-3 top-1/2 -translate-y-1/2 z-20 w-10 h-10 bg-white/90 backdrop-blur-sm rounded-full shadow-lg flex items-center justify-center text-gray-800 border border-gray-100 md:hidden"
+            aria-label="Scroll right"
+          >
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3">
+              <path d="M9 18l6-6-6-6" />
+            </svg>
+          </button>
 
-              {/* Colored image panel */}
+          {/* Carousel on mobile / 3-col grid on desktop */}
+          <div
+            ref={scrollRef}
+            className="no-scrollbar workflow-container"
+            style={{
+              display: "grid",
+              gridTemplateColumns: "repeat(3, 1fr)",
+              gap: 24,
+            }}
+          >
+
+            {features.map((feature) => (
               <div
-                className="wf-img-panel"
-                style={{ background: feature.bgColor }}
+                key={feature.id}
+                className="wf-card"
+                style={{ scrollSnapAlign: "center" }}
               >
-                <Image
-                  src={feature.imageSrc}
-                  alt={feature.title}
-                  fill
-                  className=""
-                  style={{ objectFit: "cover" }}
-                />
-              </div>
-
-              {/* Text content */}
-              <div style={{ padding: "28px 32px 36px" }}>
-                <h3
-                  style={{
-                    fontSize: 20,
-                    fontWeight: 700,
-                    color: "#111827",
-                    margin: "0 0 10px 0",
-                    letterSpacing: "-0.01em",
-                  }}
+                {/* Coloured image panel */}
+                <div
+                  className="wf-img-panel"
+                  style={{ background: feature.bgColor }}
                 >
-                  {feature.title}
-                </h3>
-                <p
-                  style={{
-                    fontSize: 15,
-                    color: "#6B7280",
-                    fontWeight: 400,
-                    margin: "0 0 24px 0",
-                    lineHeight: 1.65,
-                  }}
-                >
-                  {feature.description}
-                </p>
-                <a href={feature.link} className="wf-learn">
-                  Learn More <span style={{ fontSize: 18, lineHeight: 1 }}>→</span>
-                </a>
-              </div>
+                  <Image
+                    src={feature.imageSrc}
+                    alt={feature.title}
+                    fill
+                    style={{ objectFit: "cover" }}
+                  />
+                </div>
 
-            </div>
-          ))}
+                {/* Text */}
+                <div style={{ padding: "28px 32px 36px" }}>
+                  <h3
+                    style={{
+                      fontSize: 20,
+                      fontWeight: 700,
+                      color: "#111827",
+                      margin: "0 0 10px 0",
+                      letterSpacing: "-0.01em",
+                    }}
+                  >
+                    {feature.title}
+                  </h3>
+                  <p
+                    style={{
+                      fontSize: 15,
+                      color: "#6B7280",
+                      fontWeight: 400,
+                      margin: "0 0 24px 0",
+                      lineHeight: 1.65,
+                    }}
+                  >
+                    {feature.description}
+                  </p>
+                  <Link href={feature.link} className="wf-learn">
+                    Learn More{" "}
+                    <span style={{ fontSize: 18, lineHeight: 1 }}>→</span>
+                  </Link>
+                </div>
+              </div>
+            ))}
+          </div>
         </div>
-
       </div>
     </section>
   );

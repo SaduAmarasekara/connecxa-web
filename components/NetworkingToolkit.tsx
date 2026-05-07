@@ -23,6 +23,8 @@ export default function NetworkingToolkit() {
           flex-shrink: 0;
           display: flex;
           flex-direction: column;
+          text-align: center;
+          align-items: center;
         }
         .nt-visual {
           width: 100%;

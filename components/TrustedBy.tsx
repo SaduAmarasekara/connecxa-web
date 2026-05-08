@@ -183,7 +183,7 @@ export default function TrustedBy() {
       </div>
 
       {/* ── Divider ── */}
-      <div className="flex items-center justify-center gap-3 mb-14">
+      <div className="flex items-center justify-center gap-3 mb-14" style={{ marginTop: 32 }}>
         <span className="w-10 h-px bg-gray-200" />
         <span className="w-2 h-2 rounded-full bg-blue-600" />
         <span className="w-10 h-px bg-gray-200" />
@@ -226,8 +226,13 @@ export default function TrustedBy() {
         </div>
       </div>
 
+      {/* ── Spacer + Divider ── */}
+      <div style={{ marginTop: 48, marginBottom: 48, display: 'flex', justifyContent: 'center' }}>
+        <div style={{ width: 80, height: 1, background: '#e5e7eb' }} />
+      </div>
+
       {/* ── Stats ── */}
-      <div className="flex flex-wrap justify-center mt-16 px-6" style={{ gap: "48px" }}>
+      <div className="flex flex-wrap justify-center px-6" style={{ gap: "48px" }}>
         {[
           { num: "2M+", label: "Taps, scans & shares" },
           { num: "200K+", label: "Users & teams globally" },

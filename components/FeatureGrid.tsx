@@ -1,6 +1,6 @@
 "use client";
 
-import React from "react";
+import React, { useRef } from "react";
 import Image from "next/image";
 
 const features = [
@@ -31,28 +31,40 @@ const features = [
 ];
 
 export default function FeatureGrid() {
+  const scrollRef = useRef<HTMLDivElement>(null);
+
+  const scroll = (direction: 'left' | 'right') => {
+    if (scrollRef.current) {
+      const scrollAmount = 300;
+      scrollRef.current.scrollBy({
+        left: direction === 'left' ? -scrollAmount : scrollAmount,
+        behavior: 'smooth'
+      });
+    }
+  };
+
   return (
     <>
       <style>{`
         .feature-grid-section {
           width: 100%;
-          padding: 64px 24px;
+          padding: 80px 24px;
           background: #ffffff;
-          font-family: 'DM Sans', sans-serif;
+          font-family: 'DM Sans', 'Helvetica Neue', sans-serif;
           box-sizing: border-box;
+          overflow: hidden;
         }
 
         .feature-grid-inner {
           width: 100%;
           max-width: 1400px;
           margin: 0 auto;
-          padding: 0 24px;
-          box-sizing: border-box;
+          position: relative;
         }
 
         .feature-grid-header {
           text-align: center;
-          margin-bottom: 48px;
+          margin-bottom: 64px;
         }
 
         .feature-grid-title {
@@ -73,17 +85,17 @@ export default function FeatureGrid() {
         }
 
         .feature-grid-subtitle {
-          font-size: clamp(15px, 2vw, 19px);
+          font-size: clamp(16px, 2vw, 19px);
           color: #6b7280;
           font-weight: 500;
-          margin: 0 0 20px 0;
+          margin: 0;
           padding: 0;
         }
 
         .feature-grid-cards {
           display: grid;
           grid-template-columns: repeat(3, 1fr);
-          gap: 28px;
+          gap: 32px;
         }
 
         .feature-grid-card {
@@ -93,6 +105,7 @@ export default function FeatureGrid() {
           border-radius: 40px;
           overflow: hidden;
           transition: all 0.3s ease;
+          min-width: 0;
         }
 
         .feature-grid-card:hover {
@@ -101,18 +114,20 @@ export default function FeatureGrid() {
         }
 
         .feature-grid-card-content {
-          padding: 36px 36px 24px;
+          padding: 48px 36px 32px;
           text-align: center;
           display: flex;
           flex-direction: column;
           align-items: center;
+          flex: 1;
         }
 
         .feature-grid-card-title {
           font-size: clamp(20px, 2.2vw, 26px);
           font-weight: 900;
           color: #111;
-          margin: 0 0 12px 0;
+          margin: 0 0 16px 0;
+          line-height: 1.2;
         }
 
         .feature-grid-card-desc {
@@ -120,20 +135,18 @@ export default function FeatureGrid() {
           color: #4b5563;
           font-weight: 500;
           line-height: 1.6;
-          max-width: 320px;
+          max-width: 280px;
           margin: 0;
         }
 
         .feature-grid-card-mockup {
           position: relative;
-          height: 340px;
-          margin: auto 32px 0;
-          border-radius: 20px 20px 0 0;
+          height: 380px;
+          margin: 0 32px;
+          border-radius: 24px 24px 0 0;
           overflow: hidden;
-          box-shadow: 0 -4px 30px rgba(0, 0, 0, 0.12);
-          border-left: 1px solid rgba(255, 255, 255, 0.5);
-          border-right: 1px solid rgba(255, 255, 255, 0.5);
-          border-top: 1px solid rgba(255, 255, 255, 0.5);
+          box-shadow: 0 -4px 30px rgba(0, 0, 0, 0.08);
+          background: #fff;
         }
 
         .feature-grid-card-mockup img {
@@ -144,54 +157,72 @@ export default function FeatureGrid() {
           transform: scale(1.05);
         }
 
-        /* Tablet: 2 columns */
+        /* ── ARROWS ── */
+        .fg-arrows {
+          display: none;
+          position: absolute;
+          top: 50%;
+          left: -15px;
+          right: -15px;
+          transform: translateY(-50%);
+          justify-content: space-between;
+          z-index: 30;
+          pointer-events: none;
+        }
+
+        .scroll-btn {
+          width: 46px;
+          height: 46px;
+          background: #fff;
+          border: 1px solid #E5E7EB;
+          border-radius: 50%;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          cursor: pointer;
+          pointer-events: auto;
+          box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+          transition: all 0.2s;
+          color: #111;
+        }
+
+        .scroll-btn:hover {
+          background: #F9FAFB;
+          transform: scale(1.1);
+        }
+
+        /* Tablet/Mobile Responsive */
         @media (max-width: 1024px) {
           .feature-grid-cards {
             grid-template-columns: repeat(2, 1fr);
-            gap: 24px;
-          }
-          .feature-grid-section {
-            padding: 48px 20px;
-          }
-          .feature-grid-card {
-            border-radius: 32px;
-          }
-          .feature-grid-card-content {
-            padding: 28px 28px 20px;
-          }
-          .feature-grid-card-mockup {
-            height: 280px;
-            margin-left: 24px;
-            margin-right: 24px;
           }
         }
 
-        /* Mobile: 1 column */
-        @media (max-width: 600px) {
+        @media (max-width: 768px) {
+          .fg-arrows {
+            display: flex;
+          }
+
           .feature-grid-cards {
-            grid-template-columns: 1fr;
+            display: flex;
+            overflow-x: auto;
+            scroll-snap-type: x mandatory;
             gap: 20px;
+            padding-bottom: 24px;
+            scrollbar-width: none;
           }
-          .feature-grid-section {
-            padding: 40px 16px;
+
+          .feature-grid-cards::-webkit-scrollbar {
+            display: none;
           }
-          .feature-grid-inner {
-            padding: 0 8px;
-          }
-          .feature-grid-header {
-            margin-bottom: 32px;
-          }
+
           .feature-grid-card {
-            border-radius: 28px;
+            flex: 0 0 300px;
+            scroll-snap-align: center;
           }
-          .feature-grid-card-content {
-            padding: 24px 24px 16px;
-          }
+
           .feature-grid-card-mockup {
-            height: 220px;
-            margin-left: 16px;
-            margin-right: 16px;
-            border-radius: 16px 16px 0 0;
+            height: 280px;
           }
         }
       `}</style>
@@ -205,12 +236,26 @@ export default function FeatureGrid() {
               <span className="feature-grid-title-emoji">⭐</span>
             </h2>
             <p className="feature-grid-subtitle">
-              Discover more ways to network smarter with connecxa
+              Discover more ways to network smarter with Connecxa
             </p>
           </div>
 
-          {/* Grid */}
-          <div className="feature-grid-cards">
+          {/* Arrows (Mobile Only) */}
+          <div className="fg-arrows">
+            <button className="scroll-btn" onClick={() => scroll('left')}>
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                <polyline points="15 18 9 12 15 6"></polyline>
+              </svg>
+            </button>
+            <button className="scroll-btn" onClick={() => scroll('right')}>
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                <polyline points="9 18 15 12 9 6"></polyline>
+              </svg>
+            </button>
+          </div>
+
+          {/* Grid/Carousel */}
+          <div className="feature-grid-cards" ref={scrollRef}>
             {features.map((feature, i) => (
               <div
                 key={i}

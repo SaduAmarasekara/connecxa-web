@@ -34,7 +34,6 @@ export default function ContactUsPage() {
     const timer = setInterval(() => {
       setCurrentSlide((prev) => (prev + 1) % slides.length);
     }, 5000);
-    return () => clearInterval(timer);
   }, []);
 
   return (
@@ -42,6 +41,9 @@ export default function ContactUsPage() {
       <style>{`
         @import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800;900&display=swap');
         
+        .contact-page-wrapper {
+          font-family: 'DM Sans', 'Helvetica Neue', sans-serif;
+        }
 
 
         .contact-container {

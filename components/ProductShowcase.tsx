@@ -40,7 +40,7 @@ export default function ProductShowcase() {
   };
 
   return (
-    <section className="py-20 bg-white overflow-hidden" style={{ fontFamily: "'DM Sans', sans-serif" }}>
+    <section className="py-20 bg-white overflow-hidden" style={{ fontFamily: "'DM Sans', 'Helvetica Neue', sans-serif" }}>
       <style>{`
         .showcase-container {
           max-width: 1400px;

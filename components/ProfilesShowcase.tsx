@@ -7,8 +7,10 @@ const profiles = [
   { id: "classic", name: "", src: "/profile-classic.png" },
   { id: "creative", name: "", src: "/profile-creative.png" },
   { id: "professional", name: "", src: "/profile-professional.png" },
+  { id: "corporate", name: "", src: "/profile-corporate.png" },
   { id: "modern", name: "", src: "/profile-modern.png" },
   { id: "minimalist", name: "", src: "/profile-minimalist.png" },
+  { id: "elegant", name: "", src: "/profile-elegant.png" },
 ];
 
 export default function ProfilesShowcase() {

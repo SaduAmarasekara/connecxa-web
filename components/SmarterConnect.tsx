@@ -33,22 +33,7 @@ export default function SmarterConnect() {
         </svg>
       ),
     },
-    {
-      name: "Google Reviews",
-      bg: "#fff",
-      icon: (
-        <svg viewBox="0 0 72 72" xmlns="http://www.w3.org/2000/svg" className="w-16 h-16">
-          <text x="36" y="26" textAnchor="middle" fontSize="11" fontFamily="DM Sans,sans-serif" fontWeight="700" fill="#FBBC05">★★★★★</text>
-          <text x="36" y="38" textAnchor="middle" fontSize="9" fontFamily="DM Sans,sans-serif" fill="#888">Google</text>
-          <g transform="translate(16,40) scale(0.5)">
-            <path d="M46.5 36.5c0-1-.09-1.97-.26-2.9H24v5.49h12.66c-.55 2.97-2.21 5.48-4.71 7.17v5.96h7.63C43.69 48.05 46.5 42.7 46.5 36.5z" fill="#4285F4" />
-            <path d="M24 52c6.48 0 11.92-2.15 15.9-5.83l-7.63-5.96C30.23 41.64 27.27 42.5 24 42.5c-6.28 0-11.6-4.24-13.5-9.94H2.6v6.16C6.55 47.79 14.7 52 24 52z" fill="#34A853" />
-            <path d="M10.5 32.56A14.58 14.58 0 0 1 9.87 28c0-1.58.27-3.11.63-4.56v-6.16H2.6A23.95 23.95 0 0 0 0 28c0 3.87.93 7.53 2.6 10.72l7.9-6.16z" fill="#FBBC05" />
-            <path d="M24 13.5c3.54 0 6.71 1.22 9.21 3.6l6.9-6.9C36.03 6.63 30.58 4 24 4 14.7 4 6.55 8.21 2.6 17.28l7.9 6.16C12.4 17.74 17.72 13.5 24 13.5z" fill="#EA4335" />
-          </g>
-        </svg>
-      ),
-    },
+   
     {
       name: "X (Twitter)",
       bg: "#000",
@@ -135,22 +120,7 @@ export default function SmarterConnect() {
         </svg>
       ),
     },
-    {
-      name: "Slack",
-      bg: "#fff",
-      icon: (
-        <svg viewBox="0 0 72 72" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-16 h-16">
-          <path d="M27.5 36.5C27.5 38.43 26.18 40 24.5 40C22.82 40 21.5 38.43 21.5 36.5C21.5 34.57 22.82 33 24.5 33H27.5V36.5Z" fill="#E01E5A" />
-          <path d="M29 36.5C29 34.57 30.32 33 32 33C33.68 33 35 34.57 35 36.5V47.5C35 49.43 33.68 51 32 51C30.32 51 29 49.43 29 47.5V36.5Z" fill="#E01E5A" />
-          <path d="M32 28.5C30.07 28.5 28.5 27.18 28.5 25.5C28.5 23.82 30.07 22.5 32 22.5C33.93 22.5 35.5 23.82 35.5 25.5V28.5H32Z" fill="#36C5F0" />
-          <path d="M32 30C33.93 30 35.5 31.32 35.5 33C35.5 34.68 33.93 36 32 36H21C19.07 36 17.5 34.68 17.5 33C17.5 31.32 19.07 30 21 30H32Z" fill="#36C5F0" />
-          <path d="M40.5 33C42.43 33 44 34.32 44 36C44 37.68 42.43 39 40.5 39C38.57 39 37 37.68 37 36V33H40.5Z" fill="#2EB67D" />
-          <path d="M39 33C39 34.93 37.68 36.5 36 36.5C34.32 36.5 33 34.93 33 33V22C33 20.07 34.32 18.5 36 18.5C37.68 18.5 39 20.07 39 22V33Z" fill="#2EB67D" />
-          <path d="M36 41.5C37.93 41.5 39.5 42.82 39.5 44.5C39.5 46.18 37.93 47.5 36 47.5C34.07 47.5 32.5 46.18 32.5 44.5V41.5H36Z" fill="#ECB22E" />
-          <path d="M36 40C34.07 40 32.5 38.68 32.5 37C32.5 35.32 34.07 34 36 34H47C48.93 34 50.5 35.32 50.5 37C50.5 38.68 48.93 40 47 40H36Z" fill="#ECB22E" />
-        </svg>
-      ),
-    },
+   
     {
       name: "Discord",
       bg: "#5865F2",
@@ -178,16 +148,7 @@ export default function SmarterConnect() {
         </svg>
       ),
     },
-    {
-      name: "PayPal",
-      bg: "#fff",
-      icon: (
-        <svg viewBox="0 0 72 72" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-16 h-16">
-          <path d="M47.5 22.5C47.5 22.5 49 29 44 32C40.5 34.2 37 34 33 34L31 44H27L24 22.5H36C40 22.5 47.5 22.5 47.5 22.5Z" fill="#009CDE" />
-          <path d="M45 30C45 30 46.5 36.5 41.5 39.5C38 41.7 34.5 41.5 30.5 41.5L28.5 51.5H24.5L27 30H39C43 30 45 30 45 30Z" fill="#003087" />
-        </svg>
-      ),
-    },
+  
   ];
 
   // Duplicate for seamless loop

@@ -11,9 +11,9 @@ const quickLinks = [
 ];
 
 const policies = [
-  { label: "Terms of Service", href: "/terms-of-service" },
-  { label: "Privacy Policy", href: "#" },
-  { label: "Product Policy", href: "#" },
+  { label: "Terms of Service", href: "/policies/terms-of-service" },
+  { label: "Privacy Policy", href: "/policies/privacy-policy" },
+  { label: "Product Policy", href: "/policies/product-policy" },
   { label: "Shipping Policy", href: "#" },
 ];
 
@@ -349,7 +349,7 @@ export default function Footer() {
       {/* ── White-Blue Footer Section ── */}
       <div
         style={{
-          background: "linear-gradient(180deg, #ffffff 0%, #f0f7ff 60%, #e0edff 100%)",
+          background: "linear-gradient(180deg, #ffffffff 0%, #fafbfcff 60%, #e0edff 100%)",
           color: "#111827",
           padding: "72px 40px 0",
           width: "100%",

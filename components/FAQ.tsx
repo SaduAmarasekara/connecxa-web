@@ -72,7 +72,7 @@ export default function FAQ({ dark = false }: { dark?: boolean }) {
         }
 
         .faq-card--light {
-          background: linear-gradient(135deg, #5d85d5ff 0%, #2552a0ff 50%, #59a7ecff 100%);
+          background: linear-gradient(135deg, #3262c0ff 0%, #2552a0ff 50%, #2d81cbff 100%);
           color: #ffffff;
           border: none;
         }

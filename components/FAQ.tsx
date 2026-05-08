@@ -41,15 +41,21 @@ export default function FAQ({ dark = false }: { dark?: boolean }) {
           width: 100%;
           display: flex;
           justify-content: center;
-          background: #ffffff;
+          background: #ffffff !important;
+          background-color: #ffffff !important;
           padding: 80px 24px;
           font-family: 'DM Sans', 'Helvetica Neue', sans-serif;
           box-sizing: border-box;
+          isolation: isolate;
+          position: relative;
+          z-index: 1;
         }
 
         .faq-container {
           width: 100%;
           max-width: 1100px;
+          margin: 0 auto;
+          background: transparent;
         }
 
         .faq-card {
@@ -61,12 +67,12 @@ export default function FAQ({ dark = false }: { dark?: boolean }) {
           gap: 64px;
           width: 100%;
           box-sizing: border-box;
-          box-shadow: 0 4px 40px rgba(0, 0, 0, 0.06);
-          border: 1px solid rgba(255, 255, 255, 0.15);
+          box-shadow: none;
+          border: none;
         }
 
         .faq-card--light {
-          background: linear-gradient(135deg, #1f4087ff 0%, #1c4eb1ff 50%, #60a0e9ff 100%);
+          background: linear-gradient(135deg, #5d85d5ff 0%, #2552a0ff 50%, #7bbcf6ff 100%);
           color: #ffffff;
           border: none;
         }

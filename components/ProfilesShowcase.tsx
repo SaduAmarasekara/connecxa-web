@@ -17,89 +17,298 @@ export default function ProfilesShowcase() {
   const scroll = (direction: "left" | "right") => {
     if (scrollRef.current) {
       scrollRef.current.scrollBy({
-        left: direction === "left" ? -400 : 400,
+        left: direction === "left" ? -360 : 360,
         behavior: "smooth",
       });
     }
   };
 
   return (
-    // ✅ FIX: removed marginLeft:"10px"
-    <section
-      className="w-full py-24 bg-white overflow-hidden"
-      style={{ fontFamily: "'DM Sans', 'Helvetica Neue', sans-serif" }}
-    >
-      {/* ✅ FIX: consistent wrapper — maxWidth 1200, auto margins, 24px padding */}
-      <div style={{ maxWidth: 1200, marginLeft: "auto", marginRight: "auto", paddingLeft: 24, paddingRight: 24 }}>
-        <div className="text-center mb-16 flex flex-col items-center">
-          <h2 className="text-[36px] sm:text-[40px] md:text-[54px] font-bold text-[#111827] tracking-tight leading-tight mb-4 text-center">
-            Fully-Customisable Profiles <span className="text-[0.85em] inline-block ml-1">⚡</span>
+    <>
+      <style>{`
+        .profiles-section {
+          width: 100%;
+          padding: 80px 0 64px;
+          background: #ffffff;
+          font-family: 'DM Sans', 'Helvetica Neue', sans-serif;
+          box-sizing: border-box;
+          overflow: hidden;
+        }
+
+        .profiles-header {
+          max-width: 1400px;
+          margin: 0 auto;
+          padding: 0 24px;
+          text-align: center;
+          margin-bottom: 48px;
+          box-sizing: border-box;
+        }
+
+        .profiles-title {
+          font-size: clamp(32px, 5vw, 54px);
+          font-weight: 700;
+          color: #111827;
+          letter-spacing: -0.02em;
+          line-height: 1.1;
+          margin: 0 0 16px 0;
+        }
+
+        .profiles-title-emoji {
+          font-size: 0.85em;
+          display: inline-block;
+          margin-left: 4px;
+        }
+
+        .profiles-subtitle {
+          font-size: clamp(15px, 1.8vw, 19px);
+          color: #4B5563;
+          font-weight: 500;
+          max-width: 700px;
+          margin: 0 auto;
+          line-height: 1.6;
+        }
+
+        .profiles-carousel-wrapper {
+          position: relative;
+          width: 100%;
+        }
+
+        .profiles-scroll-btn {
+          position: absolute;
+          top: 50%;
+          transform: translateY(-50%);
+          z-index: 10;
+          width: 40px;
+          height: 40px;
+          background: rgba(255, 255, 255, 0.95);
+          backdrop-filter: blur(8px);
+          border-radius: 50%;
+          box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          color: #1f2937;
+          border: 1px solid rgba(0, 0, 0, 0.06);
+          cursor: pointer;
+          transition: all 0.2s ease;
+        }
+
+        .profiles-scroll-btn:hover {
+          transform: translateY(-50%) scale(1.1);
+          box-shadow: 0 6px 24px rgba(0, 0, 0, 0.2);
+        }
+
+        .profiles-scroll-btn--left {
+          left: 6px;
+        }
+
+        .profiles-scroll-btn--right {
+          right: 6px;
+        }
+
+        .profiles-scroll-row {
+          display: flex;
+          gap: 20px;
+          overflow-x: auto;
+          scroll-snap-type: x mandatory;
+          scroll-behavior: smooth;
+          padding: 8px 24px 16px;
+          scrollbar-width: none;
+          -ms-overflow-style: none;
+        }
+
+        .profiles-scroll-row::-webkit-scrollbar {
+          display: none;
+        }
+
+        .profiles-card {
+          flex-shrink: 0;
+          scroll-snap-align: start;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          cursor: pointer;
+          width: 240px;
+        }
+
+        .profiles-device {
+          position: relative;
+          width: 100%;
+          height: 480px;
+          border-radius: 16px;
+          box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+          background: #F8F9FA;
+          overflow: hidden;
+          transition: all 0.35s ease;
+        }
+
+        .profiles-card:hover .profiles-device {
+          box-shadow: 0 16px 40px rgba(0, 0, 0, 0.14);
+          transform: translateY(-6px);
+        }
+
+        .profiles-device-overlay {
+          position: absolute;
+          inset: 0;
+          background: linear-gradient(to top right, transparent, rgba(255,255,255,0.15), transparent);
+          pointer-events: none;
+        }
+
+        .profiles-label {
+          margin-top: 16px;
+          font-size: 18px;
+          font-weight: 700;
+          color: #1f2937;
+          letter-spacing: -0.01em;
+          transition: color 0.3s ease;
+        }
+
+        .profiles-card:hover .profiles-label {
+          color: #005AD1;
+        }
+
+        /* Large desktop */
+        @media (min-width: 1200px) {
+          .profiles-card {
+            width: 280px;
+          }
+          .profiles-device {
+            height: 540px;
+          }
+          .profiles-scroll-row {
+            gap: 24px;
+            padding: 8px 40px 16px;
+          }
+          .profiles-scroll-btn--left {
+            left: 12px;
+          }
+          .profiles-scroll-btn--right {
+            right: 12px;
+          }
+        }
+
+        /* Tablet */
+        @media (max-width: 768px) {
+          .profiles-section {
+            padding: 56px 0 48px;
+          }
+          .profiles-card {
+            width: 220px;
+          }
+          .profiles-device {
+            height: 440px;
+            border-radius: 14px;
+          }
+          .profiles-scroll-row {
+            gap: 16px;
+            padding: 8px 16px 16px;
+          }
+        }
+
+        /* Mobile */
+        @media (max-width: 480px) {
+          .profiles-section {
+            padding: 48px 0 40px;
+          }
+          .profiles-header {
+            margin-bottom: 32px;
+            padding: 0 16px;
+          }
+          .profiles-card {
+            width: 200px;
+          }
+          .profiles-device {
+            height: 400px;
+            border-radius: 12px;
+          }
+          .profiles-scroll-row {
+            gap: 12px;
+            padding: 8px 12px 12px;
+          }
+          .profiles-scroll-btn {
+            width: 32px;
+            height: 32px;
+          }
+        }
+      `}</style>
+
+      <section className="profiles-section">
+        {/* Header */}
+        <div className="profiles-header">
+          <h2 className="profiles-title">
+            Fully-Customisable Profiles
+            <span className="profiles-title-emoji">⚡</span>
           </h2>
-          <p className="text-[17px] md:text-[19px] text-[#4B5563] font-medium max-w-2xl mx-auto">
-            Ready-to-use Digital Business Cards for modern professionals and teams. Click to view!
+          <p className="profiles-subtitle">
+            Ready-to-use Digital Business Cards for modern professionals and
+            teams. Click to view!
           </p>
         </div>
-      </div>
 
-      {/* Carousel — starts from the same left edge as the wrapper above */}
-      <div
-        className="relative group"
-        style={{ paddingLeft: 24 }}
-      >
-        {/* Left arrow */}
-        <button
-          onClick={() => scroll("left")}
-          className="absolute left-2 md:left-8 top-1/2 -translate-y-1/2 z-10 w-10 h-10 md:w-14 md:h-14 bg-white/90 backdrop-blur-sm rounded-full shadow-[0_8px_30px_rgba(0,0,0,0.12)] flex items-center justify-center text-gray-800 hover:scale-110 transition-transform lg:opacity-0 lg:group-hover:opacity-100 border border-gray-100"
-          aria-label="Scroll left"
-        >
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" className="md:w-6 md:h-6">
-            <path d="M15 18l-6-6 6-6" />
-          </svg>
-        </button>
-
-        {/* Right arrow */}
-        <button
-          onClick={() => scroll("right")}
-          className="absolute right-2 md:right-8 top-1/2 -translate-y-1/2 z-10 w-10 h-10 md:w-14 md:h-14 bg-white/90 backdrop-blur-sm rounded-full shadow-[0_8px_30px_rgba(0,0,0,0.12)] flex items-center justify-center text-gray-800 hover:scale-110 transition-transform lg:opacity-0 lg:group-hover:opacity-100 border border-gray-100"
-          aria-label="Scroll right"
-        >
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" className="md:w-6 md:h-6">
-            <path d="M9 18l6-6-6-6" />
-          </svg>
-        </button>
-
-        {/* Scrolling row */}
-        <div
-          ref={scrollRef}
-          className="flex gap-8 overflow-x-auto snap-x snap-mandatory pb-8 pt-4"
-          style={{ scrollbarWidth: "none", msOverflowStyle: "none", scrollBehavior: "smooth" }}
-        >
-          <style>{`.no-scrollbar::-webkit-scrollbar { display: none; }`}</style>
-
-          {profiles.map((profile, index) => (
-            <div
-              key={profile.id}
-              className={`flex-shrink-0 snap-start flex flex-col items-center gap-6 cursor-pointer group/card ${index === profiles.length - 1 ? "pr-8" : ""}`}
+        {/* Carousel */}
+        <div className="profiles-carousel-wrapper">
+          {/* Left arrow */}
+          <button
+            onClick={() => scroll("left")}
+            className="profiles-scroll-btn profiles-scroll-btn--left"
+            aria-label="Scroll left"
+          >
+            <svg
+              width="18"
+              height="18"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="2.5"
+              strokeLinecap="round"
+              strokeLinejoin="round"
             >
-              {/* Device mockup — sizes unchanged */}
-              <div className="relative w-[280px] h-[580px] md:w-[320px] md:h-[660px] rounded-[40px] shadow-[0_8px_30px_rgba(0,0,0,0.08)] bg-[#F8F9FA] overflow-hidden border-[8px] border-white group-hover/card:shadow-[0_20px_50px_rgba(0,0,0,0.15)] group-hover/card:-translate-y-2 transition-all duration-400">
-                <Image
-                  src={profile.src}
-                  alt={profile.name}
-                  fill
-                  className="object-cover object-top"
-                />
-                <div className="absolute inset-0 bg-gradient-to-tr from-transparent via-white/20 to-transparent pointer-events-none" />
-              </div>
+              <path d="M15 18l-6-6 6-6" />
+            </svg>
+          </button>
 
-              {/* Label */}
-              <span className="text-[20px] font-bold text-gray-800 tracking-tight group-hover/card:text-[#005AD1] transition-colors">
-                {profile.name}
-              </span>
-            </div>
-          ))}
+          {/* Right arrow */}
+          <button
+            onClick={() => scroll("right")}
+            className="profiles-scroll-btn profiles-scroll-btn--right"
+            aria-label="Scroll right"
+          >
+            <svg
+              width="18"
+              height="18"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="2.5"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+            >
+              <path d="M9 18l6-6-6-6" />
+            </svg>
+          </button>
+
+          {/* Scrolling row */}
+          <div ref={scrollRef} className="profiles-scroll-row">
+            {profiles.map((profile) => (
+              <div key={profile.id} className="profiles-card">
+                <div className="profiles-device">
+                  <Image
+                    src={profile.src}
+                    alt={profile.name || profile.id}
+                    fill
+                    style={{ objectFit: "cover", objectPosition: "top" }}
+                  />
+                  <div className="profiles-device-overlay" />
+                </div>
+
+                {profile.name && (
+                  <span className="profiles-label">{profile.name}</span>
+                )}
+              </div>
+            ))}
+          </div>
         </div>
-      </div>
-    </section>
+      </section>
+    </>
   );
 }

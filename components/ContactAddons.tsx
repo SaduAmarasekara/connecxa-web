@@ -5,52 +5,230 @@ import Image from "next/image";
 
 export function ContactContextSection() {
   return (
-    <section className="w-[calc(100%-40px)] py-12 md:py-24 bg-white" style={{ fontFamily: "'DM Sans', sans-serif" ,marginLeft: 20 }}>
-      <div className="w-full max-w-[1600px] mx-auto px-4 sm:px-6 md:px-12">
-        <div className="flex flex-col lg:flex-row items-center gap-12 lg:gap-24">
+    <>
+      <style>{`
+        .contact-context-section {
+          width: 100%;
+          padding: 48px 24px;
+          background: #ffffff;
+          font-family: 'DM Sans', sans-serif;
+          box-sizing: border-box;
+        }
 
-          {/* Left Mockup */}
-          <div className="w-full lg:w-1/2">
-            <div className="relative w-full aspect-[4/3] bg-[#FEF9C3] rounded-[32px] md:rounded-[48px] overflow-hidden shadow-sm flex items-center justify-center p-6 md:p-12 group">
-              <div className="relative w-full h-full bg-white rounded-[20px] md:rounded-[32px] shadow-2xl overflow-hidden">
-                <Image
-                  src="/contact-context-mockup.png"
-                  alt="Interaction Context Mockup"
-                  fill
-                  className="object-cover transition-transform duration-700 group-hover:scale-105"
-                />
+        .contact-context-inner {
+          width: 100%;
+          max-width: 1400px;
+          margin: 0 auto;
+          padding: 0 24px;
+          box-sizing: border-box;
+        }
+
+        .contact-context-layout {
+          display: flex;
+          align-items: center;
+          gap: 64px;
+        }
+
+        .contact-context-mockup-col {
+          width: 50%;
+          flex-shrink: 0;
+        }
+
+        .contact-context-mockup-frame {
+          position: relative;
+          width: 100%;
+          aspect-ratio: 4 / 3;
+          background: #FEF9C3;
+          border-radius: 48px;
+          overflow: hidden;
+          box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04);
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          padding: 48px;
+        }
+
+        .contact-context-mockup-inner {
+          position: relative;
+          width: 100%;
+          height: 100%;
+          background: #ffffff;
+          border-radius: 32px;
+          box-shadow: 0 20px 60px rgba(0, 0, 0, 0.12);
+          overflow: hidden;
+        }
+
+        .contact-context-mockup-inner img {
+          transition: transform 0.7s ease;
+        }
+
+        .contact-context-mockup-frame:hover .contact-context-mockup-inner img {
+          transform: scale(1.05);
+        }
+
+        .contact-context-content-col {
+          width: 50%;
+          display: flex;
+          flex-direction: column;
+          align-items: flex-start;
+          text-align: left;
+        }
+
+        .contact-context-title {
+          font-size: clamp(32px, 4.5vw, 54px);
+          font-weight: 900;
+          color: #111;
+          line-height: 1.1;
+          margin: 0 0 24px 0;
+        }
+
+        .contact-context-desc {
+          font-size: clamp(15px, 1.8vw, 19px);
+          color: #6b7280;
+          font-weight: 500;
+          line-height: 1.65;
+          margin: 0 0 32px 0;
+          max-width: 560px;
+        }
+
+        .contact-context-features {
+          list-style: none;
+          padding: 0;
+          margin: 0;
+          display: flex;
+          flex-direction: column;
+          gap: 20px;
+          width: 100%;
+          max-width: 400px;
+        }
+
+        .contact-context-feature-item {
+          display: flex;
+          align-items: center;
+          gap: 16px;
+        }
+
+        .contact-context-feature-dot {
+          width: 24px;
+          height: 24px;
+          border-radius: 6px;
+          background: #eff6ff;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          flex-shrink: 0;
+        }
+
+        .contact-context-feature-dot-inner {
+          width: 12px;
+          height: 2px;
+          background: #005AD1;
+          border-radius: 99px;
+        }
+
+        .contact-context-feature-text {
+          font-size: clamp(15px, 1.5vw, 17px);
+          font-weight: 700;
+          color: #1f2937;
+        }
+
+        /* Tablet */
+        @media (max-width: 1024px) {
+          .contact-context-layout {
+            gap: 40px;
+          }
+          .contact-context-mockup-frame {
+            border-radius: 32px;
+            padding: 32px;
+          }
+          .contact-context-mockup-inner {
+            border-radius: 20px;
+          }
+        }
+
+        /* Mobile */
+        @media (max-width: 768px) {
+          .contact-context-section {
+            padding: 40px 16px;
+          }
+          .contact-context-inner {
+            padding: 0 8px;
+          }
+          .contact-context-layout {
+            flex-direction: column;
+            gap: 32px;
+          }
+          .contact-context-mockup-col,
+          .contact-context-content-col {
+            width: 100%;
+          }
+          .contact-context-content-col {
+            align-items: center;
+            text-align: center;
+          }
+          .contact-context-features {
+            max-width: 100%;
+          }
+          .contact-context-feature-item {
+            justify-content: center;
+          }
+          .contact-context-mockup-frame {
+            border-radius: 28px;
+            padding: 24px;
+          }
+        }
+      `}</style>
+
+      <section className="contact-context-section">
+        <div className="contact-context-inner">
+          <div className="contact-context-layout">
+            {/* Left Mockup */}
+            <div className="contact-context-mockup-col">
+              <div className="contact-context-mockup-frame">
+                <div className="contact-context-mockup-inner">
+                  <Image
+                    src="/contact-context-mockup.png"
+                    alt="Interaction Context Mockup"
+                    fill
+                    style={{ objectFit: "cover" }}
+                  />
+                </div>
               </div>
             </div>
-          </div>
 
-          {/* Right Content */}
-          <div className="w-full lg:w-1/2 flex flex-col items-center lg:items-start text-center lg:text-left">
-            <h2 className="text-[32px] sm:text-[38px] md:text-[44px] lg:text-[54px] font-black text-[#111] leading-[1.2] md:leading-[1.1] mb-6 md:mb-8">
-              Make Every Interaction Context-Rich
-            </h2>
-            <p className="text-[16px] md:text-[19px] text-gray-500 font-medium leading-relaxed mb-8 md:mb-10 max-w-xl">
-              Capture key moments, meeting notes, and activity logs all in one place, synced across your contact and deal records.
-            </p>
-            
-            <ul className="space-y-4 md:space-y-6 w-full max-w-md mx-auto lg:mx-0">
-              <li className="flex items-center justify-center lg:justify-start gap-4">
-                <div className="w-6 h-6 rounded-md bg-blue-50 flex items-center justify-center shrink-0">
-                  <div className="w-3 h-0.5 bg-[#005AD1] rounded-full" />
-                </div>
-                <span className="text-[16px] md:text-[17px] font-bold text-gray-800">Automated activity logs</span>
-              </li>
-              <li className="flex items-center justify-center lg:justify-start gap-4">
-                <div className="w-6 h-6 rounded-md bg-blue-50 flex items-center justify-center shrink-0">
-                  <div className="w-3 h-0.5 bg-[#005AD1] rounded-full" />
-                </div>
-                <span className="text-[16px] md:text-[17px] font-bold text-gray-800">Built-in notes with timestamps</span>
-              </li>
-            </ul>
-          </div>
+            {/* Right Content */}
+            <div className="contact-context-content-col">
+              <h2 className="contact-context-title">
+                Make Every Interaction Context-Rich
+              </h2>
+              <p className="contact-context-desc">
+                Capture key moments, meeting notes, and activity logs all in one
+                place, synced across your contact and deal records.
+              </p>
 
+              <ul className="contact-context-features">
+                <li className="contact-context-feature-item">
+                  <div className="contact-context-feature-dot">
+                    <div className="contact-context-feature-dot-inner" />
+                  </div>
+                  <span className="contact-context-feature-text">
+                    Automated activity logs
+                  </span>
+                </li>
+                <li className="contact-context-feature-item">
+                  <div className="contact-context-feature-dot">
+                    <div className="contact-context-feature-dot-inner" />
+                  </div>
+                  <span className="contact-context-feature-text">
+                    Built-in notes with timestamps
+                  </span>
+                </li>
+              </ul>
+            </div>
+          </div>
         </div>
-      </div>
-    </section>
+      </section>
+    </>
   );
 }
 
@@ -60,71 +238,217 @@ export function NetworkingFeatures() {
       title: "OCR Scanner",
       desc: "Instantly capture paper name card details using your phone's camera.",
       bg: "#FEF3C7",
-      icon: (
-        <svg className="w-6 h-6 text-orange-600" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
-          <path d="M2 9V7a2 2 0 0 1 2-2h2"/><path d="M18 5h2a2 2 0 0 1 2 2v2"/><path d="M2 15v2a2 2 0 0 0 2 2h2"/><path d="M18 19h2a2 2 0 0 0 2-2v2"/><rect x="7" y="7" width="10" height="10" rx="2"/>
-        </svg>
-      )
+      iconColor: "#ea580c",
+      iconPath: (
+        <>
+          <path d="M2 9V7a2 2 0 0 1 2-2h2" />
+          <path d="M18 5h2a2 2 0 0 1 2 2v2" />
+          <path d="M2 15v2a2 2 0 0 0 2 2h2" />
+          <path d="M18 19h2a2 2 0 0 0 2-2v-2" />
+          <rect x="7" y="7" width="10" height="10" rx="2" />
+        </>
+      ),
     },
     {
       title: "Quick Sharing",
       desc: "Instantly call, email, share, or download VCF directly from the contact manager.",
       bg: "#F3E8FF",
-      icon: (
-        <svg className="w-6 h-6 text-purple-600" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
-          <path d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8"/><polyline points="16 6 12 2 8 6"/><line x1="12" y1="2" x2="12" y2="15"/>
-        </svg>
-      )
+      iconColor: "#9333ea",
+      iconPath: (
+        <>
+          <path d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8" />
+          <polyline points="16 6 12 2 8 6" />
+          <line x1="12" y1="2" x2="12" y2="15" />
+        </>
+      ),
     },
     {
       title: "Sync to CRM",
       desc: "Manage and link new deals seamlessly when contacts convert into prospects.",
       bg: "#DCFCE7",
-      icon: (
-        <svg className="w-6 h-6 text-green-600" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
-          <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><polyline points="16 11 18 13 22 9"/>
-        </svg>
-      )
+      iconColor: "#16a34a",
+      iconPath: (
+        <>
+          <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2" />
+          <circle cx="9" cy="7" r="4" />
+          <polyline points="16 11 18 13 22 9" />
+        </>
+      ),
     },
     {
       title: "Multi-Device",
       desc: "Easily manage contacts on the go, whether you're using mobile or desktop.",
       bg: "#DBEAFE",
-      icon: (
-        <svg className="w-6 h-6 text-[#005AD1]" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
-          <rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/>
-        </svg>
-      )
-    }
+      iconColor: "#005AD1",
+      iconPath: (
+        <>
+          <rect x="2" y="3" width="20" height="14" rx="2" ry="2" />
+          <line x1="8" y1="21" x2="16" y2="21" />
+          <line x1="12" y1="17" x2="12" y2="21" />
+        </>
+      ),
+    },
   ];
 
   return (
-    <section className="w-[calc(100%-20px)] py-16 md:py-24 bg-white" style={{ fontFamily: "'DM Sans', sans-serif", marginLeft: 20 }}>
-      <div className="w-full max-w-[1600px] mx-auto px-4 sm:px-6 md:px-12">
-        <div className="text-center mb-10 md:mb-16">
-          <h2 className="text-[32px] sm:text-[38px] md:text-[44px] lg:text-[56px] font-black text-[#111] leading-tight mb-4 flex flex-col md:flex-row items-center justify-center gap-4 md:gap-4">
-            <span>Better Networking Starts Here</span>
-            <span className="inline-block text-[32px] sm:text-[38px] lg:text-[40px] mt-2 md:mt-0">🤝</span>
-          </h2>
-        </div>
+    <>
+      <style>{`
+        .networking-features-section {
+          width: 100%;
+          padding: 64px 24px;
+          background: #ffffff;
+          font-family: 'DM Sans', sans-serif;
+          box-sizing: border-box;
+        }
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6">
-          {features.map((f, i) => (
-            <div key={i} className="bg-[#F8FAFC] p-6 sm:p-8 md:p-10 rounded-[24px] md:rounded-[32px] transition-all duration-300 hover:shadow-xl hover:-translate-y-1 group">
-              <div 
-                className="w-10 h-10 md:w-12 md:h-12 rounded-xl md:rounded-2xl flex items-center justify-center mb-6 md:mb-8 transition-transform duration-300 group-hover:scale-110"
-                style={{ background: f.bg }}
-              >
-                {f.icon}
+        .networking-features-inner {
+          width: 100%;
+          max-width: 1400px;
+          margin: 0 auto;
+          padding: 0 24px;
+          box-sizing: border-box;
+        }
+
+        .networking-features-header {
+          text-align: center;
+          margin-bottom: 48px;
+        }
+
+        .networking-features-title {
+          font-size: clamp(32px, 5vw, 56px);
+          font-weight: 900;
+          color: #111;
+          line-height: 1.1;
+          margin: 0 0 16px 0;
+          display: flex;
+          flex-wrap: wrap;
+          align-items: center;
+          justify-content: center;
+          gap: 12px;
+        }
+
+        .networking-features-title-emoji {
+          font-size: clamp(28px, 4vw, 40px);
+        }
+
+        .networking-features-grid {
+          display: grid;
+          grid-template-columns: repeat(4, 1fr);
+          gap: 24px;
+        }
+
+        .networking-features-card {
+          background: #F8FAFC;
+          padding: 36px 32px;
+          border-radius: 32px;
+          transition: all 0.3s ease;
+        }
+
+        .networking-features-card:hover {
+          box-shadow: 0 20px 50px rgba(0, 0, 0, 0.08);
+          transform: translateY(-4px);
+        }
+
+        .networking-features-icon {
+          width: 48px;
+          height: 48px;
+          border-radius: 16px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          margin-bottom: 28px;
+          transition: transform 0.3s ease;
+        }
+
+        .networking-features-card:hover .networking-features-icon {
+          transform: scale(1.1);
+        }
+
+        .networking-features-card-title {
+          font-size: clamp(18px, 2vw, 22px);
+          font-weight: 900;
+          color: #111;
+          margin: 0 0 12px 0;
+        }
+
+        .networking-features-card-desc {
+          font-size: 15px;
+          color: #6b7280;
+          font-weight: 500;
+          line-height: 1.65;
+          margin: 0;
+        }
+
+        /* Tablet: 2 columns */
+        @media (max-width: 1024px) {
+          .networking-features-grid {
+            grid-template-columns: repeat(2, 1fr);
+          }
+          .networking-features-section {
+            padding: 48px 20px;
+          }
+        }
+
+        /* Mobile: 1 column */
+        @media (max-width: 600px) {
+          .networking-features-grid {
+            grid-template-columns: 1fr;
+            gap: 16px;
+          }
+          .networking-features-section {
+            padding: 40px 16px;
+          }
+          .networking-features-inner {
+            padding: 0 8px;
+          }
+          .networking-features-header {
+            margin-bottom: 32px;
+          }
+          .networking-features-card {
+            padding: 28px 24px;
+            border-radius: 24px;
+          }
+        }
+      `}</style>
+
+      <section className="networking-features-section">
+        <div className="networking-features-inner">
+          {/* Header */}
+          <div className="networking-features-header">
+            <h2 className="networking-features-title">
+              <span>Better Networking Starts Here</span>
+              <span className="networking-features-title-emoji">🤝</span>
+            </h2>
+          </div>
+
+          {/* Grid */}
+          <div className="networking-features-grid">
+            {features.map((f, i) => (
+              <div key={i} className="networking-features-card">
+                <div
+                  className="networking-features-icon"
+                  style={{ background: f.bg }}
+                >
+                  <svg
+                    width="24"
+                    height="24"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke={f.iconColor}
+                    strokeWidth="2.5"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                  >
+                    {f.iconPath}
+                  </svg>
+                </div>
+                <h3 className="networking-features-card-title">{f.title}</h3>
+                <p className="networking-features-card-desc">{f.desc}</p>
               </div>
-              <h3 className="text-[20px] md:text-[22px] font-black text-[#111] mb-3 md:mb-4">{f.title}</h3>
-              <p className="text-[15px] md:text-[16px] text-gray-500 font-medium leading-relaxed">
-                {f.desc}
-              </p>
-            </div>
-          ))}
+            ))}
+          </div>
         </div>
-      </div>
-    </section>
+      </section>
+    </>
   );
 }

@@ -3,21 +3,24 @@ import Link from "next/link";
 import Image from "next/image";
 
 const quickLinks = [
-  "Get your Connecxa Card",
-  "Be our Affiliate!",
-  "Send a Gift Card",
-  "Contact Us",
-  "User Login",
+  { label: "Get your Connecxa Card", href: "/login" },
+  { label: "Be our Affiliate!", href: "#" },
+  { label: "Send a Gift Card", href: "/shop" },
+  { label: "Contact Us", href: "/contact-us" },
+  { label: "User Login", href: "/login" },
 ];
 
 const policies = [
-  "Terms of Service",
-  "Privacy Policy",
-  "Product Policy",
-  "Shipping Policy",
+  { label: "Terms of Service", href: "/terms-of-service" },
+  { label: "Privacy Policy", href: "#" },
+  { label: "Product Policy", href: "#" },
+  { label: "Shipping Policy", href: "#" },
 ];
 
-const company = ["About Us", "Our Commitments"];
+const company = [
+  { label: "About Us", href: "/" },
+  { label: "Our Commitments", href: "/for-companies/teams" },
+];
 
 const features = [
   "Fully Customisable",
@@ -416,8 +419,8 @@ export default function Footer() {
               </h3>
               <div style={{ display: "flex", flexDirection: "column", gap: 13 }}>
                 {quickLinks.map((l) => (
-                  <Link key={l} href="#" className="footer-link">
-                    {l}
+                  <Link key={l.label} href={l.href} className="footer-link">
+                    {l.label}
                     <span className="link-arrow">→</span>
                   </Link>
                 ))}
@@ -441,11 +444,11 @@ export default function Footer() {
               <div style={{ display: "flex", flexDirection: "column", gap: 13 }}>
                 {policies.map((l) => (
                   <Link
-                    key={l}
-                    href={l === "Terms of Service" ? "/terms-of-service" : "#"}
+                    key={l.label}
+                    href={l.href}
                     className="footer-link"
                   >
-                    {l}
+                    {l.label}
                     <span className="link-arrow">→</span>
                   </Link>
                 ))}
@@ -468,8 +471,8 @@ export default function Footer() {
               </h3>
               <div style={{ display: "flex", flexDirection: "column", gap: 13, marginBottom: 32 }}>
                 {company.map((l) => (
-                  <Link key={l} href="#" className="footer-link">
-                    {l}
+                  <Link key={l.label} href={l.href} className="footer-link">
+                    {l.label}
                     <span className="link-arrow">→</span>
                   </Link>
                 ))}

@@ -14,7 +14,7 @@ export default function AllProductsPage() {
         <div className="max-w-[1600px] mx-auto px-6 lg:px-12 mb-24">
 
           {/* Header */}
-          <div className="mb-16 " style={{ margin: "0 auto", textAlign: "center" }} >
+          <div className="mb-16 " style={{ margin: "0 auto", textAlign: "center", fontFamily: "'DM Sans', 'Helvetica Neue', sans-serif" }} >
             <h1 className="text-[42px] md:text-[60px] font-[900] text-[#111827] leading-tight mb-20">
               Your Gateway to Smarter Connections
             </h1>

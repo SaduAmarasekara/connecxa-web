@@ -14,7 +14,7 @@ const policies = [
   { label: "Terms of Service", href: "/policies/terms-of-service" },
   { label: "Privacy Policy", href: "/policies/privacy-policy" },
   { label: "Product Policy", href: "/policies/product-policy" },
-  { label: "Shipping Policy", href: "#" },
+  { label: "Shipping Policy", href: "/policies/shipping-policy" },
 ];
 
 const company = [

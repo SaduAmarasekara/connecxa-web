@@ -494,7 +494,7 @@ export default function Footer() {
                     letterSpacing: "0.14em",
                   }}
                 >
-                  Newsletter
+                  Connecxa
                 </p>
                 <p
                   style={{

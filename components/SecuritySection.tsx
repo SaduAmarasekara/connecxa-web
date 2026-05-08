@@ -6,81 +6,224 @@ const securityFeatures = [
   {
     title: "Private Mode",
     desc: "Toggle advanced privacy and security settings to control the information on your digital business card",
-    icon: (
-      <div className="w-12 h-12 rounded-full bg-[#E0F2FE] flex items-center justify-center mb-6">
-        <svg className="w-6 h-6 text-[#0369A1]" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
-          <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" /><circle cx="12" cy="7" r="4" />
-        </svg>
-      </div>
-    )
+    iconBg: "#E0F2FE",
+    iconColor: "#0369A1",
+    iconPath: (
+      <>
+        <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" />
+        <circle cx="12" cy="7" r="4" />
+      </>
+    ),
   },
   {
     title: "Certified Compliant",
     desc: "Audited and certified cyber-safe compliant by the Cybersecurity Agency of Singapore (CSA)",
-    icon: (
-      <div className="w-12 h-12 rounded-full bg-[#DCFCE7] flex items-center justify-center mb-6">
-        <svg className="w-6 h-6 text-[#15803D]" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
-          <circle cx="12" cy="12" r="10" /><path d="m9 12 2 2 4-4" />
-        </svg>
-      </div>
-    )
+    iconBg: "#DCFCE7",
+    iconColor: "#15803D",
+    iconPath: (
+      <>
+        <circle cx="12" cy="12" r="10" />
+        <path d="m9 12 2 2 4-4" />
+      </>
+    ),
   },
   {
     title: "AES-256 Encryption",
     desc: "We employ state-of-the-art AES-256 encryption to ensure that your information stays secure and private.",
-    icon: (
-      <div className="w-12 h-12 rounded-full bg-[#F3E8FF] flex items-center justify-center mb-6">
-        <svg className="w-6 h-6 text-[#7E22CE]" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
-          <rect x="3" y="11" width="18" height="11" rx="2" ry="2" /><path d="M7 11V7a5 5 0 0 1 10 0v4" />
-        </svg>
-      </div>
-    )
+    iconBg: "#F3E8FF",
+    iconColor: "#7E22CE",
+    iconPath: (
+      <>
+        <rect x="3" y="11" width="18" height="11" rx="2" ry="2" />
+        <path d="M7 11V7a5 5 0 0 1 10 0v4" />
+      </>
+    ),
   },
   {
     title: "MFA Protection",
     desc: "Safeguard your account against unauthorised access with additional layers of security and protection",
-    icon: (
-      <div className="w-12 h-12 rounded-full bg-[#FEF9C3] flex items-center justify-center mb-6">
-        <svg className="w-6 h-6 text-[#A16207]" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
-          <rect x="3" y="3" width="18" height="18" rx="2" ry="2" /><path d="M7 7h10v10H7z" />
-        </svg>
-      </div>
-    )
-  }
+    iconBg: "#FEF9C3",
+    iconColor: "#A16207",
+    iconPath: (
+      <>
+        <rect x="3" y="3" width="18" height="18" rx="2" ry="2" />
+        <path d="M7 7h10v10H7z" />
+      </>
+    ),
+  },
 ];
 
 export default function SecuritySection() {
   return (
-    <section className="w-full py-16 md:py-24 bg-[#F8FAFC]" style={{ fontFamily: "'DM Sans', sans-serif" ,marginLeft: 10 }}>
-      <div className="w-full max-w-[1600px] mx-auto px-6 md:px-12">
+    <>
+      <style>{`
+        .security-section {
+          width: 100%;
+          padding: 64px 24px;
+          background: #F8FAFC;
+          font-family: 'DM Sans', sans-serif;
+          box-sizing: border-box;
+        }
 
-        {/* Header */}
-        <div className="text-center mb-12 md:mb-16">
-          <h2 className="text-[36px] md:text-[44px] lg:text-[56px] font-black text-[#111] leading-tight mb-4 flex flex-wrap items-center justify-center gap-2 md:gap-4">
-            Secured Connections, Always
-            <span className="text-[32px] md:text-[40px]">🔒</span>
-          </h2>
-          <p className="text-[16px] md:text-[19px] text-gray-500 font-medium px-4 md:px-0"style={{marginBottom:20}}>
-            Build connections and network confidently with built-in security at every layer
-          </p>
-        </div>
+        .security-inner {
+          width: 100%;
+          max-width: 1400px;
+          margin: 0 auto;
+          padding: 0 24px;
+          box-sizing: border-box;
+        }
 
-        {/* Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-          {securityFeatures.map((feature, i) => (
-            <div
-              key={i}
-              className="bg-white p-8 md:p-10 rounded-[32px] shadow-[0_8px_30px_rgba(0,0,0,0.04)] border border-gray-100 flex flex-col items-start transition-all duration-300 hover:shadow-[0_20px_50px_rgba(0,0,0,0.08)] hover:-translate-y-1"
-            >
-              {feature.icon}
-              <h3 className="text-[20px] md:text-[22px] font-black text-[#111] mb-3 md:mb-4">{feature.title}</h3>
-              <p className="text-[15px] text-gray-500 font-medium leading-relaxed">
-                {feature.desc}
-              </p>
-            </div>
-          ))}
+        .security-header {
+          text-align: center;
+          margin-bottom: 48px;
+        }
+
+        .security-title {
+          font-size: clamp(32px, 5vw, 56px);
+          font-weight: 900;
+          color: #111;
+          line-height: 1.1;
+          margin: 0 0 16px 0;
+          display: flex;
+          flex-wrap: wrap;
+          align-items: center;
+          justify-content: center;
+          gap: 8px;
+        }
+
+        .security-title-emoji {
+          font-size: clamp(28px, 4vw, 40px);
+        }
+
+        .security-subtitle {
+          font-size: clamp(15px, 2vw, 19px);
+          color: #6b7280;
+          font-weight: 500;
+          margin: 0 0 20px 0;
+          padding: 0;
+        }
+
+        .security-grid {
+          display: grid;
+          grid-template-columns: repeat(4, 1fr);
+          gap: 24px;
+        }
+
+        .security-card {
+          background: #ffffff;
+          padding: 36px 32px;
+          border-radius: 32px;
+          box-shadow: 0 8px 30px rgba(0, 0, 0, 0.04);
+          border: 1px solid #f3f4f6;
+          display: flex;
+          flex-direction: column;
+          align-items: flex-start;
+          transition: all 0.3s ease;
+        }
+
+        .security-card:hover {
+          box-shadow: 0 20px 50px rgba(0, 0, 0, 0.08);
+          transform: translateY(-4px);
+        }
+
+        .security-icon-circle {
+          width: 48px;
+          height: 48px;
+          border-radius: 50%;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          margin-bottom: 24px;
+          flex-shrink: 0;
+        }
+
+        .security-card-title {
+          font-size: clamp(18px, 2vw, 22px);
+          font-weight: 900;
+          color: #111;
+          margin: 0 0 12px 0;
+        }
+
+        .security-card-desc {
+          font-size: 15px;
+          color: #6b7280;
+          font-weight: 500;
+          line-height: 1.65;
+          margin: 0;
+        }
+
+        /* Tablet: 2 columns */
+        @media (max-width: 1024px) {
+          .security-grid {
+            grid-template-columns: repeat(2, 1fr);
+          }
+          .security-section {
+            padding: 48px 20px;
+          }
+        }
+
+        /* Mobile: 1 column */
+        @media (max-width: 600px) {
+          .security-grid {
+            grid-template-columns: 1fr;
+            gap: 16px;
+          }
+          .security-section {
+            padding: 40px 16px;
+          }
+          .security-inner {
+            padding: 0 8px;
+          }
+          .security-header {
+            margin-bottom: 32px;
+          }
+          .security-card {
+            padding: 28px 24px;
+          }
+        }
+      `}</style>
+
+      <section className="security-section">
+        <div className="security-inner">
+          {/* Header */}
+          <div className="security-header">
+            <h2 className="security-title">
+              Secured Connections, Always
+              <span className="security-title-emoji">🔒</span>
+            </h2>
+            <p className="security-subtitle">
+              Build connections and network confidently with built-in security at every layer
+            </p>
+          </div>
+
+          {/* Grid */}
+          <div className="security-grid">
+            {securityFeatures.map((feature, i) => (
+              <div key={i} className="security-card">
+                <div
+                  className="security-icon-circle"
+                  style={{ background: feature.iconBg }}
+                >
+                  <svg
+                    width="24"
+                    height="24"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke={feature.iconColor}
+                    strokeWidth="2.5"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                  >
+                    {feature.iconPath}
+                  </svg>
+                </div>
+                <h3 className="security-card-title">{feature.title}</h3>
+                <p className="security-card-desc">{feature.desc}</p>
+              </div>
+            ))}
+          </div>
         </div>
-      </div>
-    </section>
+      </section>
+    </>
   );
 }

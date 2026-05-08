@@ -1,756 +1,450 @@
 "use client";
 
-import React from "react";
+import React, { useState, useEffect } from "react";
+import Image from "next/image";
 import TestermonialsContact from "@/components/testermonialscontact";
 import FAQSectionContact from "@/components/Faqsectioncontact";
+import TrustedBy from "@/components/TrustedBy";
 
+const slides = [
+  {
+    image: "/contact-hero-1.png",
+    quote: "Connecxa shows that we're thinking ahead — always finding innovative ways to make experiences better.",
+    author: "Daniel Joshua Lee",
+    role: "Creative Director"
+  },
+  {
+    image: "/contact-hero-2.png",
+    quote: "Connecxa has made networking simpler for us. This has significantly enhanced our networking and client relationships.",
+    author: "Clane Chai",
+    role: "Business Development"
+  },
+  {
+    image: "/contact-hero-3.png",
+    quote: "Connecxa provides a seamless way to share our digital identity instantly. It's an essential tool for modern professionals.",
+    author: "Alex Rivera",
+    role: "Marketing Manager"
+  }
+];
 
 export default function ContactUsPage() {
+  const [currentSlide, setCurrentSlide] = useState(0);
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setCurrentSlide((prev) => (prev + 1) % slides.length);
+    }, 5000);
+    return () => clearInterval(timer);
+  }, []);
+
   return (
-    <div>
+    <div className="contact-page-wrapper">
       <style>{`
         @import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800;900&display=swap');
         
-        .contact-page-wrapper {
-          font-family: 'DM Sans', 'Helvetica Neue', sans-serif;
-        }
 
-        .contact-page {
-          min-height: 100vh;
-          display: grid;
-          grid-template-columns: 1fr 1fr;
-          max-width: 1600px;
+
+        .contact-container {
+          max-width: 1400px;
           margin: 0 auto;
-          padding: 0 5vw;
-          align-items: stretch;
-          background: #FAFAF8;
+          padding: 40px 32px;
+          display: grid;
+          grid-template-columns: 1.1fr 0.9fr;
+          gap: 80px;
+          align-items: flex-start;
         }
 
-        /* ── LEFT SIDE ── */
+        /* ── LEFT SIDE: FORM ── */
         .contact-left {
-          padding: 64px 56px 64px 0;
           display: flex;
           flex-direction: column;
-          justify-content: center;
-        }
-
-        .eyebrow {
-          display: inline-flex;
-          align-items: center;
-          gap: 8px;
-          background: rgba(255, 92, 0, 0.08);
-          border: 1px solid rgba(255, 92, 0, 0.18);
-          color: #FF5C00;
-          font-size: 11px;
-          font-weight: 700;
-          letter-spacing: 0.12em;
-          text-transform: uppercase;
-          padding: 6px 14px;
-          border-radius: 100px;
-          margin-bottom: 20px;
-          width: fit-content;
-        }
-
-        .eyebrow-dot {
-          width: 6px;
-          height: 6px;
-          border-radius: 50%;
-          background: #FF5C00;
-          animation: pulse 2s infinite;
-        }
-
-        @keyframes pulse {
-          0%, 100% { opacity: 1; }
-          50% { opacity: 0.3; }
         }
 
         .contact-heading {
-          font-family: 'DM Sans', 'Helvetica Neue', sans-serif;
-          font-size: 56px;
+          font-size: clamp(32px, 5vw, 56px);
           font-weight: 800;
-          line-height: 1.04;
-          color: #0D0D0D;
-          margin-bottom: 20px;
-          letter-spacing: -0.03em;
-        }
-
-        .contact-heading em {
-          font-style: italic;
-          color: #FF5C00;
-        }
-
-        .contact-subtitle {
-          font-size: 19px;
-          color: #6B6B6B;
-          line-height: 1.7;
-          margin-bottom: 40px;
-          max-width: 520px;
-          font-weight: 400;
-        }
-
-        /* ── FORM ── */
-        .form-grid {
-          display: flex;
-          flex-direction: column;
-          gap: 20px;
-        }
-
-        .row-2 {
-          display: grid;
-          grid-template-columns: 1fr 1fr;
-          gap: 16px;
-        }
-
-        .field {
-          display: flex;
-          flex-direction: column;
-          gap: 6px;
-        }
-
-        .field label {
-          font-size: 11px;
-          font-weight: 700;
-          color: #222;
-          letter-spacing: 0.08em;
-          text-transform: uppercase;
-        }
-
-        .field label .req {
-          color: #FF5C00;
-          margin-left: 2px;
-        }
-
-        .field input,
-        .field select,
-        .field textarea {
-          width: 100%;
-          padding: 13px 16px;
-          border: 1.5px solid #E8E8E4;
-          border-radius: 12px;
-          font-family: 'DM Sans', 'Helvetica Neue', sans-serif;
-          font-size: 14px;
           color: #111;
-          background: #fff;
-          outline: none;
-          transition: border-color 0.2s, box-shadow 0.2s;
-          -webkit-appearance: none;
-          appearance: none;
-        }
-
-        .field input:focus,
-        .field select:focus,
-        .field textarea:focus {
-          border-color: #FF5C00;
-          box-shadow: 0 0 0 4px rgba(255, 92, 0, 0.08);
-        }
-
-        .field input::placeholder,
-        .field textarea::placeholder {
-          color: #B0B0A8;
-        }
-
-        .select-wrap {
-          position: relative;
-        }
-
-        .select-wrap select {
-          padding-right: 40px;
-          cursor: pointer;
-        }
-
-        .select-arrow {
-          position: absolute;
-          right: 14px;
-          top: 50%;
-          transform: translateY(-50%);
-          pointer-events: none;
-          color: #999;
-        }
-
-        .field textarea {
-          resize: none;
-          line-height: 1.6;
-        }
-
-        .submit-btn {
-          width: 100%;
-          padding: 16px;
-          background: #FF5C00;
-          color: #fff;
-          border: none;
-          border-radius: 14px;
-          font-family: 'DM Sans', 'Helvetica Neue', sans-serif;
-          font-size: 15px;
-          font-weight: 700;
-          cursor: pointer;
-          letter-spacing: 0.02em;
-          transition: background 0.2s, transform 0.15s;
+          margin-bottom: 16px;
+          letter-spacing: -0.03em;
           display: flex;
           align-items: center;
-          justify-content: center;
-          gap: 10px;
-          margin-top: 4px;
-        }
-
-        .submit-btn:hover {
-          background: #E65200;
-          transform: translateY(-1px);
-        }
-
-        .submit-btn:active {
-          transform: translateY(0);
-        }
-
-        .btn-icon {
-          width: 22px;
-          height: 22px;
-          border-radius: 50%;
-          background: rgba(255, 255, 255, 0.25);
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          font-size: 13px;
-        }
-
-        .legal {
-          text-align: center;
-          font-size: 11.5px;
-          color: #AAAAA4;
-          margin-top: 4px;
-        }
-
-        .legal a {
-          color: #888;
-          text-decoration: underline;
-        }
-
-        /* ── RIGHT SIDE ── */
-        .contact-right {
-          padding: 40px 0 40px 40px;
-          display: flex;
-          flex-direction: column;
-          justify-content: center;
-          gap: 20px;
-        }
-
-        .image-card {
-          width: 100%;
-          height: 420px;
-          border-radius: 24px;
-          overflow: hidden;
-          position: relative;
-          flex-shrink: 0;
-        }
-
-        .img-badge {
-          position: absolute;
-          top: 20px;
-          left: 20px;
-          background: rgba(255, 255, 255, 0.12);
-          backdrop-filter: blur(12px);
-          -webkit-backdrop-filter: blur(12px);
-          border: 1px solid rgba(255, 255, 255, 0.2);
-          border-radius: 10px;
-          padding: 10px 14px;
-          display: flex;
-          align-items: center;
-          gap: 10px;
-          z-index: 10;
-        }
-
-        .badge-dot {
-          width: 8px;
-          height: 8px;
-          border-radius: 50%;
-          background: #4ADE80;
-          box-shadow: 0 0 8px rgba(74, 222, 128, 0.8);
-          flex-shrink: 0;
-        }
-
-        .img-badge span {
-          color: #fff;
-          font-size: 12px;
-          font-weight: 600;
-        }
-
-        .img-bottom {
-          position: absolute;
-          bottom: 0;
-          left: 0;
-          right: 0;
-          padding: 24px;
-          background: linear-gradient(to top, rgba(0, 0, 0, 0.85) 0%, transparent 100%);
-          z-index: 10;
-        }
-
-        .testimonial-text {
-          color: #fff;
-          font-family: 'DM Sans', 'Helvetica Neue', sans-serif;
-          font-size: 17px;
-          font-weight: 400;
-          font-style: italic;
-          line-height: 1.5;
-          margin-bottom: 14px;
-        }
-
-        .testimonial-author {
-          display: flex;
-          align-items: center;
-          gap: 10px;
-        }
-
-        .author-avatar {
-          width: 34px;
-          height: 34px;
-          border-radius: 50%;
-          background: #FF5C00;
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          font-size: 12px;
-          font-weight: 700;
-          color: #fff;
-          flex-shrink: 0;
-          border: 2px solid rgba(255, 255, 255, 0.25);
-        }
-
-        .author-name {
-          color: #fff;
-          font-size: 13px;
-          font-weight: 700;
-        }
-
-        .author-role {
-          color: rgba(255, 255, 255, 0.6);
-          font-size: 11.5px;
-        }
-
-        /* ── INFO CARDS ── */
-        .info-cards {
-          display: grid;
-          grid-template-columns: 1fr 1fr 1fr;
           gap: 12px;
         }
 
-        .info-card {
-          background: #fff;
-          border: 1px solid #EBEBE6;
-          border-radius: 16px;
-          padding: 16px;
+        .contact-subtitle {
+          font-size: clamp(16px, 1.8vw, 18px);
+          color: #555;
+          margin-bottom: 48px;
+          font-weight: 400;
+          line-height: 1.6;
+        }
+
+        .form-grid {
           display: flex;
           flex-direction: column;
-          gap: 4px;
+          gap: 24px;
+          width: 100%;
         }
 
-        .info-icon {
-          width: 32px;
-          height: 32px;
-          border-radius: 8px;
-          background: rgba(255, 92, 0, 0.08);
+        .form-row {
+          display: grid;
+          grid-template-columns: 1fr 1fr;
+          gap: 24px;
+        }
+
+        .field-group {
           display: flex;
-          align-items: center;
-          justify-content: center;
-          margin-bottom: 6px;
+          flex-direction: column;
+          gap: 8px;
         }
 
-        .info-card-label {
-          font-size: 10.5px;
+        .field-group label {
+          font-size: 14px;
           font-weight: 700;
-          color: #AAAAA4;
-          letter-spacing: 0.08em;
-          text-transform: uppercase;
+          color: #333;
         }
 
-        .info-card-value {
-          font-size: 13px;
-          font-weight: 600;
+        .field-group label .req {
+          color: #ef4444;
+          margin-left: 2px;
+        }
+
+        .field-group input,
+        .field-group select,
+        .field-group textarea {
+          width: 100%;
+          padding: 14px 18px;
+          border: 1.5px solid #E5E7EB;
+          border-radius: 12px;
+          font-family: inherit;
+          font-size: 15px;
           color: #111;
+          background: #fff;
+          transition: all 0.2s ease;
+          outline: none;
+        }
+
+        .field-group input:focus,
+        .field-group select:focus,
+        .field-group textarea:focus {
+          border-color: #2563EB;
+          box-shadow: 0 0 0 4px rgba(37, 99, 235, 0.1);
+        }
+
+        .field-group input::placeholder,
+        .field-group textarea::placeholder {
+          color: #9CA3AF;
+        }
+
+        .submit-btn {
+          margin-top: 12px;
+          padding: 16px 32px;
+          background: linear-gradient(135deg, #1D4ED8 0%, #2563EB 100%);
+          color: #fff;
+          border: none;
+          border-radius: 99px;
+          font-size: 16px;
+          font-weight: 700;
+          cursor: pointer;
+          transition: all 0.2s ease;
+          box-shadow: 0 4px 14px rgba(37, 99, 235, 0.3);
+          text-align: center;
+          width: 100%;
+          max-width: 200px;
+        }
+
+        .submit-btn:hover {
+          transform: translateY(-2px);
+          box-shadow: 0 6px 20px rgba(37, 99, 235, 0.4);
+          background: linear-gradient(135deg, #1e40af 0%, #1D4ED8 100%);
+        }
+
+        /* ── RIGHT SIDE: VISUAL SLIDER ── */
+        .contact-right {
+          position: sticky;
+          top: 120px;
+          height: auto;
+        }
+
+        .visual-card {
+          background: #fff;
+          border-radius: 28px;
+          overflow: hidden;
+          box-shadow: 0 20px 50px rgba(0,0,0,0.05);
+          border: 1px solid #F3F4F6;
+          position: relative;
+        }
+
+        .visual-image-container {
+          position: relative;
+          width: 100%;
+          height: 520px;
+          overflow: hidden;
+        }
+
+        .visual-image {
+          position: absolute;
+          inset: 0;
+          transition: opacity 1s ease-in-out, transform 1s ease-in-out;
+          opacity: 0;
+          transform: scale(1.05);
+        }
+
+        .visual-image.active {
+          opacity: 1;
+          transform: scale(1);
+        }
+
+        .visual-content {
+          padding: 32px;
+          background: #fff;
+          min-height: 180px;
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+        }
+
+        .quote-container {
+          transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
+          opacity: 0;
+          transform: translateY(10px);
+          display: none;
+        }
+
+        .quote-container.active {
+          opacity: 1;
+          transform: translateY(0);
+          display: block;
+        }
+
+        .quote-text {
+          font-size: 18px;
+          line-height: 1.6;
+          color: #374151;
+          font-style: italic;
+          margin-bottom: 20px;
+        }
+
+        .quote-author {
+          display: flex;
+          flex-direction: column;
+        }
+
+        .author-name {
+          font-weight: 700;
+          color: #111;
+          font-size: 15px;
+        }
+
+        .author-role {
+          color: #6B7280;
+          font-size: 13px;
+        }
+
+        .slider-dots {
+          position: absolute;
+          bottom: 20px;
+          left: 50%;
+          transform: translateX(-50%);
+          display: flex;
+          gap: 8px;
+          z-index: 10;
+        }
+
+        .dot {
+          width: 8px;
+          height: 8px;
+          border-radius: 50%;
+          background: rgba(255, 255, 255, 0.5);
+          cursor: pointer;
+          transition: all 0.3s ease;
+        }
+
+        .dot.active {
+          background: #fff;
+          width: 24px;
+          border-radius: 4px;
         }
 
         /* ── RESPONSIVE ── */
-        @media (max-width: 900px) {
-          .contact-page {
+        @media (max-width: 1100px) {
+          .contact-container {
             grid-template-columns: 1fr;
-            padding: 32px 24px;
-          }
-          .contact-left {
-            padding: 48px 0 32px;
+            gap: 64px;
+            padding: 40px 24px;
           }
           .contact-right {
-            padding: 0 0 48px;
+            position: static;
+            max-width: 700px;
+            margin: 0 auto;
+          }
+          .contact-left {
+            align-items: center;
+            text-align: center;
+          }
+          .contact-heading {
+            justify-content: center;
+          }
+          .submit-btn {
+            margin: 12px auto 0;
+          }
+        }
+
+        @media (max-width: 640px) {
+          .contact-page-wrapper {
+            padding-top: 100px;
+          }
+          .form-row {
+            grid-template-columns: 1fr;
           }
           .contact-heading {
             font-size: 36px;
           }
-          .row-2 {
-            grid-template-columns: 1fr;
+          .visual-image-container {
+            height: 360px;
           }
-          .info-cards {
-            grid-template-columns: 1fr;
+          .visual-content {
+            padding: 24px;
+          }
+          .quote-text {
+            font-size: 16px;
           }
         }
       `}</style>
 
-      <div className="contact-page-wrapper">
-        <div className="contact-page">
-        {/* ── LEFT: Form ── */}
+      <div className="contact-container">
+        {/* Left: Form */}
         <div className="contact-left">
-          <div className="eyebrow">
-            <div className="eyebrow-dot" />
-            We&apos;re Online
-          </div>
-
           <h1 className="contact-heading">
-            Let&apos;s start a<br />
-            <em>conversation</em>
+            Contact Us <span style={{ fontSize: "0.8em" }}>💬</span>
           </h1>
-
           <p className="contact-subtitle">
-            Have something in mind? We&apos;d love to hear from you. Our team
-            typically responds within 24 hours.
+            Have something in mind? We&apos;re here to make it happen.
           </p>
 
-          <div className="form-grid">
-            <div className="row-2">
-              <div className="field">
-                <label>
-                  Name <span className="req">*</span>
-                </label>
-                <input type="text" placeholder="Your full name" />
+          <form className="form-grid" onSubmit={(e) => e.preventDefault()}>
+            <div className="field-group">
+              <label htmlFor="name">
+                Name <span className="req">*</span>
+              </label>
+              <input type="text" id="name" placeholder="Your name" required />
+            </div>
+
+            <div className="field-group">
+              <label htmlFor="email">
+                Email <span className="req">*</span>
+              </label>
+              <input type="email" id="email" placeholder="Your email address" required />
+            </div>
+
+            <div className="form-row">
+              <div className="field-group">
+                <label htmlFor="number">Number</label>
+                <input type="tel" id="number" placeholder="Your contact number" />
               </div>
-              <div className="field">
-                <label>
-                  Email <span className="req">*</span>
+              <div className="field-group">
+                <label htmlFor="method">
+                  Preferred Contact Method <span className="req">*</span>
                 </label>
-                <input type="email" placeholder="you@example.com" />
+                <select id="method" required>
+                  <option value="email">Email</option>
+                  <option value="phone">Phone</option>
+                  <option value="whatsapp">WhatsApp</option>
+                </select>
               </div>
             </div>
 
-            <div className="row-2">
-              <div className="field">
-                <label>Phone</label>
-                <input type="tel" placeholder="+1 (000) 000-0000" />
-              </div>
-              <div className="field">
-                <label>
-                  Preferred Contact <span className="req">*</span>
-                </label>
-                <div className="select-wrap">
-                  <select>
-                    <option>Email</option>
-                    <option>Phone</option>
-                  </select>
-                  <div className="select-arrow">
-                    <svg
-                      width="12"
-                      height="12"
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      stroke="currentColor"
-                      strokeWidth="2.5"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                    >
-                      <path d="m6 9 6 6 6-6" />
-                    </svg>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <div className="row-2">
-              <div className="field">
-                <label>
+            <div className="form-row">
+              <div className="field-group">
+                <label htmlFor="type">
                   Enquiry Type <span className="req">*</span>
                 </label>
-                <div className="select-wrap">
-                  <select>
-                    <option>Bulk Order (10+)</option>
-                    <option>General Enquiry</option>
-                    <option>Support</option>
-                  </select>
-                  <div className="select-arrow">
-                    <svg
-                      width="12"
-                      height="12"
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      stroke="currentColor"
-                      strokeWidth="2.5"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                    >
-                      <path d="m6 9 6 6 6-6" />
-                    </svg>
-                  </div>
-                </div>
+                <select id="type" required>
+                  <option value="bulk">Bulk order (10 and above)</option>
+                  <option value="individual">Individual order</option>
+                  <option value="corporate">Corporate Gifting</option>
+                  <option value="support">Technical Support</option>
+                  <option value="general">General Inquiry</option>
+                </select>
               </div>
-              <div className="field">
-                <label>Quantity (bulk only)</label>
-                <input type="number" defaultValue={1} min={1} />
+              <div className="field-group">
+                <label htmlFor="quantity">Quantity (For Bulk enquiries only)</label>
+                <input type="number" id="quantity" defaultValue={1} min={1} />
               </div>
             </div>
 
-            <div className="field">
-              <label>
+            <div className="field-group">
+              <label htmlFor="message">
                 Message <span className="req">*</span>
               </label>
               <textarea
-                rows={4}
-                placeholder="Tell us what you have in mind..."
+                id="message"
+                rows={5}
+                placeholder="Enter your message"
+                required
               />
             </div>
 
-            <button className="submit-btn" type="button">
-              Send Message
-              <span className="btn-icon">→</span>
+            <button type="submit" className="submit-btn">
+              Submit
             </button>
-
-            <p className="legal">
-              By submitting you agree to our <a href="#">Terms of Service</a>{" "}
-              and <a href="#">Privacy Policy</a>
-            </p>
-          </div>
+          </form>
         </div>
 
-        {/* ── RIGHT: Visual ── */}
+        {/* Right: Animated Slider */}
         <div className="contact-right">
-          <div className="image-card">
-            {/*
-              TO USE YOUR OWN IMAGE instead of the SVG below:
-              1. Remove the <svg>...</svg> block
-              2. Add: import Image from "next/image";
-              3. Replace with:
+          <div className="visual-card">
+            <div className="visual-image-container">
+              {slides.map((slide, index) => (
+                <div
+                  key={index}
+                  className={`visual-image ${index === currentSlide ? "active" : ""}`}
+                >
                   <Image
-                    src="/your-image.png"
-                    alt="Contact visual"
+                    src={slide.image}
+                    alt="Connecxa Testimonial"
                     fill
                     className="object-cover"
-                    priority
+                    priority={index === 0}
                   />
-            */}
-            <svg
-              style={{
-                position: "absolute",
-                inset: 0,
-                width: "100%",
-                height: "100%",
-              }}
-              viewBox="0 0 560 420"
-              xmlns="http://www.w3.org/2000/svg"
-              preserveAspectRatio="xMidYMid slice"
-            >
-              <defs>
-                <radialGradient id="rg1" cx="30%" cy="30%" r="70%">
-                  <stop offset="0%" stopColor="#FF7A2E" stopOpacity="0.9" />
-                  <stop offset="100%" stopColor="#1A0A00" stopOpacity="1" />
-                </radialGradient>
-                <radialGradient id="rg2" cx="80%" cy="80%" r="60%">
-                  <stop offset="0%" stopColor="#FF5C00" stopOpacity="0.4" />
-                  <stop offset="100%" stopColor="transparent" />
-                </radialGradient>
-              </defs>
-              <rect width="560" height="420" fill="url(#rg1)" />
-              <rect width="560" height="420" fill="url(#rg2)" />
-              <circle
-                cx="420"
-                cy="80"
-                r="140"
-                fill="none"
-                stroke="rgba(255,255,255,0.07)"
-                strokeWidth="1"
-              />
-              <circle
-                cx="420"
-                cy="80"
-                r="100"
-                fill="none"
-                stroke="rgba(255,255,255,0.06)"
-                strokeWidth="1"
-              />
-              <circle
-                cx="420"
-                cy="80"
-                r="60"
-                fill="none"
-                stroke="rgba(255,255,255,0.08)"
-                strokeWidth="1"
-              />
-              <g stroke="rgba(255,255,255,0.04)" strokeWidth="0.5">
-                {[70, 140, 210, 280, 350].map((y) => (
-                  <line key={`h${y}`} x1="0" y1={y} x2="560" y2={y} />
+                </div>
+              ))}
+              <div className="slider-dots">
+                {slides.map((_, index) => (
+                  <div
+                    key={index}
+                    className={`dot ${index === currentSlide ? "active" : ""}`}
+                    onClick={() => setCurrentSlide(index)}
+                  />
                 ))}
-                {[80, 160, 240, 320, 400, 480].map((x) => (
-                  <line key={`v${x}`} x1={x} y1="0" x2={x} y2="420" />
-                ))}
-              </g>
-              <rect
-                x="60"
-                y="50"
-                width="80"
-                height="80"
-                rx="16"
-                fill="rgba(255,255,255,0.06)"
-                stroke="rgba(255,255,255,0.12)"
-                strokeWidth="1"
-              />
-              <rect
-                x="100"
-                y="90"
-                width="80"
-                height="80"
-                rx="16"
-                fill="rgba(255,255,255,0.04)"
-                stroke="rgba(255,255,255,0.08)"
-                strokeWidth="1"
-              />
-              <rect
-                x="180"
-                y="100"
-                width="220"
-                height="140"
-                rx="16"
-                fill="rgba(255,255,255,0.1)"
-                stroke="rgba(255,255,255,0.2)"
-                strokeWidth="1"
-              />
-              <rect
-                x="198"
-                y="118"
-                width="60"
-                height="36"
-                rx="6"
-                fill="rgba(255,255,255,0.15)"
-              />
-              <rect
-                x="198"
-                y="162"
-                width="100"
-                height="8"
-                rx="4"
-                fill="rgba(255,255,255,0.2)"
-              />
-              <rect
-                x="198"
-                y="178"
-                width="70"
-                height="6"
-                rx="3"
-                fill="rgba(255,255,255,0.1)"
-              />
-              <circle cx="360" cy="218" r="20" fill="rgba(255,92,0,0.5)" />
-              <circle cx="375" cy="218" r="20" fill="rgba(255,92,0,0.3)" />
-              <rect
-                x="60"
-                y="300"
-                width="130"
-                height="10"
-                rx="5"
-                fill="rgba(255,255,255,0.12)"
-              />
-              <rect
-                x="60"
-                y="320"
-                width="90"
-                height="8"
-                rx="4"
-                fill="rgba(255,255,255,0.07)"
-              />
-            </svg>
-
-            {/* Online badge */}
-            <div className="img-badge">
-              <div className="badge-dot" />
-              <span>Always available</span>
+              </div>
             </div>
-
-            {/* Testimonial */}
-            <div className="img-bottom">
-              <p className="testimonial-text">
-                &ldquo;Connecxa shows that we&apos;re thinking ahead — always
-                finding innovative ways to make experiences better.&rdquo;
-              </p>
-              <div className="testimonial-author">
-                <div className="author-avatar">DJ</div>
-                <div>
-                  <div className="author-name">Daniel Joshua L.</div>
-                  <div className="author-role">
-                    Creative Director · We Are One
+            <div className="visual-content">
+              {slides.map((slide, index) => (
+                <div
+                  key={index}
+                  className={`quote-container ${index === currentSlide ? "active" : ""}`}
+                >
+                  <p className="quote-text">&ldquo;{slide.quote}&rdquo;</p>
+                  <div className="quote-author">
+                    <span className="author-name">{slide.author}</span>
+                    <span className="author-role">{slide.role}</span>
                   </div>
                 </div>
-              </div>
-            </div>
-          </div>
-
-          {/* Info cards */}
-          <div className="info-cards">
-            <div className="info-card">
-              <div className="info-icon">
-                <svg
-                  width="16"
-                  height="16"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="#FF5C00"
-                  strokeWidth="2"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                >
-                  <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
-                  <polyline points="22,6 12,13 2,6" />
-                </svg>
-              </div>
-              <div className="info-card-label">Email us</div>
-              <div className="info-card-value">hello@connecxa.com</div>
-            </div>
-
-            <div className="info-card">
-              <div className="info-icon">
-                <svg
-                  width="16"
-                  height="16"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="#FF5C00"
-                  strokeWidth="2"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                >
-                  <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.64 3.38 2 2 0 0 1 3.62 1.22h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 9.91a16 16 0 0 0 6 6l1.81-1.81a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7a2 2 0 0 1 1.72 2.02z" />
-                </svg>
-              </div>
-              <div className="info-card-label">Call us</div>
-              <div className="info-card-value">+1 800 000 000</div>
-            </div>
-
-            <div className="info-card">
-              <div className="info-icon">
-                <svg
-                  width="16"
-                  height="16"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="#FF5C00"
-                  strokeWidth="2"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                >
-                  <circle cx="12" cy="12" r="10" />
-                  <polyline points="12 6 12 12 16 14" />
-                </svg>
-              </div>
-              <div className="info-card-label">Response</div>
-              <div className="info-card-value">Within 24 hours</div>
+              ))}
             </div>
           </div>
         </div>
       </div>
+
+      <div className="w-full h-24 lg:h-32 bg-white" />
+      <TrustedBy />
+
       <div className="w-full h-24 lg:h-32 bg-white" />
       <TestermonialsContact />
       <div className="w-full h-24 lg:h-32 bg-white" />
       <FAQSectionContact />
       <div className="w-full h-24 lg:h-32 bg-white" />
-      </div>
     </div>
   );
 }

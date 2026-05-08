@@ -54,82 +54,86 @@ export default function FAQSection() {
     <>
       <style>{`
         .faq-section {
-          background: #FAFAF8;
-          padding: 90px 40px;
-          font-family: 'DM Sans', sans-serif;
+          background: #FFFFFF;
+          padding: 100px 40px;
+          font-family: 'DM Sans', 'Helvetica Neue', sans-serif;
         }
 
         .faq-inner {
-          max-width: 1200px;
+          max-width: 1300px;
           margin: 0 auto;
           display: grid;
-          grid-template-columns: 320px 1fr;
-          gap: 64px;
+          grid-template-columns: 360px 1fr;
+          gap: 80px;
           align-items: start;
         }
 
         /* LEFT */
         .faq-left {
           position: sticky;
-          top: 100px;
+          top: 120px;
         }
 
         .faq-heading {
-          font-size: 42px;
+          font-size: clamp(36px, 4.5vw, 48px);
           font-weight: 800;
-          color: #0D0D0D;
-          line-height: 1.15;
+          color: #111;
+          line-height: 1.1;
           margin-bottom: 0;
+          letter-spacing: -0.03em;
         }
 
-        .faq-heading-orange {
-          color: #FF5C00;
+        .faq-heading-blue {
+          color: #2563EB;
           display: block;
         }
 
         .faq-heading-row {
           display: flex;
           align-items: center;
-          gap: 10px;
+          gap: 12px;
+          margin-top: 4px;
         }
 
         .faq-see-all {
           display: inline-flex;
           align-items: center;
-          gap: 6px;
-          margin-top: 28px;
-          font-size: 16px;
+          gap: 8px;
+          margin-top: 32px;
+          font-size: 18px;
           font-weight: 700;
-          color: #1565C0;
+          color: #2563EB;
           text-decoration: none;
-          transition: gap 0.2s;
+          transition: all 0.2s;
         }
 
         .faq-see-all:hover {
-          gap: 10px;
+          gap: 12px;
+          color: #1D4ED8;
         }
 
         .faq-deco {
-          margin-top: 48px;
+          margin-top: 60px;
           display: flex;
           align-items: flex-end;
           gap: 0px;
           line-height: 1;
           user-select: none;
+          opacity: 0.8;
         }
 
         .faq-deco-exclaim {
-          font-size: 110px;
+          font-size: 120px;
           font-weight: 900;
-          color: #FF5C00;
+          color: #2563EB;
           line-height: 1;
           letter-spacing: -8px;
         }
 
         .faq-deco-question {
-          font-size: 110px;
+          font-size: 120px;
           font-weight: 900;
-          color: #FF5C00;
+          color: #60A5FA;
           line-height: 1;
         }
 
@@ -140,53 +144,54 @@ export default function FAQSection() {
         }
 
         .faq-item {
-          border-bottom: 1.5px solid #E8E8E4;
+          border-bottom: 1.5px solid #F3F4F6;
         }
 
         .faq-item:first-child {
-          border-top: 1.5px solid #E8E8E4;
+          border-top: 1.5px solid #F3F4F6;
         }
 
         .faq-question {
           width: 100%;
           background: none;
           border: none;
-          padding: 22px 0;
+          padding: 28px 0;
           display: flex;
           align-items: center;
           justify-content: space-between;
-          gap: 16px;
+          gap: 20px;
           cursor: pointer;
           text-align: left;
-          font-family: var(--font-outfit), sans-serif;
-          font-size: 16px;
+          font-family: inherit;
+          font-size: 19px;
           font-weight: 700;
-          color: #0D0D0D;
-          transition: color 0.2s;
+          color: #111;
+          transition: all 0.2s;
         }
 
         .faq-question:hover {
-          color: #FF5C00;
+          color: #2563EB;
+          padding-left: 8px;
         }
 
         .faq-question.open {
-          color: #FF5C00;
+          color: #2563EB;
         }
 
         .faq-chevron {
           flex-shrink: 0;
-          width: 24px;
-          height: 24px;
+          width: 28px;
+          height: 28px;
           border-radius: 50%;
-          background: #F0F0EC;
+          background: #F3F4F6;
           display: flex;
           align-items: center;
           justify-content: center;
-          transition: background 0.2s, transform 0.3s;
+          transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
         }
 
         .faq-question.open .faq-chevron {
-          background: #FF5C00;
+          background: #2563EB;
           transform: rotate(90deg);
         }
 
@@ -201,34 +206,34 @@ export default function FAQSection() {
         .faq-answer {
           overflow: hidden;
           max-height: 0;
-          transition: max-height 0.35s ease, padding 0.2s;
+          transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
         }
 
         .faq-answer.open {
-          max-height: 300px;
+          max-height: 400px;
         }
 
         .faq-answer-inner {
-          padding: 0 0 20px;
-          font-size: 15px;
-          color: #555;
+          padding: 0 0 32px;
+          font-size: 17px;
+          color: #4B5563;
           line-height: 1.7;
-          max-width: 580px;
+          max-width: 700px;
         }
 
-        @media (max-width: 900px) {
+        @media (max-width: 1024px) {
           .faq-section {
-            padding: 60px 20px;
+            padding: 80px 24px;
           }
           .faq-inner {
             grid-template-columns: 1fr;
-            gap: 40px;
+            gap: 48px;
           }
           .faq-left {
             position: static;
           }
           .faq-heading {
-            font-size: 32px;
+            font-size: 38px;
           }
           .faq-deco {
             display: none;
@@ -244,10 +249,8 @@ export default function FAQSection() {
             <h2 className="faq-heading">
              Everything you need,
               <div className="faq-heading-row">
-                <span className="faq-heading-orange"> explained</span>
-                <span style={{ fontSize: 36 }}> 🙋
-
-</span>
+                <span className="faq-heading-blue"> explained</span>
+                <span style={{ fontSize: 36 }}> 🙋</span>
               </div>
             </h2>
 
@@ -273,11 +276,11 @@ export default function FAQSection() {
                   {faq.question}
                   <div className="faq-chevron">
                     <svg
-                      width="12"
-                      height="12"
+                      width="14"
+                      height="14"
                       viewBox="0 0 24 24"
                       fill="none"
-                      stroke="#555"
+                      stroke="#4B5563"
                       strokeWidth="3"
                       strokeLinecap="round"
                       strokeLinejoin="round"

@@ -103,7 +103,7 @@ export default function TestermonialsContact() {
     <>
       <style>{`
         .testimonials-section {
-          background: #F5F5F3;
+          background: #FFFFFF;
           padding: 80px 40px 90px;
           font-family: 'DM Sans', sans-serif;
           position: relative;

@@ -64,11 +64,12 @@ export default function ProductShowcase() {
         }
 
         .showcase-subtitle {
-          font-size: clamp(16px, 2vw, 18px);
+          font-size: clamp(16px, 2vw, 20px);
           color: #6B7280;
           max-width: 800px;
           margin: 0 auto;
           line-height: 1.6;
+          font-weight: 500;
         }
 
         .showcase-grid {
@@ -118,8 +119,9 @@ export default function ProductShowcase() {
 
         .showcase-card-desc {
           font-size: 15px;
-          color: #6B7280;
+          color: #43464eff;
           line-height: 1.6;
+          font-weight: 500;
         }
 
         /* ── MOBILE SCROLL CONTROLS ── */

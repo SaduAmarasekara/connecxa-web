@@ -251,7 +251,7 @@ export default function Footer() {
       {/* ── Blue CTA Section ── */}
       <div
         style={{
-          background: "linear-gradient(135deg, #99acd3ff 0%, #2552a0ff 50%, #84b6f0ff 100%)",
+          background: "linear-gradient(135deg, #5d85d5ff 0%, #2552a0ff 50%, #84b6f0ff 100%)",
           color: "#ffffff",
           padding: "80px 24px",
           width: "100%",

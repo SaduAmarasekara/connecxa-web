@@ -12,140 +12,365 @@ import FAQ from '@/components/FAQ';
 
 export default function DigitalBusinessCards() {
   return (
-    <main className="w-full flex flex-col items-center pb-8 lg:pb-16 overflow-x-hidden" style={{ fontFamily: "DM Sans, sans-serif" }}>
-      <div className="w-full max-w-[1600px] px-5 md:px-16 lg:px-24">
+    <main
+      className="w-full relative flex flex-col items-center overflow-hidden"
+      style={{
+        fontFamily: "'DM Sans', 'Helvetica Neue', sans-serif",
+        background: "linear-gradient(160deg, #faf8ff 0%, #ede8f7 40%, #d8c4e0 100%)",
+      }}
+    >
+      {/* ── Ambient Background Glows ── */}
+      <div
+        className="absolute pointer-events-none"
+        style={{
+          top: "-5%",
+          left: "-8%",
+          width: "55%",
+          height: "60%",
+          background: "radial-gradient(circle, rgba(124,58,237,0.08) 0%, transparent 70%)",
+          filter: "blur(60px)",
+        }}
+      />
+      <div
+        className="absolute pointer-events-none"
+        style={{
+          bottom: "5%",
+          right: "-10%",
+          width: "50%",
+          height: "55%",
+          background: "radial-gradient(circle, rgba(167,100,255,0.07) 0%, transparent 70%)",
+          filter: "blur(80px)",
+        }}
+      />
+      <div
+        className="absolute pointer-events-none"
+        style={{
+          top: "30%",
+          left: "40%",
+          width: "35%",
+          height: "40%",
+          background: "radial-gradient(circle, rgba(196,160,255,0.06) 0%, transparent 70%)",
+          filter: "blur(70px)",
+        }}
+      />
 
-        {/* Lavender Hero Card */}
+      {/* ── Hero Section ── */}
+      <section className="w-full max-w-[1280px] px-6 sm:px-10 lg:px-16 z-10 relative" style={{ paddingTop: "32px", paddingBottom: "0px" }}>
         <div
-          className="relative flex flex-col lg:flex-row items-center lg:items-center overflow-hidden bg-white text-[#111827] rounded-[32px] md:rounded-[48px] w-full shadow-2xl"
-          style={{
-            minHeight: "auto",
-            paddingTop: "clamp(25px,4vw,60px)",
-            paddingLeft: "clamp(20px,5vw,80px)",
-            paddingRight: "clamp(20px,5vw,80px)",
-            background: "linear-gradient(180deg, #FFFFFF 0%, #D8C4E0 100%)",
-          }}
+          className="flex flex-col lg:flex-row items-center justify-between"
+          style={{ gap: "48px", alignItems: "center" }}
         >
 
-          {/* Background effects */}
-          <div className="absolute top-[-10%] left-[-10%] w-[40%] h-[40%] bg-[#D8C4E0]/5 rounded-full blur-[100px] pointer-events-none" />
-          <div className="absolute bottom-[-10%] right-[-10%] w-[50%] h-[50%] bg-[#D8C4E0]/5 rounded-full blur-[120px] pointer-events-none" />
-
           {/* ── Left Column ── */}
-          <div className="z-10 flex flex-col justify-center items-center lg:items-start text-center lg:text-left w-full lg:w-[clamp(320px,42%,580px)] shrink-0 pb-12 lg:pb-20 lg:pr-0">
-
-            <div className="flex flex-col gap-6 md:gap-10 items-center lg:items-start w-full">
-              {/* Eyebrow tag */}
-              <div className="inline-flex items-center gap-2 bg-white border border-[#D8C4E0]/30 rounded-full px-5 py-2 text-[13px] font-bold tracking-[0.12em] uppercase text-[#7C3AED] mb-6 shadow-sm">
-                <span className="w-2.5 h-2.5 rounded-full bg-[#7C3AED] animate-pulse" />
-                DIGITAL BUSINESS CARD
-              </div>
-
-              <div className="space-y-4 md:space-y-6 w-full flex flex-col items-center lg:items-start">
-                <h1
-                  style={{
-                    fontSize: "clamp(22px,3.5vw,60px)",
-                    fontWeight: 900,
-                    lineHeight: 1.15,
-                    letterSpacing: "0.01em",
-                    color: "#111827",
-                    marginBottom: 24,
-                  }}
-                >
-                  Ditch the Paper.
-                  <br className="hidden lg:block" />
-                  Go Fully Digital.
-                </h1>
-                <p
-                  style={{
-                    fontSize: "clamp(15px,1.4vw,20px)",
-                    color: "#4B5563",
-                    lineHeight: 1.65,
-                    fontWeight: 500,
-                    maxWidth: 460,
-                    marginBottom: 20,
-                  }}
-                >
-                  Make every impression count with a sleek, modern digital business card - no apps, no limits, just your brand at its best.
-                </p>
-              </div>
-
-              {/* CTA Button */}
-              <div className="mt-2">
-                <Link href="/login" className="no-underline">
-                  <button
-                    style={{
-                      background: "#7C3AED",
-                      color: "#fff",
-                      fontSize: 18,
-                      fontWeight: 800,
-                      borderRadius: 50,
-                      padding: "16px 36px",
-                      border: "none",
-                      cursor: "pointer",
-                      display: "inline-flex",
-                      alignItems: "center",
-                      gap: 8,
-                      width: "fit-content",
-                      boxShadow: "0 8px 28px rgba(124,58,237,0.25)",
-                      transition: "all 0.2s",
-                    }}
-                    onMouseEnter={(e) => {
-                      e.currentTarget.style.transform = "translateY(-2px)";
-                      e.currentTarget.style.boxShadow =
-                        "0 14px 36px rgba(124,58,237,0.35)";
-                      e.currentTarget.style.background = "#6D28D9";
-                    }}
-                    onMouseLeave={(e) => {
-                      e.currentTarget.style.transform = "translateY(0)";
-                      e.currentTarget.style.boxShadow =
-                        "0 8px 28px rgba(124,58,237,0.25)";
-                      e.currentTarget.style.background = "#7C3AED";
-                    }}
-                  >
-                    Get Started <span style={{ fontSize: 20 }}>→</span>
-                  </button>
-                </Link>
-              </div>
+          <div
+            className="flex flex-col items-center lg:items-start text-center lg:text-left flex-1"
+            style={{ maxWidth: "620px" }}
+          >
+            {/* Pill badge */}
+            <div
+              className="inline-flex items-center gap-2 mb-8"
+              style={{
+                background: "rgba(255,255,255,0.85)",
+                border: "1.5px solid rgba(0,90,209,0.15)",
+                borderRadius: "999px",
+                padding: "10px 20px",
+                backdropFilter: "blur(12px)",
+                boxShadow: "0 2px 16px rgba(0,90,209,0.08)",
+              }}
+            >
+              <span
+                style={{
+                  width: "8px",
+                  height: "8px",
+                  borderRadius: "50%",
+                  background: "#005AD1",
+                  display: "inline-block",
+                  boxShadow: "0 0 0 3px rgba(0,90,209,0.2)",
+                  animation: "pulse 2s ease-in-out infinite",
+                }}
+              />
+              <span
+                style={{
+                  fontSize: "11px",
+                  fontWeight: 700,
+                  letterSpacing: "0.14em",
+                  textTransform: "uppercase",
+                  color: "#005AD1",
+                }}
+              >
+                Digital Business Card
+              </span>
             </div>
+
+            {/* Headline */}
+            <h1
+              style={{
+                fontSize: "clamp(38px, 6vw, 72px)",
+                fontWeight: 900,
+                lineHeight: 1.08,
+                letterSpacing: "-0.04em",
+                color: "#0f0a1e",
+                marginBottom: "28px",
+              }}
+            >
+              Ditch the Paper.
+              <br />
+              <span
+                style={{
+                  color: "#0f0a1e",
+                }}
+              >
+                Go Fully Digital.
+              </span>
+            </h1>
+
+            {/* Subtext */}
+            <p
+              style={{
+                fontSize: "clamp(16px, 2vw, 19px)",
+                color: "#5b5472",
+                lineHeight: 1.7,
+                fontWeight: 450,
+                maxWidth: "480px",
+                marginBottom: "48px",
+              }}
+            >
+              Make every impression count with a sleek, modern digital business card — no apps, no limits, just your brand at its best.
+            </p>
+
+            {/* CTA Group */}
+            <div className="flex flex-col sm:flex-row items-center lg:items-start gap-4 w-full sm:w-auto">
+              <Link href="/login" className="no-underline w-full sm:w-auto">
+                <button
+                  className="hero-cta-btn"
+                  style={{
+                    background: "linear-gradient(135deg, #005AD1 0%, #004bb1 100%)",
+                    color: "#fff",
+                    fontSize: "17px",
+                    fontWeight: 700,
+                    borderRadius: "999px",
+                    padding: "16px 40px",
+                    border: "none",
+                    cursor: "pointer",
+                    display: "inline-flex",
+                    alignItems: "center",
+                    justifyContent: "center",
+                    gap: "10px",
+                    width: "100%",
+                    boxShadow: "0 8px 32px rgba(0,90,209,0.3), inset 0 1px 0 rgba(255,255,255,0.15)",
+                    transition: "all 0.25s cubic-bezier(0.34, 1.56, 0.64, 1)",
+                    letterSpacing: "-0.01em",
+                  }}
+                  onMouseEnter={(e) => {
+                    e.currentTarget.style.transform = "translateY(-3px) scale(1.02)";
+                    e.currentTarget.style.boxShadow = "0 16px 40px rgba(0,90,209,0.4), inset 0 1px 0 rgba(255,255,255,0.15)";
+                  }}
+                  onMouseLeave={(e) => {
+                    e.currentTarget.style.transform = "translateY(0) scale(1)";
+                    e.currentTarget.style.boxShadow = "0 8px 32px rgba(0,90,209,0.3), inset 0 1px 0 rgba(255,255,255,0.15)";
+                  }}
+                >
+                  Get Started 
+                  <span style={{ fontSize: "20px", lineHeight: 1 }}>→</span>
+                </button>
+              </Link>
+
+              <Link href="#how-it-works" className="no-underline w-full sm:w-auto">
+                <button
+                  style={{
+                    background: "rgba(255,255,255,0.7)",
+                    color: "#005AD1",
+                    fontSize: "17px",
+                    fontWeight: 700,
+                    borderRadius: "999px",
+                    padding: "15px 32px",
+                    border: "1.5px solid rgba(0,90,209,0.2)",
+                    cursor: "pointer",
+                    display: "inline-flex",
+                    alignItems: "center",
+                    justifyContent: "center",
+                    gap: "8px",
+                    width: "100%",
+                    backdropFilter: "blur(8px)",
+                    transition: "all 0.2s ease",
+                    letterSpacing: "-0.01em",
+                  }}
+                  onMouseEnter={(e) => {
+                    e.currentTarget.style.background = "rgba(0,90,209,0.06)";
+                    e.currentTarget.style.borderColor = "rgba(0,90,209,0.4)";
+                  }}
+                  onMouseLeave={(e) => {
+                    e.currentTarget.style.background = "rgba(255,255,255,0.7)";
+                    e.currentTarget.style.borderColor = "rgba(0,90,209,0.2)";
+                  }}
+                >
+                  See how it works
+                </button>
+              </Link>
+            </div>
+
           </div>
 
-          {/* ── Right Column — Image ── */}
-          <div className="flex-1 relative w-full z-10 flex items-center justify-center lg:justify-end mt-12 lg:mt-0 min-h-[360px] md:min-h-[480px] lg:min-h-0">
-            <div className="relative w-full h-full min-h-[300px] md:min-h-[400px] lg:min-h-[580px] lg:scale-[0.8] origin-center transition-transform duration-700 ease-out hover:scale-[0.82]">
-              <Image
-                src="/digital_card_lavender_mockup_1777364739572.png"
-                alt="Digital Business Card Mockup"
-                fill
-                className="object-contain object-center drop-shadow-[0_45px_65px_rgba(0,0,0,0.2)]"
-                priority
+          {/* ── Right Column: Image ── */}
+          <div
+            className="flex-1 w-full flex justify-center lg:justify-end"
+            style={{ maxWidth: "520px" }}
+          >
+            {/* Outer floating container — shifted down intentionally for visual balance */}
+            <div
+              style={{
+                position: "relative",
+                width: "100%",
+                maxWidth: "460px",
+                paddingTop: "clamp(0px, 3vw, 60px)",
+              }}
+            >
+              {/* Glow ring behind card */}
+              <div
+                style={{
+                  position: "absolute",
+                  inset: "-20px",
+                  borderRadius: "60px",
+                  background: "radial-gradient(ellipse at center, rgba(124,58,237,0.18) 0%, transparent 70%)",
+                  filter: "blur(30px)",
+                  pointerEvents: "none",
+                }}
               />
+
+              {/* Decorative dots grid */}
+              <div
+                style={{
+                  position: "absolute",
+                  top: "-30px",
+                  right: "-30px",
+                  width: "100px",
+                  height: "100px",
+                  backgroundImage: "radial-gradient(circle, rgba(124,58,237,0.25) 1.5px, transparent 1.5px)",
+                  backgroundSize: "14px 14px",
+                  borderRadius: "8px",
+                  pointerEvents: "none",
+                  zIndex: 0,
+                }}
+              />
+              <div
+                style={{
+                  position: "absolute",
+                  bottom: "-20px",
+                  left: "-24px",
+                  width: "80px",
+                  height: "80px",
+                  backgroundImage: "radial-gradient(circle, rgba(124,58,237,0.2) 1.5px, transparent 1.5px)",
+                  backgroundSize: "12px 12px",
+                  borderRadius: "8px",
+                  pointerEvents: "none",
+                  zIndex: 0,
+                }}
+              />
+
+              {/* Floating share badge — bottom right */}
+              <div
+                style={{
+                  position: "absolute",
+                  bottom: "28px",
+                  right: "-16px",
+                  background: "linear-gradient(135deg, #7C3AED 0%, #9333ea 100%)",
+                  backdropFilter: "blur(16px)",
+                  borderRadius: "16px",
+                  padding: "12px 18px",
+                  boxShadow: "0 8px 24px rgba(124,58,237,0.35)",
+                  zIndex: 10,
+                  animation: "floatB 6s ease-in-out infinite",
+                  display: "flex",
+                  alignItems: "center",
+                  gap: "10px",
+                }}
+              >
+                <span style={{ fontSize: "22px" }}>🔗</span>
+                <div>
+                  <div style={{ fontSize: "11px", color: "rgba(255,255,255,0.7)", fontWeight: 600 }}>Shared instantly</div>
+                  <div style={{ fontSize: "14px", fontWeight: 800, color: "#fff" }}>No app needed</div>
+                </div>
+              </div>
+
+              {/* Main image card */}
+              <div
+                style={{
+                  position: "relative",
+                  width: "100%",
+                  aspectRatio: "4/5",
+                  borderRadius: "48px",
+                  overflow: "hidden",
+                  boxShadow: "0 40px 80px -20px rgba(124,58,237,0.3), 0 20px 40px -10px rgba(0,0,0,0.12), inset 0 1px 0 rgba(255,255,255,0.4)",
+                  animation: "heroFloat 7s ease-in-out infinite",
+                  border: "1px solid rgba(255,255,255,0.5)",
+                  zIndex: 5,
+                }}
+              >
+                <Image
+                  src="/digital_card_lavender_mockup_1777364739572.png"
+                  alt="Digital Business Card Mockup"
+                  fill
+                  className="object-cover"
+                  priority
+                />
+                {/* Subtle sheen overlay */}
+                <div
+                  style={{
+                    position: "absolute",
+                    inset: 0,
+                    background: "linear-gradient(135deg, rgba(255,255,255,0.08) 0%, transparent 50%, rgba(124,58,237,0.04) 100%)",
+                    pointerEvents: "none",
+                  }}
+                />
+              </div>
             </div>
           </div>
         </div>
-      </div>
+      </section>
 
-      {/* Page Sections */}
+      {/* ── Keyframe Animations ── */}
+      <style jsx global>{`
+        @keyframes pulse {
+          0%, 100% { opacity: 1; box-shadow: 0 0 0 3px rgba(124,58,237,0.2); }
+          50% { opacity: 0.7; box-shadow: 0 0 0 6px rgba(124,58,237,0.08); }
+        }
+        @keyframes heroFloat {
+          0%, 100% { transform: translateY(0px) rotate(0deg); }
+          33% { transform: translateY(-10px) rotate(0.4deg); }
+          66% { transform: translateY(-5px) rotate(-0.3deg); }
+        }
+        @keyframes floatB {
+          0%, 100% { transform: translateY(0px); }
+          50% { transform: translateY(-6px); }
+        }
+
+        /* Responsive image sizing */
+        @media (max-width: 1023px) {
+          /* On tablet/mobile, reduce the top margin so image isn't too far down */
+          .hero-image-wrapper {
+            margin-top: 16px !important;
+          }
+        }
+        @media (max-width: 639px) {
+          /* On small mobile, hide floating badges to avoid overflow */
+          .floating-badge {
+            display: none;
+          }
+        }
+      `}</style>
+
+      {/* ── Page Sections ── */}
       <div className="w-full">
         <div className="w-full h-24 lg:h-32 bg-white" />
         <ProfilesShowcase />
         <div className="w-full h-24 lg:h-32 bg-white" />
-
-        {/* Product Showcase Section */}
         <ProductShowcase />
-
         <div className="w-full h-24 lg:h-32 bg-white" />
         <SmarterConnect />
         <div className="w-full h-24 lg:h-32 bg-white" />
-
-        {/* Explore More Powerful Tools Section */}
         <FeatureGrid />
-
         <div className="w-full h-24 lg:h-32 bg-white" />
-
-        {/* Security Section */}
         <SecuritySection />
-
         <div className="w-full h-24 lg:h-32 bg-white" />
         <FAQ />
         <div className="w-full h-24 lg:h-32 bg-white" />

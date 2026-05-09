@@ -102,9 +102,9 @@ export default function SmarterConnect() {
             margin: "0 auto",
           }}
         >
-          Instead of losing touch, <span style={{ fontWeight: 900 }}>Connecxa</span> turns
+          Instead of losing touch, <span style={{ fontWeight: 900 }}>Connecxa</span> turns{" "}
           <br className="hidden md:block" />
-          every meeting into a <span style={{ color: "#5b5e6b" }}>lasting connection</span>
+          every meeting into a <span style={{ color: "#5b5e6b" }}>lasting connection</span>{" "}
           <br className="hidden md:block" />
           <span style={{ color: "#5b5e6b" }}>you can remember.</span>
         </h2>
@@ -129,10 +129,29 @@ export default function SmarterConnect() {
             width: 70px !important;
             height: 70px !important;
             padding: 14px !important;
+            border-radius: 18px !important;
           }
         }
         @media (max-width: 767px) {
-          .smarter-icon-wrap { display: none; }
+          .smarter-icon-wrap div {
+            width: 50px !important;
+            height: 50px !important;
+            padding: 10px !important;
+            border-radius: 14px !important;
+            opacity: 0.8;
+          }
+          /* Adjust positions to edges to avoid text overlap */
+          .smarter-icon-wrap {
+             margin: 0 -4% !important;
+          }
+        }
+        @media (max-width: 480px) {
+          .smarter-icon-wrap div {
+            width: 42px !important;
+            height: 42px !important;
+            padding: 8px !important;
+            opacity: 0.6;
+          }
         }
       `}</style>
     </section>

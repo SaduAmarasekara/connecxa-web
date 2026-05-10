@@ -7,82 +7,283 @@ import { Gift } from "lucide-react";
 
 export default function CorporateGiftingHero() {
   return (
-    <section className="w-full flex justify-center py-6 md:py-12 bg-white" style={{ fontFamily: "'DM Sans', sans-serif" }}>
-      <div className="w-full max-w-[1600px] px-6">
-        <div className="relative flex flex-col lg:flex-row items-stretch bg-[#F3F7FA] rounded-[48px] min-h-[700px] overflow-hidden shadow-[0_32px_80px_rgba(0,0,0,0.05)] border-[8px] border-white">
+    <section className="w-full max-w-[1280px] px-6 sm:px-10 lg:px-16 z-10 relative" style={{ paddingTop: "32px", paddingBottom: "0px", fontFamily: "'DM Sans', sans-serif" }}>
+      <div
+        className="flex flex-col lg:flex-row items-center justify-between"
+        style={{ gap: "48px", alignItems: "center" }}
+      >
 
-          {/* Subtle bg art */}
-          <div className="absolute top-[-10%] right-[-5%] w-[600px] h-[600px] bg-white/40 rounded-full blur-3xl pointer-events-none" />
-
-          {/* Left Content */}
-          <div className="relative z-10 flex-1 lg:flex-[0_0_50%] flex flex-col justify-center p-12 md:p-14 lg:pl-[80px] lg:pr-[40px] lg:py-[80px] max-lg:!p-8 max-md:!p-6 max-lg:!ml-0 max-lg:!mb-0 max-lg:!items-center max-lg:!text-center" style={{ marginLeft: 30, marginBottom: 50 }}>
-            <div className="text-[14px] font-bold tracking-[0.2em] text-[#005AD1] uppercase mb-8 max-lg:!mb-4" style={{ marginBottom: 15 }}>
+        {/* ── Left Column ── */}
+        <div
+          className="flex flex-col items-center lg:items-start text-center lg:text-left flex-1"
+          style={{ maxWidth: "620px" }}
+        >
+          {/* Pill badge */}
+          <div
+            className="inline-flex items-center gap-2 mb-8"
+            style={{
+              background: "rgba(255,255,255,0.85)",
+              border: "1.5px solid rgba(0,90,209,0.15)",
+              borderRadius: "999px",
+              padding: "10px 20px",
+              backdropFilter: "blur(12px)",
+              boxShadow: "0 2px 16px rgba(0,90,209,0.08)",
+            }}
+          >
+            <span
+              style={{
+                width: "8px",
+                height: "8px",
+                borderRadius: "50%",
+                background: "#005AD1",
+                display: "inline-block",
+                boxShadow: "0 0 0 3px rgba(0,90,209,0.2)",
+                animation: "pulse 2s ease-in-out infinite",
+              }}
+            />
+            <span
+              style={{
+                fontSize: "11px",
+                fontWeight: 700,
+                letterSpacing: "0.14em",
+                textTransform: "uppercase",
+                color: "#005AD1",
+              }}
+            >
               CORPORATE GIFTING
-            </div>
-            <h1 className="text-[52px] md:text-[68px] lg:text-[84px] font-[900] text-[#005AD1] leading-[1.02] mb-8 max-md:!text-[42px] max-lg:!mb-4"style={{ marginBottom: 15 }}>
-              Corporate Gifting <br className="hidden lg:block" /> Made Easy
-            </h1>
-            <p className="text-[20px] text-[#005AD1]/70 leading-[1.6] mb-12 max-w-[540px] font-medium max-md:!text-[16px] max-lg:!mb-8 max-lg:!mx-auto"style={{ marginBottom: 35 }}>
-              Make gifting effortless with fully customisable NFC products that are practical, memorable, and delivered fast - perfect for any event or occasion.
-            </p>
+            </span>
+          </div>
 
-            <Link href="/login" className="no-underline">
+          {/* Headline */}
+          <h1
+            style={{
+              fontSize: "clamp(38px, 6vw, 72px)",
+              fontWeight: 900,
+              lineHeight: 1.08,
+              letterSpacing: "-0.04em",
+              color: "#0f0a1e",
+              marginBottom: "28px",
+            }}
+          >
+            Corporate Gifting
+            <br />
+            <span
+              style={{
+                color: "#0f0a1e",
+              }}
+            >
+              Made Easy.
+            </span>
+          </h1>
+
+          {/* Subtext */}
+          <p
+            style={{
+              fontSize: "clamp(16px, 2vw, 19px)",
+              color: "#5b5472",
+              lineHeight: 1.7,
+              fontWeight: 450,
+              maxWidth: "520px",
+              marginBottom: "48px",
+            }}
+          >
+            Make gifting effortless with fully customisable NFC products that are practical, memorable, and delivered fast - perfect for any event.
+          </p>
+
+          {/* CTA Group */}
+          <div className="flex flex-col sm:flex-row items-center lg:items-start gap-4 w-full sm:w-auto">
+            <Link href="/login" className="no-underline w-full sm:w-auto">
               <button
-                className="max-lg:!ml-0"
+                className="hero-cta-btn"
                 style={{
-                  background: "#FF5C00",
+                  background: "linear-gradient(135deg, #005AD1 0%, #004bb1 100%)",
                   color: "#fff",
-                  fontSize: 18,
-                  fontWeight: 800,
-                  borderRadius: 50,
-                  padding: "16px 36px",
+                  fontSize: "17px",
+                  fontWeight: 700,
+                  borderRadius: "999px",
+                  padding: "16px 40px",
                   border: "none",
                   cursor: "pointer",
                   display: "inline-flex",
                   alignItems: "center",
-                  gap: 8,
-                  width: "fit-content",
-                  boxShadow: "0 8px 28px rgba(255,92,0,0.25)",
-                  transition: "all 0.2s",
-                  marginLeft: 50
+                  justifyContent: "center",
+                  gap: "10px",
+                  width: "100%",
+                  boxShadow: "0 8px 32px rgba(0,90,209,0.3), inset 0 1px 0 rgba(255,255,255,0.15)",
+                  transition: "all 0.25s cubic-bezier(0.34, 1.56, 0.64, 1)",
+                  letterSpacing: "-0.01em",
                 }}
                 onMouseEnter={(e) => {
-                  e.currentTarget.style.transform = "translateY(-2px)";
-                  e.currentTarget.style.boxShadow = "0 14px 36px rgba(255,92,0,0.35)";
+                  e.currentTarget.style.transform = "translateY(-3px) scale(1.02)";
+                  e.currentTarget.style.boxShadow = "0 16px 40px rgba(0,90,209,0.4), inset 0 1px 0 rgba(255,255,255,0.15)";
                 }}
                 onMouseLeave={(e) => {
-                  e.currentTarget.style.transform = "translateY(0)";
-                  e.currentTarget.style.boxShadow = "0 8px 28px rgba(255,92,0,0.25)";
+                  e.currentTarget.style.transform = "translateY(0) scale(1)";
+                  e.currentTarget.style.boxShadow = "0 8px 32px rgba(0,90,209,0.3), inset 0 1px 0 rgba(255,255,255,0.15)";
                 }}
               >
                 Get Started
-                <span style={{ fontSize: 20, marginLeft: 8 }}>→</span>
+                <span style={{ fontSize: "20px", lineHeight: 1 }}>→</span>
+              </button>
+            </Link>
+
+            <Link href="#how-it-works" className="no-underline w-full sm:w-auto">
+              <button
+                style={{
+                  background: "rgba(255,255,255,0.7)",
+                  color: "#005AD1",
+                  fontSize: "17px",
+                  fontWeight: 700,
+                  borderRadius: "999px",
+                  padding: "15px 32px",
+                  border: "1.5px solid rgba(0,90,209,0.2)",
+                  cursor: "pointer",
+                  display: "inline-flex",
+                  alignItems: "center",
+                  justifyContent: "center",
+                  gap: "8px",
+                  width: "100%",
+                  backdropFilter: "blur(8px)",
+                  transition: "all 0.2s ease",
+                  letterSpacing: "-0.01em",
+                }}
+                onMouseEnter={(e) => {
+                  e.currentTarget.style.background = "rgba(0,90,209,0.06)";
+                  e.currentTarget.style.borderColor = "rgba(0,90,209,0.4)";
+                }}
+                onMouseLeave={(e) => {
+                  e.currentTarget.style.background = "rgba(255,255,255,0.7)";
+                  e.currentTarget.style.borderColor = "rgba(0,90,209,0.2)";
+                }}
+              >
+                Learn more
               </button>
             </Link>
           </div>
 
-          {/* Right Mockup */}
-          <div className="relative z-10 flex-1 flex items-center justify-center p-8 lg:p-12">
-            <div className="relative w-full aspect-[4/3] max-w-[700px] rounded-[32px] overflow-hidden shadow-[0_40px_100px_rgba(0,0,0,0.1)] border border-white/50 group">
+        </div>
+
+        {/* ── Right Column: Image ── */}
+        <div
+          className="flex-1 w-full flex justify-center lg:justify-end"
+          style={{ maxWidth: "520px" }}
+        >
+          {/* Outer floating container */}
+          <div
+            style={{
+              position: "relative",
+              width: "100%",
+              maxWidth: "460px",
+              paddingTop: "clamp(0px, 3vw, 60px)",
+            }}
+          >
+            {/* Glow ring behind mockup */}
+            <div
+              style={{
+                position: "absolute",
+                inset: "-20px",
+                borderRadius: "60px",
+                background: "radial-gradient(ellipse at center, rgba(0,90,209,0.12) 0%, transparent 70%)",
+                filter: "blur(30px)",
+                pointerEvents: "none",
+              }}
+            />
+
+            {/* Decorative dots grid */}
+            <div
+              style={{
+                position: "absolute",
+                top: "-30px",
+                right: "-30px",
+                width: "100px",
+                height: "100px",
+                backgroundImage: "radial-gradient(circle, rgba(0,90,209,0.15) 1.5px, transparent 1.5px)",
+                backgroundSize: "14px 14px",
+                borderRadius: "8px",
+                pointerEvents: "none",
+                zIndex: 0,
+              }}
+            />
+            <div
+              style={{
+                position: "absolute",
+                bottom: "-20px",
+                left: "-24px",
+                width: "80px",
+                height: "80px",
+                backgroundImage: "radial-gradient(circle, rgba(0,90,209,0.1) 1.5px, transparent 1.5px)",
+                backgroundSize: "12px 12px",
+                borderRadius: "8px",
+                pointerEvents: "none",
+                zIndex: 0,
+              }}
+            />
+
+            {/* Floating badge */}
+            <div
+              style={{
+                position: "absolute",
+                bottom: "28px",
+                right: "-16px",
+                background: "linear-gradient(135deg, #005AD1 0%, #004bb1 100%)",
+                backdropFilter: "blur(16px)",
+                borderRadius: "16px",
+                padding: "12px 18px",
+                boxShadow: "0 8px 24px rgba(0,90,209,0.25)",
+                zIndex: 10,
+                display: "flex",
+                alignItems: "center",
+                gap: "10px",
+              }}
+            >
+              <Gift className="text-white" size={22} />
+              <div>
+                <div style={{ fontSize: "11px", color: "rgba(255,255,255,0.7)", fontWeight: 600 }}>Gift perfectly</div>
+                <div style={{ fontSize: "14px", fontWeight: 800, color: "#fff" }}>Custom Ready</div>
+              </div>
+            </div>
+
+            {/* Main image card */}
+            <div
+              style={{
+                position: "relative",
+                width: "100%",
+                aspectRatio: "4/5",
+                overflow: "hidden",
+                boxShadow: "0 40px 80px -20px rgba(0,90,209,0.25), 0 20px 40px -10px rgba(0,0,0,0.12), inset 0 1px 0 rgba(255,255,255,0.4)",
+                border: "1px solid rgba(255,255,255,0.5)",
+                zIndex: 5,
+              }}
+            >
               <Image
                 src="/corporate-gifting-hero-composite.png"
                 alt="Corporate Gifting Mockup"
                 fill
-                className="object-cover transition-transform duration-700 group-hover:scale-105"
+                className="object-cover"
+                style={{ objectPosition: "center 100%", transform: "scale(1.4)" }}
                 priority
               />
-
-              {/* Floating Gift Icon */}
-              <div className="absolute top-[15%] right-[10%] w-16 h-16 md:w-20 md:h-20 bg-[#005AD1] rounded-full flex items-center justify-center text-white shadow-xl border-4 border-white transform translate-x-4 -translate-y-4">
-                <Gift className="w-8 h-8 md:w-10 md:h-10" />
-              </div>
-
-              {/* Subtle glare overlay */}
-              <div className="absolute inset-0 bg-gradient-to-tr from-transparent via-white/10 to-transparent pointer-events-none" />
+              {/* Subtle sheen overlay */}
+              <div
+                style={{
+                  position: "absolute",
+                  inset: 0,
+                  background: "linear-gradient(135deg, rgba(255,255,255,0.1) 0%, transparent 50%, rgba(255,92,0,0.03) 100%)",
+                  pointerEvents: "none",
+                }}
+              />
             </div>
           </div>
         </div>
       </div>
+
+      {/* ── Keyframe Animations ── */}
+      <style jsx global>{`
+        @keyframes pulse {
+          0%, 100% { opacity: 1; box-shadow: 0 0 0 3px rgba(0,90,209,0.2); }
+          50% { opacity: 0.7; box-shadow: 0 0 0 6px rgba(0,90,209,0.08); }
+        }
+      `}</style>
     </section>
   );
 }

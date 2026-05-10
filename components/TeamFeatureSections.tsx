@@ -2,6 +2,7 @@
 
 import React, { useEffect, useRef, useState } from "react";
 import Image from "next/image";
+import { ChevronLeft, ChevronRight } from "lucide-react";
 
 interface SectionProps {
   eyebrow: string;
@@ -34,7 +35,7 @@ const FeatureSection = ({ eyebrow, title, desc, features, image, imageLeft = fal
   }, []);
 
   return (
-    <section ref={sectionRef} className="w-full py-16 md:py-24 overflow-hidden max-lg:!p-6">
+    <section ref={sectionRef} className="w-full py-16 md:py-24 overflow-hidden max-lg:!p-6 hidden lg:block">
       <div className={`max-w-[1400px] mx-auto px-6 flex flex-col ${imageLeft ? 'lg:flex-row' : 'lg:flex-row-reverse'} items-center justify-between gap-10 md:gap-16 lg:gap-20`}>
 
         {/* Image Column */}
@@ -92,6 +93,7 @@ const FeatureSection = ({ eyebrow, title, desc, features, image, imageLeft = fal
 };
 
 export default function TeamFeatureSections() {
+  const [currentSlide, setCurrentSlide] = useState(0);
   const sections = [
     {
       eyebrow: "CUSTOM-BRANDED NFC CARDS",
@@ -220,11 +222,78 @@ export default function TeamFeatureSections() {
     }
   ];
 
+  const nextSlide = () => setCurrentSlide((prev) => (prev + 1) % sections.length);
+  const prevSlide = () => setCurrentSlide((prev) => (prev - 1 + sections.length) % sections.length);
+
   return (
-    <div className="flex flex-col">
-      {sections.map((section, index) => (
-        <FeatureSection key={index} {...section} />
-      ))}
+    <div className="flex flex-col w-full">
+      {/* Desktop View */}
+      <div className="hidden lg:flex flex-col">
+        {sections.map((section, index) => (
+          <FeatureSection key={index} {...section} />
+        ))}
+      </div>
+
+      {/* Mobile Slider View */}
+      <div className="lg:hidden w-full px-4 py-12 relative overflow-hidden">
+        <div 
+          className="flex transition-transform duration-500 ease-out"
+          style={{ transform: `translateX(-${currentSlide * 100}%)` }}
+        >
+          {sections.map((section, index) => (
+            <div key={index} className="w-full flex-shrink-0 px-2">
+              <div className="bg-white rounded-[32px] p-8 shadow-xl border border-gray-100 flex flex-col items-center text-center">
+                <div className="text-[#005AD1] font-black text-xs tracking-[0.15em] uppercase mb-4">
+                  {section.eyebrow}
+                </div>
+                <h3 className="text-[28px] font-[900] text-[#111827] leading-tight mb-4">
+                  {section.title}
+                </h3>
+                <div className="relative w-full aspect-[4/3] rounded-2xl overflow-hidden mb-6 shadow-md border border-gray-50">
+                  <Image src={section.image} alt={section.title} fill className="object-cover" />
+                </div>
+                <p className="text-gray-500 text-sm font-medium mb-8">
+                  {section.desc}
+                </p>
+                <div className="space-y-4 text-left w-full">
+                  {section.features.map((f, i) => (
+                    <div key={i} className="flex items-start gap-3">
+                      <div className="text-[#005AD1] shrink-0 mt-0.5">{f.icon}</div>
+                      <div className="text-gray-600 text-sm">
+                        <span className="font-bold text-gray-900">{f.bold}</span> {f.text}
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+
+        {/* Navigation Arrows */}
+        <div className="flex justify-center items-center gap-6 mt-8">
+          <button 
+            onClick={prevSlide}
+            className="w-12 h-12 rounded-full bg-white shadow-lg border border-gray-100 flex items-center justify-center text-[#005AD1] active:scale-95 transition-all"
+          >
+            <ChevronLeft size={24} />
+          </button>
+          <div className="flex gap-2">
+            {sections.map((_, i) => (
+              <div 
+                key={i} 
+                className={`h-1.5 rounded-full transition-all duration-300 ${currentSlide === i ? 'w-6 bg-[#005AD1]' : 'w-1.5 bg-gray-200'}`}
+              />
+            ))}
+          </div>
+          <button 
+            onClick={nextSlide}
+            className="w-12 h-12 rounded-full bg-white shadow-lg border border-gray-100 flex items-center justify-center text-[#005AD1] active:scale-95 transition-all"
+          >
+            <ChevronRight size={24} />
+          </button>
+        </div>
+      </div>
     </div>
   );
 }

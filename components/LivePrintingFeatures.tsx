@@ -2,6 +2,7 @@
 
 import React, { useEffect, useRef, useState } from "react";
 import Image from "next/image";
+import { ChevronLeft, ChevronRight } from "lucide-react";
 
 interface SectionProps {
   eyebrow: string;
@@ -34,7 +35,7 @@ const FeatureSection = ({ eyebrow, title, desc, features, image, imageLeft = fal
   }, []);
 
   return (
-    <section ref={sectionRef} className="w-full py-8 md:py-12 overflow-hidden max-lg:!px-4">
+    <section ref={sectionRef} className="w-full py-8 md:py-12 overflow-hidden max-lg:!px-4 hidden lg:block">
       <div className={`max-w-[1400px] mx-auto px-0 md:px-6 flex flex-col ${imageLeft ? 'lg:flex-row' : 'lg:flex-row-reverse'} items-center gap-8 lg:gap-16`}>
 
         {/* Image Column */}
@@ -94,6 +95,7 @@ const FeatureSection = ({ eyebrow, title, desc, features, image, imageLeft = fal
 };
 
 export default function LivePrintingFeatures() {
+  const [currentSlide, setCurrentSlide] = useState(0);
   const sections = [
     {
       eyebrow: "ORGANIC CROWD MAGNET",
@@ -130,6 +132,9 @@ export default function LivePrintingFeatures() {
     }
   ];
 
+  const nextSlide = () => setCurrentSlide((prev) => (prev + 1) % sections.length);
+  const prevSlide = () => setCurrentSlide((prev) => (prev - 1 + sections.length) % sections.length);
+
   return (
     <div className="bg-white flex flex-col py-8 md:py-12" style={{ fontFamily: "'DM Sans', sans-serif" }}>
       {/* Header Section */}
@@ -142,11 +147,76 @@ export default function LivePrintingFeatures() {
         </p>
       </div>
 
-      {/* Feature Sections */}
-      <div className="flex flex-col gap-4">
+      {/* Desktop Feature Sections */}
+      <div className="hidden lg:flex flex-col gap-4">
         {sections.map((section, index) => (
           <FeatureSection key={index} {...section} />
         ))}
+      </div>
+
+      {/* Mobile Slider View */}
+      <div className="lg:hidden w-full px-4 py-8 relative overflow-hidden">
+        <div 
+          className="flex transition-transform duration-500 ease-out"
+          style={{ transform: `translateX(-${currentSlide * 100}%)` }}
+        >
+          {sections.map((section, index) => (
+            <div key={index} className="w-full flex-shrink-0 px-2">
+              <div className="bg-white rounded-[32px] p-8 shadow-xl border border-gray-100 flex flex-col items-center text-center">
+                <div className="text-[#005AD1] font-bold text-[12px] tracking-[0.12em] uppercase mb-4">
+                  {section.eyebrow}
+                </div>
+                <h3 className="text-[26px] font-[900] text-[#111827] leading-tight mb-4">
+                  {section.title}
+                </h3>
+                <div className="relative w-full aspect-[16/10] rounded-2xl overflow-hidden mb-6 shadow-md border border-gray-50">
+                  <Image src={section.image} alt={section.title} fill className="object-cover" />
+                </div>
+                <p className="text-gray-500 text-sm font-medium mb-8">
+                  {section.desc}
+                </p>
+                <div className="space-y-4 text-left w-full">
+                  {section.features.map((f, i) => (
+                    <div key={i} className="flex items-start gap-3">
+                      <div className="text-[#005AD1] shrink-0 mt-0.5">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round">
+                          <polyline points="20 6 9 17 4 12" />
+                        </svg>
+                      </div>
+                      <div className="text-gray-600 text-sm font-medium">
+                        {f}
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+
+        {/* Navigation Arrows */}
+        <div className="flex justify-center items-center gap-6 mt-8">
+          <button 
+            onClick={prevSlide}
+            className="w-11 h-11 rounded-full bg-white shadow-lg border border-gray-100 flex items-center justify-center text-[#005AD1] active:scale-95 transition-all"
+          >
+            <ChevronLeft size={22} />
+          </button>
+          <div className="flex gap-2">
+            {sections.map((_, i) => (
+              <div 
+                key={i} 
+                className={`h-1.5 rounded-full transition-all duration-300 ${currentSlide === i ? 'w-6 bg-[#005AD1]' : 'w-1.5 bg-gray-200'}`}
+              />
+            ))}
+          </div>
+          <button 
+            onClick={nextSlide}
+            className="w-11 h-11 rounded-full bg-white shadow-lg border border-gray-100 flex items-center justify-center text-[#005AD1] active:scale-95 transition-all"
+          >
+            <ChevronRight size={22} />
+          </button>
+        </div>
       </div>
     </div>
   );

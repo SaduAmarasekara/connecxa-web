@@ -8,6 +8,7 @@ import TeamDashboardShowcase from "@/components/TeamDashboardShowcase";
 import SecuritySection from "@/components/SecuritySection";
 import FAQ from "@/components/FAQ";
 import FeatureGrid from '@/components/FeatureGrid';
+import FeatureContactForm from '@/components/FeatureContactForm';
 
 export default function TeamDashboard() {
   return (
@@ -265,7 +266,7 @@ export default function TeamDashboard() {
         <div className="w-full h-16 lg:h-24 bg-white" />
         <FeatureGrid />
         <div className="w-full h-16 lg:h-24 bg-white" />
-  
+        <FeatureContactForm />
     </main>
   );
 }

@@ -270,7 +270,7 @@ export default function FeatureContactForm() {
           width: 46px;
           height: 46px;
           border-radius: 50%;
-          background: linear-gradient(135deg, #005AD1 0%, #0EA5E9 100%);
+          background: #005AD1;
           display: flex;
           align-items: center;
           justify-content: center;
@@ -282,7 +282,7 @@ export default function FeatureContactForm() {
         .social-icon:hover {
           transform: translateY(-4px) scale(1.05);
           box-shadow: 0 14px 28px rgba(0, 90, 209, 0.35);
-          background: linear-gradient(135deg, #0044aa 0%, #0284c7 100%);
+          background: #0048A5;
         }
 
         /* Right Column - Form */
@@ -371,7 +371,7 @@ export default function FeatureContactForm() {
           margin-top: 12px;
           width: 100%;
           padding: 17px 28px;
-          background: linear-gradient(135deg, #005AD1 0%, #0EA5E9 100%);
+          background: #005AD1;
           color: white;
           font-weight: 700;
           font-size: 16px;
@@ -390,7 +390,7 @@ export default function FeatureContactForm() {
         .submit-btn:hover {
           transform: translateY(-3px);
           box-shadow: 0 18px 36px rgba(0, 90, 209, 0.4);
-          background: linear-gradient(135deg, #0044bb 0%, #0284c7 100%);
+          background: #0048A5;
         }
 
         .btn-arrow {

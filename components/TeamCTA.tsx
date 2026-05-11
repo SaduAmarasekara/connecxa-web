@@ -144,7 +144,9 @@ export default function TeamCTA() {
               </p>
 
               <div className="cta-buttons" style={{ display: "flex", gap: 14, flexWrap: "wrap" }}>
-                <button className="cta-primary">Get started</button>
+                <button className="cta-primary" style={{ display: "flex", alignItems: "center", gap: "8px" }}>
+                  Get Started <span>→</span>
+                </button>
                 <button className="cta-secondary">For teams</button>
               </div>
             </div>

@@ -294,7 +294,7 @@ export default function ContactUsPage() {
 
         @media (max-width: 640px) {
           .contact-page-wrapper {
-            padding-top: 100px;
+            padding-top: 24px;
           }
           .form-row {
             grid-template-columns: 1fr;

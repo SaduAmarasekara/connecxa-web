@@ -78,14 +78,26 @@ export default function TeamCTA() {
           flex-wrap: wrap;
         }
         @media (max-width: 767px) {
-          .cta-inner { flex-direction: column; align-items: flex-start; }
-          .cta-phone-col { display: none !important; }
+          .cta-inner { flex-direction: column; align-items: center; text-align: center; }
+          .cta-left-content { align-items: center !important; }
+          .cta-buttons { justify-content: center; }
+          .cta-phone-col { 
+            display: block !important; 
+            width: 100%; 
+            height: 320px !important; 
+            flex: none !important; 
+            margin-top: 30px; 
+          }
+          .phone-shell { right: 50% !important; transform: translateX(50%) scale(0.9); bottom: -100px !important; }
+          .pill-a { left: 5% !important; top: 30% !important; }
+          .pill-b { right: 5% !important; bottom: 80px !important; }
+          .pill-c { right: 15% !important; top: 0 !important; }
         }
       `}</style>
 
       {/* ── Consistent wrapper ── */}
       <div style={{ maxWidth: 1400, marginLeft: "auto", marginRight: "auto", paddingLeft: 32, paddingRight: 32 }}>
-        <div style={{
+        <div className="cta-wrapper" style={{
           position: "relative",
           borderRadius: 28,
           overflow: "hidden",
@@ -93,6 +105,11 @@ export default function TeamCTA() {
           padding: "56px 64px",
           minHeight: 300,
         }}>
+          <style>{`
+            @media (max-width: 767px) {
+              .cta-wrapper { padding: 40px 24px 0 24px !important; }
+            }
+          `}</style>
 
           {/* ── Background bokeh blobs ── */}
           <div style={{ position:"absolute", top:"-40%", left:"10%",  width:700, height:700, background:"rgba(255,255,255,0.06)", borderRadius:"50%", filter:"blur(90px)", pointerEvents:"none" }} />
@@ -102,7 +119,7 @@ export default function TeamCTA() {
           <div className="cta-inner">
 
             {/* ── LEFT ── */}
-            <div style={{ position:"relative", zIndex:2, maxWidth:520, flex:"1 1 320px" }}>
+            <div className="cta-left-content" style={{ position:"relative", zIndex:2, maxWidth:520, flex:"1 1 320px", display:"flex", flexDirection:"column" }}>
               <h2 style={{
                 fontSize: "clamp(26px, 3.2vw, 44px)",
                 fontWeight: 800,
@@ -126,7 +143,7 @@ export default function TeamCTA() {
                 details, capture leads, and remember everyone you meet.
               </p>
 
-              <div style={{ display:"flex", gap:14, flexWrap:"wrap" }}>
+              <div className="cta-buttons" style={{ display:"flex", gap:14, flexWrap:"wrap" }}>
                 <button className="cta-primary">Get started</button>
                 <button className="cta-secondary">For teams</button>
               </div>
@@ -144,7 +161,7 @@ export default function TeamCTA() {
             >
 
               {/* ── Phone shell ── */}
-              <div style={{
+              <div className="phone-shell" style={{
                 position: "absolute",
                 right: 8,
                 bottom: -56,

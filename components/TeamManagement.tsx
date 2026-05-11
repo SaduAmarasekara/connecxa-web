@@ -231,19 +231,6 @@ export default function FeatureGrid() {
                   boxSizing: "border-box" as const,
                 }}
               >
-                {/* Icon badge - slightly larger */}
-                <div style={{
-                  width: "56px", height: "56px",
-                  borderRadius: "18px",
-                  background: feature.bg,
-                  border: `1px solid ${feature.accent}20`,
-                  display: "flex", alignItems: "center", justifyContent: "center",
-                  fontSize: "26px", marginBottom: "20px", flexShrink: 0,
-                  transition: "transform 0.3s ease",
-                  transform: hovered === idx ? "scale(1.1) rotate(3deg)" : "scale(1)",
-                }}>
-                  {feature.icon}
-                </div>
 
                 {/* Text - larger font sizes */}
                 <h3 style={{

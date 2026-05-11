@@ -21,8 +21,8 @@ export default function FeatureContactForm() {
             </div>
 
             <h2 className="title">
-              We're all ears.<br />
-              Talk to us <span className="title-emoji">💬</span>
+            Let's talk. .<br />
+              Let's connect <span className="title-emoji">💬</span>
             </h2>
 
             <p className="description">

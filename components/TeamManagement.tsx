@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useState, useRef } from "react";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -57,6 +57,15 @@ const features = [
 
 export default function FeatureGrid() {
   const [hovered, setHovered] = useState<number | null>(null);
+  const scrollRef = useRef<HTMLDivElement>(null);
+
+  const scroll = (direction: "left" | "right") => {
+    if (scrollRef.current) {
+      const { scrollLeft, clientWidth } = scrollRef.current;
+      const scrollTo = direction === "left" ? scrollLeft - clientWidth : scrollLeft + clientWidth;
+      scrollRef.current.scrollTo({ left: scrollTo, behavior: "smooth" });
+    }
+  };
 
   return (
     <section style={{
@@ -172,109 +181,133 @@ export default function FeatureGrid() {
           </Link>
         </div>
 
-        {/* ── Feature Grid (Larger Cards & Images) ── */}
-        <div className="feature-grid-responsive">
-          {features.map((feature, idx) => (
-            <div
-              key={idx}
-              onMouseEnter={() => setHovered(idx)}
-              onMouseLeave={() => setHovered(null)}
-              style={{
-                background: "#ffffff",
-                borderRadius: "32px",
-                border: hovered === idx
-                  ? `1.5px solid ${feature.accent}35`
-                  : "1.5px solid #e8f0fe",
-                padding: "clamp(24px, 2.5vw, 36px)",
-                display: "flex",
-                flexDirection: "column",
-                transition: "all 0.3s cubic-bezier(0.34,1.2,0.64,1)",
-                transform: hovered === idx ? "translateY(-6px)" : "translateY(0)",
-                boxShadow: hovered === idx
-                  ? `0 24px 60px rgba(37,99,235,0.12), 0 0 0 1px ${feature.accent}15`
-                  : "0 2px 14px rgba(37,99,235,0.05)",
-                cursor: "default",
-                boxSizing: "border-box" as const,
-              }}
-            >
-              {/* Icon badge - slightly larger */}
-              <div style={{
-                width: "56px", height: "56px",
-                borderRadius: "18px",
-                background: feature.bg,
-                border: `1px solid ${feature.accent}20`,
-                display: "flex", alignItems: "center", justifyContent: "center",
-                fontSize: "26px", marginBottom: "20px", flexShrink: 0,
-                transition: "transform 0.3s ease",
-                transform: hovered === idx ? "scale(1.1) rotate(3deg)" : "scale(1)",
-              }}>
-                {feature.icon}
-              </div>
+        {/* ── Feature Grid / Slider (Larger Cards & Images) ── */}
+        <div className="relative w-full group">
+          {/* Mobile Navigation Arrows */}
+          <button 
+            onClick={() => scroll("left")}
+            className="absolute -left-3 top-[40%] -translate-y-1/2 z-30 w-12 h-12 bg-white/90 backdrop-blur-sm rounded-full shadow-[0_8px_24px_rgba(0,0,0,0.12)] border border-gray-200/60 flex items-center justify-center text-gray-600 hover:text-[#005AD1] hover:scale-105 hover:bg-white transition-all duration-300 md:hidden"
+            aria-label="Previous step"
+          >
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+              <path d="M15 18l-6-6 6-6" />
+            </svg>
+          </button>
+          <button 
+            onClick={() => scroll("right")}
+            className="absolute -right-3 top-[40%] -translate-y-1/2 z-30 w-12 h-12 bg-white/90 backdrop-blur-sm rounded-full shadow-[0_8px_24px_rgba(0,0,0,0.12)] border border-gray-200/60 flex items-center justify-center text-gray-600 hover:text-[#005AD1] hover:scale-105 hover:bg-white transition-all duration-300 md:hidden"
+            aria-label="Next step"
+          >
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+              <path d="M9 18l6-6-6-6" />
+            </svg>
+          </button>
 
-              {/* Text - larger font sizes */}
-              <h3 style={{
-                fontSize: "clamp(20px, 1.6vw, 24px)",
-                fontWeight: 800, color: "#0f172a",
-                marginBottom: "10px", letterSpacing: "-0.02em", lineHeight: 1.2,
-              }}>
-                {feature.title}
-              </h3>
-              <p style={{
-                fontSize: "clamp(15px, 1.2vw, 17px)",
-                color: "#64748B", lineHeight: 1.65,
-                fontWeight: 450, marginBottom: "24px",
-                flexGrow: 1,
-              }}>
-                {feature.description}
-              </p>
-
-              {/* Image — uniform 16:10 ratio but larger overall */}
-              <div style={{
-                position: "relative", width: "100%",
-                aspectRatio: "16 / 10",
-                borderRadius: "20px", overflow: "hidden",
-                background: feature.bg,
-                border: `1px solid ${feature.accent}15`,
-                flexShrink: 0,
-                boxShadow: "0 4px 12px rgba(0,0,0,0.03)",
-              }}>
-                <Image
-                  src={feature.image}
-                  alt={feature.title}
-                  fill
-                  style={{
-                    objectFit: "cover",
-                    transition: "transform 0.5s ease",
-                    transform: hovered === idx ? "scale(1.05)" : "scale(1)",
-                  }}
-                  sizes="(max-width: 600px) 100vw, (max-width: 1024px) 50vw, 33vw"
-                />
-                {/* Accent bar */}
+          <div 
+            ref={scrollRef}
+            className="feature-grid-responsive flex md:grid md:grid-cols-3 gap-6 md:gap-8 overflow-x-auto md:overflow-x-visible pb-8 md:pb-0 scrollbar-hide snap-x snap-mandatory w-full"
+          >
+            {features.map((feature, idx) => (
+              <div
+                key={idx}
+                onMouseEnter={() => setHovered(idx)}
+                onMouseLeave={() => setHovered(null)}
+                className="min-w-[85vw] sm:min-w-[60vw] md:min-w-0 snap-center"
+                style={{
+                  background: "#ffffff",
+                  borderRadius: "32px",
+                  border: hovered === idx
+                    ? `1.5px solid ${feature.accent}35`
+                    : "1.5px solid #e8f0fe",
+                  padding: "clamp(24px, 2.5vw, 36px)",
+                  display: "flex",
+                  flexDirection: "column",
+                  transition: "all 0.3s cubic-bezier(0.34,1.2,0.64,1)",
+                  transform: hovered === idx ? "translateY(-6px)" : "translateY(0)",
+                  boxShadow: hovered === idx
+                    ? `0 24px 60px rgba(37,99,235,0.12), 0 0 0 1px ${feature.accent}15`
+                    : "0 2px 14px rgba(37,99,235,0.05)",
+                  cursor: "default",
+                  boxSizing: "border-box" as const,
+                }}
+              >
+                {/* Icon badge - slightly larger */}
                 <div style={{
-                  position: "absolute", bottom: 0, left: 0, right: 0,
-                  height: "4px",
-                  background: `linear-gradient(90deg, ${feature.accent}, ${feature.accent}50)`,
+                  width: "56px", height: "56px",
+                  borderRadius: "18px",
+                  background: feature.bg,
+                  border: `1px solid ${feature.accent}20`,
+                  display: "flex", alignItems: "center", justifyContent: "center",
+                  fontSize: "26px", marginBottom: "20px", flexShrink: 0,
+                  transition: "transform 0.3s ease",
+                  transform: hovered === idx ? "scale(1.1) rotate(3deg)" : "scale(1)",
+                }}>
+                  {feature.icon}
+                </div>
+
+                {/* Text - larger font sizes */}
+                <h3 style={{
+                  fontSize: "clamp(20px, 1.6vw, 24px)",
+                  fontWeight: 800, color: "#0f172a",
+                  marginBottom: "10px", letterSpacing: "-0.02em", lineHeight: 1.2,
+                }}>
+                  {feature.title}
+                </h3>
+                <p style={{
+                  fontSize: "clamp(15px, 1.2vw, 17px)",
+                  color: "#64748B", lineHeight: 1.65,
+                  fontWeight: 450, marginBottom: "24px",
+                  flexGrow: 1,
+                }}>
+                  {feature.description}
+                </p>
+
+                {/* Image — uniform 16:10 ratio but larger overall */}
+                <div style={{
+                  position: "relative", width: "100%",
+                  aspectRatio: "16 / 10",
+                  borderRadius: "20px", overflow: "hidden",
+                  background: feature.bg,
+                  border: `1px solid ${feature.accent}15`,
+                  flexShrink: 0,
+                  boxShadow: "0 4px 12px rgba(0,0,0,0.03)",
+                }}>
+                  <Image
+                    src={feature.image}
+                    alt={feature.title}
+                    fill
+                    style={{
+                      objectFit: "cover",
+                      transition: "transform 0.5s ease",
+                      transform: hovered === idx ? "scale(1.05)" : "scale(1)",
+                    }}
+                    sizes="(max-width: 600px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                  />
+                  {/* Accent bar */}
+                  <div style={{
+                    position: "absolute", bottom: 0, left: 0, right: 0,
+                    height: "4px",
+                    background: `linear-gradient(90deg, ${feature.accent}, ${feature.accent}50)`,
+                    opacity: hovered === idx ? 1 : 0,
+                    transition: "opacity 0.3s ease",
+                  }} />
+                </div>
+
+                {/* Learn more link */}
+                <div style={{
+                  display: "flex", alignItems: "center", gap: "6px",
+                  marginTop: "18px", color: feature.accent,
+                  fontSize: "14px", fontWeight: 700,
                   opacity: hovered === idx ? 1 : 0,
-                  transition: "opacity 0.3s ease",
-                }} />
+                  transform: hovered === idx ? "translateY(0)" : "translateY(4px)",
+                  transition: "all 0.25s ease",
+                }}>
+                  Learn more <span style={{ fontSize: "15px" }}>→</span>
+                </div>
               </div>
-
-              {/* Learn more link */}
-              <div style={{
-                display: "flex", alignItems: "center", gap: "6px",
-                marginTop: "18px", color: feature.accent,
-                fontSize: "14px", fontWeight: 700,
-                opacity: hovered === idx ? 1 : 0,
-                transform: hovered === idx ? "translateY(0)" : "translateY(4px)",
-                transition: "all 0.25s ease",
-              }}>
-                Learn more <span style={{ fontSize: "15px" }}>→</span>
-              </div>
-            </div>
-          ))}
+            ))}
+          </div>
         </div>
-
-        {/* Stats strip removed as requested */}
       </div>
 
       {/* Standard CSS for responsive grid */}
@@ -292,8 +325,18 @@ export default function FeatureGrid() {
         }
         @media (max-width: 600px) {
           .feature-grid-responsive {
-            grid-template-columns: 1fr;
+            display: flex !important;
           }
+        }
+        
+        /* Hide scrollbar for Chrome, Safari and Opera */
+        .scrollbar-hide::-webkit-scrollbar {
+          display: none;
+        }
+        /* Hide scrollbar for IE, Edge and Firefox */
+        .scrollbar-hide {
+          -ms-overflow-style: none;  /* IE and Edge */
+          scrollbar-width: none;  /* Firefox */
         }
       `}</style>
     </section>

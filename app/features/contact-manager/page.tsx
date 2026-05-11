@@ -9,6 +9,7 @@ import SecuritySection from "@/components/SecuritySection";
 import FAQ from "@/components/FAQ";
 import { ContactContextSection, NetworkingFeatures } from "@/components/ContactAddons";
 import FeatureGrid from '@/components/FeatureGrid';
+import HowToCreateCard from '@/components/HowToCreateCard';
 
 export default function ContactManager() {
   return (
@@ -257,9 +258,15 @@ export default function ContactManager() {
       `}</style>
 
       <div className="w-full">
+        
+        <div className="w-full h-16 lg:h-24 bg-white" />
+        <HowToCreateCard />
+        
         <div className="w-full h-16 lg:h-24 bg-white" />
         
         {/* Context Rich Interaction Section */}
+        
+     
         <ContactContextSection />
         
         <div className="w-full h-16 lg:h-24 bg-white" />

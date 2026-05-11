@@ -34,8 +34,8 @@ const FeatureSection = ({ eyebrow, title, desc, bullets, image, imageLeft = fals
   }, []);
 
   return (
-    <section ref={sectionRef} className="w-[calc(100%-100px)] py-10 md:py-16 overflow-hidden bg-white" style={{ fontFamily: "'DM Sans', sans-serif", marginLeft: 50 }}>
-      <div className={`max-w-[1400px] mx-auto px-0 sm:px-4 lg:px-12 flex flex-col ${imageLeft ? 'lg:flex-row' : 'lg:flex-row-reverse'} items-center gap-8 lg:gap-16`}>
+    <section ref={sectionRef} className="feature-section">
+      <div className={`feature-inner flex flex-col ${imageLeft ? 'lg:flex-row' : 'lg:flex-row-reverse'} items-center gap-12 lg:gap-24`}>
 
         {/* Mobile Eyebrow */}
         <div
@@ -51,12 +51,12 @@ const FeatureSection = ({ eyebrow, title, desc, bullets, image, imageLeft = fals
 
         {/* Image Column */}
         <div
-          className={`w-full lg:w-[40%] transition-all duration-1000 ease-out transform ${isVisible
+          className={`w-full lg:w-[45%] transition-all duration-1000 ease-out transform ${isVisible
             ? 'translate-x-0 opacity-100'
             : `${imageLeft ? '-translate-x-12' : 'translate-x-12'} opacity-0`
             }`}
         >
-          <div className="relative w-full aspect-[16/10] rounded-[20px] md:rounded-[24px] overflow-hidden shadow-[0_20px_40px_rgba(0,0,0,0.06)] border border-gray-100 bg-gray-50">
+          <div className="relative w-full aspect-[16/11] rounded-[24px] md:rounded-[32px] overflow-hidden shadow-[0_20px_40px_rgba(0,0,0,0.06)] border border-gray-100 bg-gray-50">
             <Image
               src={image}
               alt={title}
@@ -68,7 +68,7 @@ const FeatureSection = ({ eyebrow, title, desc, bullets, image, imageLeft = fals
 
         {/* Text Column */}
         <div
-          className={`w-full lg:w-[60%] flex flex-col items-center lg:items-start text-center lg:text-left transition-all duration-1000 ease-out transform delay-200 ${isVisible
+          className={`w-full lg:w-[55%] flex flex-col items-center lg:items-start text-center lg:text-left transition-all duration-1000 ease-out transform delay-200 ${isVisible
             ? 'translate-x-0 opacity-100'
             : `${imageLeft ? 'translate-x-12' : '-translate-x-12'} opacity-0`
             }`}
@@ -193,10 +193,45 @@ export default function TeamDashboardShowcase() {
   ];
 
   return (
-    <div className="flex flex-col gap-16 md:gap-24 bg-white py-8 md:py-12">
-      {sections.map((section, index) => (
-        <FeatureSection key={index} {...section} />
-      ))}
-    </div>
+    <>
+      <style>{`
+        .feature-section {
+          width: 100%;
+          padding: 80px 24px;
+          background: #ffffff;
+          font-family: 'DM Sans', sans-serif;
+          box-sizing: border-box;
+          overflow: hidden;
+        }
+
+        .feature-inner {
+          width: 100%;
+          max-width: 1400px;
+          margin: 0 auto;
+          padding: 0 24px;
+          box-sizing: border-box;
+        }
+
+        @media (max-width: 1024px) {
+          .feature-section {
+            padding: 64px 20px;
+          }
+        }
+
+        @media (max-width: 600px) {
+          .feature-section {
+            padding: 48px 16px;
+          }
+          .feature-inner {
+            padding: 0 8px;
+          }
+        }
+      `}</style>
+      <div className="w-full flex flex-col gap-0 bg-white relative z-10">
+        {sections.map((section, index) => (
+          <FeatureSection key={index} {...section} />
+        ))}
+      </div>
+    </>
   );
 }

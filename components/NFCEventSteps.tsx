@@ -1,6 +1,6 @@
 "use client";
 
-import React from "react";
+import React, { useRef } from "react";
 
 export default function NFCEventSteps() {
   const steps = [
@@ -41,38 +41,93 @@ export default function NFCEventSteps() {
   ];
 
   return (
-    <section className="bg-white py-20 md:py-32" style={{ fontFamily: "'DM Sans', sans-serif" }}>
-      <div className="max-w-[1400px] mx-auto px-6" style={{ marginLeft: 50 }}>
-        {/* Header */}
-        <div className="text-center mb-20 md:mb-28">
-          <h2 className="text-[42px] md:text-[56px] lg:text-[68px] font-[900] text-[#111827] leading-tight">
-            How to Get Started
-          </h2>
-        </div>
+    <section className="steps-section w-full bg-white relative z-10">
+      <style>{`
+        .steps-section {
+          width: 100%;
+          padding: 80px 24px;
+          background: #ffffff;
+          font-family: 'DM Sans', sans-serif;
+          box-sizing: border-box;
+        }
 
-        {/* Steps Grid */}
-        <div className="flex flex-col md:flex-row items-start justify-between gap-12 md:gap-8 relative">
-          {steps.map((step, index) => (
-            <React.Fragment key={index}>
-              <div className="flex-1 flex flex-col items-center text-center group">
-                <div className="mb-10 text-[#111827] transition-transform duration-300 group-hover:scale-110">
-                  {step.icon}
-                </div>
-                <h3 className="text-[22px] md:text-[26px] font-[900] text-[#111827] mb-4">
-                  {step.title}
-                </h3>
-                <p className="text-gray-500 text-[16px] md:text-[17px] font-medium leading-relaxed max-w-[280px]">
-                  {step.desc}
-                </p>
+        .steps-header {
+          width: 100%;
+          max-width: 1400px;
+          margin: 0 auto 64px;
+          text-align: center;
+          padding: 0 24px;
+          box-sizing: border-box;
+        }
+
+        .steps-inner {
+          width: 100%;
+          max-width: 1400px;
+          margin: 0 auto;
+          display: flex;
+          flex-direction: row;
+          align-items: flex-start;
+          justify-content: space-between;
+          gap: 24px;
+        }
+
+        @media (max-width: 1024px) {
+          .steps-section {
+            padding: 64px 24px;
+          }
+          .steps-header {
+            margin-bottom: 48px;
+          }
+          .steps-inner {
+            flex-direction: column;
+            align-items: center;
+            gap: 48px;
+            text-align: center;
+          }
+          .step-card-wrap {
+            width: 100%;
+            max-width: 320px;
+          }
+        }
+
+        @media (max-width: 600px) {
+          .steps-section {
+            padding: 48px 20px;
+          }
+          .steps-header h2 {
+            font-size: 32px;
+          }
+        }
+      `}</style>
+
+      {/* Header Section */}
+      <div className="steps-header">
+        <h2 className="text-[32px] md:text-[56px] lg:text-[68px] font-[900] text-[#111827] leading-[1.1] tracking-tight">
+          How to Get Started
+        </h2>
+      </div>
+
+      <div className="steps-inner">
+        {steps.map((step, index) => (
+          <React.Fragment key={index}>
+            <div className="step-card-wrap flex-1 flex flex-col items-center text-center group">
+              <div className="mb-6 md:mb-10 text-[#111827] transition-transform duration-300 group-hover:scale-110">
+                {step.icon}
               </div>
+              <h3 className="text-[22px] md:text-[28px] font-[900] text-[#111827] mb-4 leading-tight">
+                {step.title}
+              </h3>
+              <p className="text-gray-500 text-[16px] md:text-[18px] font-medium leading-relaxed max-w-[280px]">
+                {step.desc}
+              </p>
+            </div>
 
-              {/* Connecting Line */}
-              {index < steps.length - 1 && (
-                <div className="hidden md:block flex-[0_0_100px] lg:flex-[0_0_150px] h-[2px] bg-gray-200 mt-[24px]" />
-              )}
-            </React.Fragment>
-          ))}
-        </div>
+            {/* Connecting Line (Desktop Only) */}
+            {index < steps.length - 1 && (
+              <div className="hidden lg:block flex-[0_0_60px] lg:flex-[0_0_100px] h-[2px] bg-gray-200 mt-[24px]" />
+            )}
+          </React.Fragment>
+        ))}
       </div>
     </section>
   );

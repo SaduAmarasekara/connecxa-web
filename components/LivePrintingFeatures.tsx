@@ -95,7 +95,7 @@ const FeatureSection = ({ eyebrow, title, desc, features, image, imageLeft = fal
 };
 
 export default function LivePrintingFeatures() {
-  const [currentSlide, setCurrentSlide] = useState(0);
+  const scrollRef = useRef<HTMLDivElement | null>(null);
   const sections = [
     {
       eyebrow: "ORGANIC CROWD MAGNET",
@@ -132,92 +132,186 @@ export default function LivePrintingFeatures() {
     }
   ];
 
-  const nextSlide = () => setCurrentSlide((prev) => (prev + 1) % sections.length);
-  const prevSlide = () => setCurrentSlide((prev) => (prev - 1 + sections.length) % sections.length);
-
   return (
-    <div className="bg-white flex flex-col py-8 md:py-12" style={{ fontFamily: "'DM Sans', sans-serif" }}>
+    <section className="live-section w-full bg-white relative z-10">
+      <style>{`
+        .live-section {
+          width: 100%;
+          padding: 80px 24px;
+          background: #ffffff;
+          font-family: 'DM Sans', sans-serif;
+          box-sizing: border-box;
+          overflow: hidden;
+        }
+
+        .live-header {
+          width: 100%;
+          max-width: 1400px;
+          margin: 0 auto 64px;
+          text-align: center;
+          padding: 0 24px;
+          box-sizing: border-box;
+        }
+
+        .live-inner-wrapper {
+          position: relative;
+          width: 100%;
+          max-width: 1400px;
+          margin: 0 auto;
+        }
+
+        .live-inner {
+          width: 100%;
+          display: flex;
+          flex-direction: column;
+          gap: 120px;
+        }
+
+        .carousel-arrow {
+          position: absolute;
+          top: 45%; 
+          transform: translateY(-50%);
+          width: 48px; 
+          height: 48px;
+          background: rgba(17,17,17,0.6); 
+          backdrop-filter: blur(8px);
+          border: none; 
+          cursor: pointer; 
+          color: #fff;
+          display: none; 
+          align-items: center; 
+          justify-content: center;
+          z-index: 50; 
+          transition: all 0.2s ease;
+        }
+        .arrow-right { right: 0; border-top-left-radius: 99px; border-bottom-left-radius: 99px; }
+        .arrow-left  { left: 0;  border-top-right-radius: 99px; border-bottom-right-radius: 99px; }
+        .carousel-arrow:hover { background: rgba(17,17,17,0.8); }
+
+        .no-scrollbar::-webkit-scrollbar { display: none; }
+        .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+
+        @media (max-width: 1024px) {
+          .live-section {
+            padding: 64px 0;
+          }
+          .live-header {
+            margin-bottom: 40px;
+          }
+          .live-inner {
+            flex-direction: row;
+            overflow-x: auto;
+            scroll-snap-type: x mandatory;
+            gap: 20px;
+            padding: 0 20px 40px;
+            -webkit-overflow-scrolling: touch;
+          }
+          .live-card-wrap {
+            width: 88vw;
+            flex-shrink: 0;
+            scroll-snap-align: center;
+          }
+          .carousel-arrow {
+            display: flex;
+          }
+        }
+
+        @media (max-width: 600px) {
+          .live-section {
+            padding: 48px 0;
+          }
+          .live-inner {
+            padding: 0 20px 40px;
+            gap: 16px;
+          }
+          .live-card-wrap {
+            width: 90vw;
+          }
+          .carousel-arrow {
+            width: 40px;
+            height: 40px;
+            top: 40%;
+          }
+        }
+      `}</style>
+
       {/* Header Section */}
-      <div className="max-w-[1400px] mx-auto px-4 md:px-6 text-center mb-10 md:mb-14 flex flex-col items-center">
-        <h2 className="text-[32px] md:text-[48px] lg:text-[56px] font-[900] text-[#111827] leading-tight mb-3 md:mb-4">
+      <div className="live-header">
+        <h2 className="text-[32px] md:text-[48px] lg:text-[56px] font-[900] text-[#111827] leading-[1.1] mb-4 md:mb-6 tracking-tight">
           Elevate Events with Live Printing
         </h2>
-        <p className="text-gray-500 text-[16px] md:text-[20px] font-medium max-w-[1400px] mx-auto px-2">
+        <p className="text-gray-500 text-[16px] md:text-[20px] font-medium max-w-4xl mx-auto leading-relaxed">
           Transform your event into an experience with live-printed personalised NFC cards
         </p>
       </div>
 
-      {/* Desktop Feature Sections */}
-      <div className="hidden lg:flex flex-col gap-4">
-        {sections.map((section, index) => (
-          <FeatureSection key={index} {...section} />
-        ))}
-      </div>
-
-      {/* Mobile Slider View */}
-      <div className="lg:hidden w-full px-4 py-8 relative overflow-hidden">
-        <div 
-          className="flex transition-transform duration-500 ease-out"
-          style={{ transform: `translateX(-${currentSlide * 100}%)` }}
-        >
+      <div className="live-inner-wrapper">
+        <div ref={scrollRef} className="live-inner no-scrollbar">
           {sections.map((section, index) => (
-            <div key={index} className="w-full flex-shrink-0 px-2">
-              <div className="bg-white rounded-[32px] p-8 shadow-xl border border-gray-100 flex flex-col items-center text-center">
-                <div className="text-[#005AD1] font-bold text-[12px] tracking-[0.12em] uppercase mb-4">
-                  {section.eyebrow}
+            <div key={index} className="live-card-wrap">
+              <div className={`flex flex-col ${section.imageLeft ? 'lg:flex-row' : 'lg:flex-row-reverse'} items-center justify-between gap-10 md:gap-16 lg:gap-24`}>
+                
+                {/* Image Column */}
+                <div className="w-full lg:w-[45%]">
+                  <div className="relative aspect-[16/11] rounded-[24px] md:rounded-[40px] overflow-hidden shadow-[0_20px_50px_rgba(0,0,0,0.08)] border border-gray-100 bg-gray-50">
+                    <Image
+                      src={section.image}
+                      alt={section.title}
+                      fill
+                      className="object-cover"
+                    />
+                  </div>
                 </div>
-                <h3 className="text-[26px] font-[900] text-[#111827] leading-tight mb-4">
-                  {section.title}
-                </h3>
-                <div className="relative w-full aspect-[16/10] rounded-2xl overflow-hidden mb-6 shadow-md border border-gray-50">
-                  <Image src={section.image} alt={section.title} fill className="object-cover" />
-                </div>
-                <p className="text-gray-500 text-sm font-medium mb-8">
-                  {section.desc}
-                </p>
-                <div className="space-y-4 text-left w-full">
-                  {section.features.map((f, i) => (
-                    <div key={i} className="flex items-start gap-3">
-                      <div className="text-[#005AD1] shrink-0 mt-0.5">
-                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round">
-                          <polyline points="20 6 9 17 4 12" />
-                        </svg>
+
+                {/* Text Column */}
+                <div className="w-full lg:w-[55%] flex flex-col items-center lg:items-start text-center lg:text-left">
+                  <div className="text-[#005AD1] font-bold text-[12px] md:text-[13px] tracking-[0.15em] uppercase mb-4 md:mb-6">
+                    {section.eyebrow}
+                  </div>
+
+                  <h2 className="text-[28px] md:text-[36px] lg:text-[44px] font-[900] text-[#111827] leading-[1.15] md:leading-[1.1] tracking-tight mb-6 md:mb-8">
+                    {section.title}
+                  </h2>
+
+                  <p className="text-gray-500 text-[15px] md:text-[18px] font-medium leading-relaxed mb-8 md:mb-10 max-w-xl">
+                    {section.desc}
+                  </p>
+
+                  <div className="space-y-4 md:space-y-6 w-full max-w-md lg:max-w-none text-left">
+                    {section.features.map((feature, i) => (
+                      <div key={i} className="flex items-start gap-4 group">
+                        <div className="w-5 h-5 md:w-6 md:h-6 flex items-center justify-center text-[#005AD1] shrink-0 mt-0.5">
+                          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round">
+                            <polyline points="20 6 9 17 4 12" />
+                          </svg>
+                        </div>
+                        <div className="text-gray-600 text-[14px] md:text-[17px] font-bold leading-tight">
+                          {feature}
+                        </div>
                       </div>
-                      <div className="text-gray-600 text-sm font-medium">
-                        {f}
-                      </div>
-                    </div>
-                  ))}
+                    ))}
+                  </div>
                 </div>
               </div>
             </div>
           ))}
         </div>
 
-        {/* Navigation Arrows */}
-        <div className="flex justify-center items-center gap-6 mt-8">
-          <button 
-            onClick={prevSlide}
-            className="w-11 h-11 rounded-full bg-white shadow-lg border border-gray-100 flex items-center justify-center text-[#005AD1] active:scale-95 transition-all"
-          >
-            <ChevronLeft size={22} />
-          </button>
-          <div className="flex gap-2">
-            {sections.map((_, i) => (
-              <div 
-                key={i} 
-                className={`h-1.5 rounded-full transition-all duration-300 ${currentSlide === i ? 'w-6 bg-[#005AD1]' : 'w-1.5 bg-gray-200'}`}
-              />
-            ))}
-          </div>
-          <button 
-            onClick={nextSlide}
-            className="w-11 h-11 rounded-full bg-white shadow-lg border border-gray-100 flex items-center justify-center text-[#005AD1] active:scale-95 transition-all"
-          >
-            <ChevronRight size={22} />
-          </button>
-        </div>
+        <button 
+          className="carousel-arrow arrow-left" 
+          onClick={() => scrollRef.current?.scrollBy({ left: -window.innerWidth * 0.8, behavior: "smooth" })} 
+          aria-label="Scroll left"
+        >
+          <span style={{ fontSize: 24, fontWeight: 300, marginRight: -4 }}>‹</span>
+        </button>
+        <button 
+          className="carousel-arrow arrow-right" 
+          onClick={() => scrollRef.current?.scrollBy({ left: window.innerWidth * 0.8, behavior: "smooth" })} 
+          aria-label="Scroll right"
+        >
+          <span style={{ fontSize: 24, fontWeight: 300, marginLeft: -4 }}>›</span>
+        </button>
       </div>
-    </div>
+    </section>
   );
 }

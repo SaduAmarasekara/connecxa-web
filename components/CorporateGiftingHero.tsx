@@ -248,11 +248,12 @@ export default function CorporateGiftingHero() {
               style={{
                 position: "relative",
                 width: "100%",
-                aspectRatio: "4/5",
+                aspectRatio: "4/3",
                 overflow: "hidden",
                 boxShadow: "0 40px 80px -20px rgba(0,90,209,0.25), 0 20px 40px -10px rgba(0,0,0,0.12), inset 0 1px 0 rgba(255,255,255,0.4)",
                 border: "1px solid rgba(255,255,255,0.5)",
                 zIndex: 5,
+                borderRadius: "32px",
               }}
             >
               <Image
@@ -260,7 +261,7 @@ export default function CorporateGiftingHero() {
                 alt="Corporate Gifting Mockup"
                 fill
                 className="object-cover"
-                style={{ objectPosition: "center 100%", transform: "scale(1.4)" }}
+                style={{ objectPosition: "center" }}
                 priority
               />
               {/* Subtle sheen overlay */}

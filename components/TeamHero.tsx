@@ -247,11 +247,12 @@ export default function TeamHero() {
               style={{
                 position: "relative",
                 width: "100%",
-                aspectRatio: "4/5",
+                aspectRatio: "4/3",
                 overflow: "hidden",
                 boxShadow: "0 40px 80px -20px rgba(0,90,209,0.25), 0 20px 40px -10px rgba(0,0,0,0.12), inset 0 1px 0 rgba(255,255,255,0.4)",
                 border: "1px solid rgba(255,255,255,0.5)",
                 zIndex: 5,
+                borderRadius: "32px",
               }}
             >
               <Image
@@ -259,6 +260,7 @@ export default function TeamHero() {
                 alt="Team Dashboard Mockup"
                 fill
                 className="object-cover"
+                style={{ objectPosition: "center" }}
                 priority
               />
               {/* Subtle sheen overlay */}

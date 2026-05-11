@@ -297,10 +297,10 @@ export default function DigitalBusinessCards() {
                 style={{
                   position: "relative",
                   width: "100%",
-                  aspectRatio: "4/5",
+                  aspectRatio: "4/3",
                   borderRadius: "48px",
                   overflow: "hidden",
-                  boxShadow: "0 40px 80px -20px rgba(124,58,237,0.3), 0 20px 40px -10px rgba(0,0,0,0.12), inset 0 1px 0 rgba(255,255,255,0.4)",
+                  boxShadow: "0 40px 80px -20px rgba(0,90,209,0.25), 0 20px 40px -10px rgba(0,0,0,0.12)",
                   animation: "heroFloat 7s ease-in-out infinite",
                   border: "1px solid rgba(255,255,255,0.5)",
                   zIndex: 5,

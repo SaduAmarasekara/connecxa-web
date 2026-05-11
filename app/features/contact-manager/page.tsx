@@ -223,7 +223,7 @@ export default function ContactManager() {
                 style={{
                   position: "relative",
                   width: "100%",
-                  aspectRatio: "4/5",
+                  aspectRatio: "4/3",
                   borderRadius: "48px",
                   overflow: "hidden",
                   boxShadow: "0 40px 80px -20px rgba(0,90,209,0.25), 0 20px 40px -10px rgba(0,0,0,0.12)",

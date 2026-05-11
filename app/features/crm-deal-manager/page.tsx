@@ -43,7 +43,7 @@ export default function CRMDealManager() {
       />
 
       {/* ── Hero Section ── */}
-      <section className="w-full max-w-[1280px] px-6 sm:px-10 lg:px-16 z-10 relative" style={{ paddingTop: "70px", paddingBottom: "40px" }}>
+      <section className="w-full max-w-[1280px] px-6 sm:px-10 lg:px-16 z-10 relative" style={{ paddingTop: "35px", paddingBottom: "30px" }}>
         <div
           className="flex flex-col lg:flex-row items-center justify-between"
           style={{ gap: "48px", alignItems: "center" }}
@@ -256,19 +256,19 @@ export default function CRMDealManager() {
       `}</style>
 
       <div className="w-full">
-        <div className="w-full h-24 lg:h-32 bg-white" />
+        <div className="w-full h-16 lg:h-24 bg-white" />
         
         {/* Features Showcase Section */}
         <CRMShowcase />
         
-        <div className="w-full h-24 lg:h-32 bg-white" />
+        <div className="w-full h-16 lg:h-24 bg-white" />
         
         <SecuritySection />
-        <div className="w-full h-24 lg:h-32 bg-white" />
+        <div className="w-full h-16 lg:h-24 bg-white" />
         <FAQ />
-        <div className="w-full h-24 lg:h-32 bg-white" />
+        <div className="w-full h-16 lg:h-24 bg-white" />
         <FeatureGrid />
-        <div className="w-full h-24 lg:h-32 bg-white" />
+        <div className="w-full h-16 lg:h-24 bg-white" />
       </div>
     </main>
   );

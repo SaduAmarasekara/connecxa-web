@@ -13,7 +13,7 @@ export default function Home() {
   return (
     <div className="min-h-screen flex flex-col bg-white overflow-hidden">
       {/* ── Hero Section ── */}
-      <main className="w-full relative flex flex-col items-center pt-20 pb-16 lg:pt-28 lg:pb-0 overflow-hidden" style={{
+      <main className="w-full relative flex flex-col items-center pt-10 pb-16 lg:pt-14 lg:pb-0 overflow-hidden" style={{
         background: "linear-gradient(180deg, #FFFFFF 0%, #D2E4FC 100%)",
         fontFamily: "'DM Sans', 'Helvetica Neue', sans-serif"
       }}>
@@ -132,26 +132,26 @@ export default function Home() {
       <TrustedBy />
 
       {/* ── Sections ── */}
-      <div className="w-full h-24 lg:h-32 bg-white" />
+      <div className="w-full h-16 lg:h-24 bg-white" />
       <CardShowcase />
 
       {/* Spacer between CardShowcase and Workflow */}
-      <div className="w-full h-24 lg:h-32 bg-white" />
+      <div className="w-full h-16 lg:h-24 bg-white" />
 
       <Workflow />
 
       {/* Spacer between Workflow and ProfilesShowcase */}
-      <div className="w-full h-24 lg:h-32 bg-white" />
+      <div className="w-full h-16 lg:h-24 bg-white" />
 
       <ProfilesShowcase />
 
       {/* Spacer between ProfilesShowcase and NetworkingToolkit */}
-      <div className="w-full h-24 lg:h-32 bg-white" />
+      <div className="w-full h-16 lg:h-24 bg-white" />
 
       <NetworkingToolkit />
 
       {/* Spacer between NetworkingToolkit and FAQ */}
-      <div className="w-full h-24 lg:h-32 bg-white" />
+      <div className="w-full h-16 lg:h-24 bg-white" />
 
       <FAQ />
 

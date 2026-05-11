@@ -55,7 +55,7 @@ export default function DigitalBusinessCards() {
       />
 
       {/* ── Hero Section ── */}
-      <section className="w-full max-w-[1280px] px-6 sm:px-10 lg:px-16 z-10 relative" style={{ paddingTop: "32px", paddingBottom: "0px" }}>
+      <section className="w-full max-w-[1280px] px-6 sm:px-10 lg:px-16 z-10 relative" style={{ paddingTop: "20px", paddingBottom: "0px" }}>
         <div
           className="flex flex-col lg:flex-row items-center justify-between"
           style={{ gap: "48px", alignItems: "center" }}
@@ -361,17 +361,17 @@ export default function DigitalBusinessCards() {
 
       {/* ── Page Sections ── */}
       <div className="w-full">
-        <div className="w-full h-24 lg:h-32 bg-white" />
+        <div className="w-full h-16 lg:h-24 bg-white" />
         <ProfilesShowcase />
-        <div className="w-full h-24 lg:h-32 bg-white" />
+        <div className="w-full h-16 lg:h-24 bg-white" />
         <ProductShowcase />
-        <div className="w-full h-24 lg:h-32 bg-white" />
+        <div className="w-full h-16 lg:h-24 bg-white" />
         <SmarterConnect />
-        <div className="w-full h-24 lg:h-32 bg-white" />
+        <div className="w-full h-16 lg:h-24 bg-white" />
         <FeatureGrid />
-        <div className="w-full h-24 lg:h-32 bg-white" />
+        <div className="w-full h-16 lg:h-24 bg-white" />
         <SecuritySection />
-        <div className="w-full h-24 lg:h-32 bg-white" />
+        <div className="w-full h-16 lg:h-24 bg-white" />
         <FAQ />
         <div className="w-full h-24 lg:h-32 bg-white" />
       </div>

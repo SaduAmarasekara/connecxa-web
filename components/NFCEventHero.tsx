@@ -6,7 +6,7 @@ import Link from "next/link";
 
 export default function NFCEventHero() {
   return (
-    <section className="w-full max-w-[1280px] px-6 sm:px-10 lg:px-16 z-10 relative" style={{ paddingTop: "32px", paddingBottom: "0px", fontFamily: "'DM Sans', sans-serif" }}>
+    <section className="w-full max-w-[1280px] px-6 sm:px-10 lg:px-16 z-10 relative" style={{ paddingTop: "20px", paddingBottom: "0px", fontFamily: "'DM Sans', sans-serif" }}>
       <div
         className="flex flex-col lg:flex-row items-center justify-between"
         style={{ gap: "48px", alignItems: "center" }}

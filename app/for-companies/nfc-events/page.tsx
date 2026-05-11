@@ -55,15 +55,15 @@ export default function NFCEventsPage() {
 
       <NFCEventHero />
       <div className="w-full">
-        <div className="w-full h-24 lg:h-32 bg-white" />
+        <div className="w-full h-16 lg:h-24 bg-white" />
         <LivePrintingFeatures />
-        <div className="w-full h-24 lg:h-32 bg-white" />
+        <div className="w-full h-16 lg:h-24 bg-white" />
         <NFCEventServices />
-        <div className="w-full h-24 lg:h-32 bg-white" />
+        <div className="w-full h-16 lg:h-24 bg-white" />
         <NFCEventSteps />
-        <div className="w-full h-24 lg:h-32 bg-white" />
+        <div className="w-full h-16 lg:h-24 bg-white" />
         <OccasionsSection />
-        <div className="w-full h-24 lg:h-32 bg-white" />
+        <div className="w-full h-16 lg:h-24 bg-white" />
         <FAQ />
         <div className="w-full h-24 lg:h-32 bg-white" />
       </div>

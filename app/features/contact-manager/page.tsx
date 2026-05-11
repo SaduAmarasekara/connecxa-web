@@ -44,7 +44,7 @@ export default function ContactManager() {
       />
 
       {/* ── Hero Section ── */}
-      <section className="w-full max-w-[1280px] px-6 sm:px-10 lg:px-16 z-10 relative" style={{ paddingTop: "70px", paddingBottom: "40px" }}>
+      <section className="w-full max-w-[1280px] px-6 sm:px-10 lg:px-16 z-10 relative" style={{ paddingTop: "35px", paddingBottom: "30px" }}>
         <div
           className="flex flex-col lg:flex-row items-center justify-between"
           style={{ gap: "48px", alignItems: "center" }}
@@ -257,25 +257,25 @@ export default function ContactManager() {
       `}</style>
 
       <div className="w-full">
-        <div className="w-full h-24 lg:h-32 bg-white" />
+        <div className="w-full h-16 lg:h-24 bg-white" />
         
         {/* Context Rich Interaction Section */}
         <ContactContextSection />
         
-        <div className="w-full h-24 lg:h-32 bg-white" />
+        <div className="w-full h-16 lg:h-24 bg-white" />
         
         {/* Better Networking Features Section */}
         <NetworkingFeatures />
         
-        <div className="w-full h-24 lg:h-32 bg-white" />
+        <div className="w-full h-16 lg:h-24 bg-white" />
 
       
        
         <FAQ />
-        <div className="w-full h-24 lg:h-32 bg-white" />
+        <div className="w-full h-16 lg:h-24 bg-white" />
           <FeatureGrid />
 
-        <div className="w-full h-24 lg:h-32 bg-white" />
+        <div className="w-full h-16 lg:h-24 bg-white" />
       </div>
     </main>
   );

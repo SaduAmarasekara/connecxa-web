@@ -175,7 +175,7 @@ export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
   const [activeMobileDropdown, setActiveMobileDropdown] = useState<string | null>(null);
-  const [cartCount] = useState(2);
+  const [cartCount] = useState(0);
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 12);
@@ -569,7 +569,9 @@ export default function Navbar() {
 
             {/* Right: Actions */}
             <div className="actions">
-              <button className="btn-demo">Get a Demo</button>
+              <Link href="/contact-us" style={{ textDecoration: 'none' }}>
+                <button className="btn-demo">Get a Demo</button>
+              </Link>
 
               <Link href="/login" style={{ textDecoration: 'none' }}>
                 <button className="btn-login">
@@ -581,25 +583,27 @@ export default function Navbar() {
               <div className="nav-divider" />
 
               {/* Cart */}
-              <button className="cart-btn" aria-label="Shopping cart">
-                <svg
-                  width="20"
-                  height="20"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  strokeWidth="2.2"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                >
-                  <path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4Z" />
-                  <path d="M3 6h18" />
-                  <path d="M16 10a4 4 0 0 1-8 0" />
-                </svg>
-                {cartCount > 0 && (
-                  <span className="cart-badge">{cartCount}</span>
-                )}
-              </button>
+              <Link href="/cart" style={{ textDecoration: 'none' }}>
+                <button className="cart-btn" aria-label="Shopping cart">
+                  <svg
+                    width="20"
+                    height="20"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth="2.2"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                  >
+                    <path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4Z" />
+                    <path d="M3 6h18" />
+                    <path d="M16 10a4 4 0 0 1-8 0" />
+                  </svg>
+                  {cartCount > 0 && (
+                    <span className="cart-badge">{cartCount}</span>
+                  )}
+                </button>
+              </Link>
 
               {/* Hamburger */}
               <div
@@ -702,22 +706,24 @@ export default function Navbar() {
               marginTop: "auto",
             }}
           >
-            <button
-              style={{
-                fontFamily: "inherit",
-                fontSize: 16,
-                fontWeight: 700,
-                color: "#005AD1",
-                background: "transparent",
-                border: "2px solid #005AD1",
-                borderRadius: 99,
-                padding: "14px 28px",
-                cursor: "pointer",
-                width: "100%",
-              }}
-            >
-              Get a Demo
-            </button>
+            <Link href="/contact-us" style={{ textDecoration: 'none', width: '100%' }}>
+              <button
+                style={{
+                  fontFamily: "inherit",
+                  fontSize: 16,
+                  fontWeight: 700,
+                  color: "#005AD1",
+                  background: "transparent",
+                  border: "2px solid #005AD1",
+                  borderRadius: 99,
+                  padding: "14px 28px",
+                  cursor: "pointer",
+                  width: "100%",
+                }}
+              >
+                Get a Demo
+              </button>
+            </Link>
             <button
               style={{
                 fontFamily: "inherit",

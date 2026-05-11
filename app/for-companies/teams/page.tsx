@@ -6,6 +6,7 @@ import TeamTools from "@/components/TeamTools";
 import TeamCTA from "@/components/TeamCTA";
 import FAQ from "@/components/FAQ";
 import SecuritySection from "@/components/SecuritySection";
+import TeamManagement from "@/components/TeamManagement";
 
 export default function TeamsPage() {
   return (
@@ -53,15 +54,16 @@ export default function TeamsPage() {
 
       <TeamHero />
       <div className="w-full">
-        <div className="w-full h-24 lg:h-32 bg-white" />
+        <TeamManagement />
+        <div className="w-full h-16 lg:h-24 bg-white" />
         <TeamFeatureSections />
-        <div className="w-full h-24 lg:h-32 bg-white" />
+        <div className="w-full h-16 lg:h-24 bg-white" />
         <TeamCTA />
-        <div className="w-full h-24 lg:h-32 bg-white" />
+        <div className="w-full h-16 lg:h-24 bg-white" />
         <TeamTools />
-        <div className="w-full h-24 lg:h-32 bg-white" />
+        <div className="w-full h-16 lg:h-24 bg-white" />
         <FAQ  />
-        <div className="w-full h-24 lg:h-32 bg-white" />
+        <div className="w-full h-16 lg:h-24 bg-white" />
         <SecuritySection />
         <div className="w-full h-24 lg:h-32 bg-white" />
       </div>

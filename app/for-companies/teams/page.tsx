@@ -60,7 +60,7 @@ export default function TeamsPage() {
         <div className="w-full h-24 lg:h-32 bg-white" />
         <TeamTools />
         <div className="w-full h-24 lg:h-32 bg-white" />
-        <FAQ dark />
+        <FAQ  />
         <div className="w-full h-24 lg:h-32 bg-white" />
         <SecuritySection />
         <div className="w-full h-24 lg:h-32 bg-white" />

@@ -64,7 +64,7 @@ export default function NFCEventsPage() {
         <div className="w-full h-24 lg:h-32 bg-white" />
         <OccasionsSection />
         <div className="w-full h-24 lg:h-32 bg-white" />
-        <FAQ dark />
+        <FAQ />
         <div className="w-full h-24 lg:h-32 bg-white" />
       </div>
     </main>

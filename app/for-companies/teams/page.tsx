@@ -7,6 +7,7 @@ import TeamCTA from "@/components/TeamCTA";
 import FAQ from "@/components/FAQ";
 import SecuritySection from "@/components/SecuritySection";
 import TeamManagement from "@/components/TeamManagement";
+import FeatureContactForm from "@/components/FeatureContactForm";
 
 export default function TeamsPage() {
   return (
@@ -66,6 +67,7 @@ export default function TeamsPage() {
         <div className="w-full h-16 lg:h-24 bg-white" />
         <SecuritySection />
         <div className="w-full h-24 lg:h-32 bg-white" />
+         <FeatureContactForm />
       </div>
     </main>
   );

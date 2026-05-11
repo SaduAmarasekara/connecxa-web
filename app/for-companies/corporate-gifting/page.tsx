@@ -4,6 +4,7 @@ import CorporateGiftingHero from "@/components/CorporateGiftingHero";
 import CorporateGiftOptions from "@/components/CorporateGiftOptions";
 import OccasionsSection from "@/components/OccasionsSection";
 import FAQ from "@/components/FAQ";
+import FeatureContactForm from "@/components/FeatureContactForm";
 
 
 export default function CorporateGiftingPage() {
@@ -59,7 +60,9 @@ export default function CorporateGiftingPage() {
         <div className="w-full h-24 lg:h-32 bg-white" />
         <FAQ  />
         <div className="w-full h-24 lg:h-32 bg-white" />
+         <FeatureContactForm />
       </div>
+
     </main>
   );
 }

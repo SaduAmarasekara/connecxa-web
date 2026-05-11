@@ -7,6 +7,7 @@ import FAQ from "@/components/FAQ";
 import LivePrintingFeatures from "@/components/LivePrintingFeatures";
 import NFCEventServices from "@/components/NFCEventServices";
 import NFCEventSteps from "@/components/NFCEventSteps";
+import FeatureContactForm from "@/components/FeatureContactForm";
 
 
 export default function NFCEventsPage() {
@@ -66,6 +67,7 @@ export default function NFCEventsPage() {
         <div className="w-full h-16 lg:h-24 bg-white" />
         <FAQ />
         <div className="w-full h-24 lg:h-32 bg-white" />
+         <FeatureContactForm />
       </div>
     </main>
   );

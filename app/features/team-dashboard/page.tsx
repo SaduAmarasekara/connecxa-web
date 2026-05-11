@@ -250,9 +250,8 @@ export default function TeamDashboard() {
           50% { opacity: 0.7; box-shadow: 0 0 0 6px rgba(0,90,209,0.08); }
         }
         @keyframes heroFloat {
-          0%, 100% { transform: translateY(0px) rotate(0deg); }
-          33% { transform: translateY(-10px) rotate(0.4deg); }
-          66% { transform: translateY(-5px) rotate(-0.3deg); }
+          0%, 100% { transform: scale(1); }
+          50% { transform: scale(1.03); }
         }
       `}</style>
   <div className="w-full h-16 lg:h-24 bg-white" />

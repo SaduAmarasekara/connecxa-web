@@ -231,7 +231,7 @@ export default function CRMDealManager() {
                 }}
               >
                 <Image
-                  src="/crm_manager_mockup_new.png"
+                  src="/images/crm-integrations-connecxa.png"
                   alt="CRM Sales Pipeline Mockup"
                   fill
                   className="object-cover"
@@ -249,9 +249,8 @@ export default function CRMDealManager() {
           50% { opacity: 0.7; box-shadow: 0 0 0 6px rgba(0,90,209,0.08); }
         }
         @keyframes heroFloat {
-          0%, 100% { transform: translateY(0px) rotate(0deg); }
-          33% { transform: translateY(-10px) rotate(0.4deg); }
-          66% { transform: translateY(-5px) rotate(-0.3deg); }
+          0%, 100% { transform: scale(1); }
+          50% { transform: scale(1.03); }
         }
       `}</style>
 

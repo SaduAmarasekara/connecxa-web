@@ -4,7 +4,7 @@ export default function PurchaseSteps() {
   return (
     <section
       style={{
-        background: "#114FB5", // Vibrant blue from screenshot
+        background: "linear-gradient(135deg, #63adb7ff 0%, #3879ceff 100%)",
         padding: "80px 24px",
         color: "#ffffff",
         fontFamily: "'DM Sans', 'Helvetica Neue', sans-serif",

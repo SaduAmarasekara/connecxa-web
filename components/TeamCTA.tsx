@@ -101,7 +101,7 @@ export default function TeamCTA() {
           position: "relative",
           borderRadius: 28,
           overflow: "hidden",
-          background: "linear-gradient(118deg, #1D4ED8 0%, #2563EB 28%, #3B82F6 58%, #60A5FA 82%, #BAE6FD 100%)",
+          background: "linear-gradient(135deg, #63adb7ff 0%, #3879ceff 100%)",
           padding: "56px 64px",
           minHeight: 300,
         }}>
@@ -112,14 +112,14 @@ export default function TeamCTA() {
           `}</style>
 
           {/* ── Background bokeh blobs ── */}
-          <div style={{ position:"absolute", top:"-40%", left:"10%",  width:700, height:700, background:"rgba(255,255,255,0.06)", borderRadius:"50%", filter:"blur(90px)", pointerEvents:"none" }} />
-          <div style={{ position:"absolute", bottom:"-50%", right:"5%", width:600, height:600, background:"rgba(186,230,253,0.12)", borderRadius:"50%", filter:"blur(80px)", pointerEvents:"none" }} />
-          <div style={{ position:"absolute", top:"20%",  right:"38%", width:300, height:300, background:"rgba(255,255,255,0.04)", borderRadius:"50%", filter:"blur(50px)", pointerEvents:"none" }} />
+          <div style={{ position: "absolute", top: "-40%", left: "10%", width: 700, height: 700, background: "rgba(255,255,255,0.06)", borderRadius: "50%", filter: "blur(90px)", pointerEvents: "none" }} />
+          <div style={{ position: "absolute", bottom: "-50%", right: "5%", width: 600, height: 600, background: "rgba(186,230,253,0.12)", borderRadius: "50%", filter: "blur(80px)", pointerEvents: "none" }} />
+          <div style={{ position: "absolute", top: "20%", right: "38%", width: 300, height: 300, background: "rgba(255,255,255,0.04)", borderRadius: "50%", filter: "blur(50px)", pointerEvents: "none" }} />
 
           <div className="cta-inner">
 
             {/* ── LEFT ── */}
-            <div className="cta-left-content" style={{ position:"relative", zIndex:2, maxWidth:520, flex:"1 1 320px", display:"flex", flexDirection:"column" }}>
+            <div className="cta-left-content" style={{ position: "relative", zIndex: 2, maxWidth: 520, flex: "1 1 320px", display: "flex", flexDirection: "column" }}>
               <h2 style={{
                 fontSize: "clamp(26px, 3.2vw, 44px)",
                 fontWeight: 800,
@@ -143,7 +143,7 @@ export default function TeamCTA() {
                 details, capture leads, and remember everyone you meet.
               </p>
 
-              <div className="cta-buttons" style={{ display:"flex", gap:14, flexWrap:"wrap" }}>
+              <div className="cta-buttons" style={{ display: "flex", gap: 14, flexWrap: "wrap" }}>
                 <button className="cta-primary">Get started</button>
                 <button className="cta-secondary">For teams</button>
               </div>
@@ -180,11 +180,11 @@ export default function TeamCTA() {
                   padding: "10px 16px 8px",
                   display: "flex", justifyContent: "space-between", alignItems: "center",
                 }}>
-                  <span style={{ fontSize:9, fontWeight:700, color:"#2563EB" }}>9:41</span>
+                  <span style={{ fontSize: 9, fontWeight: 700, color: "#2563EB" }}>9:41</span>
                   {/* Dynamic island */}
-                  <div style={{ width:44, height:14, background:"rgba(37,99,235,0.18)", borderRadius:99 }} />
-                  <div style={{ display:"flex", gap:3, alignItems:"center" }}>
-                    <svg width="12" height="8" viewBox="0 0 12 8" fill="#60A5FA"><rect x="0" y="3" width="2" height="5" rx="1"/><rect x="3" y="2" width="2" height="6" rx="1"/><rect x="6" y="1" width="2" height="7" rx="1"/><rect x="9" y="0" width="2" height="8" rx="1"/></svg>
+                  <div style={{ width: 44, height: 14, background: "rgba(37,99,235,0.18)", borderRadius: 99 }} />
+                  <div style={{ display: "flex", gap: 3, alignItems: "center" }}>
+                    <svg width="12" height="8" viewBox="0 0 12 8" fill="#60A5FA"><rect x="0" y="3" width="2" height="5" rx="1" /><rect x="3" y="2" width="2" height="6" rx="1" /><rect x="6" y="1" width="2" height="7" rx="1" /><rect x="9" y="0" width="2" height="8" rx="1" /></svg>
                   </div>
                 </div>
 
@@ -194,11 +194,11 @@ export default function TeamCTA() {
                   margin: "10px 8px 0",
                   borderRadius: 18,
                   padding: "20px 14px 16px",
-                  display: "flex", flexDirection:"column", alignItems:"center",
+                  display: "flex", flexDirection: "column", alignItems: "center",
                   boxShadow: "0 4px 20px rgba(37,99,235,0.08)",
                 }}>
                   {/* Avatar with pulse ring */}
-                  <div style={{ position:"relative", marginBottom:12 }}>
+                  <div style={{ position: "relative", marginBottom: 12 }}>
                     <div style={{
                       width: 72, height: 72, borderRadius: "50%",
                       background: "linear-gradient(135deg, #93C5FD 0%, #3B82F6 45%, #1D4ED8 100%)",
@@ -209,91 +209,91 @@ export default function TeamCTA() {
                     }}>
                       {/* Person icon */}
                       <svg width="40" height="40" viewBox="0 0 40 40" fill="none">
-                        <circle cx="20" cy="14" r="9" fill="rgba(255,255,255,0.9)"/>
-                        <ellipse cx="20" cy="36" rx="15" ry="10" fill="rgba(255,255,255,0.75)"/>
+                        <circle cx="20" cy="14" r="9" fill="rgba(255,255,255,0.9)" />
+                        <ellipse cx="20" cy="36" rx="15" ry="10" fill="rgba(255,255,255,0.75)" />
                       </svg>
                     </div>
                     {/* Online dot */}
                     <div style={{
-                      position:"absolute", bottom:3, right:3,
-                      width:14, height:14, borderRadius:"50%",
-                      background:"#22C55E",
-                      border:"2.5px solid #fff",
-                      zIndex:2,
+                      position: "absolute", bottom: 3, right: 3,
+                      width: 14, height: 14, borderRadius: "50%",
+                      background: "#22C55E",
+                      border: "2.5px solid #fff",
+                      zIndex: 2,
                     }} />
                   </div>
 
-                  <div style={{ fontSize:14, fontWeight:800, color:"#111827", marginBottom:3, fontFamily:"'DM Sans',sans-serif" }}>Margo Smith</div>
-                  <div style={{ fontSize:11, color:"#6B7280", marginBottom:6, fontFamily:"'DM Sans',sans-serif" }}>Marketer</div>
+                  <div style={{ fontSize: 14, fontWeight: 800, color: "#111827", marginBottom: 3, fontFamily: "'DM Sans',sans-serif" }}>Margo Smith</div>
+                  <div style={{ fontSize: 11, color: "#6B7280", marginBottom: 6, fontFamily: "'DM Sans',sans-serif" }}>Marketer</div>
 
                   {/* Location */}
-                  <div style={{ fontSize:9, color:"#9CA3AF", display:"flex", alignItems:"center", gap:3, marginBottom:14 }}>
-                    <svg width="8" height="8" viewBox="0 0 24 24" fill="none" stroke="#9CA3AF" strokeWidth="2.5"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"/></svg>
+                  <div style={{ fontSize: 9, color: "#9CA3AF", display: "flex", alignItems: "center", gap: 3, marginBottom: 14 }}>
+                    <svg width="8" height="8" viewBox="0 0 24 24" fill="none" stroke="#9CA3AF" strokeWidth="2.5"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z" /></svg>
                     New York · Connecxa
                   </div>
 
                   {/* Exchange button */}
                   <div style={{
-                    width:"100%",
+                    width: "100%",
                     background: "linear-gradient(90deg,#2563EB,#3B82F6)",
-                    borderRadius:99,
-                    padding:"8px 0",
-                    textAlign:"center",
-                    fontSize:10, fontWeight:700, color:"#fff",
-                    cursor:"pointer",
-                    boxShadow:"0 4px 12px rgba(37,99,235,0.35)",
-                    fontFamily:"'DM Sans',sans-serif",
-                    letterSpacing:"0.02em",
+                    borderRadius: 99,
+                    padding: "8px 0",
+                    textAlign: "center",
+                    fontSize: 10, fontWeight: 700, color: "#fff",
+                    cursor: "pointer",
+                    boxShadow: "0 4px 12px rgba(37,99,235,0.35)",
+                    fontFamily: "'DM Sans',sans-serif",
+                    letterSpacing: "0.02em",
                   }}>
                     Exchange Contact
                   </div>
                 </div>
 
                 {/* Social row */}
-                <div style={{ padding:"12px 16px 0", display:"flex", flexDirection:"column", alignItems:"center", gap:6 }}>
-                  <div style={{ fontSize:8, color:"#9CA3AF", letterSpacing:"0.1em", fontFamily:"'DM Sans',sans-serif" }}>LET'S CONNECT</div>
-                  <div style={{ display:"flex", gap:8 }}>
-                    {["in","ig","tw"].map((s) => (
+                <div style={{ padding: "12px 16px 0", display: "flex", flexDirection: "column", alignItems: "center", gap: 6 }}>
+                  <div style={{ fontSize: 8, color: "#9CA3AF", letterSpacing: "0.1em", fontFamily: "'DM Sans',sans-serif" }}>LET'S CONNECT</div>
+                  <div style={{ display: "flex", gap: 8 }}>
+                    {["in", "ig", "tw"].map((s) => (
                       <div key={s} style={{
-                        width:28, height:28, borderRadius:8,
-                        background:"linear-gradient(135deg,#DBEAFE,#BFDBFE)",
-                        display:"flex", alignItems:"center", justifyContent:"center",
+                        width: 28, height: 28, borderRadius: 8,
+                        background: "linear-gradient(135deg,#DBEAFE,#BFDBFE)",
+                        display: "flex", alignItems: "center", justifyContent: "center",
                       }}>
-                        <div style={{ width:10, height:10, borderRadius:2, background:"#3B82F6", opacity:0.8 }} />
+                        <div style={{ width: 10, height: 10, borderRadius: 2, background: "#3B82F6", opacity: 0.8 }} />
                       </div>
                     ))}
                   </div>
                 </div>
 
                 {/* Bottom gradient fill */}
-                <div style={{ flex:1, minHeight:40, background:"linear-gradient(180deg,#F0F7FF,#DBEAFE)" }} />
+                <div style={{ flex: 1, minHeight: 40, background: "linear-gradient(180deg,#F0F7FF,#DBEAFE)" }} />
               </div>
 
               {/* ── Floating pills ── */}
               {/* Grow */}
               <div className="pill-c glass-pill" style={{
-                position:"absolute", top:10, right:4,
-                color:"#1e3a8a",
+                position: "absolute", top: 10, right: 4,
+                color: "#1e3a8a",
               }}>
-                <div style={{ width:10, height:10, borderRadius:"50%", background:"linear-gradient(135deg,#60A5FA,#2563EB)", boxShadow:"0 2px 6px rgba(37,99,235,0.5)" }} />
+                <div style={{ width: 10, height: 10, borderRadius: "50%", background: "linear-gradient(135deg,#60A5FA,#2563EB)", boxShadow: "0 2px 6px rgba(37,99,235,0.5)" }} />
                 Grow
               </div>
 
               {/* Share */}
               <div className="pill-a glass-pill" style={{
-                position:"absolute", top:"42%", left:-4,
-                color:"#065f46",
+                position: "absolute", top: "42%", left: -4,
+                color: "#065f46",
               }}>
-                <div style={{ width:10, height:10, borderRadius:"50%", background:"linear-gradient(135deg,#6EE7B7,#10B981)", boxShadow:"0 2px 6px rgba(16,185,129,0.5)" }} />
+                <div style={{ width: 10, height: 10, borderRadius: "50%", background: "linear-gradient(135deg,#6EE7B7,#10B981)", boxShadow: "0 2px 6px rgba(16,185,129,0.5)" }} />
                 Share
               </div>
 
               {/* Connect */}
               <div className="pill-b glass-pill" style={{
-                position:"absolute", bottom:32, right:4,
-                color:"#78350f",
+                position: "absolute", bottom: 32, right: 4,
+                color: "#78350f",
               }}>
-                <div style={{ width:10, height:10, borderRadius:"50%", background:"linear-gradient(135deg,#FCD34D,#F59E0B)", boxShadow:"0 2px 6px rgba(245,158,11,0.5)" }} />
+                <div style={{ width: 10, height: 10, borderRadius: "50%", background: "linear-gradient(135deg,#FCD34D,#F59E0B)", boxShadow: "0 2px 6px rgba(245,158,11,0.5)" }} />
                 Connect
               </div>
 

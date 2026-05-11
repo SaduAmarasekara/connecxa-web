@@ -10,97 +10,306 @@ import CorporateBranding from "@/components/CorporateBranding";
 
 export default function ShopPage() {
   return (
-    <div
-      className="min-h-screen flex flex-col bg-white overflow-hidden"
-      style={{ fontFamily: "'DM Sans', 'Helvetica Neue', sans-serif" }}
+    <main
+      className="w-full relative flex flex-col items-center overflow-hidden"
+      style={{
+        fontFamily: "'DM Sans', 'Helvetica Neue', sans-serif",
+        background: "linear-gradient(160deg, #faf8ff 0%, #ede8f7 40%, #d8c4e0 100%)",
+      }}
     >
+      {/* ── Ambient Background Glows ── */}
+      <div
+        className="absolute pointer-events-none"
+        style={{
+          top: "-5%",
+          left: "-8%",
+          width: "55%",
+          height: "60%",
+          background: "radial-gradient(circle, rgba(0,90,209,0.08) 0%, transparent 70%)",
+          filter: "blur(60px)",
+        }}
+      />
+      <div
+        className="absolute pointer-events-none"
+        style={{
+          bottom: "5%",
+          right: "-10%",
+          width: "50%",
+          height: "55%",
+          background: "radial-gradient(circle, rgba(14,165,233,0.07) 0%, transparent 70%)",
+          filter: "blur(80px)",
+        }}
+      />
+      <div
+        className="absolute pointer-events-none"
+        style={{
+          top: "30%",
+          left: "40%",
+          width: "35%",
+          height: "40%",
+          background: "radial-gradient(circle, rgba(37,99,235,0.06) 0%, transparent 70%)",
+          filter: "blur(70px)",
+        }}
+      />
+
       {/* ── Hero Section ── */}
-      <main className="w-full relative flex flex-col items-center pt-10 pb-12 lg:pt-16 lg:pb-0 overflow-hidden" style={{
-        background: "linear-gradient(180deg, #FFFFFF 0%, #D2E4FC 100%)",
-      }}>
-        {/* Subtle background glow effects */}
-        <div className="absolute top-[-10%] left-[-10%] w-[40%] h-[40%] bg-[#005AD1]/3 rounded-full blur-[100px] pointer-events-none" />
-        <div className="absolute bottom-[-10%] right-[-10%] w-[50%] h-[50%] bg-[#005AD1]/3 rounded-full blur-[120px] pointer-events-none" />
+      <section className="w-full max-w-[1280px] px-6 sm:px-10 lg:px-16 z-10 relative" style={{ paddingTop: "40px", paddingBottom: "20px" }}>
+        <div
+          className="flex flex-col lg:flex-row items-center justify-between"
+          style={{ gap: "48px", alignItems: "center" }}
+        >
 
-        <div className="w-full max-w-[1200px] px-6 flex flex-col items-center text-center z-10">
-          {/* Eyebrow tag */}
-          <div className="inline-flex items-center gap-2 bg-white border border-[#005AD1]/10 rounded-full px-5 py-2.5 text-[13px] font-bold tracking-[0.15em] uppercase text-[#005AD1] mb-8 shadow-sm" >
-            <span className="w-2.5 h-2.5 rounded-full bg-[#005AD1] animate-pulse" />
-            NFC Business Cards
-          </div>
-
-          <h1 className="text-[42px] md:text-[64px] lg:text-[80px] font-black leading-[1.05] tracking-[-0.04em] text-[#111827] mb-8">
-            Your Smartest <br className="hidden md:block" />
-            <span className="text-[#005AD1]">Business Card Yet.</span>
-          </h1>
-
-          <p className="text-[18px] md:text-[21px] text-[#4B5563] leading-[1.6] font-medium max-w-[800px] mb-12">
-            Modernise your networking with a single tap - share socials, links, and contacts instantly. Stand out with premium NFC technology.
-          </p>
-
-          {/* CTA Row */}
-          <div className="flex flex-col sm:flex-row items-center gap-5 mb-16">
-            <Link href="/shop/products" className="no-underline">
-              <button
+          {/* ── Left Column ── */}
+          <div
+            className="flex flex-col items-center lg:items-start text-center lg:text-left flex-1"
+            style={{ maxWidth: "620px" }}
+          >
+            {/* Pill badge */}
+            <div
+              className="inline-flex items-center gap-2 mb-8"
+              style={{
+                background: "rgba(255,255,255,0.85)",
+                border: "1.5px solid rgba(0,90,209,0.15)",
+                borderRadius: "999px",
+                padding: "10px 20px",
+                backdropFilter: "blur(12px)",
+                boxShadow: "0 2px 16px rgba(0,90,209,0.08)",
+              }}
+            >
+              <span
                 style={{
+                  width: "8px",
+                  height: "8px",
+                  borderRadius: "50%",
                   background: "#005AD1",
-                  color: "#fff",
-                  fontSize: 18,
-                  fontWeight: 800,
-                  borderRadius: 50,
-                  padding: "16px 36px",
-                  border: "none",
-                  cursor: "pointer",
-                  display: "inline-flex",
-                  alignItems: "center",
-                  gap: 8,
-                  width: "fit-content",
-                  boxShadow: "0 8px 28px rgba(0,90,209,0.25)",
-                  transition: "all 0.2s",
-                  marginBottom: "20px",
+                  display: "inline-block",
+                  boxShadow: "0 0 0 3px rgba(0,90,209,0.2)",
+                  animation: "pulse 2s ease-in-out infinite",
                 }}
-                onMouseEnter={(e) => {
-                  e.currentTarget.style.transform = "translateY(-2px)";
-                  e.currentTarget.style.boxShadow = "0 14px 36px rgba(0,90,209,0.35)";
-                  e.currentTarget.style.background = "#0047AB";
-                }}
-                onMouseLeave={(e) => {
-                  e.currentTarget.style.transform = "translateY(0)";
-                  e.currentTarget.style.boxShadow = "0 8px 28px rgba(0,90,209,0.25)";
-                  e.currentTarget.style.background = "#005AD1";
+              />
+              <span
+                style={{
+                  fontSize: "11px",
+                  fontWeight: 700,
+                  letterSpacing: "0.14em",
+                  textTransform: "uppercase",
+                  color: "#005AD1",
                 }}
               >
-                Customise Now <span style={{ fontSize: 20 }}>→</span>
-              </button>
-            </Link>
+                NFC Business Cards
+              </span>
+            </div>
+
+            {/* Headline */}
+            <h1
+              style={{
+                fontSize: "clamp(38px, 6vw, 72px)",
+                fontWeight: 900,
+                lineHeight: 1.08,
+                letterSpacing: "-0.04em",
+                color: "#0f0a1e",
+                marginBottom: "28px",
+              }}
+            >
+              Your Smartest
+              <br />
+              <span
+                style={{
+                  color: "#005AD1",
+                }}
+              >
+                Business Card Yet.
+              </span>
+            </h1>
+
+            {/* Subtext */}
+            <p
+              style={{
+                fontSize: "clamp(16px, 2vw, 19px)",
+                color: "#5b5472",
+                lineHeight: 1.7,
+                fontWeight: 450,
+                maxWidth: "480px",
+                marginBottom: "48px",
+              }}
+            >
+              Modernise your networking with a single tap - share socials, links, and contacts instantly. Stand out with premium NFC technology.
+            </p>
+
+            {/* CTA Group */}
+            <div className="flex flex-col sm:flex-row items-center lg:items-start gap-4 w-full sm:w-auto">
+              <Link href="/shop/products" className="no-underline w-full sm:w-auto">
+                <button
+                  className="hero-cta-btn"
+                  style={{
+                    background: "linear-gradient(135deg, #005AD1 0%, #004bb1 100%)",
+                    color: "#fff",
+                    fontSize: "17px",
+                    fontWeight: 700,
+                    borderRadius: "999px",
+                    padding: "16px 40px",
+                    border: "none",
+                    cursor: "pointer",
+                    display: "inline-flex",
+                    alignItems: "center",
+                    justifyContent: "center",
+                    gap: "10px",
+                    width: "100%",
+                    boxShadow: "0 8px 32px rgba(0,90,209,0.3), inset 0 1px 0 rgba(255,255,255,0.15)",
+                    transition: "all 0.25s cubic-bezier(0.34, 1.56, 0.64, 1)",
+                    letterSpacing: "-0.01em",
+                  }}
+                  onMouseEnter={(e) => {
+                    e.currentTarget.style.transform = "translateY(-3px) scale(1.02)";
+                    e.currentTarget.style.boxShadow = "0 16px 40px rgba(0,90,209,0.4), inset 0 1px 0 rgba(255,255,255,0.15)";
+                  }}
+                  onMouseLeave={(e) => {
+                    e.currentTarget.style.transform = "translateY(0) scale(1)";
+                    e.currentTarget.style.boxShadow = "0 8px 32px rgba(0,90,209,0.3), inset 0 1px 0 rgba(255,255,255,0.15)";
+                  }}
+                >
+                  Customise Now 
+                  <span style={{ fontSize: "20px", lineHeight: 1 }}>→</span>
+                </button>
+              </Link>
+
+              <Link href="#how-it-works" className="no-underline w-full sm:w-auto">
+                <button
+                  style={{
+                    background: "rgba(255,255,255,0.7)",
+                    color: "#005AD1",
+                    fontSize: "17px",
+                    fontWeight: 700,
+                    borderRadius: "999px",
+                    padding: "15px 32px",
+                    border: "1.5px solid rgba(0,90,209,0.2)",
+                    cursor: "pointer",
+                    display: "inline-flex",
+                    alignItems: "center",
+                    justifyContent: "center",
+                    gap: "8px",
+                    width: "100%",
+                    backdropFilter: "blur(8px)",
+                    transition: "all 0.2s ease",
+                    letterSpacing: "-0.01em",
+                  }}
+                  onMouseEnter={(e) => {
+                    e.currentTarget.style.background = "rgba(0,90,209,0.06)";
+                    e.currentTarget.style.borderColor = "rgba(0,90,209,0.4)";
+                  }}
+                  onMouseLeave={(e) => {
+                    e.currentTarget.style.background = "rgba(255,255,255,0.7)";
+                    e.currentTarget.style.borderColor = "rgba(0,90,209,0.2)";
+                  }}
+                >
+                  See how it works
+                </button>
+              </Link>
+            </div>
           </div>
 
-          {/* Centered Mockup */}
-          <div className="relative w-full max-w-[850px] aspect-[16/11] flex justify-center items-end mt-20">
-            <div className="relative w-full h-full">
-              <Image
-                src="/images/shophero.png"
-                alt="Connecxa Premium NFC Card Shop"
-                fill
-                className="object-contain object-bottom drop-shadow-[0_40px_70px_rgba(0,0,0,0.1)]"
-                priority
+          {/* ── Right Column: Image ── */}
+          <div
+            className="flex-1 w-full flex justify-center lg:justify-end"
+            style={{ maxWidth: "520px" }}
+          >
+            {/* Outer floating container */}
+            <div
+              style={{
+                position: "relative",
+                width: "100%",
+                maxWidth: "460px",
+                paddingTop: "clamp(0px, 3vw, 40px)",
+              }}
+            >
+              {/* Glow ring behind mockup */}
+              <div
+                style={{
+                  position: "absolute",
+                  inset: "-20px",
+                  borderRadius: "60px",
+                  background: "radial-gradient(ellipse at center, rgba(0,90,209,0.12) 0%, transparent 70%)",
+                  filter: "blur(30px)",
+                  pointerEvents: "none",
+                }}
               />
+
+              {/* Floating badge */}
+              <div
+                style={{
+                  position: "absolute",
+                  bottom: "28px",
+                  right: "-16px",
+                  background: "linear-gradient(135deg, #005AD1 0%, #004bb1 100%)",
+                  backdropFilter: "blur(16px)",
+                  borderRadius: "16px",
+                  padding: "12px 18px",
+                  boxShadow: "0 8px 24px rgba(0,90,209,0.25)",
+                  zIndex: 10,
+                  display: "flex",
+                  alignItems: "center",
+                  gap: "10px",
+                }}
+              >
+                <span style={{ fontSize: "22px" }}>🛒</span>
+                <div>
+                  <div style={{ fontSize: "11px", color: "rgba(255,255,255,0.7)", fontWeight: 600 }}>Available Now</div>
+                  <div style={{ fontSize: "14px", fontWeight: 800, color: "#fff" }}>Shop Premium</div>
+                </div>
+              </div>
+
+              {/* Main image card */}
+              <div
+                style={{
+                  position: "relative",
+                  width: "100%",
+                  aspectRatio: "4/3",
+                  borderRadius: "48px",
+                  overflow: "hidden",
+                  boxShadow: "0 40px 80px -20px rgba(0,90,209,0.25), 0 20px 40px -10px rgba(0,0,0,0.12)",
+                  animation: "heroFloat 7s ease-in-out infinite",
+                  border: "1px solid rgba(255,255,255,0.5)",
+                  zIndex: 5,
+                  backgroundColor: "transparent",
+                }}
+              >
+                <Image
+                  src="/images/shophero.png"
+                  alt="Shop Premium NFC Cards"
+                  fill
+                  className="object-cover"
+                  priority
+                />
+              </div>
             </div>
           </div>
         </div>
-      </main>
+      </section>
 
-      <div className="w-full h-16 lg:h-24 bg-white" />
-      <NutshellFeatures />
-      <div className="w-full h-16 lg:h-24 bg-white" />
-      <CardShowcase />
-      <div className="w-full h-16 lg:h-24 bg-white" />
-      <PurchaseSteps />
-      <div className="w-full h-16 lg:h-24 bg-white" />
-      <CorporateBranding />
-      <div className="w-full h-16 lg:h-24 bg-white" />
-      <FAQ />
-      <div className="w-full h-16 lg:h-24 bg-white" />
-    </div>
+      <style jsx global>{`
+        @keyframes pulse {
+          0%, 100% { opacity: 1; box-shadow: 0 0 0 3px rgba(0,90,209,0.2); }
+          50% { opacity: 0.7; box-shadow: 0 0 0 6px rgba(0,90,209,0.08); }
+        }
+        @keyframes heroFloat {
+          0%, 100% { transform: scale(1); }
+          50% { transform: scale(1.03); }
+        }
+      `}</style>
+
+      <div className="w-full">
+        <div className="w-full h-16 lg:h-24 bg-white" />
+        <NutshellFeatures />
+        <div className="w-full h-16 lg:h-24 bg-white" />
+        <CardShowcase />
+        <div className="w-full h-16 lg:h-24 bg-white" />
+        <PurchaseSteps />
+        <div className="w-full h-16 lg:h-24 bg-white" />
+        <CorporateBranding />
+        <div className="w-full h-16 lg:h-24 bg-white" />
+        <FAQ />
+        <div className="w-full h-16 lg:h-24 bg-white" />
+      </div>
+    </main>
   );
 }

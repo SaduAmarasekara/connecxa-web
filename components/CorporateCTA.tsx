@@ -6,7 +6,10 @@ export default function CorporateCTA() {
   return (
     <section className="w-full flex flex-col lg:flex-row overflow-hidden" >
       {/* Left Column: Content with Blue Background */}
-      <div className="w-full lg:w-1/2 bg-[#005BD3] p-8 md:p-16 lg:p-24 flex flex-col justify-center items-center text-center">
+      <div 
+        className="w-full lg:w-1/2 p-8 md:p-16 lg:p-24 flex flex-col justify-center items-center text-center"
+        style={{ background: "linear-gradient(135deg, #63adb7ff 0%, #3879ceff 100%)" }}
+      >
         <div className="max-w-[600px] mx-auto">
           <span className="text-white/80 font-bold text-sm tracking-[0.2em] uppercase  block"style={{ marginBottom: 20 }}>
             Corporate Solutions
@@ -22,7 +25,7 @@ export default function CorporateCTA() {
 
           <button
             style={{
-              background: "#FF5C00",
+              background: "#005AD1",
               color: "#fff",
               fontSize: 18,
               fontWeight: 800,
@@ -35,15 +38,16 @@ export default function CorporateCTA() {
               gap: 8,
               width: "fit-content",
               transition: "all 0.2s",
-              marginBottom:"20px"
+              marginBottom:"20px",
+              boxShadow: "0 8px 28px rgba(0,90,209,0.25)"
             }}
             onMouseEnter={(e) => {
               e.currentTarget.style.transform = "translateY(-2px)";
-              e.currentTarget.style.boxShadow = "0 14px 36px rgba(255,92,0,0.35)";
+              e.currentTarget.style.boxShadow = "0 14px 36px rgba(0,90,209,0.35)";
             }}
             onMouseLeave={(e) => {
               e.currentTarget.style.transform = "translateY(0)";
-              e.currentTarget.style.boxShadow = "0 8px 28px rgba(255,92,0,0.25)";
+              e.currentTarget.style.boxShadow = "0 8px 28px rgba(0,90,209,0.25)";
             }}
           >
             Get in touch

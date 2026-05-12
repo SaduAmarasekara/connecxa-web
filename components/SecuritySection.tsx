@@ -1,55 +1,28 @@
 "use client";
 
 import React from "react";
+import Image from "next/image";
 
 const securityFeatures = [
   {
-    title: "Private Mode",
-    desc: "Toggle advanced privacy and security settings to control the information on your digital business card",
-    iconBg: "#E0F2FE",
-    iconColor: "#0369A1",
-    iconPath: (
-      <>
-        <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" />
-        <circle cx="12" cy="7" r="4" />
-      </>
-    ),
+    title: "Private Profile Control",
+    desc: "Take full ownership of your digital footprint. Easily manage what information is visible to others and maintain strict privacy over your personal details.",
+    image: "/images/private-profile-control.png",
   },
   {
-    title: "Certified Compliant",
-    desc: "Audited and certified cyber-safe compliant by the Cybersecurity Agency of Singapore (CSA)",
-    iconBg: "#DCFCE7",
-    iconColor: "#15803D",
-    iconPath: (
-      <>
-        <circle cx="12" cy="12" r="10" />
-        <path d="m9 12 2 2 4-4" />
-      </>
-    ),
+    title: "OTP Verification",
+    desc: "Ensure that only authorized users can access sensitive information. We send a one-time password to verify your identity quickly and securely.",
+    image: "/images/otp-verification.png",
   },
   {
-    title: "AES-256 Encryption",
-    desc: "We employ state-of-the-art AES-256 encryption to ensure that your information stays secure and private.",
-    iconBg: "#F3E8FF",
-    iconColor: "#7E22CE",
-    iconPath: (
-      <>
-        <rect x="3" y="11" width="18" height="11" rx="2" ry="2" />
-        <path d="M7 11V7a5 5 0 0 1 10 0v4" />
-      </>
-    ),
+    title: "Two-Factor Authentication",
+    desc: "Add an extra layer of defense to your account. By combining your password with a secondary verification method, we keep intruders out.",
+    image: "/images/two-factor-auth.png",
   },
   {
-    title: "MFA Protection",
-    desc: "Safeguard your account against unauthorised access with additional layers of security and protection",
-    iconBg: "#FEF9C3",
-    iconColor: "#A16207",
-    iconPath: (
-      <>
-        <rect x="3" y="3" width="18" height="18" rx="2" ry="2" />
-        <path d="M7 7h10v10H7z" />
-      </>
-    ),
+    title: "Secure Data Handling",
+    desc: "Your data is treated with the highest level of care. We employ industry-standard encryption and secure infrastructure to protect your information at all times.",
+    image: "/images/secure-data-handling.png",
   },
 ];
 
@@ -59,23 +32,22 @@ export default function SecuritySection() {
       <style>{`
         .security-section {
           width: 100%;
-          padding: 64px 24px;
-          background: #F8FAFC;
+          padding: 80px 24px;
+          background: #ffffff;
           font-family: 'DM Sans', sans-serif;
           box-sizing: border-box;
         }
 
         .security-inner {
           width: 100%;
-          max-width: 1400px;
+          max-width: 1200px;
           margin: 0 auto;
-          padding: 0 24px;
           box-sizing: border-box;
         }
 
         .security-header {
           text-align: center;
-          margin-bottom: 48px;
+          margin-bottom: 56px;
         }
 
         .security-title {
@@ -96,89 +68,94 @@ export default function SecuritySection() {
         }
 
         .security-subtitle {
-          font-size: clamp(15px, 2vw, 19px);
+          font-size: clamp(16px, 2vw, 20px);
           color: #6b7280;
           font-weight: 500;
           margin: 0 0 20px 0;
           padding: 0;
+          max-width: 700px;
+          margin-left: auto;
+          margin-right: auto;
         }
 
         .security-grid {
           display: grid;
-          grid-template-columns: repeat(4, 1fr);
+          grid-template-columns: repeat(2, 1fr);
           gap: 24px;
         }
 
         .security-card {
-          background: #ffffff;
-          padding: 36px 32px;
-          border-radius: 32px;
-          box-shadow: 0 8px 30px rgba(0, 0, 0, 0.04);
-          border: 1px solid #f3f4f6;
+          background: #F9FAFB;
+          padding: 40px 40px 40px 40px;
+          border-radius: 24px;
+          border: 1px solid #F3F4F6;
           display: flex;
-          flex-direction: column;
-          align-items: flex-start;
-          transition: all 0.3s ease;
-        }
-
-        .security-card:hover {
-          box-shadow: 0 20px 50px rgba(0, 0, 0, 0.08);
-          transform: translateY(-4px);
-        }
-
-        .security-icon-circle {
-          width: 48px;
-          height: 48px;
-          border-radius: 50%;
-          display: flex;
+          flex-direction: row;
           align-items: center;
-          justify-content: center;
-          margin-bottom: 24px;
-          flex-shrink: 0;
+          justify-content: space-between;
+          position: relative;
+          overflow: hidden;
+          min-height: 220px;
+        }
+
+        .security-card-content {
+          max-width: 60%;
+          z-index: 2;
         }
 
         .security-card-title {
-          font-size: clamp(18px, 2vw, 22px);
-          font-weight: 900;
-          color: #111;
+          font-size: clamp(20px, 2.5vw, 24px);
+          font-weight: 800;
+          color: #111827;
           margin: 0 0 12px 0;
+          letter-spacing: -0.02em;
         }
 
         .security-card-desc {
           font-size: 15px;
           color: #6b7280;
           font-weight: 500;
-          line-height: 1.65;
+          line-height: 1.6;
           margin: 0;
         }
 
-        /* Tablet: 2 columns */
+        .security-card-image {
+          position: absolute;
+          right: -20px;
+          bottom: -20px;
+          width: 200px;
+          height: 200px;
+          object-fit: contain;
+          z-index: 1;
+          mix-blend-mode: multiply; /* Helps blend white backgrounds */
+        }
+
+        /* Tablet: Adjust padding and image size */
         @media (max-width: 1024px) {
-          .security-grid {
-            grid-template-columns: repeat(2, 1fr);
+          .security-card {
+            padding: 32px;
+            flex-direction: column;
+            align-items: flex-start;
           }
-          .security-section {
-            padding: 48px 20px;
+          .security-card-content {
+            max-width: 100%;
+            margin-bottom: 80px;
+          }
+          .security-card-image {
+            right: -10px;
+            bottom: -10px;
+            width: 140px;
+            height: 140px;
           }
         }
 
         /* Mobile: 1 column */
-        @media (max-width: 600px) {
+        @media (max-width: 768px) {
           .security-grid {
             grid-template-columns: 1fr;
-            gap: 16px;
           }
           .security-section {
-            padding: 40px 16px;
-          }
-          .security-inner {
-            padding: 0 8px;
-          }
-          .security-header {
-            margin-bottom: 32px;
-          }
-          .security-card {
-            padding: 28px 24px;
+            padding: 56px 16px;
           }
         }
       `}</style>
@@ -200,25 +177,17 @@ export default function SecuritySection() {
           <div className="security-grid">
             {securityFeatures.map((feature, i) => (
               <div key={i} className="security-card">
-                <div
-                  className="security-icon-circle"
-                  style={{ background: feature.iconBg }}
-                >
-                  <svg
-                    width="24"
-                    height="24"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke={feature.iconColor}
-                    strokeWidth="2.5"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                  >
-                    {feature.iconPath}
-                  </svg>
+                <div className="security-card-content">
+                  <h3 className="security-card-title">{feature.title}</h3>
+                  <p className="security-card-desc">{feature.desc}</p>
                 </div>
-                <h3 className="security-card-title">{feature.title}</h3>
-                <p className="security-card-desc">{feature.desc}</p>
+                <Image
+                  src={feature.image}
+                  alt={feature.title}
+                  width={200}
+                  height={200}
+                  className="security-card-image"
+                />
               </div>
             ))}
           </div>
@@ -227,3 +196,4 @@ export default function SecuritySection() {
     </>
   );
 }
+

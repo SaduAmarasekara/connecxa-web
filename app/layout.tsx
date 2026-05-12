@@ -14,7 +14,7 @@ const outfit = Outfit({
 });
 
 export const metadata: Metadata = {
-  title: "Connecxa",
+  title: "CONNECXA",
   description: "Connect smarter with the all-in-one digital business card, CRM, and contact manager.",
 };
 

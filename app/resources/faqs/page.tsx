@@ -180,7 +180,7 @@ export default function FAQsPage() {
         .faq-page {
           background: #fff;
           min-height: 100vh;
-          padding: 80px 20px;
+          padding: 40px 20px 80px;
           display: flex;
           flex-direction: column;
           align-items: center;
@@ -334,8 +334,22 @@ export default function FAQsPage() {
         }
 
         @media (max-width: 992px) {
-          .faq-container { grid-template-columns: 1fr; }
-          .faq-sidebar { display: none; }
+          .faq-page { padding: 20px 20px 60px; }
+          .faq-container { grid-template-columns: 1fr; gap: 32px; }
+          .faq-sidebar {
+            display: flex;
+            flex-direction: row;
+            overflow-x: auto;
+            padding-bottom: 8px;
+            scrollbar-width: none;
+            -ms-overflow-style: none;
+          }
+          .faq-sidebar::-webkit-scrollbar {
+            display: none;
+          }
+          .cat-item {
+            white-space: nowrap;
+          }
           .faq-title { font-size: 36px; }
         }
       `}</style>

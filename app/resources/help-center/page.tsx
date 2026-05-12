@@ -89,7 +89,7 @@ export default function HelpCenterPage() {
 
         /* ── Hero Section ── */
         .hc-hero {
-          padding: 120px 40px 80px;
+          padding: 60px 40px 80px;
           text-align: center;
           background: #fff;
         }
@@ -291,7 +291,7 @@ export default function HelpCenterPage() {
           .hc-title { font-size: 40px; }
           .categories-grid { grid-template-columns: 1fr; }
           .hc-categories { padding: 40px 20px; }
-          .hc-hero { padding: 80px 20px 40px; }
+          .hc-hero { padding: 40px 20px 40px; }
         }
       `}</style>
 
